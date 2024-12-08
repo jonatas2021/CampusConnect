@@ -38,4 +38,6 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
+.idea/
+
 app-example
