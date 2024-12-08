@@ -32,6 +32,8 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="hello" options={{ headerShown: false }} />
+        <Stack.Screen name="questions" options={{ headerShown: false }} />
+        <Stack.Screen name="carousel" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found"  />
       </Stack>
       <StatusBar style="auto" />
