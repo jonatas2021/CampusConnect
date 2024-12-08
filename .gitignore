@@ -38,6 +38,11 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-.idea/
+# Editors
+.vscode
+.idea
+
+# Bun
+bun.lockb
 
 app-example

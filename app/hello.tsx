@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, SafeAreaView, Image, Text, TextInput, TouchableOpacity } from 'react-native';
+import { useRouter } from 'expo-router';
 
 export default function Hello() {
   const [name, setName] = useState('');
+
+  const router = useRouter();
 
   const handleNameChange = (text: string) => {
     setName(text);
@@ -10,11 +13,12 @@ export default function Hello() {
 
   const handleEnter = () => {
     console.log(`Nome enviado: ${name}`);
+    router.push('/questions');
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.tela}>
+    <SafeAreaView style={styles.rootContainer}>
+      <View style={styles.sectionContainer}>
         <Image
           source={require('../assets/images/fundo.png')}
           style={styles.imagef}
@@ -51,7 +55,7 @@ export default function Hello() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  rootContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -75,7 +79,7 @@ const styles = StyleSheet.create({
     width: '100%',
     resizeMode: 'contain',
   },
-  tela: {
+  sectionContainer: {
     width: '100%',
     height: '100%',
     justifyContent: 'center',
