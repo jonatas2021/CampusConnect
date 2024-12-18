@@ -23,7 +23,7 @@ const LoadingScreen = () => {
         />
         <View style={styles.logos}>
           <Image
-            source={require('../assets/images/logoCCinicial.png')}
+            source={require('../assets/images/logoCCinicial.gif')}
             style={styles.image2}
           />
           <Image
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     left: 0,
   },
   image2: {
-    height:'30%',
+    height:'35%',
     resizeMode: 'contain',
     marginTop: '40%',
   },
