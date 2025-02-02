@@ -1,5 +1,5 @@
-import React from "react";
-import { StyleSheet, SafeAreaView, View, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, SafeAreaView, View, TouchableOpacity, Text } from "react-native";
 import Carousel from "../components/ui/Carousel";
 import { useRouter } from "expo-router";
 import BackButton from "../components/svg/BackButton";
@@ -33,18 +33,24 @@ const carouselData = [
 
 const CarouselPage = () => {
   const router = useRouter();
+  const [isLastSlide, setIsLastSlide] = useState(false);
 
   const backToQuestions = () => {
     router.push("/questions");
   };
+
+  const handleButtonPress = () => {
+    router.push("/questions"); // Substitua pela rota desejada
+  };
+
   return (
     <SafeAreaView style={styles.rootContainer}>
-      <View >
-        {/* Back Arrow Placeholder */}
+      <View>
         <TouchableOpacity style={styles.backArrow} onPress={backToQuestions}>
           <BackButton width={25} height={25} />
         </TouchableOpacity>
       </View>
+
       <Carousel data={carouselData} />
     </SafeAreaView>
   );
@@ -55,13 +61,30 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#DFFFD6",
   },
-
   backArrow: {
     position: "absolute",
     top: 30,
     left: 10,
     zIndex: 10,
     padding: 20,
+  },
+  finalButton: {
+    position: "absolute",
+    bottom: 40,
+    backgroundColor: "#2A5A06",
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 10,
+    alignItems: "center",
+    width: "80%",
+    justifyContent: "center",
+  },
+  buttonText: {
+    color: "#FFFFFF",
+    fontSize: 18,
+    fontWeight: "bold",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
