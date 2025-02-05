@@ -8,10 +8,10 @@ const LoadingScreen = () => {
   useEffect(() => {
 
     const timer = setTimeout(() => {
-      router.push('/Hello'); // Caminho para a tela principal
+      router.push('/Hello');
     }, 3000);
 
-    return () => clearTimeout(timer); // Limpeza do temporizador
+    return () => clearTimeout(timer);
   }, [router]);
 
   return (
