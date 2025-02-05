@@ -13,7 +13,7 @@ export default function Hello() {
 
   const handleEnter = () => {
     console.log(`Nome enviado: ${name}`);
-    router.push('/questions');
+    router.push('/Questions');
   };
 
   return (

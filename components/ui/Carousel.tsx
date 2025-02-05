@@ -120,7 +120,7 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
 
       {/* Renderiza o botão apenas no último slide */}
       {currentIndex === data.length - 1 && (
-        <TouchableOpacity style={styles.button} onPress={() => router.push("/questions")}>
+        <TouchableOpacity style={styles.button} onPress={() => router.push("/main/MainScreen")}>
           <Text style={styles.buttonText}>Vamos lá!</Text>
         </TouchableOpacity>
       )}

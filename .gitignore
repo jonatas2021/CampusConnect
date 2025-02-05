@@ -42,7 +42,8 @@ yarn-error.*
 .vscode
 .idea
 
-# Bun
+# Bun & NPM
 bun.lockb
+package-lock.json
 
 app-example
