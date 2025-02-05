@@ -20,19 +20,17 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ### Como executar?
 
 # Clone este repositório
-$ git clone <https://github.com/jonatas2021/CampusConnect.git/>
+````
+git clone https://github.com/jonatas2021/CampusConnect.git
+````
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd CampusConnect
+````
+cd CampusConnect
+````
 
-# Instale o npm
-$ sudo apt install npm nodejs
+# Aprenda a executar projetos React Native com o Expo
+<a href="https://docs.expo.dev/guides/overview">Guias.</a><br>
+<a href="https://docs.expo.dev/faq">Perguntas frequentes.</a><br>
+<a href="https://docs.expo.dev/get-started/set-up-your-environment/?platform=android&device=simulated&mode=development-build&buildEnv=local">Como executar, passo a passo.</a><br>
 
-# Instale as dependencias do projeto
-$ npm install
-
-# Instalar os pacotes
-$ npm install
-
-# Execute a aplicação
-$ npx expo run
