@@ -29,7 +29,8 @@ git clone https://github.com/jonatas2021/CampusConnect.git
 cd CampusConnect
 ````
 
-# Aprenda a executar projetos ReactNative
+# Aprenda a executar projetos React Native com o Expo
 <a href="https://docs.expo.dev/guides/overview">Guias.</a><br>
 <a href="https://docs.expo.dev/faq">Perguntas frequentes.</a><br>
 <a href="https://docs.expo.dev/get-started/set-up-your-environment/?platform=android&device=simulated&mode=development-build&buildEnv=local">Como executar, passo a passo.</a><br>
+
