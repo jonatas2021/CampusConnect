@@ -25,7 +25,7 @@ export default function Hello() {
         />
         <View style={styles.logos}>
           <Image
-            source={require('../assets/images/logoCCinicial.png')}
+            source={require('../assets/images/logoCCinicial.gif')}
             style={styles.image2}
           />
         </View>
