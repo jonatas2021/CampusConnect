@@ -15,12 +15,12 @@ export default function Questions() {
   const [response, setResponse] = useState<string | null>(null);
 
   const backToHello = () => {
-    router.push("/hello");
+    router.push("/Hello");
   };
 
   const handleResponse = (answer: string) => {
     setResponse(answer);
-    router.push('/carousel');
+    router.push('/Carousel');
   };
 
   return (

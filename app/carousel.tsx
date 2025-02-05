@@ -36,11 +36,11 @@ const CarouselPage = () => {
   const [isLastSlide, setIsLastSlide] = useState(false);
 
   const backToQuestions = () => {
-    router.push("/questions");
+    router.push("/Questions");
   };
 
   const handleButtonPress = () => {
-    router.push("/questions"); // Substitua pela rota desejada
+    router.push("/Questions");
   };
 
   return (
