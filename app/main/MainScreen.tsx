@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Pressable, FlatList, StyleSheet } from 'react-native';
+import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -14,6 +14,30 @@ export default function HomeScreen() {
       }
     };
     fetchName();
+
+    // Função para interceptar o gesto de voltar
+    const backAction = () => {
+      Alert.alert("Sair do App", "Você realmente quer sair?", [
+        {
+          text: "Cancelar",
+          onPress: () => null, // Não faz nada ao cancelar
+          style: "cancel"
+        },
+        {
+          text: "Sim",
+          onPress: () => BackHandler.exitApp() // Sai do app
+        }
+      ]);
+      return true; // Impede o comportamento padrão (voltar para a tela anterior)
+    };
+
+    // Adiciona o listener do evento de voltar
+    const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+
+    // Limpa o listener quando o componente for desmontado
+    return () => {
+      backHandler.remove();
+    };
   }, []);
 
   // Função para determinar a saudação baseada no horário
