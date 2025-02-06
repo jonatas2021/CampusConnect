@@ -8,10 +8,14 @@ import {
 } from "react-native";
 import BackButton from "../components/svg/BackButton";
 import QuestionScreenImage from "../components/svg/QuestionScreenImage";
-import { useRouter } from "expo-router";
+import { useRouter, useLocalSearchParams } from "expo-router";
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export default function Questions() {
   const router = useRouter();
+  const params = useLocalSearchParams();
+  const name = params.name ? String(params.name) : null;
+  console.log("Nome recebido:", name);  
   const [response, setResponse] = useState<string | null>(null);
 
   const backToHello = () => {
@@ -20,13 +24,13 @@ export default function Questions() {
 
   const handleResponse = (answer: string) => {
     setResponse(answer);
-    router.push('/Carousel');
+    router.push({ pathname: "/Carousel", params: { name } }); // Passa o nome para a próxima tela
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
-        {/* Back Arrow Placeholder */}
+        {/* Back Arrow */}
         <TouchableOpacity style={styles.backArrow} onPress={backToHello}>
           <BackButton width={25} height={25} />
         </TouchableOpacity>
@@ -68,50 +72,48 @@ export default function Questions() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: "4%",
     backgroundColor: "#FFFFFF",
   },
   backArrow: {
     position: "absolute",
-    top: 30,
-    left: 10,
+    top: "4%",
+    left: "3%",
     zIndex: 1,
   },
   backText: {
-    fontSize: 18,
+    fontSize: RFValue(14),
     color: "#000000",
   },
   imageContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-  },
-  image: {
-    width: 200,
-    height: 200,
+    width: "100%",
+    height: "50%",
   },
   title: {
-    fontSize: 24,
+    fontSize: RFValue(20),
     fontWeight: "bold",
     textAlign: "center",
     marginTop: 20,
     color: "#3C3939",
   },
   description: {
-    fontSize: 16,
+    fontSize: RFValue(12),
     textAlign: "center",
     color: "#3C3939",
-    marginVertical: 20,
+    marginVertical: "8%",
   },
   buttonContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
-    marginBottom: 40,
+    marginBottom: "12%",
   },
   button: {
     flex: 1,
-    marginHorizontal: 10,
-    paddingVertical: 15,
+    marginHorizontal: "4%",
+    paddingVertical: "4%",
     borderRadius: 10,
     alignItems: "center",
   },
@@ -123,7 +125,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#FFFFFF",
-    fontSize: 16,
+    fontSize: RFValue(12),
     fontWeight: "bold",
   },
 });

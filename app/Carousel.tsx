@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, SafeAreaView, View, TouchableOpacity, Text } from "react-native";
 import Carousel from "../components/ui/Carousel";
-import { useRouter } from "expo-router";
+import { useRouter, useLocalSearchParams } from "expo-router";
 import BackButton from "../components/svg/BackButton";
 
 const carouselData = [
@@ -17,15 +17,15 @@ const carouselData = [
     id: "2",
     title: "Preencha formulários!",
     description:
-      "Veja todas as disciplinas do seu curso, aqui você também pode encontrar as referências de livros e filmes de cada uma disciplina.",
+      "Acesse horários das disciplinas e o calendário acadêmico com datas importantes, como matrícula, feriados e início de semestres.",
     backgroundColor: "#DFFFD6",
     image: require("../components/svg/CarouselItem02").default,
   },
   {
     id: "3",
-    title: "Saiba os hórarios do ônibus!",
+    title: "Saiba os horários do ônibus!",
     description:
-      "Veja todas as disciplinas do seu curso, aqui você também pode encontrar as referências de livros e filmes de cada uma disciplina.",
+      "Planeje seu transporte com facilidade! Aqui você encontra os horários atualizados dos ônibus para chegar ao campus no momento certo.",
     backgroundColor: "#DFFFD6",
     image: require("../components/svg/CarouselItem03").default,
   },
@@ -33,16 +33,14 @@ const carouselData = [
 
 const CarouselPage = () => {
   const router = useRouter();
+  const { name } = useLocalSearchParams(); // Captura o nome vindo da Questions.tsx
+  console.log("Nome na tela do Carrossel:", name); // Console para verificar o nome
   const [isLastSlide, setIsLastSlide] = useState(false);
 
   const backToQuestions = () => {
-    router.push("/Questions");
-  };
-
-  const handleButtonPress = () => {
-    router.push("/Questions");
-  };
-
+    console.log("Voltando para a tela de Perguntas com nome:", name);
+    router.push({ pathname: "/Questions", params: { name } }); // Mantém o nome ao voltar
+  }; 
   return (
     <SafeAreaView style={styles.rootContainer}>
       <View>
@@ -78,13 +76,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "80%",
     justifyContent: "center",
+    alignSelf: "center",
   },
   buttonText: {
     color: "#FFFFFF",
     fontSize: 18,
     fontWeight: "bold",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });
 

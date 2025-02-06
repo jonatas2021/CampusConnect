@@ -12,7 +12,8 @@ import {
   ViewabilityConfig,
   ViewToken,
 } from "react-native";
-import { useRouter } from "expo-router";
+import { useRouter, useLocalSearchParams } from "expo-router";
+import { RFValue } from 'react-native-responsive-fontsize';
 
 const screenWidth = Dimensions.get("window").width;
 
@@ -42,6 +43,8 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
   const flatListRef = useRef<FlatList>(null);
   const scrollX = useRef(new Animated.Value(0)).current;
   const router = useRouter();
+
+  const { name } = useLocalSearchParams();
 
   const handleScroll = Animated.event(
     [{ nativeEvent: { contentOffset: { x: scrollX } } }],
@@ -101,6 +104,16 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
       );
     });
 
+  const handleButtonPress = () => {
+    console.log("Enviando nome para a tela MainScreen:", name); // Verificação no console
+    if (name) {
+      router.push({ pathname: "/main/MainScreen", params: { name } }); // Envia o nome para a MainScreen
+    } else {
+      console.warn("Nome não encontrado, voltando para tela inicial");
+      router.push("/Hello"); // Caso não haja nome, volta para a tela inicial
+    }
+  };
+
   return (
     <View style={styles.container}>
       <FlatList
@@ -120,13 +133,14 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
 
       {/* Renderiza o botão apenas no último slide */}
       {currentIndex === data.length - 1 && (
-        <TouchableOpacity style={styles.button} onPress={() => router.push("/main/MainScreen")}>
+        <TouchableOpacity style={styles.button} onPress={handleButtonPress}>
           <Text style={styles.buttonText}>Vamos lá!</Text>
         </TouchableOpacity>
       )}
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {
@@ -138,53 +152,53 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    padding: 20,
+    padding: "5%",
   },
   image: {
     width: "100%",
-    height: 250,
+    height: "50%",
     resizeMode: "contain",
-    marginBottom: 20,
+    marginBottom: "2%",
   },
   title: {
-    fontSize: 24,
+    fontSize: RFValue(18),
     fontWeight: "bold",
     textAlign: "center",
     color: "#3C3939",
-    marginBottom: 10,
+    marginBottom: "2%",
   },
   description: {
-    fontSize: 16,
-    textAlign: "center",
+    fontSize: RFValue(12),
+    textAlign: "left",
     color: "#3C3939",
-    marginBottom: 20,
+    marginBottom: "4%",
   },
   paginationContainer: {
     position: "absolute",
     width: "100%",
-    bottom: 150,
+    bottom: "15%",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 20,
+    marginBottom: "2%",
   },
   dot: {
     height: 8,
     borderRadius: 4,
-    marginHorizontal: 5,
+    marginHorizontal: "1%",
   },
   button: {
     position: "absolute",
-    bottom: 50,
+    bottom: "5%",
     left: "10%",
     width: "80%",
-    paddingVertical: 12,
+    paddingVertical: "3%",
     backgroundColor: "#2A5A06",
     borderRadius: 8,
     alignItems: "center",
   },
   buttonText: {
-    fontSize: 18,
+    fontSize: RFValue(14),
     color: "#FFFFFF",
     fontWeight: "bold",
   },

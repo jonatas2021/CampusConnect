@@ -1,7 +1,11 @@
 import { View, Text, Pressable, FlatList, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useLocalSearchParams } from 'expo-router';
 
 export default function HomeScreen() {
+const params = useLocalSearchParams();
+const name = params.name ? String(params.name) : "Usuário"; 
+console.log("Nome recebido na Home:", name);
   const menuItems = [
     {
       id: 1,
@@ -79,7 +83,7 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.greeting}>Bom dia, Usuário!</Text>
+      <Text style={styles.greeting}>Bom dia, {name}!</Text>
       
       <FlatList
         data={menuItems}
