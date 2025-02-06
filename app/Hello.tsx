@@ -7,6 +7,18 @@ export default function Hello() {
   const [name, setName] = useState('');
   const router = useRouter();
 
+  // Função para determinar a saudação baseada no horário
+  const getGreeting = () => {
+    const hours = new Date().getHours();
+    if (hours < 12) {
+      return "Bom dia!";
+    } else if (hours < 18) {
+      return "Boa tarde!";
+    } else {
+      return "Boa noite!";
+    }
+  };
+
   const handleEnter = () => {
     console.log(`Nome enviado: ${name}`);
     router.push({ pathname: "/Questions", params: { name } }); // Passando nome como parâmetro
@@ -22,17 +34,17 @@ export default function Hello() {
       </View>
 
       <View style={styles.caixa}>
-        <Text style={styles.bomDiaText}>Olá, Bom dia!</Text>
+        <Text style={styles.bomDiaText}>{getGreeting()}</Text>
         <Text style={styles.textoInput}>Como você quer ser chamado?</Text>
 
         <TextInput
           style={styles.input}
           placeholder="Digite seu nome"
           value={name}
-          onChangeText={setName} 
+          onChangeText={setName}
         />
-        <TouchableOpacity 
-          style={[styles.botao, { backgroundColor: name ? '#2A5A06' : '#ccc' }]} 
+        <TouchableOpacity
+          style={[styles.botao, { backgroundColor: name ? '#2A5A06' : '#ccc' }]}
           onPress={handleEnter}
           disabled={!name}
         >
@@ -44,15 +56,78 @@ export default function Hello() {
 }
 
 const styles = StyleSheet.create({
-  rootContainer: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff' },
-  imagef: { width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 },
-  image2: { height: '46%', resizeMode: 'contain', marginBottom: '30%' },
-  logos: { justifyContent: 'center', alignItems: 'center', width: '100%', resizeMode: 'contain' },
-  sectionContainer: { width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center' },
-  caixa: { width: '100%', height: '28%', backgroundColor: 'white', position: 'absolute', bottom: 0, padding: '5%', justifyContent: 'flex-start', borderTopLeftRadius: 20, borderTopRightRadius: 20 },
-  bomDiaText: { fontSize: RFValue(24), fontWeight: 'bold', marginBottom: '3%', alignSelf: 'flex-start' },
-  textoInput: { fontSize: RFValue(15), marginBottom: '4%', alignSelf: 'flex-start' },
-  input: { width: '95%', height: '20%', borderColor: '#001E01', borderWidth: 2, borderRadius: 5, paddingLeft: '4%', fontSize: RFValue(14), marginBottom: '5%', alignSelf: 'center' },
-  botao: { width: '90%', paddingVertical: '3%', borderRadius: 8, alignItems: 'center', alignSelf: 'center' },
-  botaoText: { color: 'white', fontSize: RFValue(14), fontWeight: 'bold' },
+  rootContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff'
+  },
+  imagef: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    top: 0,
+    left: 0
+  },
+  image2: {
+    height: '46%',
+    resizeMode: 'contain',
+    marginBottom: '30%'
+  },
+  logos: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    resizeMode: 'contain'
+  },
+  sectionContainer: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  caixa: {
+    width: '100%',
+    height: '28%',
+    backgroundColor: 'white',
+    position: 'absolute',
+    bottom: 0, padding: '5%',
+    justifyContent: 'flex-start',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20
+  },
+  bomDiaText: {
+    fontSize: RFValue(24),
+    fontWeight: 'bold',
+    marginBottom: '3%',
+    alignSelf: 'flex-start'
+  },
+  textoInput: {
+    fontSize: RFValue(15),
+    marginBottom: '4%',
+    alignSelf: 'flex-start'
+  },
+  input: { 
+    width: '95%', 
+    height: '20%', 
+    borderColor: '#001E01', 
+    borderWidth: 2, 
+    borderRadius: 5, 
+    paddingLeft: '4%', 
+    fontSize: RFValue(14), 
+    marginBottom: '5%', 
+    alignSelf: 'center' 
+  },
+  botao: { 
+    width: '90%', 
+    paddingVertical: '3%', 
+    borderRadius: 8, 
+    alignItems: 'center', 
+    alignSelf: 'center' 
+  },
+  botaoText: { 
+    color: 'white', 
+    fontSize: RFValue(14), 
+    fontWeight: 'bold' 
+  },
 });
