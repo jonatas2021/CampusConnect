@@ -1,11 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, SafeAreaView, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 export default function Hello() {
   const [name, setName] = useState('');
   const router = useRouter();
+
+  useEffect(() => {
+    const fetchStoredName = async () => {
+      const storedName = await AsyncStorage.getItem('userName');
+      if (storedName) {
+        setName(storedName); // Define o nome salvo no estado
+      }
+    };
+    fetchStoredName();
+  }, []);
 
   // Função para determinar a saudação baseada no horário
   const getGreeting = () => {
@@ -19,8 +30,9 @@ export default function Hello() {
     }
   };
 
-  const handleEnter = () => {
+  const handleEnter = async () => {
     console.log(`Nome enviado: ${name}`);
+    await AsyncStorage.setItem('userName', name); // Salva o nome no AsyncStorage
     router.push({ pathname: "/Questions", params: { name } }); // Passando nome como parâmetro
   };
 

@@ -1,11 +1,20 @@
+import React, { useEffect, useState } from 'react';
 import { View, Text, Pressable, FlatList, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { useLocalSearchParams } from 'expo-router';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function HomeScreen() {
-  const params = useLocalSearchParams();
-  const name = params.name ? String(params.name) : "Usuário"; 
-  console.log("Nome recebido na Home:", name);
+  const [name, setName] = useState('Usuário');
+  
+  useEffect(() => {
+    const fetchName = async () => {
+      const storedName = await AsyncStorage.getItem('userName');
+      if (storedName) {
+        setName(storedName);
+      }
+    };
+    fetchName();
+  }, []);
 
   // Função para determinar a saudação baseada no horário
   const getGreeting = () => {

@@ -1,17 +1,26 @@
 import React, { useEffect } from 'react';
 import { View, StyleSheet, SafeAreaView, Image } from 'react-native';
 import { useRouter } from 'expo-router';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const LoadingScreen = () => {
   const router = useRouter();
 
   useEffect(() => {
+    const checkIfFirstLaunch = async () => {
+      const isFirstLaunch = await AsyncStorage.getItem('isFirstLaunch');
+      
+      if (isFirstLaunch === null) {
+        // Primeira vez que o usuário abre o app
+        await AsyncStorage.setItem('isFirstLaunch', 'false');
+        router.push('/Hello');
+      } else {
+        // O app já foi aberto antes, vai direto para o Carousel
+        router.push('/main/MainScreen');
+      }
+    };
 
-    const timer = setTimeout(() => {
-      router.push('/Hello');
-    }, 3000);
-
-    return () => clearTimeout(timer);
+    checkIfFirstLaunch();
   }, [router]);
 
   return (
@@ -51,27 +60,27 @@ const styles = StyleSheet.create({
     left: 0,
   },
   image2: {
-    height:'35%',
+    height: '35%',
     resizeMode: 'contain',
     marginTop: '40%',
   },
   image3: {
     height: '8%',
     resizeMode: 'contain',
-    marginTop: '60%'
+    marginTop: '60%',
   },
   logos: {
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   },
   tela: {
     width: '100%',
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-  }
+  },
 });
 
 export default LoadingScreen;
