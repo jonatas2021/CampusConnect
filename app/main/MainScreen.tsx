@@ -3,9 +3,22 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useLocalSearchParams } from 'expo-router';
 
 export default function HomeScreen() {
-const params = useLocalSearchParams();
-const name = params.name ? String(params.name) : "Usuário"; 
-console.log("Nome recebido na Home:", name);
+  const params = useLocalSearchParams();
+  const name = params.name ? String(params.name) : "Usuário"; 
+  console.log("Nome recebido na Home:", name);
+
+  // Função para determinar a saudação baseada no horário
+  const getGreeting = () => {
+    const hours = new Date().getHours();
+    if (hours < 12) {
+      return "Bom dia";
+    } else if (hours < 18) {
+      return "Boa tarde";
+    } else {
+      return "Boa noite";
+    }
+  };
+
   const menuItems = [
     {
       id: 1,
@@ -83,7 +96,7 @@ console.log("Nome recebido na Home:", name);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.greeting}>Bom dia, {name}!</Text>
+      <Text style={styles.greeting}>{getGreeting()}, {name}!</Text>
       
       <FlatList
         data={menuItems}
