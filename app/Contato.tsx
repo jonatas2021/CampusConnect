@@ -7,13 +7,13 @@ import {
   FlatList,
   TouchableOpacity,
   Alert,
-  Clipboard,
   Linking,
 } from "react-native";
 import BackButton from "../components/svg/BackButton";
 import { RFValue } from "react-native-responsive-fontsize";
 import { MaterialIcons, Feather } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
+import Clipboard from "@react-native-clipboard/clipboard";
 
 const docentes = [
     { id: "1", nome: "Prof. Alexandre Magno", email: "alexandre.oliveira@igarassu.ifpe.edu.br" },
