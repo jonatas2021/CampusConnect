@@ -28,10 +28,13 @@ export default function Questions() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
-        {/* Back Arrow */}
-        <TouchableOpacity style={styles.backArrow} onPress={backToCarousel}>
-          <BackButton width={25} height={25} />
-        </TouchableOpacity>
+       
+        {/* Back Arrow with Circle */}
+        <View style={styles.backArrowContainer}>
+          <TouchableOpacity style={styles.backArrow} onPress={backToCarousel}>
+            <BackButton width={25} height={25} />
+          </TouchableOpacity>
+        </View>
 
         {/* Illustration */}
         <View style={styles.imageContainer}>
@@ -70,18 +73,22 @@ export default function Questions() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: "4%",
     backgroundColor: "#FFFFFF",
   },
-  backArrow: {
+  backArrowContainer: {
     position: "absolute",
     top: "4%",
     left: "3%",
     zIndex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    width: "11%", // Define o tamanho do círculo
+    height: "5%", // Define o tamanho do círculo
+    borderRadius: '50%', // Garante que fique circular
+    backgroundColor: "#DEFCC7", // Cor de fundo com transparência
   },
-  backText: {
-    fontSize: RFValue(14),
-    color: "#000000",
+  backArrow: {
+    zIndex: 2, // Mantém a seta sobre a bola
   },
   imageContainer: {
     flex: 1,
@@ -89,6 +96,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     height: "50%",
+    padding: "4%"
   },
   title: {
     fontSize: RFValue(20),
@@ -99,14 +107,16 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: RFValue(12),
-    textAlign: "center",
+    textAlign: "left",
     color: "#3C3939",
     marginVertical: "8%",
+    marginHorizontal: "15%",
   },
   buttonContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
     marginBottom: "12%",
+    padding: "4%"
   },
   button: {
     flex: 1,

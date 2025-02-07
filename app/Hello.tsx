@@ -50,9 +50,11 @@ export default function Hello() {
 
   return (
     <SafeAreaView style={styles.rootContainer}>
-         <TouchableOpacity style={styles.backArrow} onPress={backToQuestion}>
-          <BackButton width={25} height={25} />
-        </TouchableOpacity>
+        <View style={styles.backArrowContainer}>
+          <TouchableOpacity style={styles.backArrow} onPress={backToQuestion}>
+            <BackButton width={25} height={25} />
+          </TouchableOpacity>
+        </View>
       <View style={styles.sectionContainer}>
         <Image source={require('../assets/images/fundo.png')} style={styles.imagef} />
         <View style={styles.logos}>
@@ -89,11 +91,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff'
   },
-  backArrow: {
+  backArrowContainer: {
     position: "absolute",
     top: "4%",
     left: "3%",
     zIndex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    width: "11%", // Define o tamanho do círculo
+    height: "5%", // Define o tamanho do círculo
+    borderRadius: '50%', // Garante que fique circular
+    backgroundColor: "#DEFCC7", // Cor de fundo com transparência
+  },
+  backArrow: {
+    zIndex: 2, // Mantém a seta sobre a bola
   },
   imagef: {
     width: '100%',
