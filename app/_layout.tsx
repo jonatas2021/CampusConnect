@@ -35,6 +35,7 @@ export default function RootLayout() {
         <Stack.Screen name="Questions" options={{ headerShown: false }} />
         <Stack.Screen name="Carousel" options={{ headerShown: false }} />
         <Stack.Screen name="main/MainScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="Contato" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found"  />
       </Stack>
       <StatusBar style="auto" />

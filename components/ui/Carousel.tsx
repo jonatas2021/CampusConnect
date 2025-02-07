@@ -35,6 +35,7 @@ const CarouselItem = ({ item }: { item: any }) => {
   return (
     <View style={[styles.carouselItem, { backgroundColor: item.backgroundColor }]}>
       <ImageComponent style={styles.image} />
+      <View style={styles.separator} />  {/* Linha preta */}
       <Text style={styles.title}>{item.title}</Text>
       <Text style={styles.description}>{item.description}</Text>
     </View>
@@ -177,7 +178,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "50%",
     resizeMode: "contain",
-    marginBottom: "2%",
   },
   title: {
     fontSize: RFValue(18),
@@ -190,7 +190,7 @@ const styles = StyleSheet.create({
     fontSize: RFValue(12),
     textAlign: "left",
     color: "#3C3939",
-    marginBottom: "4%",
+    marginBottom: "30%",
   },
   paginationContainer: {
     position: "absolute",
@@ -221,6 +221,12 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     fontWeight: "bold",
   },
+  separator: {
+    width: "100%",  // Ajuste conforme necessário
+    height: 2,    // Espessura da linha
+    backgroundColor: "#263238",  // Preto
+    marginBottom: '10%',  // Espaço acima e abaixo da linha
+  },  
 });
 
 export default Carousel;

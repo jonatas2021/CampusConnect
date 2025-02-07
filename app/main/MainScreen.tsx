@@ -3,9 +3,12 @@ import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert } from 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from "@react-navigation/native";
+import { useRouter, useLocalSearchParams } from "expo-router";
+
 
 export default function HomeScreen() {
   const [name, setName] = useState('Usuário');
+    const router = useRouter();
   
   useFocusEffect(
     useCallback(() => {
@@ -72,7 +75,9 @@ export default function HomeScreen() {
       id: 4,
       label: 'Contatos',
       icon: 'email' as const,
-      onPress: () => console.log('Contacts'),
+      onPress: () =>{ router.push("/Contato");
+      console.log('Contacts');
+    }
     },
     {
       id: 5,
