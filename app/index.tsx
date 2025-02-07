@@ -7,20 +7,21 @@ const LoadingScreen = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const checkIfFirstLaunch = async () => {
-      const isFirstLaunch = await AsyncStorage.getItem('isFirstLaunch');
-      
-      if (isFirstLaunch === null) {
-        // Primeira vez que o usuário abre o app
-        await AsyncStorage.setItem('isFirstLaunch', 'false');
-        router.push('/Hello');
-      } else {
-        // O app já foi aberto antes, vai direto para o Carousel
-        router.push('/main/MainScreen');
-      }
+    const checkStoredName = async () => {
+      setTimeout(async () => {
+        const storedName = await AsyncStorage.getItem('userName');
+
+        if (storedName) {
+          // Se já tiver um nome salvo, vai direto para a tela principal
+          router.push('/main/MainScreen');
+        } else {
+          // Se não tiver nome salvo, redireciona para a tela de cadastro do nome
+          router.push('/Carousel');
+        }
+      }, 3000); // Aguarda 3 segundos antes de verificar
     };
 
-    checkIfFirstLaunch();
+    checkStoredName();
   }, [router]);
 
   return (

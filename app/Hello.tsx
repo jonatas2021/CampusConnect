@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import BackButton from "../components/svg/BackButton";
 import { View, StyleSheet, SafeAreaView, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -8,15 +9,29 @@ export default function Hello() {
   const [name, setName] = useState('');
   const router = useRouter();
 
+  const backToQuestion = () => {
+    router.push("/Questions");
+  };
+
   useEffect(() => {
     const fetchStoredName = async () => {
       const storedName = await AsyncStorage.getItem('userName');
       if (storedName) {
         setName(storedName); // Define o nome salvo no estado
       }
+      console.log("Enviando nome para a tela MainScreen:", name); // Verificação no console
+      if (name) {
+        router.push({ pathname: "/main/MainScreen", params: { name } }); // Envia o nome para a MainScreen
+      } else {
+        console.warn("Nome não encontrado, voltando para tela inicial");
+        router.push("/Hello"); // Caso não haja nome, volta para a tela inicial
+      }
     };
-    fetchStoredName();
   }, []);
+
+    const handleButtonPress = () => {
+
+    };
 
   // Função para determinar a saudação baseada no horário
   const getGreeting = () => {
@@ -33,11 +48,14 @@ export default function Hello() {
   const handleEnter = async () => {
     console.log(`Nome enviado: ${name}`);
     await AsyncStorage.setItem('userName', name); // Salva o nome no AsyncStorage
-    router.push({ pathname: "/Questions", params: { name } }); // Passando nome como parâmetro
+    router.push({ pathname: "/main/MainScreen", params: { name } }); // Passando nome como parâmetro
   };
 
   return (
     <SafeAreaView style={styles.rootContainer}>
+         <TouchableOpacity style={styles.backArrow} onPress={backToQuestion}>
+          <BackButton width={25} height={25} />
+        </TouchableOpacity>
       <View style={styles.sectionContainer}>
         <Image source={require('../assets/images/fundo.png')} style={styles.imagef} />
         <View style={styles.logos}>
@@ -73,6 +91,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff'
+  },
+  backArrow: {
+    position: "absolute",
+    top: "4%",
+    left: "3%",
+    zIndex: 1,
   },
   imagef: {
     width: '100%',

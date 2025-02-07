@@ -105,13 +105,7 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
     });
 
   const handleButtonPress = () => {
-    console.log("Enviando nome para a tela MainScreen:", name); // Verificação no console
-    if (name) {
-      router.push({ pathname: "/main/MainScreen", params: { name } }); // Envia o nome para a MainScreen
-    } else {
-      console.warn("Nome não encontrado, voltando para tela inicial");
-      router.push("/Hello"); // Caso não haja nome, volta para a tela inicial
-    }
+      router.push("/Questions"); // Caso não haja nome, volta para a tela inicial
   };
 
   return (

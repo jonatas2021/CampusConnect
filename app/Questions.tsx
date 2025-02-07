@@ -14,24 +14,22 @@ import { RFValue } from 'react-native-responsive-fontsize';
 export default function Questions() {
   const router = useRouter();
   const params = useLocalSearchParams();
-  const name = params.name ? String(params.name) : null;
-  console.log("Nome recebido:", name);  
   const [response, setResponse] = useState<string | null>(null);
 
-  const backToHello = () => {
-    router.push("/Hello");
+  const backToCarousel = () => {
+    router.push("/Carousel");
   };
 
   const handleResponse = (answer: string) => {
     setResponse(answer);
-    router.push({ pathname: "/Carousel", params: { name } }); // Passa o nome para a próxima tela
+    router.push('/Hello');
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
         {/* Back Arrow */}
-        <TouchableOpacity style={styles.backArrow} onPress={backToHello}>
+        <TouchableOpacity style={styles.backArrow} onPress={backToCarousel}>
           <BackButton width={25} height={25} />
         </TouchableOpacity>
 

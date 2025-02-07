@@ -33,22 +33,8 @@ const carouselData = [
 
 const CarouselPage = () => {
   const router = useRouter();
-  const { name } = useLocalSearchParams(); // Captura o nome vindo da Questions.tsx
-  console.log("Nome na tela do Carrossel:", name); // Console para verificar o nome
-  const [isLastSlide, setIsLastSlide] = useState(false);
-
-  const backToQuestions = () => {
-    console.log("Voltando para a tela de Perguntas com nome:", name);
-    router.push({ pathname: "/Questions", params: { name } }); // Mantém o nome ao voltar
-  }; 
   return (
     <SafeAreaView style={styles.rootContainer}>
-      <View>
-        <TouchableOpacity style={styles.backArrow} onPress={backToQuestions}>
-          <BackButton width={25} height={25} />
-        </TouchableOpacity>
-      </View>
-
       <Carousel data={carouselData} />
     </SafeAreaView>
   );
