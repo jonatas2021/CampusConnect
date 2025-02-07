@@ -1,44 +1,41 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useFocusEffect } from "@react-navigation/native";
 
 export default function HomeScreen() {
   const [name, setName] = useState('Usuário');
   
-  useEffect(() => {
-    const fetchName = async () => {
-      const storedName = await AsyncStorage.getItem('userName');
-      if (storedName) {
-        setName(storedName);
-      }
-    };
-    fetchName();
-
-    // Função para interceptar o gesto de voltar
-    const backAction = () => {
-      Alert.alert("Sair do App", "Você realmente quer sair?", [
-        {
-          text: "Cancelar",
-          onPress: () => null, // Não faz nada ao cancelar
-          style: "cancel"
-        },
-        {
-          text: "Sim",
-          onPress: () => BackHandler.exitApp() // Sai do app
+  useFocusEffect(
+    useCallback(() => {
+      const fetchName = async () => {
+        const storedName = await AsyncStorage.getItem('userName');
+        if (storedName) {
+          setName(storedName);
         }
-      ]);
-      return true; // Impede o comportamento padrão (voltar para a tela anterior)
-    };
-
-    // Adiciona o listener do evento de voltar
-    const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
-
-    // Limpa o listener quando o componente for desmontado
-    return () => {
-      backHandler.remove();
-    };
-  }, []);
+      };
+      fetchName();
+      const backAction = () => {
+        Alert.alert("Sair do App", "Você realmente quer sair?", [
+          {
+            text: "Cancelar",
+            onPress: () => null,
+            style: "cancel"
+          },
+          {
+            text: "Sim",
+            onPress: () => BackHandler.exitApp()
+          }
+        ]);
+        return true;
+      };
+  
+      const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+  
+      return () => backHandler.remove(); // Remove o listener ao sair da tela
+    }, [])
+  );
 
   // Função para determinar a saudação baseada no horário
   const getGreeting = () => {
