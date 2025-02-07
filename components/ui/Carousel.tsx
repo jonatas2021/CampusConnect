@@ -1,4 +1,4 @@
-import React, { useRef, useState, useCallback } from "react";
+import React, { useRef, useState, useCallback, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -10,7 +10,9 @@ import {
   NativeSyntheticEvent,
   NativeScrollEvent,
   ViewabilityConfig,
-  ViewToken,
+  ViewToken, 
+  BackHandler, 
+  Alert 
 } from "react-native";
 import { useRouter, useLocalSearchParams } from "expo-router";
 import { RFValue } from 'react-native-responsive-fontsize';
@@ -44,7 +46,33 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
   const scrollX = useRef(new Animated.Value(0)).current;
   const router = useRouter();
 
-  const { name } = useLocalSearchParams();
+  useEffect(() => {
+
+    // Função para interceptar o gesto de voltar
+    const backAction = () => {
+      Alert.alert("Sair do App", "Você realmente quer sair?", [
+        {
+          text: "Cancelar",
+          onPress: () => null, // Não faz nada ao cancelar
+          style: "cancel"
+        },
+        {
+          text: "Sim",
+          onPress: () => BackHandler.exitApp() // Sai do app
+        }
+      ]);
+      return true; // Impede o comportamento padrão (voltar para a tela anterior)
+    };
+  
+    // Adiciona o listener do evento de voltar
+    const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+  
+    // Limpa o listener quando o componente for desmontado
+    return () => {
+      backHandler.remove();
+    };
+  }, []);
+  
 
   const handleScroll = Animated.event(
     [{ nativeEvent: { contentOffset: { x: scrollX } } }],
