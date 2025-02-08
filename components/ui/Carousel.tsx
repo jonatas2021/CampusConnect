@@ -1,4 +1,4 @@
-import React, { useRef, useState, useCallback, useEffect } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import {
   StyleSheet,
   View,
@@ -14,7 +14,7 @@ import {
   BackHandler, 
   Alert,
 } from "react-native";
-import { useRouter, useLocalSearchParams } from "expo-router";
+import { useRouter } from "expo-router";
 import { RFValue } from 'react-native-responsive-fontsize';
 import { useFocusEffect } from "@react-navigation/native";
 
@@ -34,8 +34,12 @@ const CarouselItem = ({ item }: { item: any }) => {
   const ImageComponent = item.image;
   return (
     <View style={[styles.carouselItem, { backgroundColor: item.backgroundColor }]}>
-      <ImageComponent style={styles.image} />
-      <View style={styles.separator} />  {/* Linha preta */}
+      {ImageComponent ? (
+        <ImageComponent style={styles.image} />
+      ) : (
+        <Text style={styles.errorMessage}>Imagem não disponível</Text>
+      )}
+      <View style={styles.separator} />
       <Text style={styles.title}>{item.title}</Text>
       <Text style={styles.description}>{item.description}</Text>
     </View>
@@ -71,7 +75,6 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
     }, [])
   );
   
-
   const handleScroll = Animated.event(
     [{ nativeEvent: { contentOffset: { x: scrollX } } }],
     { useNativeDriver: false }
@@ -131,7 +134,7 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
     });
 
   const handleButtonPress = () => {
-      router.push("/Questions"); // Caso não haja nome, volta para a tela inicial
+    router.push("/Questions"); // Caso não haja nome, volta para a tela inicial
   };
 
   return (
@@ -160,7 +163,6 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
     </View>
   );
 };
-
 
 const styles = StyleSheet.create({
   container: {
@@ -226,7 +228,12 @@ const styles = StyleSheet.create({
     height: 2,    // Espessura da linha
     backgroundColor: "#263238",  // Preto
     marginBottom: '10%',  // Espaço acima e abaixo da linha
-  },  
+  },
+  errorMessage: {
+    color: 'red',
+    textAlign: 'center',
+    fontSize: RFValue(14),
+  },
 });
 
 export default Carousel;

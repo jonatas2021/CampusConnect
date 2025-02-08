@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { 
+  View, StyleSheet, SafeAreaView, Image, Text, TextInput, TouchableOpacity, 
+  KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard 
+} from 'react-native';
 import BackButton from "../components/svg/BackButton";
-import { View, StyleSheet, SafeAreaView, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { RFValue } from 'react-native-responsive-fontsize';
@@ -13,74 +16,63 @@ export default function Hello() {
     router.push("/Questions");
   };
 
-  useEffect(() => {
-    const fetchStoredName = async () => {
-      const storedName = await AsyncStorage.getItem('userName');
-      if (storedName) {
-        setName(storedName); // Define o nome salvo no estado
-      }
-      console.log("Enviando nome para a tela MainScreen:", name); // Verificação no console
-      if (name) {
-        router.push({ pathname: "/main/MainScreen", params: { name } }); // Envia o nome para a MainScreen
-      }
-    };
-  }, []);
-
-    const handleButtonPress = () => {
-
-    };
-
-  // Função para determinar a saudação baseada no horário
-  const getGreeting = () => {
-    const hours = new Date().getHours();
-    if (hours < 12) {
-      return "Bom dia!";
-    } else if (hours < 18) {
-      return "Boa tarde!";
-    } else {
-      return "Boa noite!";
-    }
-  };
-
   const handleEnter = async () => {
     console.log(`Nome enviado: ${name}`);
-    await AsyncStorage.setItem('userName', name); // Salva o nome no AsyncStorage
-    router.push({ pathname: "/main/MainScreen", params: { name } }); // Passando nome como parâmetro
+    await AsyncStorage.setItem('userName', name);
+    router.push({ pathname: "/main/MainScreen", params: { name } });
+  };
+
+  const getGreeting = () => {
+    const hours = new Date().getHours();
+    if (hours < 12) return "Bom dia!";
+    else if (hours < 18) return "Boa tarde!";
+    else return "Boa noite!";
   };
 
   return (
-    <SafeAreaView style={styles.rootContainer}>
-        <View style={styles.backArrowContainer}>
-          <TouchableOpacity style={styles.backArrow} onPress={backToQuestion}>
-            <BackButton width={25} height={25} />
-          </TouchableOpacity>
-        </View>
-      <View style={styles.sectionContainer}>
-        <Image source={require('../assets/images/fundo.png')} style={styles.imagef} />
-        <View style={styles.logos}>
-          <Image source={require('../assets/images/logoCCinicial.gif')} style={styles.image2} />
-        </View>
-      </View>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+      <KeyboardAvoidingView 
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'} 
+        style={{ flex: 1 }}
+      >
+        <SafeAreaView style={styles.rootContainer}>
+          {/* Botão de voltar */}
+          <View style={styles.backArrowContainer}>
+            <TouchableOpacity style={styles.backArrow} onPress={backToQuestion}>
+              <BackButton width={25} height={25} />
+            </TouchableOpacity>
+          </View>
 
-      <View style={styles.caixa}>
-        <Text style={styles.bomDiaText}>{getGreeting()}</Text>
-        <Text style={styles.textoInput}>Como você quer ser chamado?</Text>
+          {/* Fundo e logo */}
+          <View style={styles.sectionContainer}>
+            <Image source={require('../assets/images/fundo.png')} style={styles.imagef} />
+            <View style={styles.logos}>
+              <Image source={require('../assets/images/logoCCinicial.gif')} style={styles.image2} />
+            </View>
+          </View>
 
-        <TextInput
-          style={styles.input}
-          placeholder="Digite seu nome"
-          value={name}
-          onChangeText={setName}
-        />
-        <TouchableOpacity
-          style={[styles.botao, { backgroundColor: name ? '#2A5A06' : '#ccc' }]}
-          onPress={handleEnter}
-          disabled={!name}
-        >
-          <Text style={styles.botaoText}>Entrar</Text>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
+          {/* Caixa de input */}
+          <View style={styles.caixa}>
+            <Text style={styles.bomDiaText}>{getGreeting()}</Text>
+            <Text style={styles.textoInput}>Como você quer ser chamado?</Text>
+
+            <TextInput
+              style={styles.input}
+              placeholder="Digite seu nome"
+              value={name}
+              onChangeText={setName}
+            />
+            <TouchableOpacity
+              style={[styles.botao, { backgroundColor: name ? '#2A5A06' : '#ccc' }]}
+              onPress={handleEnter}
+              disabled={!name}
+            >
+              <Text style={styles.botaoText}>Entrar</Text>
+            </TouchableOpacity>
+          </View>
+        </SafeAreaView>
+      </KeyboardAvoidingView>
+    </TouchableWithoutFeedback>
   );
 }
 
@@ -98,13 +90,13 @@ const styles = StyleSheet.create({
     zIndex: 1,
     alignItems: "center",
     justifyContent: "center",
-    width: "11%", // Define o tamanho do círculo
-    height: "5%", // Define o tamanho do círculo
-    borderRadius: '50%', // Garante que fique circular
-    backgroundColor: "#DEFCC7", // Cor de fundo com transparência
+    width: 45, // 🔹 Corrigido para tamanho fixo
+    height: 45, // 🔹 Corrigido para tamanho fixo
+    borderRadius: '50%', // 🔹 Garante que fique circular
+    backgroundColor: "#DEFCC7",
   },
   backArrow: {
-    zIndex: 2, // Mantém a seta sobre a bola
+    zIndex: 2,
   },
   imagef: {
     width: '100%',
@@ -135,7 +127,8 @@ const styles = StyleSheet.create({
     height: '28%',
     backgroundColor: 'white',
     position: 'absolute',
-    bottom: 0, padding: '5%',
+    bottom: 0, 
+    padding: '5%',
     justifyContent: 'flex-start',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20
