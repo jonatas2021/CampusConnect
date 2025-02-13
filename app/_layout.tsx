@@ -14,7 +14,7 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    SpaceMono: require('@/assets/fonts/SpaceMono-Regular.ttf'),
   });
 
   useEffect(() => {
@@ -31,11 +31,12 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="Hello" options={{ headerShown: false }} />
-        <Stack.Screen name="Questions" options={{ headerShown: false }} />
-        <Stack.Screen name="Carousel" options={{ headerShown: false }} />
-        <Stack.Screen name="main/MainScreen" options={{ headerShown: false }} />
-        <Stack.Screen name="Contato" options={{ headerShown: false }} />
+        <Stack.Screen name="screens/Hello" options={{ headerShown: false }} />
+        <Stack.Screen name="screens/Questions" options={{ headerShown: false }} />
+        <Stack.Screen name="screens/Carousel" options={{ headerShown: false }} />
+        <Stack.Screen name="screens/index" options={{ headerShown: false }} />
+        <Stack.Screen name="screens/Contato" options={{ headerShown: false }} />
+        <Stack.Screen name="screens/BusScheduleScreen" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found"  />
       </Stack>
       <StatusBar style="auto" />

@@ -9,7 +9,7 @@ import {
   Alert,
   Linking,
 } from "react-native";
-import BackButton from "../components/svg/BackButton";
+import BackButton from "@/components/svg/BackButton";
 import { RFValue } from "react-native-responsive-fontsize";
 import { MaterialIcons, Feather } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
@@ -60,7 +60,7 @@ const EmailDocentes = () => {
   const router = useRouter(); // CORRETO: useRouter() dentro do componente
 
   const backToCarousel = () => {
-    router.push("/main/MainScreen");
+    router.push("/screens/Carousel");
   };
 
   const handleSendEmail = (email: string) => {

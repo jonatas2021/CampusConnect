@@ -13,10 +13,10 @@ const LoadingScreen = () => {
 
         if (storedName) {
           // Se já tiver um nome salvo, vai direto para a tela principal
-          router.push('/main/MainScreen');
+          router.push('/screens');
         } else {
           // Se não tiver nome salvo, redireciona para a tela de cadastro do nome
-          router.push('/Carousel');
+          router.push('/screens/Carousel');
         }
       }, 3000); // Aguarda 3 segundos antes de verificar
     };
@@ -28,16 +28,16 @@ const LoadingScreen = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.tela}>
         <Image
-          source={require('../assets/images/fundo.png')}
+          source={require('@/assets/images/fundo.png')}
           style={styles.imagef}
         />
         <View style={styles.logos}>
           <Image
-            source={require('../assets/images/logoCCinicial.gif')}
+            source={require('@/assets/images/logoCCinicial.gif')}
             style={styles.image2}
           />
           <Image
-            source={require('../assets/images/logoIF.png')}
+            source={require('@/assets/images/logoIF.png')}
             style={styles.image3}
           />
         </View>

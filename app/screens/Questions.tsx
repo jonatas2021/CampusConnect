@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import useQuestionsLogic from "@/hooks/useQuestionsLogic";
 import {
   StyleSheet,
   SafeAreaView,
@@ -6,24 +7,14 @@ import {
   View,
   TouchableOpacity,
 } from "react-native";
-import BackButton from "../components/svg/BackButton";
-import QuestionScreenImage from "../components/svg/QuestionScreenImage";
-import { useRouter, useLocalSearchParams } from "expo-router";
+import BackButton from "@/components/svg/BackButton";
+import QuestionScreenImage from "@/components/svg/QuestionScreenImage";
+import { useLocalSearchParams } from "expo-router";
 import { RFValue } from 'react-native-responsive-fontsize';
 
 export default function Questions() {
-  const router = useRouter();
+  const { response, backToCarousel, handleResponse } = useQuestionsLogic();
   const params = useLocalSearchParams();
-  const [response, setResponse] = useState<string | null>(null);
-
-  const backToCarousel = () => {
-    router.push("/Carousel");
-  };
-
-  const handleResponse = (answer: string) => {
-    setResponse(answer);
-    router.push('/Hello');
-  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -82,10 +73,10 @@ const styles = StyleSheet.create({
     zIndex: 1,
     alignItems: "center",
     justifyContent: "center",
-    width: "11%", // Define o tamanho do círculo
-    height: "5%", // Define o tamanho do círculo
-    borderRadius: '50%', // Garante que fique circular
-    backgroundColor: "#DEFCC7", // Cor de fundo com transparência
+    width: "11%",
+    height: "5%",
+    borderRadius: 50,
+    backgroundColor: "#DEFCC7",
   },
   backArrow: {
     zIndex: 2, // Mantém a seta sobre a bola
