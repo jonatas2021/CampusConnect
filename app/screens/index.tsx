@@ -1,10 +1,9 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from "@react-navigation/native";
-import { useRouter, useLocalSearchParams } from "expo-router";
-
+import { useRouter } from "expo-router";
 
 export default function HomeScreen() {
   const [name, setName] = useState('Usuário');
@@ -75,15 +74,15 @@ export default function HomeScreen() {
       id: 4,
       label: 'Contatos',
       icon: 'email' as const,
-      onPress: () =>{ router.push("/Contato");
+      onPress: () =>{ router.push("/screens/Contato");
       console.log('Contacts');
-    }
+      }
     },
     {
       id: 5,
       label: 'Horários do Ônibus',
       icon: 'clock' as const,
-      onPress: () => console.log('Bus Schedule'),
+      onPress: () => router.push("/screens/BusScheduleScreen"),
     },
     {
       id: 6,

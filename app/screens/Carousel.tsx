@@ -1,13 +1,13 @@
 import React from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
-import Carousel from "../components/ui/Carousel";
+import Carousel from "@/components/ui/Carousel";
 import { useRouter } from "expo-router";
 
 // Importação direta dos componentes SVG
-import CarouselItem01 from "../components/svg/CarouselItem01";
-import CarouselItem02 from "../components/svg/CarouselItem02";
-import CarouselItem03 from "../components/svg/CarouselItem03";
-import CarouselItem04 from "../components/svg/CarouselItem04";
+import CarouselItem01 from "@/components/svg/CarouselItem01";
+import CarouselItem02 from "@/components/svg/CarouselItem02";
+import CarouselItem03 from "@/components/svg/CarouselItem03";
+import CarouselItem04 from "@/components/svg/CarouselItem04";
 
 const carouselData = [
   {

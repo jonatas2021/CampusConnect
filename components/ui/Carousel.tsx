@@ -134,7 +134,7 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
     });
 
   const handleButtonPress = () => {
-    router.push("/Questions"); // Caso não haja nome, volta para a tela inicial
+    router.push("/screens/Questions"); // Caso não haja nome, volta para a tela inicial
   };
 
   return (

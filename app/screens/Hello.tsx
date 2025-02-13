@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   View, StyleSheet, SafeAreaView, Image, Text, TextInput, TouchableOpacity, 
   KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard 
 } from 'react-native';
-import BackButton from "../components/svg/BackButton";
+import BackButton from "@/components/svg/BackButton";
 import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { RFValue } from 'react-native-responsive-fontsize';
@@ -13,13 +13,13 @@ export default function Hello() {
   const router = useRouter();
 
   const backToQuestion = () => {
-    router.push("/Questions");
+    router.push("/screens/Questions");
   };
 
   const handleEnter = async () => {
     console.log(`Nome enviado: ${name}`);
     await AsyncStorage.setItem('userName', name);
-    router.push({ pathname: "/main/MainScreen", params: { name } });
+    router.push({ pathname: "/screens", params: { name } });
   };
 
   const getGreeting = () => {
@@ -45,9 +45,9 @@ export default function Hello() {
 
           {/* Fundo e logo */}
           <View style={styles.sectionContainer}>
-            <Image source={require('../assets/images/fundo.png')} style={styles.imagef} />
+            <Image source={require('@/assets/images/fundo.png')} style={styles.imagef} />
             <View style={styles.logos}>
-              <Image source={require('../assets/images/logoCCinicial.gif')} style={styles.image2} />
+              <Image source={require('@/assets/images/logoCCinicial.gif')} style={styles.image2} />
             </View>
           </View>
 
@@ -90,9 +90,9 @@ const styles = StyleSheet.create({
     zIndex: 1,
     alignItems: "center",
     justifyContent: "center",
-    width: 45, // 🔹 Corrigido para tamanho fixo
-    height: 45, // 🔹 Corrigido para tamanho fixo
-    borderRadius: '50%', // 🔹 Garante que fique circular
+    width: 45,
+    height: 45,
+    borderRadius: 50,
     backgroundColor: "#DEFCC7",
   },
   backArrow: {
