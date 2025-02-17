@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   SafeAreaView,
@@ -15,52 +15,15 @@ import { MaterialIcons, Feather } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import Clipboard from "@react-native-clipboard/clipboard";
 
-const docentes = [
-    { id: "1", nome: "Prof. Alexandre Magno", email: "alexandre.oliveira@igarassu.ifpe.edu.br" },
-    { id: "2", nome: "Profa. Alexandre Strapação", email: "alexandre.vianna@igarassu.ifpe.edu.br" },
-    { id: "3", nome: "Prof. Allan Diego", email: "allan.lima@igarassu.ifpe.edu.br" },
-    { id: "4", nome: "Profa. Ana C. Medeiros", email: "ana.medeiros@igarassu.ifpe.edu.br" },
-    { id: "5", nome: "Profa. Ana C. Lemos", email: "ana.lemos@igarassu.ifpe.edu.br" },
-    { id: "6", nome: "Prof. Anderson Carlos", email: "anderson.oliveira@igarassu.ifpe.edu.br" },
-    { id: "7", nome: "Profa. Andreza Cordeiro", email: "andreza.cordeiro@igarassu.ifpe.edu.br" },
-    { id: "8", nome: "Prof. Bruno Rios", email: "bruno.monteiro@igarassu.ifpe.edu.br" },
-    { id: "9", nome: "Prof. Cícero Raimundo", email: "cicero.junior@igarassu.ifpe.edu.br" },
-    { id: "10", nome: "Prof. Danniel Cláudio", email: "danniel.araujo@igarassu.ifpe.edu.br" },
-    { id: "11", nome: "Prof. David Mota", email: "david.cavalcanti@igarassu.ifpe.edu.br" },
-    { id: "12", nome: "Prof. Djalma Rangel", email: "djalma.rangel@igarassu.ifpe.edu.br" },
-    { id: "13", nome: "Profa. Edilene Félix", email: "edilene.santos@igarassu.ifpe.edu.br" },
-    { id: "14", nome: "Profa. Emaú Florêncio", email: "emaur.oliveira@igarassu.ifpe.edu.br" },
-    { id: "15", nome: "Prof. Erton Vieira", email: "erton.silva@igarassu.ifpe.edu.br" },
-    { id: "16", nome: "Profa. Flora Magna", email: "flora.vilar@igarassu.ifpe.edu.br" },
-    { id: "17", nome: "Prof. Francisco Chaves", email: "francisco.pinto@igarassu.ifpe.edu.br" },
-    { id: "18", nome: "Prof. Gustavo Boudoux", email: "gustavo.melo@igarassu.ifpe.edu.br" },
-    { id: "19", nome: "Prof. Gustavo Nóbrega", email: "gustavo.martins@igarassu.ifpe.edu.br" },
-    { id: "20", nome: "Prof. Hugo Dantas", email: "hugo.dantas@igarassu.ifpe.edu.br" },
-    { id: "21", nome: "Profa. Inêz Manuele", email: "inez.santos@igarassu.ifpe.edu.br" },
-    { id: "22", nome: "Prof. Ivo Félix", email: "ivo.gualberto@igarassu.ifpe.edu.br" },
-    { id: "23", nome: "Prof. José Tarcisio", email: "jose.magalhaes@igarassu.ifpe.edu.br" },
-    { id: "24", nome: "Profa. Liliane Alves", email: "liliane.sales@igarassu.ifpe.edu.br" },
-    { id: "25", nome: "Prof. Lincoln Tavares", email: "lincoln.santos@igarassu.ifpe.edu.br" },
-    { id: "26", nome: "Prof. Luiz Henrique", email: "luiz.martins@igarassu.ifpe.edu.br" },
-    { id: "27", nome: "Profa. Mari Tania", email: "mari.soares@igarassu.ifpe.edu.br" },
-    { id: "28", nome: "Profa. Michelle Cedraz", email: "michelle.oliveira@igarassu.ifpe.edu.br" },
-    { id: "29", nome: "Prof. Milton Secundino", email: "milton.junior@igarassu.ifpe.edu.br" },
-    { id: "30", nome: "Prof. Ramon Mota", email: "ramon.farias@igarassu.ifpe.edu.br" },
-    { id: "31", nome: "Prof. Ranieri Valença", email: "ranieri.carvalho@igarassu.ifpe.edu.br" },
-    { id: "32", nome: "Profa. Renata Queiroz", email: "renata.costa@igarassu.ifpe.edu.br" },
-    { id: "33", nome: "Prof. Roberto Cahú", email: "roberto.cahu@igarassu.ifpe.edu.br" },
-    { id: "34", nome: "Prof. Rodrigo Leite", email: "rodrigo.araujo@igarassu.ifpe.edu.br" },
-    { id: "35", nome: "Profa. Simonelle Wivian", email: "simonelle.nascimento@igarassu.ifpe.edu.br" },
-    { id: "36", nome: "Prof. Willyans Coelho", email: "willyans.coelho@igarassu.ifpe.edu.br" },
-    { id: "37", nome: "Prof. Yuri Tietre", email: "yuri.araujo@igarassu.ifpe.edu.br" }
-    
-];
+// Importa os dados do arquivo JSON na raiz do projeto
+const docentesData = require("../../docentes.json");
 
 const EmailDocentes = () => {
   const router = useRouter(); // CORRETO: useRouter() dentro do componente
+  const [docentes, setDocentes] = useState(docentesData); // Inicializa o estado com os dados do JSON
 
-  const backToCarousel = () => {
-    router.push("/screens/Carousel");
+  const backToIndex = () => {
+    router.push("/screens");
   };
 
   const handleSendEmail = (email: string) => {
@@ -77,7 +40,7 @@ const EmailDocentes = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.backArrowContainer}>
-        <TouchableOpacity style={styles.backArrow} onPress={backToCarousel}>
+        <TouchableOpacity style={styles.backArrow} onPress={backToIndex}>
           <BackButton width={25} height={25} />
         </TouchableOpacity>
       </View>
@@ -115,15 +78,15 @@ const EmailDocentes = () => {
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#FFFFFF",
-        paddingHorizontal: '4%', // Evita margens laterais excessivas
-        paddingTop: '6%',
+  container: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+    paddingHorizontal: "4%", // Evita margens laterais excessivas
+    paddingTop: "6%",
   },
   backArrowContainer: {
     position: "absolute",
-    top: "4%",
+    top: "6%",
     left: "3%",
     zIndex: 1,
     alignItems: "center",
@@ -142,7 +105,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#000",
     marginBottom: 10,
-    marginTop: '10%'
+    marginTop: "10%",
   },
   separator: {
     width: "100%",
@@ -162,18 +125,16 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 10,
     flex: 1, // Permite que a lista ocupe todo o espaço disponível
-
   },
   item: {
     backgroundColor: "#66BB6A",
-    padding: '2%',
+    padding: "2%",
     borderRadius: 8,
     marginVertical: "1%",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
     width: "100%", // Garante que o item não ultrapasse a tela
-    
   },
   itemText: {
     fontSize: RFValue(14),

@@ -48,3 +48,5 @@ bun.lock
 package-lock.json
 
 app-example
+
+docentes.json
