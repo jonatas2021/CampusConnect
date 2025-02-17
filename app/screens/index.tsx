@@ -56,7 +56,9 @@ export default function HomeScreen() {
       id: 1,
       label: 'Calendário Acadêmico',
       icon: 'calendar-month' as const,
-      onPress: () => console.log('Academic Calendar'),
+      onPress: () =>{ router.push("/screens/Calendar");
+      console.log('Academic Calendar');
+      }
     },
     {
       id: 2,
