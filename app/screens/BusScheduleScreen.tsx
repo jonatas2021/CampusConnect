@@ -1,5 +1,13 @@
 import React from "react";
-import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
+import { View, Text, StyleSheet, SafeAreaView, ScrollView,
+  FlatList,
+  TouchableOpacity,
+  Alert,
+  Linking,} from "react-native";
+  import BackButton from "@/components/svg/BackButton";
+  import { useRouter } from "expo-router";
+import { RFValue } from "react-native-responsive-fontsize";
+
 
 interface BusTimeProps {
   departure: string;
@@ -21,12 +29,22 @@ const BusScheduleScreen: React.FC = () => {
     { departure: "11:55", arrival: "12:15" },
     { departure: "12:30", arrival: "12:50" },
   ];
+    const router = useRouter(); // CORRETO: useRouter() dentro do componente
+  const backToIndex = () => {
+    router.push("/screens");
+  };
 
   return (
     <SafeAreaView style={styles.container}>
+      <View style={styles.backArrowContainer}>
+      <TouchableOpacity style={styles.backArrow} onPress={backToIndex}>
+          <BackButton width={25} height={25} />
+        </TouchableOpacity>
+      </View>
       <ScrollView>
-        <Text style={styles.title}>Horários do ônibus</Text>
-        <Text style={styles.subtitle}>Em vigor desde 01 de janeiro de 2024</Text>
+        <Text style={styles.title}>TI Igarassu / Botafogo</Text>
+        <View style={styles.separator} />
+        <Text style={styles.subtitle}>Em vigor desde 01 de julho de 2024</Text>
 
         <Text style={styles.weekdayText}>Horários de seg a sex:</Text>
 
@@ -66,22 +84,44 @@ const BusScheduleScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#e6f2e6",
-    paddingTop: 50,
+    backgroundColor: "#FFFFFF",
+    paddingHorizontal: "4%", // Evita margens laterais excessivas
+    paddingTop: "6%",
+  },
+  backArrowContainer: {
+    position: "absolute",
+    top: "6%",
+    left: "3%",
+    zIndex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: "#DEFCC7",
+  },
+  backArrow: {
+    zIndex: 2,
   },
   title: {
-    fontSize: 26,
+    fontSize: RFValue(20),
     fontWeight: "bold",
     textAlign: "center",
-    marginTop: 20,
-    color: "#333",
+    color: "#000",
+    marginBottom: 10,
+    marginTop: "10%",
+  },
+  separator: {
+    width: "100%",
+    height: 2,
+    backgroundColor: "#000",
+    marginBottom: 5,
   },
   subtitle: {
-    fontSize: 16,
-    textAlign: "center",
-    marginTop: 8,
-    marginBottom: 20,
-    color: "#666",
+    fontSize: RFValue(12),
+    color: "#888",
+    textAlign: "right",
+    marginBottom: 15,
   },
   weekdayText: {
     fontSize: 22,
@@ -101,7 +141,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#2A5224',
     borderRadius: 12,
-    padding: 26,
+    padding: 14,
     alignItems: 'center',
   },
   columnsContainer: {
@@ -111,16 +151,18 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   column: {
+    backgroundColor: "#1B5E20",
+    borderRadius: 10,
+    padding: 12,
+    marginBottom: 10,
     flex: 1,
-    backgroundColor: '#2A5224',
-    borderRadius: 12,
-    padding: 16,
   },
   timeBox: {
     backgroundColor: '#92C36B',
     borderRadius: 6,
-    padding: 20,
-    marginBottom: 20,
+    padding: 14,
+    marginBottom: 8,
+    marginTop: 8,
     alignItems: 'center',
   },
   headerText: {
