@@ -1,5 +1,8 @@
 import React from "react";
-import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
+import { View, Text, StyleSheet, SafeAreaView, ScrollView,TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
+import BackButton from "@/components/svg/BackButton";
+import { RFValue } from "react-native-responsive-fontsize";
 
 interface FeriadoProps {
     mes: string;
@@ -9,6 +12,11 @@ interface FeriadoProps {
 }
 
 const CalendarScreen: React.FC = () => {
+    const router = useRouter(); // CORRETO: useRouter() dentro do componente
+  
+    const backToIndex = () => {
+      router.push("/screens");
+    };
     const meses = [
         "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
         "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
@@ -33,6 +41,14 @@ const CalendarScreen: React.FC = () => {
 
     return (
         <SafeAreaView style={styles.container}>
+            <View style={styles.backArrowContainer}>
+        <TouchableOpacity style={styles.backArrow} onPress={backToIndex}>
+          <BackButton width={25} height={25} />
+        </TouchableOpacity>
+      </View>
+            <Text style={styles.title}>Email dos Docentes</Text>
+            <View style={styles.separator} />
+            <Text style={styles.lastUpdate}>Última atualização: 07/02/2025</Text>
             <ScrollView contentContainerStyle={styles.scrollContainer}>
 
                 {/* Meses e seus dias */}
@@ -99,15 +115,34 @@ const styles = StyleSheet.create({
     backArrow: {
         zIndex: 2,
     },
+    title: {
+        fontSize: RFValue(20),
+        fontWeight: "bold",
+        textAlign: "center",
+        color: "#000",
+        marginBottom: 10,
+        marginTop: "10%",
+      },
+      separator: {
+        width: "100%",
+        height: 2,
+        backgroundColor: "#000",
+        marginBottom: 5,
+      },
+      lastUpdate: {
+        fontSize: RFValue(12),
+        color: "#888",
+        textAlign: "right",
+        marginBottom: 15,
+      },
     scrollContainer: {
         paddingHorizontal: 20,
     },
     mesesContainer: {
         flexDirection: "column",
-        marginTop: 20,
     },
     mesContainer: {
-        marginBottom: 40,
+        marginBottom: 2,
     },
     mesBox: {
         backgroundColor: "#1B5E20", // Fundo verde para a caixa do mês
