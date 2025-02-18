@@ -28,6 +28,20 @@ const BusScheduleScreen: React.FC = () => {
     { departure: "11:20", arrival: "11:50" },
     { departure: "11:55", arrival: "12:15" },
     { departure: "12:30", arrival: "12:50" },
+    { departure: "13:10", arrival: "13:30" },
+    { departure: "13:45", arrival: "14:05" },
+    { departure: "14:50", arrival: "15:10" },
+    { departure: "15:20", arrival: "15:40" },
+    { departure: "16:00", arrival: "16:20" },
+    { departure: "16:35", arrival: "16:55" },
+    { departure: "17:15", arrival: "17:35" },
+    { departure: "17:50", arrival: "18:10" },
+    { departure: "18:30", arrival: "18:50" },
+    { departure: "19:05", arrival: "19:25" },
+    { departure: "20:10", arrival: "20:30" },
+    { departure: "20:45", arrival: "21:05" },
+    { departure: "21:20", arrival: "21:40" },
+    { departure: "22:00", arrival: "22:20" },
   ];
     const router = useRouter(); // CORRETO: useRouter() dentro do componente
   const backToIndex = () => {
@@ -124,7 +138,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   weekdayText: {
-    fontSize: 22,
+    fontSize: RFValue(17),
     fontWeight: "bold",
     marginLeft: 22,
     marginBottom: 16,
@@ -133,10 +147,11 @@ const styles = StyleSheet.create({
   headerContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center', 
     marginHorizontal: 20,
     marginBottom: 16,
     gap: 8,
-  },
+  },  
   headerBox: {
     flex: 1,
     backgroundColor: '#2A5224',
@@ -167,13 +182,13 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: "white",
-    fontSize: 18,
+    fontSize: RFValue(16),
     fontWeight: "bold",
     textAlign: "center",
   },
   timeText: {
     color: "white",
-    fontSize: 20,
+    fontSize: RFValue(16),
     fontWeight: "bold",
   },
 });
