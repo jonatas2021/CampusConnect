@@ -48,7 +48,6 @@ const BusScheduleScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <BackButton />
-      <ScrollView>
         <Text style={styles.title}>TI Igarassu / Botafogo</Text>
         <View style={styles.separator} />
         <Text style={styles.subtitle}>Em vigor desde 01 de julho de 2024</Text>
@@ -64,7 +63,8 @@ const BusScheduleScreen: React.FC = () => {
             <Text style={styles.headerText}>Chegada ao IFPE</Text>
           </View>
         </View>
-
+        
+        <ScrollView>
         {/* Time Columns */}
         <View style={styles.columnsContainer}>
           <View style={styles.column}>

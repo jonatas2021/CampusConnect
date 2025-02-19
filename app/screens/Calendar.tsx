@@ -274,6 +274,7 @@ const CalendarScreen: React.FC = () => {
             </View>
           ))}
         </View>
+      <View style={styles.separator2} />
         <View style={styles.holidayTypeContainer}>
           {holidayType.map((item, index) => (
             <View key={index} style={styles.typeHolidayBox}>
@@ -309,6 +310,13 @@ const styles = StyleSheet.create({
     height: 2,
     backgroundColor: "#000",
     marginBottom: 5,
+  },
+  separator2: {
+    width: "120%",
+    height: 2,
+    backgroundColor: "#000",
+    marginBottom: 5,
+    alignSelf: 'center'
   },
   lastUpdate: {
     fontSize: RFValue(12),
