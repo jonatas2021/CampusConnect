@@ -1,7 +1,7 @@
 import * as React from "react"
 import Svg, { SvgProps, Ellipse, Path, G } from "react-native-svg"
 const SvgComponent = (props: SvgProps) => (
-  <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" {...props}>
+  <Svg viewBox="0 0 500 500" {...props}>
     <Ellipse
       cx={250}
       cy={344.42}

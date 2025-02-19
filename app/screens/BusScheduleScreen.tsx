@@ -1,11 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet, SafeAreaView, ScrollView,
-  FlatList,
-  TouchableOpacity,
-  Alert,
-  Linking,} from "react-native";
-  import BackButton from "@/components/svg/BackButton";
-  import { useRouter } from "expo-router";
+import { 
+  View, 
+  Text, 
+  StyleSheet, 
+  SafeAreaView, 
+  ScrollView, 
+} from "react-native";
+import BackButton from "@/components/BackButton";
 import { RFValue } from "react-native-responsive-fontsize";
 
 
@@ -43,18 +44,10 @@ const BusScheduleScreen: React.FC = () => {
     { departure: "21:20", arrival: "21:40" },
     { departure: "22:00", arrival: "22:20" },
   ];
-    const router = useRouter(); // CORRETO: useRouter() dentro do componente
-  const backToIndex = () => {
-    router.push("/screens");
-  };
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.backArrowContainer}>
-      <TouchableOpacity style={styles.backArrow} onPress={backToIndex}>
-          <BackButton width={25} height={25} />
-        </TouchableOpacity>
-      </View>
+      <BackButton />
       <ScrollView>
         <Text style={styles.title}>TI Igarassu / Botafogo</Text>
         <View style={styles.separator} />
@@ -99,23 +92,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFFFFF",
-    paddingHorizontal: "4%", // Evita margens laterais excessivas
+    paddingHorizontal: "4%",
     paddingTop: "6%",
-  },
-  backArrowContainer: {
-    position: "absolute",
-    top: "6%",
-    left: "3%",
-    zIndex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: "#DEFCC7",
-  },
-  backArrow: {
-    zIndex: 2,
   },
   title: {
     fontSize: RFValue(20),

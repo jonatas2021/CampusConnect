@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   View,
   SafeAreaView,
@@ -9,22 +9,15 @@ import {
   Alert,
   Linking,
 } from "react-native";
-import BackButton from "@/components/svg/BackButton";
+import BackButton from "@/components/BackButton";
 import { RFValue } from "react-native-responsive-fontsize";
 import { MaterialIcons, Feather } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
 import Clipboard from "@react-native-clipboard/clipboard";
 
-// Importa os dados do arquivo JSON na raiz do projeto
-const docentesData = require("../../docentes.json");
+const docentesData = require("@/docentes.json");
 
 const EmailDocentes = () => {
-  const router = useRouter(); // CORRETO: useRouter() dentro do componente
-  const [docentes, setDocentes] = useState(docentesData); // Inicializa o estado com os dados do JSON
-
-  const backToIndex = () => {
-    router.push("/screens");
-  };
+  const [docentes] = useState(docentesData);
 
   const handleSendEmail = (email: string) => {
     Linking.openURL(`mailto:${email}`).catch(() => {
@@ -39,11 +32,7 @@ const EmailDocentes = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.backArrowContainer}>
-        <TouchableOpacity style={styles.backArrow} onPress={backToIndex}>
-          <BackButton width={25} height={25} />
-        </TouchableOpacity>
-      </View>
+      <BackButton />
       <Text style={styles.title}>Email dos Docentes</Text>
       <View style={styles.separator} />
       <Text style={styles.lastUpdate}>Última atualização: 07/02/2025</Text>
@@ -81,23 +70,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFFFFF",
-    paddingHorizontal: "4%", // Evita margens laterais excessivas
+    paddingHorizontal: "4%",
     paddingTop: "6%",
-  },
-  backArrowContainer: {
-    position: "absolute",
-    top: "6%",
-    left: "3%",
-    zIndex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: "#DEFCC7",
-  },
-  backArrow: {
-    zIndex: 2,
   },
   title: {
     fontSize: RFValue(20),
@@ -124,7 +98,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     marginBottom: 10,
-    flex: 1, // Permite que a lista ocupe todo o espaço disponível
+    flex: 1,
   },
   item: {
     backgroundColor: "#66BB6A",
@@ -134,13 +108,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    width: "100%", // Garante que o item não ultrapasse a tela
+    width: "100%",
   },
   itemText: {
     fontSize: RFValue(14),
     color: "#000",
     fontWeight: "bold",
-    flexShrink: 1, // Faz o texto quebrar linha em vez de vazar
+    flexShrink: 1,
   },
   buttonsContainer: {
     flexDirection: "row",

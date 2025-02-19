@@ -7,26 +7,17 @@ import {
   View,
   TouchableOpacity,
 } from "react-native";
-import BackButton from "@/components/svg/BackButton";
+import BackButton from "@/components/BackButton";
 import QuestionScreenImage from "@/components/svg/QuestionScreenImage";
-import { useLocalSearchParams } from "expo-router";
 import { RFValue } from 'react-native-responsive-fontsize';
 
 export default function Questions() {
-  const { response, backToCarousel, handleResponse } = useQuestionsLogic();
-  const params = useLocalSearchParams();
+  const { handleResponse } = useQuestionsLogic();
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.container}>
-       
-        {/* Back Arrow with Circle */}
-        <View style={styles.backArrowContainer}>
-          <TouchableOpacity style={styles.backArrow} onPress={backToCarousel}>
-            <BackButton width={25} height={25} />
-          </TouchableOpacity>
-        </View>
-
+      <BackButton destination="/Screens/Carousel" />
+      <View style={styles.content}>
         {/* Illustration */}
         <View style={styles.imageContainer}>
           <QuestionScreenImage />
@@ -65,21 +56,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFFFFF",
+    paddingHorizontal: "4%",
+    paddingTop: "6%",
   },
-  backArrowContainer: {
-    position: "absolute",
-    top: "4%",
-    left: "3%",
-    zIndex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    width: "11%",
-    height: "5%",
-    borderRadius: 50,
-    backgroundColor: "#DEFCC7",
-  },
-  backArrow: {
-    zIndex: 2, // Mantém a seta sobre a bola
+  content: {
+    flex: 1,
   },
   imageContainer: {
     flex: 1,

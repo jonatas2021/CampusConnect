@@ -8,7 +8,7 @@ import { useRouter } from "expo-router";
 export default function HomeScreen() {
   const [name, setName] = useState('Usuário');
     const router = useRouter();
-  
+
   useFocusEffect(
     useCallback(() => {
       const fetchName = async () => {
@@ -32,9 +32,9 @@ export default function HomeScreen() {
         ]);
         return true;
       };
-  
+
       const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
-  
+
       return () => backHandler.remove(); // Remove o listener ao sair da tela
     }, [])
   );
@@ -56,7 +56,7 @@ export default function HomeScreen() {
       id: 1,
       label: 'Calendário Acadêmico',
       icon: 'calendar-month' as const,
-      onPress: () =>{ router.push("/screens/Calendar");
+      onPress: () =>{ router.push("/Screens/Calendar");
       console.log('Academic Calendar');
       }
     },
@@ -76,7 +76,7 @@ export default function HomeScreen() {
       id: 4,
       label: 'Contatos',
       icon: 'email' as const,
-      onPress: () =>{ router.push("/screens/Contato");
+      onPress: () =>{ router.push("/Screens/Contato");
       console.log('Contacts');
       }
     },
@@ -84,7 +84,7 @@ export default function HomeScreen() {
       id: 5,
       label: 'Horários do Ônibus',
       icon: 'clock' as const,
-      onPress: () => router.push("/screens/BusScheduleScreen"),
+      onPress: () => router.push("/Screens/BusScheduleScreen"),
     },
     {
       id: 6,
@@ -126,14 +126,14 @@ export default function HomeScreen() {
       id: 12,
       label: 'Suporte',
       icon: 'help-circle' as const,
-      onPress: () => console.log('Support'),
+      onPress: () => router.push("/Screens/Support/ChatScreen"),
     },
   ];
 
   return (
     <View style={styles.container}>
       <Text style={styles.greeting}>{getGreeting()}, {name}!</Text>
-      
+
       <FlatList
         data={menuItems}
         keyExtractor={(item) => item.id.toString()}
