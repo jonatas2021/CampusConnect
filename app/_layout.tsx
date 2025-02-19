@@ -31,13 +31,14 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="screens/Hello" options={{ headerShown: false }} />
-        <Stack.Screen name="screens/Questions" options={{ headerShown: false }} />
-        <Stack.Screen name="screens/Carousel" options={{ headerShown: false }} />
-        <Stack.Screen name="screens/index" options={{ headerShown: false }} />
-        <Stack.Screen name="screens/Contato" options={{ headerShown: false }} />
-        <Stack.Screen name="screens/BusScheduleScreen" options={{ headerShown: false }} />
-        <Stack.Screen name="screens/Calendar" options={{ headerShown: false }} />
+        <Stack.Screen name="Screens/Hello" options={{ headerShown: false }} />
+        <Stack.Screen name="Screens/Questions" options={{ headerShown: false }} />
+        <Stack.Screen name="Screens/Carousel" options={{ headerShown: false }} />
+        <Stack.Screen name="Screens/index" options={{ headerShown: false }} />
+        <Stack.Screen name="Screens/Contato" options={{ headerShown: false }} />
+        <Stack.Screen name="Screens/BusScheduleScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="Screens/Calendar" options={{ headerShown: false }} />
+        <Stack.Screen name="Screens/Support/ChatScreen" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found"  />
       </Stack>
       <StatusBar style="auto" />

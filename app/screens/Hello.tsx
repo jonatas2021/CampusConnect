@@ -3,7 +3,7 @@ import {
   View, StyleSheet, SafeAreaView, Image, Text, TextInput, TouchableOpacity, 
   KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard 
 } from 'react-native';
-import BackButton from "@/components/svg/BackButton";
+import BackButton from "@/components/BackButton";
 import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { RFValue } from 'react-native-responsive-fontsize';
@@ -12,14 +12,10 @@ export default function Hello() {
   const [name, setName] = useState('');
   const router = useRouter();
 
-  const backToQuestion = () => {
-    router.push("/screens/Questions");
-  };
-
   const handleEnter = async () => {
     console.log(`Nome enviado: ${name}`);
     await AsyncStorage.setItem('userName', name);
-    router.push({ pathname: "/screens", params: { name } });
+    router.push({ pathname: "/Screens", params: { name } });
   };
 
   const getGreeting = () => {
@@ -36,14 +32,8 @@ export default function Hello() {
         style={{ flex: 1 }}
       >
         <SafeAreaView style={styles.rootContainer}>
-          {/* Botão de voltar */}
-          <View style={styles.backArrowContainer}>
-            <TouchableOpacity style={styles.backArrow} onPress={backToQuestion}>
-              <BackButton width={25} height={25} />
-            </TouchableOpacity>
-          </View>
+          <BackButton destination="/Screens/Carousel" />
 
-          {/* Fundo e logo */}
           <View style={styles.sectionContainer}>
             <Image source={require('@/assets/images/fundo.png')} style={styles.imagef} />
             <View style={styles.logos}>
@@ -51,7 +41,6 @@ export default function Hello() {
             </View>
           </View>
 
-          {/* Caixa de input */}
           <View style={styles.caixa}>
             <Text style={styles.bomDiaText}>{getGreeting()}</Text>
             <Text style={styles.textoInput}>Como você quer ser chamado?</Text>
@@ -82,21 +71,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff'
-  },
-  backArrowContainer: {
-    position: "absolute",
-    top: "4%",
-    left: "3%",
-    zIndex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    width: 45,
-    height: 45,
-    borderRadius: 50,
-    backgroundColor: "#DEFCC7",
-  },
-  backArrow: {
-    zIndex: 2,
   },
   imagef: {
     width: '100%',

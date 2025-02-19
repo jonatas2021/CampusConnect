@@ -13,10 +13,10 @@ const LoadingScreen = () => {
 
         if (storedName) {
           // Se já tiver um nome salvo, vai direto para a tela principal
-          router.push('/screens');
+          router.push('/Screens');
         } else {
           // Se não tiver nome salvo, redireciona para a tela de cadastro do nome
-          router.push('/screens/Carousel');
+          router.push('/Screens/Carousel');
         }
       }, 3000); // Aguarda 3 segundos antes de verificar
     };
