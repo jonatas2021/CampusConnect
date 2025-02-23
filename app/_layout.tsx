@@ -5,6 +5,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
@@ -28,20 +29,27 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="Screens/Hello" options={{ headerShown: false }} />
-        <Stack.Screen name="Screens/Questions" options={{ headerShown: false }} />
-        <Stack.Screen name="Screens/Carousel" options={{ headerShown: false }} />
-        <Stack.Screen name="Screens/index" options={{ headerShown: false }} />
-        <Stack.Screen name="Screens/Contato" options={{ headerShown: false }} />
-        <Stack.Screen name="Screens/BusScheduleScreen" options={{ headerShown: false }} />
-        <Stack.Screen name="Screens/Calendar" options={{ headerShown: false }} />
-        <Stack.Screen name="Screens/Support/ChatScreen" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found"  />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+          <GestureHandlerRootView style={{ flex: 1 }}>
+            <Stack>
+              <Stack.Screen name="index" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Hello" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Questions" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Carousel" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/index" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Contato" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/BusScheduleScreen" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Calendar" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Support/ChatScreen" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Ai/Chat" options={{ headerShown: false }} />
+              <Stack.Screen name="+not-found"  />
+            </Stack>
+            <StatusBar style="auto" />
+          </GestureHandlerRootView>
+        </ThemeProvider>
+      </GestureHandlerRootView>
+    </GestureHandlerRootView>
   );
 }
