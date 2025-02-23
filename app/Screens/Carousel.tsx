@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
 import Carousel from "@/components/ui/Carousel";
-import { useRouter } from "expo-router";
 
 // Importação direta dos componentes SVG
 import CarouselItem01 from "@/components/svg/CarouselItem01";
@@ -45,7 +44,6 @@ const carouselData = [
 ];
 
 const CarouselPage = () => {
-  const router = useRouter();
 
   return (
     <SafeAreaView style={styles.rootContainer}>
