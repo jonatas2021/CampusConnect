@@ -1,23 +1,40 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from "react";
+import { View, StyleSheet } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 
-export default function ChatHeader() {
+interface ChatHeaderProps {
+  title?: string;
+  headerLeft?: React.ReactNode;
+  headerRight?: React.ReactNode;
+}
+
+export default function ChatHeader({ headerLeft, headerRight }: ChatHeaderProps) {
   return (
     <View style={styles.headerContainer}>
-      <Text style={styles.headerTitle}>Suporte</Text>
+      {headerLeft && <View style={styles.headerLeft}>{headerLeft}</View>}
+      {headerRight && <View style={styles.headerRight}>{headerRight}</View>}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   headerContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     padding: 16,
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  headerLeft: {
+    position: "absolute",
+    left: 16,
+  },
+  headerRight: {
+    position: "absolute",
+    right: 16,
   },
   headerTitle: {
     fontSize: RFValue(18),
-    fontWeight: 'bold',
+    fontWeight: "bold",
+    alignSelf: "center",
   },
 });

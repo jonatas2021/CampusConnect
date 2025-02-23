@@ -1,75 +1,121 @@
-import React, { useState, useRef, useCallback, useEffect } from 'react';
-import { View, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import * as ImagePicker from 'expo-image-picker';
+import React, { useState, useRef, useCallback } from "react";
+import { View, TextInput, TouchableOpacity, StyleSheet, GestureResponderEvent } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { PanGestureHandler, State } from "react-native-gesture-handler";
+import { Audio } from "expo-av";
+import * as Haptics from "expo-haptics";
+import { transcribeAudio } from "@/scripts/transcription";
 
 interface ChatInputProps {
   onSend: (message: string) => void;
-  // Extend this interface later for LLM integration if needed.
+  disabled?: boolean;
 }
 
-export default function ChatInput({ onSend }: ChatInputProps) {
-  const [text, setText] = useState('');
+export default function ChatInput({ onSend, disabled }: ChatInputProps) {
+  const [text, setText] = useState("");
+  const [isRecording, setIsRecording] = useState(false);
+  const [recording, setRecording] = useState<Audio.Recording | null>(null);
+  const [recordingLocked, setRecordingLocked] = useState(false);
   const textInputRef = useRef<TextInput>(null);
-
-  // Request media library permissions on mount.
-  useEffect(() => {
-    (async () => {
-      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-      if (status !== 'granted') {
-        Alert.alert('Permission Denied', 'We need access to your photos to pick an image.');
-      }
-    })();
-  }, []);
 
   const handleSend = useCallback(() => {
     const trimmedText = text.trim();
     if (trimmedText) {
       onSend(trimmedText);
-      setText('');
-      // Refocus the text input after sending.
+      setText("");
       textInputRef.current?.focus();
     }
   }, [text, onSend]);
 
-  const openImagePicker = useCallback(async () => {
+  const onGestureEvent = (event: any) => {
+    if (isRecording && !recordingLocked) {
+      const { translationX, translationY } = event.nativeEvent;
+      if (translationX < -50) {
+        cancelRecording();
+      } else if (translationY < -50) {
+        lockRecording();
+      }
+    }
+  };
+
+  const onHandlerStateChange = async (event: any) => {
+    if (text.trim()) return;
+    if (event.nativeEvent.state === State.BEGAN) {
+      await startRecording();
+    } else if (event.nativeEvent.state === State.END && !recordingLocked) {
+      await stopRecording();
+    }
+  };
+
+  const startRecording = async () => {
     try {
-      const result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.Images,
-        allowsEditing: true,
-        aspect: [4, 3],
-        quality: 1,
+      const { status } = await Audio.requestPermissionsAsync();
+      if (status !== "granted") return;
+
+      await Audio.setAudioModeAsync({
+        allowsRecordingIOS: true,
+        playsInSilentModeIOS: true,
       });
 
-      if (!result.canceled) {
-        console.log('Selected image:', result.assets[0].uri);
-        // Optionally, pass the image URI to the parent component.
-      }
+      const newRecording = new Audio.Recording();
+      await newRecording.prepareToRecordAsync(
+        Audio.RecordingOptionsPresets.HIGH_QUALITY // Fixed preset
+      );
+      await newRecording.startAsync();
+      setRecording(newRecording);
+      setIsRecording(true);
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     } catch (error) {
-      console.error('Error selecting image:', error);
-      Alert.alert('Error', 'There was an error selecting the image.');
+      console.error("Recording failed:", error);
     }
-  }, []);
+  };
 
-  // When the emoji button is pressed, refresh the keyboard.
-  // While it's not possible to programmatically force the native keyboard into emoji mode,
-  // this trick (blurring then refocusing) can help the keyboard re-open in its last-used mode.
-  const openEmojiKeyboard = useCallback(() => {
-    if (textInputRef.current) {
-      textInputRef.current.blur();
-      setTimeout(() => {
-        textInputRef.current?.focus();
-      }, 100);
+  const stopRecording = async () => {
+    if (recording) {
+      await recording.stopAndUnloadAsync();
+      const uri = recording.getURI();
+      setRecording(null);
+      setIsRecording(false);
+      setRecordingLocked(false);
+      if (uri) {
+        const transcribedText = await transcribeAudio(uri);
+        setText(transcribedText);
+      }
     }
-  }, []);
+  };
+
+  const cancelRecording = async () => {
+    if (recording) {
+      await recording.stopAndUnloadAsync();
+      setRecording(null);
+      setIsRecording(false);
+      setRecordingLocked(false);
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
+    }
+  };
+
+  const lockRecording = () => {
+    setRecordingLocked(true);
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+  };
+
+  const handlePress = (event: GestureResponderEvent) => {
+    if (text.trim()) {
+      handleSend();
+    }
+  };
+
+  const iconName = text.trim()
+    ? "send"
+    : isRecording
+    ? recordingLocked
+      ? "stop"
+      : "record"
+    : "microphone";
 
   return (
     <View style={styles.outerContainer}>
       <View style={styles.container}>
-        <TouchableOpacity style={styles.camIconContainer} onPress={openImagePicker}>
-          <MaterialCommunityIcons name="camera" style={styles.cam} />
-        </TouchableOpacity>
-        
         <View style={styles.inputWrapper}>
           <TextInput
             ref={textInputRef}
@@ -80,15 +126,30 @@ export default function ChatInput({ onSend }: ChatInputProps) {
             returnKeyType="send"
             onSubmitEditing={handleSend}
             blurOnSubmit={false}
+            editable={!disabled && !isRecording}
           />
-          <TouchableOpacity style={styles.emojiButton} onPress={openEmojiKeyboard}>
-            <MaterialCommunityIcons name="emoticon-outline" color="#888" size={24} />
-          </TouchableOpacity>
         </View>
-
-        <TouchableOpacity style={styles.button} onPress={handleSend} activeOpacity={0.7}>
-          <MaterialCommunityIcons name="send" color="#fff" size={24} />
-        </TouchableOpacity>
+        {recordingLocked ? (
+          <View style={styles.recordingControls}>
+            <TouchableOpacity onPress={cancelRecording}>
+              <MaterialCommunityIcons name="close" color="#fff" size={24} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={stopRecording}>
+              <MaterialCommunityIcons name="send" color="#fff" size={24} />
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <PanGestureHandler onGestureEvent={onGestureEvent} onHandlerStateChange={onHandlerStateChange}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={handlePress} // Fixed onPress
+              activeOpacity={0.7}
+              disabled={disabled}
+            >
+              <MaterialCommunityIcons name={iconName} color="#fff" size={24} />
+            </TouchableOpacity>
+          </PanGestureHandler>
+        )}
       </View>
     </View>
   );
@@ -96,50 +157,45 @@ export default function ChatInput({ onSend }: ChatInputProps) {
 
 const styles = StyleSheet.create({
   outerContainer: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
     left: 0,
     right: 0,
   },
   container: {
-    flexDirection: 'row',
+    flexDirection: "row",
     padding: 20,
-    backgroundColor: '#2A5224',
-    alignItems: 'center',
-  },
-  camIconContainer: {
-    width: 40,
-    marginRight: 8,
-  },
-  cam: {
-    color: '#fff',
-    fontSize: 40,
+    backgroundColor: "#2A5224",
+    alignItems: "center",
   },
   inputWrapper: {
     flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#fff',
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#fff",
     borderRadius: 24,
     paddingHorizontal: 16,
     height: 42,
   },
   input: {
     flex: 1,
-    height: '100%',
-  },
-  emojiButton: {
-    marginLeft: 8,
+    height: "100%",
   },
   button: {
-    backgroundColor: '#66bb6a',
+    backgroundColor: "#66bb6a",
     borderRadius: 100,
     width: 50,
     height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     shadowRadius: 5,
     elevation: 6,
-    overflow: 'hidden',
+    overflow: "hidden",
+    marginLeft: 10,
+  },
+  recordingControls: {
+    flexDirection: "row",
+    gap: 20,
+    marginLeft: 10,
   },
 });
