@@ -40,10 +40,15 @@ export default function RootLayout() {
               <Stack.Screen name="Screens/Carousel" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/index" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Contato" options={{ headerShown: false }} />
-              <Stack.Screen name="Screens/BusScheduleScreen" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/BusSchedule/BusScheduleScreen" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/BusSchedule/BusScheduleScreen2" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Linha" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Calendar" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Support/ChatScreen" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Ai/Chat" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Nucleos" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Nucleos/Neabi" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Nucleos/Neged" options={{ headerShown: false }} />
               <Stack.Screen name="+not-found"  />
             </Stack>
             <StatusBar style="auto" />

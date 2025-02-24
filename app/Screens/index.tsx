@@ -7,7 +7,7 @@ import { useRouter } from "expo-router";
 
 export default function HomeScreen() {
   const [name, setName] = useState('Usuário');
-    const router = useRouter();
+  const router = useRouter();
 
   useFocusEffect(
     useCallback(() => {
@@ -56,8 +56,9 @@ export default function HomeScreen() {
       id: 1,
       label: 'Calendário Acadêmico',
       icon: 'calendar-month' as const,
-      onPress: () =>{ router.push("/Screens/Calendar");
-      console.log('Academic Calendar');
+      onPress: () => {
+        router.push("/Screens/Calendar");
+        console.log('Academic Calendar');
       }
     },
     {
@@ -76,21 +77,28 @@ export default function HomeScreen() {
       id: 4,
       label: 'Contatos',
       icon: 'email' as const,
-      onPress: () =>{ router.push("/Screens/Contato");
-      console.log('Contacts');
+      onPress: () => {
+        router.push("/Screens/Contato");
+        console.log('Contacts');
       }
     },
     {
       id: 5,
       label: 'Horários do Ônibus',
       icon: 'clock' as const,
-      onPress: () => router.push("/Screens/BusScheduleScreen"),
+      onPress: () => {
+        router.push("/Screens/Linha");
+        console.log('Horários do Ônibus');
+      }
     },
     {
       id: 6,
       label: 'Núcleos de Apoio',
-      icon: 'account-group' as const,
-      onPress: () => console.log('Support Centers'),
+      icon: 'account-group' as const, 
+      onPress: () => {
+        router.push("/Screens/Nucleos");
+        console.log('Núcleos de Apoio');
+      }
     },
     {
       id: 7,
