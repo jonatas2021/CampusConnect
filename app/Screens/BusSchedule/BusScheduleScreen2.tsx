@@ -52,7 +52,7 @@ const BusScheduleScreen2: React.FC = () => {
         <View style={styles.separator} />
         <Text style={styles.subtitle}>Em vigor desde 01 de julho de 2024</Text>
 
-        <Text style={styles.weekdayText}>Horários de seg a sex:</Text>
+        <Text style={styles.weekdayText}>Horários de ter a sex:</Text>
 
         {/* Header Boxes */}
         <View style={styles.headerContainer}>

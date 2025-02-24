@@ -130,7 +130,7 @@ const CalendarScreen: React.FC = () => {
       type: "Início/Fim da unidade",
       month: "Março",
     },
-    { day: "12 e 13", name: "Demo Week", type: "Eventos", month: "Março" },
+    { day: "13 e 14", name: "Demo Week", type: "Eventos", month: "Março" },
     {
       day: "17 e 18",
       name: "Exames finais",
