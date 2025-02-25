@@ -180,6 +180,8 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "50%",
     resizeMode: "contain",
+    marginLeft: "auto",
+    marginRight: "auto", // Isso força a centralização
   },
   title: {
     fontSize: RFValue(18),

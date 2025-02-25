@@ -191,6 +191,8 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "50%", // Ajuste a altura conforme necessário
     resizeMode: "contain",
+    marginLeft: "auto",
+    marginRight: "auto", // Isso força a centralização
   },
   textContainer: {
     alignItems: 'center', // Centraliza o texto
