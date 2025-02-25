@@ -49,6 +49,9 @@ export default function RootLayout() {
               <Stack.Screen name="Screens/Nucleos" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Nucleos/Neabi" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Nucleos/Neged" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Nucleos/Napne" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Nucleos/N60+" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Nucleos/Nac" options={{ headerShown: false }} />
               <Stack.Screen name="+not-found"  />
             </Stack>
             <StatusBar style="auto" />

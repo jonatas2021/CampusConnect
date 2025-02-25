@@ -8,15 +8,15 @@ import { useRouter } from "expo-router";
 
 
 // Importação direta dos componentes SVG
-import CarouselItem01 from "@/components/svg/Neged";
-import CarouselItem02 from "@/components/svg/NegedText";
+import CarouselItem01 from "@/components/svg/Napne";
+import CarouselItem02 from "@/components/svg/NapneText";
 
 const carouselData = [
     {
         id: "1",
-        title: "O que é o NEGED?",
+        title: "O que é o NAPNE?",
         description:
-            "É um espaço de reflexão, pesquisa e ação que busca promover a equidade de gênero e a valorização da diversidade. Suas atividades incluem debates, formações, campanhas de conscientização e projetos voltados para a inclusão e o respeito às identidades de gênero e orientações sexuais.",
+            "É um núcleo de promoção, planejamento e execução de políticas inclusivas pautado na construção da cidadania por meio da valorização da identidade étnico-racial, do respeito às diferenças e à igualdade de oportunidades, que venha a eliminar as barreiras atitudinais.",
         backgroundColor: "#DFFFD6",
         image: CarouselItem01, // Passando o componente diretamente
     },
@@ -34,7 +34,7 @@ const CarouselPage = () => {
     const router = useRouter();
 
     const handleButtonPressR = () => {
-        Linking.openURL("https://portal.ifpe.edu.br/wp-content/uploads/repositoriolegado/portal/documentos/resolucao-65-2021-aprova-o-regulamento-dos-nucleos-de-estudos-de-genero-e-diversidade-negeds-do-ifpe-1-1.pdf");
+        Linking.openURL("https://portal.ifpe.edu.br/wp-content/uploads/repositoriolegado/portal/documentos/regulamento-napne.pdf");
     };
 
    const handleButtonPressP = () => {
@@ -43,7 +43,7 @@ const CarouselPage = () => {
     return (
         <SafeAreaView style={styles.container}>
             <BackButton />
-            <Text style={styles.title}>NEGED</Text>
+            <Text style={styles.title}>NAPNE</Text>
             <View style={styles.separator} />
             <View style={styles.rootContainer}>
                 <Carousel 
@@ -61,7 +61,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#DFFFD6",
         paddingTop: "6%",
-        alignItems: 'center'
 
     },
     rootContainer: {

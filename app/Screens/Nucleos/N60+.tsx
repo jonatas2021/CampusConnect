@@ -8,15 +8,15 @@ import { useRouter } from "expo-router";
 
 
 // Importação direta dos componentes SVG
-import CarouselItem01 from "@/components/svg/Neged";
-import CarouselItem02 from "@/components/svg/NegedText";
+import CarouselItem01 from "@/components/svg/N60+";
+import CarouselItem02 from "@/components/svg/N60+Text";
 
 const carouselData = [
     {
         id: "1",
-        title: "O que é o NEGED?",
+        title: "O que é o 60+ ?",
         description:
-            "É um espaço de reflexão, pesquisa e ação que busca promover a equidade de gênero e a valorização da diversidade. Suas atividades incluem debates, formações, campanhas de conscientização e projetos voltados para a inclusão e o respeito às identidades de gênero e orientações sexuais.",
+            "É um espaço dedicado ao apoio, valorização e inclusão de pessoas idosas. Suas ações visam promover o envelhecimento ativo, o bem-estar e a participação social por meio de atividades educativas, culturais e intergeracionais.",
         backgroundColor: "#DFFFD6",
         image: CarouselItem01, // Passando o componente diretamente
     },
@@ -34,16 +34,16 @@ const CarouselPage = () => {
     const router = useRouter();
 
     const handleButtonPressR = () => {
-        Linking.openURL("https://portal.ifpe.edu.br/wp-content/uploads/repositoriolegado/portal/documentos/resolucao-65-2021-aprova-o-regulamento-dos-nucleos-de-estudos-de-genero-e-diversidade-negeds-do-ifpe-1-1.pdf");
+        Linking.openURL("https://portal.ifpe.edu.br/wp-content/uploads/2023/10/Resolucao-112-2022-Aprova-o-Regulamento-do-Nucleo-60-do-IFPE-1.pdf");
     };
 
-   const handleButtonPressP = () => {
+    const handleButtonPressP = () => {
         ToastAndroid.show("A portaria ainda não está disponível para visualização.", ToastAndroid.SHORT);
     };
     return (
         <SafeAreaView style={styles.container}>
             <BackButton />
-            <Text style={styles.title}>NEGED</Text>
+            <Text style={styles.title}>N60+</Text>
             <View style={styles.separator} />
             <View style={styles.rootContainer}>
                 <Carousel 
@@ -61,7 +61,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#DFFFD6",
         paddingTop: "6%",
-        alignItems: 'center'
 
     },
     rootContainer: {

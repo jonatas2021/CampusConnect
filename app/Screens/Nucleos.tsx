@@ -41,21 +41,21 @@ const Nucleos = () => {
 
             <TouchableOpacity style={styles.button} 
               activeOpacity={0.5} // Reduz a opacidade ao pressionar
-              onPress={() => router.push("/Screens/BusSchedule/BusScheduleScreen")}>
+              onPress={() => router.push("/Screens/Nucleos/Napne")}>
                 <Text style={styles.buttonText}>NAPNE</Text>
                 <Text style={styles.buttonText}>(Apoio às Pessoas com Deficiência)</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.button} 
               activeOpacity={0.5} // Reduz a opacidade ao pressionar
-              onPress={() => router.push("/Screens/BusSchedule/BusScheduleScreen")}>
+              onPress={() => router.push("/Screens/Nucleos/N60+")}>
                 <Text style={styles.buttonText}>60+</Text>
                 <Text style={styles.buttonText}>(Apoio e Valorização das Pessoas Idosas)</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.button} 
               activeOpacity={0.5} // Reduz a opacidade ao pressionar
-              onPress={() => router.push("/Screens/BusSchedule/BusScheduleScreen")}>
+              onPress={() => router.push("/Screens/Nucleos/Nac")}>
                 <Text style={styles.buttonText}>NAC</Text>
                 <Text style={styles.buttonText}>(Arte e cultura)</Text>
             </TouchableOpacity>

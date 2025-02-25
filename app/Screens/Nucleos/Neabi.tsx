@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, View, Text,Linking } from "react-native";
+import { StyleSheet, SafeAreaView, View, Text,Linking, ToastAndroid } from "react-native";
 import Carousel from "@/components/ui/CarouselNucleos";
 import { RFValue } from "react-native-responsive-fontsize";
 import BackButton from "@/components/BackButton";
@@ -32,11 +32,11 @@ const CarouselPage = () => {
     const router = useRouter();
 
     const handleButtonPressR = () => {
-        Linking.openURL("https://drive.google.com/seu-link-aqui");
+        Linking.openURL("https://portal.ifpe.edu.br/wp-content/uploads/repositoriolegado/portal/documentos/regulamento-neabi-1.pdf");
     };
 
     const handleButtonPressP = () => {
-        Linking.openURL("https://drive.google.com/seu-link-aqui");
+        ToastAndroid.show("A portaria ainda não está disponível para visualização.", ToastAndroid.SHORT);
     };
 
     return (
