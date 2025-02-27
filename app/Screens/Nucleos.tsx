@@ -100,7 +100,8 @@ const styles = StyleSheet.create({
         fontSize: RFValue(16),
         fontWeight: "bold",
         marginBottom: 20,
-        color: "#fff"
+        color: "#fff",
+        textAlign: 'center',
     },
     button: {
         width: "100%",

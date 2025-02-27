@@ -8,7 +8,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 
 
-const BusLineSelection = () => {
+const Linha = () => {
     const navigation = useNavigation();
     const router = useRouter();
 
@@ -77,10 +77,11 @@ const styles = StyleSheet.create({
         fontSize: RFValue(16),
         fontWeight: "bold",
         marginBottom: 20,
-        color: "#fff"
+        color: "#fff",
+        textAlign: 'center',
     },
     button: {
-        width: "90%",
+        width: "100%",
         paddingVertical: "6%",
         borderRadius: 5,
         marginVertical: "3%",
@@ -106,4 +107,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default BusLineSelection;
+export default Linha;
