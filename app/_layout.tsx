@@ -45,16 +45,23 @@ export default function RootLayout() {
               <Stack.Screen name="Screens/Linha" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Calendar" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Support/ChatScreen" options={{ headerShown: false }} />
-              <Stack.Screen name="Screens/Ai/Chat" options={{ headerShown: false }} />
+              {/* <Stack.Screen name="Screens/Ai/Chat" options={{ headerShown: false }} /> */}
               <Stack.Screen name="Screens/Nucleos" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Nucleos/Neabi" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Nucleos/Neged" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Nucleos/Napne" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Nucleos/N60+" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Nucleos/Nac" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Cursos" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Cursos/Adm1" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Cursos/Log1" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Cursos/Gq1" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Cursos/Ipi1" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Cursos/Tsi1" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Cursos/Adm2" options={{ headerShown: false }} />
               <Stack.Screen name="+not-found"  />
             </Stack>
-            <StatusBar style="auto" />
+            <StatusBar style="dark" translucent />
           </GestureHandlerRootView>
         </ThemeProvider>
       </GestureHandlerRootView>

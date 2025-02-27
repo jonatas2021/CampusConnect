@@ -71,7 +71,10 @@ export default function HomeScreen() {
       id: 3,
       label: 'Cursos',
       icon: 'notebook-edit' as const,
-      onPress: () => console.log('Courses'),
+      onPress: () => { 
+        router.push("/Screens/Cursos");
+        console.log('Courses');
+      }
     },
     {
       id: 4,
