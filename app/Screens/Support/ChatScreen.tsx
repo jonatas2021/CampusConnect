@@ -16,7 +16,6 @@ import {
 } from "react-native";
 import * as FileSystem from "expo-file-system";
 import { generateResponse, availableModels, ChatMessage } from "@/scripts/llm";
-import { ensureWhisperLoaded } from "@/scripts/transcription";
 
 interface MessageProps {
   id: string;
@@ -36,27 +35,30 @@ export default function ChatScreen() {
   const [modelStatuses, setModelStatuses] = useState<{
     [key: string]: "not_downloaded" | "downloading" | "downloaded";
   }>({});
-  const [downloadProgress, setDownloadProgress] = useState<{ [key: string]: number }>({});
+  const [downloadProgress, setDownloadProgress] = useState<{
+    [key: string]: number;
+  }>({});
 
   const flatListRef = useRef<FlatList>(null);
-
-  // Preload Whisper model on mount
-  useEffect(() => {
-    ensureWhisperLoaded();
-  }, []);
 
   // Check for downloaded models on mount
   useEffect(() => {
     const checkModels = async () => {
-      const statuses: { [key: string]: "not_downloaded" | "downloading" | "downloaded" } = {};
+      const statuses: {
+        [key: string]: "not_downloaded" | "downloading" | "downloaded";
+      } = {};
       for (const model of availableModels) {
         const path = `${FileSystem.documentDirectory}models/${model.name}`;
         const fileInfo = await FileSystem.getInfoAsync(path);
-        statuses[model.name] = fileInfo.exists ? "downloaded" : "not_downloaded";
+        statuses[model.name] = fileInfo.exists
+          ? "downloaded"
+          : "not_downloaded";
       }
       setModelStatuses(statuses);
 
-      const downloadedModel = availableModels.find((m) => statuses[m.name] === "downloaded");
+      const downloadedModel = availableModels.find(
+        (m) => statuses[m.name] === "downloaded",
+      );
       if (downloadedModel) {
         setSelectedModel(downloadedModel.name);
       } else {
@@ -67,20 +69,27 @@ export default function ChatScreen() {
   }, []);
 
   // Handle model download with progress
-  const handleDownload = async (model: typeof availableModels[0]) => {
+  const handleDownload = async (model: (typeof availableModels)[0]) => {
     setModelStatuses((prev) => ({ ...prev, [model.name]: "downloading" }));
     setDownloadProgress((prev) => ({ ...prev, [model.name]: 0 }));
     const path = `${FileSystem.documentDirectory}models/${model.name}`;
     try {
-      await FileSystem.makeDirectoryAsync(`${FileSystem.documentDirectory}models`, { intermediates: true });
+      await FileSystem.makeDirectoryAsync(
+        `${FileSystem.documentDirectory}models`,
+        { intermediates: true },
+      );
       const downloadResumable = FileSystem.createDownloadResumable(
         model.url,
         path,
         {},
         (progress) => {
-          const percentage = progress.totalBytesWritten / progress.totalBytesExpectedToWrite;
-          setDownloadProgress((prev) => ({ ...prev, [model.name]: percentage }));
-        }
+          const percentage =
+            progress.totalBytesWritten / progress.totalBytesExpectedToWrite;
+          setDownloadProgress((prev) => ({
+            ...prev,
+            [model.name]: percentage,
+          }));
+        },
       );
       await downloadResumable.downloadAsync();
       setModelStatuses((prev) => ({ ...prev, [model.name]: "downloaded" }));
@@ -103,7 +112,7 @@ export default function ChatScreen() {
       if (selectedModel === modelName) {
         setSelectedModel(null);
         const remainingModel = availableModels.find(
-          (m) => modelStatuses[m.name] === "downloaded" && m.name !== modelName
+          (m) => modelStatuses[m.name] === "downloaded" && m.name !== modelName,
         );
         if (remainingModel) {
           setSelectedModel(remainingModel.name);
@@ -127,17 +136,25 @@ export default function ChatScreen() {
       id: `${Date.now()}`,
       text,
       role: "user",
-      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+      time: new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
     };
     setMessages((prev) => [...prev, userMessage]);
     setIsLoading(true);
 
     try {
       const modelPath = `${FileSystem.documentDirectory}models/${selectedModel}`;
-      const systemMessage: ChatMessage = { role: "system", content: "You are a helpful assistant." };
+      const systemMessage: ChatMessage = {
+        role: "system",
+        content: "You are a helpful assistant.",
+      };
       const fullMessages: ChatMessage[] = [
         systemMessage,
-        ...messages.map((msg) => ({ role: msg.role, content: msg.text }) as ChatMessage),
+        ...messages.map(
+          (msg) => ({ role: msg.role, content: msg.text }) as ChatMessage,
+        ),
         { role: "user", content: text },
       ];
       const response = await generateResponse(fullMessages, modelPath);
@@ -145,7 +162,10 @@ export default function ChatScreen() {
         id: `${Date.now() + 1}`,
         text: response.trim(),
         role: "assistant",
-        time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+        time: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
       };
       setMessages((prev) => [...prev, supportMessage]);
     } catch (error) {
@@ -154,7 +174,10 @@ export default function ChatScreen() {
         id: `${Date.now() + 1}`,
         text: "Sorry, I couldn't generate a response. Please try again.",
         role: "assistant",
-        time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+        time: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
       };
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
@@ -196,7 +219,12 @@ export default function ChatScreen() {
       <ChatInput onSend={handleSend} disabled={isLoading} />
 
       {/* Model Selection Modal */}
-      <Modal animationType="slide" transparent={true} visible={modalVisible} onRequestClose={() => setModalVisible(false)}>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => setModalVisible(false)}
+      >
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
             <Text style={styles.modalTitle}>Select a Model</Text>
@@ -211,11 +239,15 @@ export default function ChatScreen() {
                       <View
                         style={[
                           styles.progressFill,
-                          { width: `${(downloadProgress[model.name] || 0) * 100}%` },
+                          {
+                            width: `${(downloadProgress[model.name] || 0) * 100}%`,
+                          },
                         ]}
                       />
                     </View>
-                    <Text>{((downloadProgress[model.name] || 0) * 100).toFixed(1)}%</Text>
+                    <Text>
+                      {((downloadProgress[model.name] || 0) * 100).toFixed(1)}%
+                    </Text>
                   </View>
                 ) : modelStatuses[model.name] === "downloaded" ? (
                   <View style={styles.modelActions}>
@@ -227,12 +259,20 @@ export default function ChatScreen() {
                       }}
                       disabled={selectedModel === model.name}
                     />
-                    <Button title="Remove" onPress={() => handleRemove(model.name)} />
+                    <Button
+                      title="Remove"
+                      onPress={() => handleRemove(model.name)}
+                    />
                   </View>
                 ) : (
-                  <Button title="Download" onPress={() => handleDownload(model)} />
+                  <Button
+                    title="Download"
+                    onPress={() => handleDownload(model)}
+                  />
                 )}
-                {selectedModel === model.name && <Text style={styles.selectedIndicator}>Selected</Text>}
+                {selectedModel === model.name && (
+                  <Text style={styles.selectedIndicator}>Selected</Text>
+                )}
               </View>
             ))}
             <Button title="Close" onPress={() => setModalVisible(false)} />
