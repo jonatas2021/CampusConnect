@@ -14,6 +14,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 import { MaterialIcons, Feather } from "@expo/vector-icons";
 import * as Clipboard from "expo-clipboard";
 import docentesData from "@/docentes.json";
+import CopyButton from "@/components/svg/CopyButton";
 
 const EmailDocentes = () => {
   const [docentes] = useState(docentesData);
@@ -57,7 +58,7 @@ const EmailDocentes = () => {
                   style={styles.button}
                   onPress={() => handleCopyEmail(item.email)}
                 >
-                  <Feather name="copy" size={30} color="#fff" />
+                  <CopyButton style={styles.copyButton} />
                 </TouchableOpacity>
               </View>
             </View>
@@ -128,6 +129,9 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     alignItems: "center",
     justifyContent: "center",
+  },
+  copyButton: {
+    transform: [{ scale: 0.9 }], // Diminui proporcionalmente o tamanho
   },
 });
 
