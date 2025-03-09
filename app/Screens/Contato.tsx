@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     width: "100%",
+    height: 55,
   },
   itemText: {
     fontSize: RFValue(14),
