@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert } from 'react-native';
+import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert, Linking } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from "@react-navigation/native";
@@ -107,7 +107,10 @@ export default function HomeScreen() {
       id: 7,
       label: 'Acesso ao QAcadêmico',
       icon: 'web' as const,
-      onPress: () => console.log('QAcadêmico Access'),
+      onPress: () => {
+        Linking.openURL("https://qacademico.ifpe.edu.br/");
+        console.log('QAcadêmico Access');
+      }
     },
     {
       id: 8,
