@@ -6,6 +6,9 @@ node_modules/
 # Android Build
 android
 
+# IOS Build
+ios
+
 # Expo
 .expo/
 dist/
