@@ -27,7 +27,7 @@ const Gq1 = () => {
             <View style={styles.containerButton}>
             <TouchableOpacity style={styles.button} 
               activeOpacity={0.5} // Reduz a opacidade ao pressionar
-              onPress={() => router.push("/Screens/Nucleos/Neabi")}>
+              onPress={() => router.push("/Screens/Cursos/Gq2")}>
                 <Text style={styles.buttonText}>Disciplinas e Ementas</Text>
                 </TouchableOpacity>
 
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     },
     button: {
         width: "100%",
-        paddingVertical: "4%",
+        paddingVertical: "6%",
         borderRadius: 5,
         marginVertical: "3%",
         borderWidth: 1,

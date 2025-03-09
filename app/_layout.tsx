@@ -59,6 +59,10 @@ export default function RootLayout() {
               <Stack.Screen name="Screens/Cursos/Ipi1" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Cursos/Tsi1" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Cursos/Adm2" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Cursos/Gq2" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Cursos/Ipi2" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Cursos/Log2" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Cursos/Tsi2" options={{ headerShown: false }} />
               <Stack.Screen name="+not-found"  />
             </Stack>
             <StatusBar style="dark" translucent />

@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert } from 'react-native';
+import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert, Linking } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from "@react-navigation/native";
@@ -107,13 +107,19 @@ export default function HomeScreen() {
       id: 7,
       label: 'Acesso ao QAcadêmico',
       icon: 'web' as const,
-      onPress: () => console.log('QAcadêmico Access'),
+      onPress: () => {
+        Linking.openURL("https://qacademico.ifpe.edu.br/");
+        console.log('QAcadêmico Access');
+      }
     },
     {
       id: 8,
-      label: 'Formulários',
+      label: 'Requerimentos CRADT',
       icon: 'file-document-edit' as const,
-      onPress: () => console.log('Forms'),
+      onPress: () => {
+        Linking.openURL("https://docs.google.com/forms/d/e/1FAIpQLSfny1cPy4j0pIMy1A8XL1mq9lf6ZoalVkhTpMwHdyjhQZhkAw/viewform");
+        console.log('Forms');
+      }
     },
     {
       id: 9,

@@ -13,7 +13,7 @@ import DiscipButton from "@/components/svg/DiscipButton";
 import BaixarButton from "@/components/svg/BaixarButton";
 import BackButton from "@/components/BackButton";
 import { RFValue } from "react-native-responsive-fontsize";
-import semesters from "./adm.json"; 
+import semesters from "./tsi.json";
 
 export default function SubjectsScreen() {
     const [expandedSemester, setExpandedSemester] = useState<number | null>(null);

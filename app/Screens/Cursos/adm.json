@@ -1,0 +1,137 @@
+[
+    {
+      "semester": "1º Semestre",
+      "subjects": [
+        {
+          "name": "Comunicação Empresarial",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1SJf9atmc77SySJ7VR3IH-m0D0V8hnhx_/view?usp=drive_link"
+        },
+        {
+          "name": "Ética Profissional em Administração",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1SJf9atmc77SySJ7VR3IH-m0D0V8hnhx_/view?usp=drive_link"
+        },
+        {
+          "name": "Introdução à Administração",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1SJf9atmc77SySJ7VR3IH-m0D0V8hnhx_/view?usp=drive_link"
+        },
+        {
+          "name": "Introdução à Contabilidade",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1SJf9atmc77SySJ7VR3IH-m0D0V8hnhx_/view?usp=drive_link"
+        },
+        {
+          "name": "Introdução à Economia",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1SJf9atmc77SySJ7VR3IH-m0D0V8hnhx_/view?usp=drive_link"
+        },
+        {
+          "name": "Matemática Aplicada à Administração",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1SJf9atmc77SySJ7VR3IH-m0D0V8hnhx_/view?usp=drive_link"
+        }
+      ]
+    },
+    {
+      "semester": "2º Semestre",
+      "subjects": [
+        {
+          "name": "Economia Brasileira",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
+        },
+        {
+          "name": "Estatística Aplicada",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
+        },
+        {
+          "name": "Introdução à Psicologia",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
+        },
+        {
+          "name": "Matemática Financeira",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
+        },
+        {
+          "name": "Noções de Direito Público e Privado",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
+        },
+        {
+          "name": "Sociologia",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
+        }
+      ]
+    },
+    {
+      "semester": "3º Semestre",
+      "subjects": [
+        {
+          "name": "Comportamento Organizacional",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/18B1PV6tcw_xC61PaQOX-9TMFTcWOcmeA/view?usp=drive_link"
+        },
+        {
+          "name": "Direito Empresarial e Trabalhista",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/18B1PV6tcw_xC61PaQOX-9TMFTcWOcmeA/view?usp=drive_link"
+        },
+        {
+          "name": "Gestão de Pessoas I",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/18B1PV6tcw_xC61PaQOX-9TMFTcWOcmeA/view?usp=drive_link"
+        },
+        {
+          "name": "Metodologia Científica",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/18B1PV6tcw_xC61PaQOX-9TMFTcWOcmeA/view?usp=drive_link"
+        },
+        {
+          "name": "Organização, Sistemas e Método",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/18B1PV6tcw_xC61PaQOX-9TMFTcWOcmeA/view?usp=drive_link"
+        }
+      ]
+    }
+  ]
+  
