@@ -13,10 +13,6 @@ import BackButton from "@/components/BackButton";
 import { RFValue } from "react-native-responsive-fontsize";
 import { MaterialIcons, Feather } from "@expo/vector-icons";
 import * as Clipboard from "expo-clipboard";
-<<<<<<< HEAD
-=======
-
->>>>>>> 71ef8f60997ea6e13e9a5c13f9cc0117f2b2e7f5
 import docentesData from "@/docentes.json";
 
 const EmailDocentes = () => {
