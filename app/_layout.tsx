@@ -63,6 +63,11 @@ export default function RootLayout() {
               <Stack.Screen name="Screens/Cursos/Ipi2" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Cursos/Log2" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Cursos/Tsi2" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Setores" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Setores/Dapd" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Setores/Depex" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Setores/Den" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Setores/Cradt" options={{ headerShown: false }} />
               <Stack.Screen name="+not-found"  />
             </Stack>
             <StatusBar style="dark" translucent />

@@ -125,7 +125,10 @@ export default function HomeScreen() {
       id: 9,
       label: 'Setores',
       icon: 'office-building' as const,
-      onPress: () => console.log('Departments'),
+      onPress: () => {
+        router.push("/Screens/Setores");
+        console.log('Departments');
+      }
     },
     {
       id: 10,
