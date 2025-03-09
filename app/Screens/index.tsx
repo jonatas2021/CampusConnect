@@ -51,6 +51,23 @@ export default function HomeScreen() {
     }
   };
 
+  const handleNameClick = () => {
+    Alert.alert(
+      "Deseja alterar seu nome?",
+      "",
+      [
+        {
+          text: "Não",
+          style: "cancel",
+        },
+        {
+          text: "Sim",
+          onPress: () => router.push("/Screens/Hello"),
+        },
+      ]
+    );
+  };
+
   const menuItems = [
     {
       id: 1,
@@ -152,7 +169,9 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.greeting}>{getGreeting()}, {name}!</Text>
+      <Text style={styles.greeting} onPress={handleNameClick}>
+        {getGreeting()}, {name}!
+      </Text>
 
       <FlatList
         data={menuItems}
