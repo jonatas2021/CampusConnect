@@ -114,9 +114,12 @@ export default function HomeScreen() {
     },
     {
       id: 8,
-      label: 'Formulários',
+      label: 'Requerimentos CRADT',
       icon: 'file-document-edit' as const,
-      onPress: () => console.log('Forms'),
+      onPress: () => {
+        Linking.openURL("https://docs.google.com/forms/d/e/1FAIpQLSfny1cPy4j0pIMy1A8XL1mq9lf6ZoalVkhTpMwHdyjhQZhkAw/viewform");
+        console.log('Forms');
+      }
     },
     {
       id: 9,
