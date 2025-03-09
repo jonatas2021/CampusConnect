@@ -8,8 +8,8 @@ import { useRouter } from "expo-router";
 
 
 // Importação direta dos componentes SVG
-import CarouselItem01 from "@/components/svg/Neged";
-import CarouselItem02 from "@/components/svg/NegedText";
+import CarouselItem01 from "@/components/svg/Nucleos/Neged";
+import CarouselItem02 from "@/components/svg/Nucleos/NegedText";
 
 const carouselData = [
     {
