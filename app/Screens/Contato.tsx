@@ -12,21 +12,21 @@ import {
 import BackButton from "@/components/BackButton";
 import { RFValue } from "react-native-responsive-fontsize";
 import { MaterialIcons, Feather } from "@expo/vector-icons";
-import Clipboard from "@react-native-clipboard/clipboard";
+import * as Clipboard from "expo-clipboard";
 
 const docentesData = require("@/docentes.json");
 
 const EmailDocentes = () => {
   const [docentes] = useState(docentesData);
-
+      
   const handleSendEmail = (email: string) => {
     Linking.openURL(`mailto:${email}`).catch(() => {
       Alert.alert("Erro", "Não foi possível abrir o app de email.");
     });
   };
 
-  const handleCopyEmail = (email: string) => {
-    Clipboard.setString(email);
+  const handleCopyEmail = async (email: string) => {
+    await Clipboard.setStringAsync(email);
     Alert.alert("Copiado!", "O email foi copiado para a área de transferência.");
   };
 
