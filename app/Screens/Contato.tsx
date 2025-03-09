@@ -14,7 +14,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 import { MaterialIcons, Feather } from "@expo/vector-icons";
 import * as Clipboard from "expo-clipboard";
 
-const docentesData = require("@/docentes.json");
+import docentesData from "@/docentes.json";
 
 const EmailDocentes = () => {
   const [docentes] = useState(docentesData);

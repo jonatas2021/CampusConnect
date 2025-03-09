@@ -16,7 +16,9 @@ const Ipi1 = () => {
     return (
         <View style={styles.container}>
             <BackButton />
-            <Text style={styles.title}>Cursos</Text>
+            <View style={styles.titleContainer}>
+            <Text style={styles.title}>Informática Para Internet</Text>
+            </View>
             <View style={styles.separator} />
             {/* Meia bola verde */}
             <View style={styles.halfCircle}>
@@ -27,7 +29,7 @@ const Ipi1 = () => {
             <View style={styles.containerButton}>
             <TouchableOpacity style={styles.button} 
               activeOpacity={0.5} // Reduz a opacidade ao pressionar
-              onPress={() => router.push("/Screens/Nucleos/Neabi")}>
+              onPress={() => router.push("/Screens/Cursos/Ipi2")}>
                 <Text style={styles.buttonText}>Disciplinas e Ementas</Text>
                 </TouchableOpacity>
 
@@ -67,6 +69,10 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         marginTop: "10%",
     },
+    titleContainer: {
+        width: "80%",
+        alignSelf: "center"
+    },
     separator: {
         width: "100%",
         height: 2,
@@ -81,7 +87,7 @@ const styles = StyleSheet.create({
     },
     button: {
         width: "100%",
-        paddingVertical: "4%",
+        paddingVertical: "6%",
         borderRadius: 5,
         marginVertical: "3%",
         borderWidth: 1,

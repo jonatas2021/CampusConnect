@@ -7,6 +7,8 @@ const SvgComponent = (props: ImageProps) => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
+    width={390}
+    height={363}
     fill="none"
     viewBox="0 0 390 363"
     {...props}

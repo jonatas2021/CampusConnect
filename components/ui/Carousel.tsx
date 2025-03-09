@@ -10,8 +10,8 @@ import {
   NativeSyntheticEvent,
   NativeScrollEvent,
   ViewabilityConfig,
-  ViewToken, 
-  BackHandler, 
+  ViewToken,
+  BackHandler,
   Alert,
 } from "react-native";
 import { useRouter } from "expo-router";
@@ -34,11 +34,13 @@ const CarouselItem = ({ item }: { item: any }) => {
   const ImageComponent = item.image;
   return (
     <View style={[styles.carouselItem, { backgroundColor: item.backgroundColor }]}>
-      {ImageComponent ? (
-        <ImageComponent style={styles.image} />
-      ) : (
-        <Text style={styles.errorMessage}>Imagem não disponível</Text>
-      )}
+      <View style={styles.imageContainer}>
+        {ImageComponent ? (
+          <ImageComponent style={styles.image} />
+        ) : (
+          <Text style={styles.errorMessage}>Imagem não disponível</Text>
+        )}
+      </View>
       <View style={styles.separator} />
       <Text style={styles.title}>{item.title}</Text>
       <Text style={styles.description}>{item.description}</Text>
@@ -68,13 +70,13 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
         ]);
         return true;
       };
-  
+
       const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
-  
+
       return () => backHandler.remove(); // Remove o listener ao sair da tela
     }, [])
   );
-  
+
   const handleScroll = Animated.event(
     [{ nativeEvent: { contentOffset: { x: scrollX } } }],
     { useNativeDriver: false }
@@ -175,6 +177,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: "5%",
+  },
+  imageContainer: {
+    width: "100%", // Para ocupar toda a largura do contêiner
+    justifyContent: 'center', // Centraliza a imagem verticalmente
+    alignItems: "center", // Centraliza a imagem horizontalmente
   },
   image: {
     width: "100%",

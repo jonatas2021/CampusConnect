@@ -1,0 +1,40 @@
+[
+  {
+    "semester": "1º Semestre",
+    "subjects": [
+      {
+        "name": "Comunicação Empresarial",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1SJf9atmc77SySJ7VR3IH-m0D0V8hnhx_/view?usp=drive_link"
+      },
+      {
+        "name": "Ética Profissional em Administração",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1SJf9atmc77SySJ7VR3IH-m0D0V8hnhx_/view?usp=drive_link"
+      }
+    ]
+  },
+  {
+    "semester": "2º Semestre",
+    "subjects": [
+      {
+        "name": "Economia Brasileira",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
+      },
+      {
+        "name": "Estatística Aplicada",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
+      }
+    ]
+  }
+]

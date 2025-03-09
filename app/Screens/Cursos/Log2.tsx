@@ -13,7 +13,7 @@ import DiscipButton from "@/components/svg/DiscipButton";
 import BaixarButton from "@/components/svg/BaixarButton";
 import BackButton from "@/components/BackButton";
 import { RFValue } from "react-native-responsive-fontsize";
-import semesters from "./adm.json"; 
+import semesters from "./log.json"; 
 
 export default function SubjectsScreen() {
     const [expandedSemester, setExpandedSemester] = useState<number | null>(null);
@@ -25,7 +25,7 @@ export default function SubjectsScreen() {
     return (
         <SafeAreaView style={styles.container}>
             <BackButton />
-            <Text style={styles.title}>Administração</Text>
+            <Text style={styles.title}>Logística</Text>
             <View style={styles.separator} />
             <ScrollView>
                 {semesters.map((sem, index) => {
