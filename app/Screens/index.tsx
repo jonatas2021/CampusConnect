@@ -82,7 +82,10 @@ export default function HomeScreen() {
       id: 2,
       label: 'Bolsas e Estágios',
       icon: 'briefcase-account' as const,
-      onPress: () => console.log('Scholarships'),
+      onPress: () => {
+        router.push("/Screens/Bolsas");
+        console.log('Scholarships');
+      }
     },
     {
       id: 3,
