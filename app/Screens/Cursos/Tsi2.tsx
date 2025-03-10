@@ -7,6 +7,7 @@ import {
     SafeAreaView,
     StyleSheet,
     Linking,
+    ToastAndroid
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import DiscipButton from "@/components/svg/DiscipButton";
@@ -21,6 +22,15 @@ export default function SubjectsScreen() {
     const toggleExpand = (index: number) => {
         setExpandedSemester(expandedSemester === index ? null : index);
     };
+
+    // Função para tratar o erro ao tentar abrir o link da ementa
+    const handleDownload = (syllabusLink: string | null) => {
+        if (!syllabusLink) {
+            ToastAndroid.show("Ementa da disciplina não encontrada", ToastAndroid.SHORT); // Exibe a mensagem de erro
+        } else {
+            Linking.openURL(syllabusLink); // Abre o link se for válido
+        }
+    };    
 
     return (
         <SafeAreaView style={styles.container}>
@@ -69,7 +79,7 @@ export default function SubjectsScreen() {
                                             </Text>
                                             <TouchableOpacity
                                                 style={styles.downloadButton}
-                                                onPress={() => Linking.openURL(subject.syllabusLink)}
+                                                onPress={() => handleDownload(subject.syllabusLink)} // Chama a função para tratar o link
                                             >
                                                 <View style={styles.buttonContent}>
                                                     <Text style={styles.downloadText}>

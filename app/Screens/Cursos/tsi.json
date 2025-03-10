@@ -3,18 +3,60 @@
     "semester": "1º Semestre",
     "subjects": [
       {
-        "name": "Comunicação Empresarial",
-        "hours": "40h",
+        "name": "Cálculo para Computação",
+        "hours": "45h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": "https://drive.google.com/file/d/1SJf9atmc77SySJ7VR3IH-m0D0V8hnhx_/view?usp=drive_link"
+        "syllabusLink": "https://drive.google.com/file/d/1TgZIYYplJ8ltnhfAqmuB9-deOWeWmL_a/view?usp=drive_link"
       },
       {
-        "name": "Ética Profissional em Administração",
-        "hours": "40h",
+        "name": "Ética, Cidadania e Sustentabilidade",
+        "hours": "45h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": "https://drive.google.com/file/d/1SJf9atmc77SySJ7VR3IH-m0D0V8hnhx_/view?usp=drive_link"
+        "syllabusLink": "https://drive.google.com/file/d/1F5dYD_SmcfbUyQdtPtzavNQCKj8Fw8l8/view?usp=drive_link"
+      },
+      {
+        "name": "Fundamentos de Computação para Internet",
+        "hours": "30h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1kvbR9oVTxROh3g0b3uxlc3mYJTAExe_W/view?usp=drive_link"
+      },
+      {
+        "name": "Fundamentos do Design Digital",
+        "hours": "45h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1lT-ASAGUkbFkIrWVUPn3G1lfa7CO1hma/view?usp=drive_link"
+      },
+      {
+        "name": "Inglês I",
+        "hours": "45h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1o-KUqGb_jxw_REMh2tm0RiIxELFjbpvt/view?usp=drive_link"
+      },
+      {
+        "name": "Introdução à Administração",
+        "hours": "45h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1v3xKJX91Jdd9gPnaJdRVe3vUiLS7jmJX/view?usp=drive_link"
+      },
+      {
+        "name": "Programação Imperativa",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1ELcpzvH9BVnOwLDx0srQKVmttMVrUmER/view?usp=drive_link"
+      },
+      {
+        "name": "Redes de Computadores",
+        "hours": "90h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1DOwZNrvAijn4YHrQZ3tSt6JNanx0xZK-/view?usp=drive_link"
       }
     ]
   },
@@ -22,18 +64,304 @@
     "semester": "2º Semestre",
     "subjects": [
       {
-        "name": "Economia Brasileira",
+        "name": "Banco de Dados",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
+        "syllabusLink": "https://drive.google.com/file/d/1QTPkLZk208lQjKigxGP4P0KigiivT1b2/view?usp=drive_link"
       },
       {
-        "name": "Estatística Aplicada",
+        "name": "Desenvolvimento para Web I",
+        "hours": "60h",
+        "requirements": "TSI.27",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Design de Interface",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
+        "syllabusLink": "https://drive.google.com/file/d/1OTOTBOLnHDpwQJbh0PHkYxiQh1_JhKPa/view?usp=drive_link"
+      },
+      {
+        "name": "Estatística e Probabilidade",
+        "hours": "45h",
+        "requirements": "TSI.34",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1G_CvPRfbCLJkipA4Map_ot2KgdhvDyDY/view?usp=drive_link"
+      },
+      {
+        "name": "Inglês II",
+        "hours": "45h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1qJtMrhYmDh_nSBOuifWTOPc8UMRAuJYj/view?usp=drive_link"
+      },
+      {
+        "name": "Interconexão e Serviços de Redes",
+        "hours": "60h",
+        "requirements": "TSI.29",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Processos Psicológicos e Interação Social",
+        "hours": "45h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/16kQPl1G1nryC5Vc83663tePtiUh3dwEs/view?usp=drive_link"
+      },
+      {
+        "name": "Projeto e Desenvolvimento I",
+        "hours": "30h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      }
+    ]
+  },
+  {
+    "semester": "3º Semestre",
+    "subjects": [
+      {
+        "name": "Desenvolvimento para Web II",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1jqUqSMas5zVktcW9BSLwVlgKtdfBe82E/view?usp=drive_link"
+      },
+      {
+        "name": "Design de Interação",
+        "hours": "45h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1PC0hyzzUpmd6-lYzxKDUuH8uFa-kCiMe/view?usp=drive_link"
+      },
+      {
+        "name": "Inglês III",
+        "hours": "45h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1nRsX-hebqle51alrOH68tMsp4XpN6xJ4/view?usp=drive_link"
+      },
+      {
+        "name": "Metodologia Científica",
+        "hours": "45h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/13aMERaCX4H4yfqDO2qlpaZmOt_A4VMid/view?usp=drive_link"
+      },
+      {
+        "name": "Pesquisa e Análise de Comportamento",
+        "hours": "45h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1E1CMN7K7New0r-5uF3I7hVDbY0o7m6oI/view?usp=drive_link"
+      },
+      {
+        "name": "Programação Orientada a Objetos",
+        "hours": "60h",
+        "requirements": "TSI.27",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1BnUj4taTAMUdj_O7OmXI8od7ORXzMUuY/view?usp=drive_link"
+      },
+      {
+        "name": "Projeto de Desenvolvimento II",
+        "hours": "30h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1nL2TFU71m38uw7Mzs8PTZNno33OudWqv/view?usp=drive_link"
+      },
+      {
+        "name": "Segurança de Sistema para Internet",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1LroyMFIXYvoe6xkblI_BXobIh9yjK_SZ/view?usp=drive_link"
+      }
+    ]
+  },
+  {
+    "semester": "4º Semestre",
+    "subjects": [
+      {
+        "name": "Administração de Sistemas Operacionais",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Algoritmos e Estruturas de Dados",
+        "hours": "60h",
+        "requirements": "TSI.27",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/15e7lkTAVxrK2MVveVo15NK8yRTZUMXJe/view?usp=drive_link"
+      },
+      {
+        "name": "Desenvolvimento para Dispositivos Móveis",
+        "hours": "60h",
+        "requirements": "TSI.27",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Engenharia de Software",
+        "hours": "45h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1hbrUYQ6AOgcL4dswxMicKOdUecgeG_dn/view?usp=drive_link"
+      },
+      {
+        "name": "Gestão de Pessoas",
+        "hours": "45h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1XQ0VkkeqDhRtunYpG7nOrRMg4PPGqQ78/view?usp=drive_link"
+      },
+      {
+        "name": "Inglês IV",
+        "hours": "30h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1_fcjRR9GyGFUrfaqJcJPUmldnsX3luTU/view?usp=drive_link"
+      },
+      {
+        "name": "Interação Humano-computador",
+        "hours": "45h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1dPRx14I95umFQ0A99RD_2wLBs_KWCcI7/view?usp=drive_link"
+      },
+      {
+        "name": "Projeto de Desenvolvimento III",
+        "hours": "45h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/18yjnKT7lalZn1ww9dY1PMY75UGnaNROL/view?usp=drive_link"
+      },
+      {
+        "name": "Sistemas Distribuídos",
+        "hours": "60h",
+        "requirements": "TSI.29",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1Zm1QQNTR1tqCVcVuczG6ThiXoc5xpK8q/view?usp=drive_link"
+      },
+      {
+        "name": "Tecnologias Assistivas",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      }
+    ]
+  },
+  {
+    "semester": "5º Semestre",
+    "subjects": [
+      {
+        "name": "Administração Avançada de Sistemas Operacionais",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Empreendedorismo e Inovação",
+        "hours": "45h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1C8VjQsEGw1k0CRV05d57ZI2YUMSjTnF7/view?usp=drive_link"
+      },
+      {
+        "name": "Gestão de Projetos",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Inglês V",
+        "hours": "45h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1cvXHRpqeEWM1XmxbTMl6Ux1hlZkve5Hg/view?usp=drive_link"
+      },
+      {
+        "name": "Inteligência Artificial",
+        "hours": "60h",
+        "requirements": "TSI.14",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Projeto de Desenvolvimento IV",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1kiGaJxqfQDsQUwB9Ex3-cAy_0mG5QD3v/view?usp=drive_link"
+      },
+      {
+        "name": "Testes e Qualidade de Software",
+        "hours": "45h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1mec-i9Vj1cyOzIDJl_TKOwT54cKn0SUW/view?usp=drive_link"
+      },
+      {
+        "name": "Tópicos Avançados em Análise e Processamento de Dados",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Tópicos Avançados em Bancos de Dados",
+        "hours": "60h",
+        "requirements": "TSI.36",
+        "type": "OBG",
+        "syllabusLink": ""
+      }
+    ]
+  },
+  {
+    "semester": "6º Semestre",
+    "subjects": [
+      {
+        "name": "Internet das Coisas",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Libras",
+        "hours": "30h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Prática Profissional",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Tópicos Avançados em Desenvolvimento Web",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1D018BWjV8lxW30BJTA87uHqq9oVkka76/view?usp=drive_link"
+      },
+      {
+        "name": "Trabalho de Conclusão de Curso",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
       }
     ]
   }
