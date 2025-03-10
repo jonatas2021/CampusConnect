@@ -68,6 +68,13 @@ export default function RootLayout() {
               <Stack.Screen name="Screens/Setores/Depex" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Setores/Den" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Setores/Cradt" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Bolsas" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Bolsas/Estagio" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Bolsas/Extensao" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Bolsas/Manutencao" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Bolsas/Monitoria" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Bolsas/Pesquisa" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Bolsas/Tutoria" options={{ headerShown: false }} />
               <Stack.Screen name="+not-found"  />
             </Stack>
             <StatusBar style="dark" translucent />

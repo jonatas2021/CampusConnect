@@ -12,7 +12,7 @@ import {
 import { Feather } from "@expo/vector-icons";
 import DiscipButton from "@/components/svg/DiscipButton";
 import BaixarButton from "@/components/svg/BaixarButton";
-import BackButton from "@/components/BackButton";
+import BackButton from "@/components/BackButton2";
 import { RFValue } from "react-native-responsive-fontsize";
 import semesters from "./tsi.json";
 

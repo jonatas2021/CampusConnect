@@ -3,7 +3,7 @@ import {
   View, StyleSheet, SafeAreaView, Image, Text, TextInput, TouchableOpacity, 
   KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard 
 } from 'react-native';
-import BackButton from "@/components/BackButton";
+import BackButton from "@/components/BackButton2";
 import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { RFValue } from 'react-native-responsive-fontsize';

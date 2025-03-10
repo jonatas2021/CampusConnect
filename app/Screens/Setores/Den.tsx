@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, SafeAreaView, View, Text, Linking, ToastAndroid } from "react-native";
 import Carousel from "@/components/ui/CarouselSetores";
 import { RFValue } from "react-native-responsive-fontsize";
-import BackButton from "@/components/BackButton";
+import BackButton from "@/components/BackButton2";
 import { useRouter } from "expo-router";
 
 // Importação direta dos componentes SVG
