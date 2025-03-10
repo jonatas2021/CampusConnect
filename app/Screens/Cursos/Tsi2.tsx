@@ -35,7 +35,9 @@ export default function SubjectsScreen() {
     return (
         <SafeAreaView style={styles.container}>
             <BackButton />
-            <Text style={styles.title}>Administração</Text>
+            <View style={styles.titleContainer}>
+            <Text style={styles.title}>Tecnologia em Sistemas para Internet</Text>
+            </View>
             <View style={styles.separator} />
             <ScrollView>
                 {semesters.map((sem, index) => {
@@ -208,5 +210,9 @@ const styles = StyleSheet.create({
     downloadText: {
         color: "#fff",
         fontSize: RFValue(14),
+    },
+    titleContainer: {
+        width: "80%",
+        alignSelf: "center"
     },
 });
