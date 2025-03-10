@@ -25,7 +25,7 @@ const carouselData = [
         description: "",
         backgroundColor: "#DFFFD6",
         image: CarouselItem02,
-        email: "info@ifpe.edu.br" // ➡️ Adicionando email
+        email: "den@igarassu.ifpe.edu.br" // ➡️ Adicionando email
     },
 ];
 
