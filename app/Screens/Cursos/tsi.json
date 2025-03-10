@@ -73,7 +73,7 @@
       {
         "name": "Desenvolvimento para Web I",
         "hours": "60h",
-        "requirements": "TSI.27",
+        "requirements": "Programação Imperativa",
         "type": "OBG",
         "syllabusLink": ""
       },
@@ -87,7 +87,7 @@
       {
         "name": "Estatística e Probabilidade",
         "hours": "45h",
-        "requirements": "TSI.34",
+        "requirements": "Cálculo para Computação",
         "type": "OBG",
         "syllabusLink": "https://drive.google.com/file/d/1G_CvPRfbCLJkipA4Map_ot2KgdhvDyDY/view?usp=drive_link"
       },
@@ -101,7 +101,7 @@
       {
         "name": "Interconexão e Serviços de Redes",
         "hours": "60h",
-        "requirements": "TSI.29",
+        "requirements": "Redes de Computadores",
         "type": "OBG",
         "syllabusLink": ""
       },
@@ -162,7 +162,7 @@
       {
         "name": "Programação Orientada a Objetos",
         "hours": "60h",
-        "requirements": "TSI.27",
+        "requirements": "Programação Imperativa",
         "type": "OBG",
         "syllabusLink": "https://drive.google.com/file/d/1BnUj4taTAMUdj_O7OmXI8od7ORXzMUuY/view?usp=drive_link"
       },
@@ -195,14 +195,14 @@
       {
         "name": "Algoritmos e Estruturas de Dados",
         "hours": "60h",
-        "requirements": "TSI.27",
+        "requirements": "Programação Imperativa",
         "type": "OBG",
         "syllabusLink": "https://drive.google.com/file/d/15e7lkTAVxrK2MVveVo15NK8yRTZUMXJe/view?usp=drive_link"
       },
       {
         "name": "Desenvolvimento para Dispositivos Móveis",
         "hours": "60h",
-        "requirements": "TSI.27",
+        "requirements": "Programação Imperativa",
         "type": "OBG",
         "syllabusLink": ""
       },
@@ -244,7 +244,7 @@
       {
         "name": "Sistemas Distribuídos",
         "hours": "60h",
-        "requirements": "TSI.29",
+        "requirements": "Redes de Computadores",
         "type": "OBG",
         "syllabusLink": "https://drive.google.com/file/d/1Zm1QQNTR1tqCVcVuczG6ThiXoc5xpK8q/view?usp=drive_link"
       },
@@ -291,7 +291,7 @@
       {
         "name": "Inteligência Artificial",
         "hours": "60h",
-        "requirements": "TSI.14",
+        "requirements": "Algoritmos e Estruturas de Dados",
         "type": "OBG",
         "syllabusLink": ""
       },
@@ -319,7 +319,7 @@
       {
         "name": "Tópicos Avançados em Bancos de Dados",
         "hours": "60h",
-        "requirements": "TSI.36",
+        "requirements": "Bancos de Dados",
         "type": "OBG",
         "syllabusLink": ""
       }
