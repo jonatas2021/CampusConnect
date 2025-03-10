@@ -1,82 +1,139 @@
-import React from "react";
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  SafeAreaView, 
-  ScrollView, 
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  ScrollView,
+  TouchableOpacity
 } from "react-native";
 import BackButton from "@/components/BackButton";
 import { RFValue } from "react-native-responsive-fontsize";
-
 
 interface BusTimeProps {
   departure: string;
   arrival: string;
 }
 
+const weekdaySchedules: BusTimeProps[] = [
+  { departure: "04:10", arrival: "04:30" },
+  { departure: "04:45", arrival: "05:05" },
+  { departure: "05:50", arrival: "06:10" },
+  { departure: "06:25", arrival: "06:45" },
+  { departure: "07:00", arrival: "07:20" },
+  { departure: "07:30", arrival: "07:50" },
+  { departure: "08:10", arrival: "08:30" },
+  { departure: "09:15", arrival: "09:35" },
+  { departure: "10:50", arrival: "11:10" },
+  { departure: "11:20", arrival: "11:50" },
+  { departure: "11:55", arrival: "12:15" },
+  { departure: "12:30", arrival: "12:50" },
+  { departure: "13:10", arrival: "13:30" },
+  { departure: "13:45", arrival: "14:05" },
+  { departure: "14:50", arrival: "15:10" },
+  { departure: "15:20", arrival: "15:40" },
+  { departure: "16:00", arrival: "16:20" },
+  { departure: "16:35", arrival: "16:55" },
+  { departure: "17:15", arrival: "17:35" },
+  { departure: "17:50", arrival: "18:10" },
+  { departure: "18:30", arrival: "18:50" },
+  { departure: "19:05", arrival: "19:25" },
+  { departure: "20:10", arrival: "20:30" },
+  { departure: "20:45", arrival: "21:05" },
+  { departure: "21:20", arrival: "21:40" },
+  { departure: "22:00", arrival: "22:20" },
+];
+
+const saturdaySchedules: BusTimeProps[] = [
+  { departure: "04:30", arrival: "04:50" },
+  { departure: "05:30", arrival: "05:50" },
+  { departure: "06:30", arrival: "06:50" },
+  { departure: "07:30", arrival: "07:50" },
+  { departure: "09:30", arrival: "09:50" },
+  { departure: "10:30", arrival: "10:50" },
+  { departure: "11:30", arrival: "11:50" },
+  { departure: "12:30", arrival: "12:50" },
+  { departure: "14:30", arrival: "14:50" },
+  { departure: "15:30", arrival: "15:50" },
+  { departure: "16:30", arrival: "16:50" },
+  { departure: "17:30", arrival: "17:50" },
+  { departure: "18:30", arrival: "18:50" },
+  { departure: "19:25", arrival: "19:45" },
+  { departure: "21:10", arrival: "21:30" },
+  { departure: "22:00", arrival: "22:20" },
+
+];
+
 const BusScheduleScreen: React.FC = () => {
-  const schedules: BusTimeProps[] = [
-    { departure: "04:10", arrival: "04:30" },
-    { departure: "04:45", arrival: "05:05" },
-    { departure: "05:50", arrival: "06:10" },
-    { departure: "06:25", arrival: "06:45" },
-    { departure: "07:00", arrival: "07:20" },
-    { departure: "07:30", arrival: "07:50" },
-    { departure: "08:10", arrival: "08:30" },
-    { departure: "09:15", arrival: "09:35" },
-    { departure: "10:50", arrival: "11:10" },
-    { departure: "11:20", arrival: "11:50" },
-    { departure: "11:55", arrival: "12:15" },
-    { departure: "12:30", arrival: "12:50" },
-    { departure: "13:10", arrival: "13:30" },
-    { departure: "13:45", arrival: "14:05" },
-    { departure: "14:50", arrival: "15:10" },
-    { departure: "15:20", arrival: "15:40" },
-    { departure: "16:00", arrival: "16:20" },
-    { departure: "16:35", arrival: "16:55" },
-    { departure: "17:15", arrival: "17:35" },
-    { departure: "17:50", arrival: "18:10" },
-    { departure: "18:30", arrival: "18:50" },
-    { departure: "19:05", arrival: "19:25" },
-    { departure: "20:10", arrival: "20:30" },
-    { departure: "20:45", arrival: "21:05" },
-    { departure: "21:20", arrival: "21:40" },
-    { departure: "22:00", arrival: "22:20" },
-  ];
+  const [selectedDay, setSelectedDay] = useState<"weekday" | "weekend">("weekday");
+
+  const getSchedules = () => {
+    switch (selectedDay) {
+      case "weekday":
+        return weekdaySchedules;
+      case "weekend":
+        return saturdaySchedules;
+      default:
+        return weekdaySchedules;
+    }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
       <BackButton />
-        <Text style={styles.title}>TI Igarassu / Botafogo</Text>
-        <View style={styles.separator} />
-        <Text style={styles.subtitle}>Em vigor desde 01 de julho de 2024</Text>
+      <Text style={styles.title}>TI Igarassu / Botafogo</Text>
+      <View style={styles.separator} />
+      <Text style={styles.subtitle}>Em vigor desde 01 de julho de 2024</Text>
 
-        <Text style={styles.weekdayText}>Horários de seg a sex:</Text>
-
-        {/* Header Boxes */}
-        <View style={styles.headerContainer}>
-          <View style={styles.headerBox}>
-            <Text style={styles.headerText}>Saída do terminal</Text>
-          </View>
-          <View style={styles.headerBox}>
-            <Text style={styles.headerText}>Chegada ao IFPE</Text>
-          </View>
+      {/* Botões de seleção */}
+      <View style={styles.selectionContainer}>
+        <Text style={styles.weekdayText}>Horários de:</Text>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={[
+              styles.button,
+              selectedDay === "weekday" && styles.buttonSelected,
+            ]}
+            onPress={() => setSelectedDay("weekday")}
+          >
+            <Text style={styles.buttonText}>Seg a Sex</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[
+              styles.button,
+              selectedDay === "weekend" && styles.buttonSelected,
+            ]}
+            onPress={() => setSelectedDay("weekend")}
+          >
+            <Text style={styles.buttonText}>Sáb e Dom</Text>
+          </TouchableOpacity>
         </View>
-        
-        <ScrollView>
+      </View>
+
+
+      {/* Header Boxes */}
+      <View style={styles.headerContainer}>
+        <View style={styles.headerBox}>
+          <Text style={styles.headerText}>Saída do terminal</Text>
+        </View>
+        <View style={styles.headerBox}>
+          <Text style={styles.headerText}>Chegada ao IFPE</Text>
+        </View>
+      </View>
+
+      <ScrollView>
         {/* Time Columns */}
         <View style={styles.columnsContainer}>
           <View style={styles.column}>
-            {schedules.map((schedule, index) => (
+            {getSchedules().map((schedule, index) => (
               <View key={`dep-${index}`} style={styles.timeBox}>
                 <Text style={styles.timeText}>{schedule.departure}</Text>
               </View>
             ))}
           </View>
-          
+
           <View style={styles.column}>
-            {schedules.map((schedule, index) => (
+            {getSchedules().map((schedule, index) => (
               <View key={`arr-${index}`} style={styles.timeBox}>
                 <Text style={styles.timeText}>{schedule.arrival}</Text>
               </View>
@@ -115,21 +172,47 @@ const styles = StyleSheet.create({
     textAlign: "right",
     marginBottom: 15,
   },
+  selectionContainer: {
+    flexDirection: "row", // Alinha o texto e os botões na mesma linha
+    alignItems: "center", // Alinha verticalmente
+    gap: 6, // Espaçamento entre os botões
+    marginBottom: 12,
+    justifyContent: "center"
+  },
   weekdayText: {
     fontSize: RFValue(17),
     fontWeight: "bold",
-    marginLeft: 22,
-    marginBottom: 16,
     color: "#333",
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    gap: 8, // Espaçamento entre os botões
+  },
+
+  button: {
+    backgroundColor: "#ddd",
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    borderRadius: 20,
+    justifyContent: 'center', // Alinha verticalmente
+    alignItems: 'center', // Alinha horizontalmente
+  },
+  buttonSelected: {
+    backgroundColor: "#92C36B",
+  },
+  buttonText: {
+    fontSize: RFValue(14),
+    fontWeight: "bold",
+    color: "#000",
   },
   headerContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center', 
+    alignItems: 'center',
     marginHorizontal: 20,
     marginBottom: 16,
     gap: 8,
-  },  
+  },
   headerBox: {
     flex: 1,
     backgroundColor: '#2A5224',
