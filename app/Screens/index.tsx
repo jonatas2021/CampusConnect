@@ -155,7 +155,7 @@ export default function HomeScreen() {
     },
     {
       id: 11,
-      label: 'Apoio Psicológico',
+      label: 'Serviço de orientação Psicológica',
       icon: 'head-heart' as const,
       onPress: () => console.log('Psychological Support'),
     },
