@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     padding: 20,
     backgroundColor: "#2A5224",
-    alignItems: "center",
+    alignItems: "center"
   },
   inputWrapper: {
     flex: 1,
