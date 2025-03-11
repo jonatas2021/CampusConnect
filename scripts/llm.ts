@@ -4,14 +4,14 @@ import * as FileSystem from "expo-file-system";
 // Define available models with metadata
 export const availableModels = [
   {
-    name: "Text2Graph-R1-Qwen2.5-0.5b.Q4_K_S.gguf",
-    size: "385MB",
-    url: "https://huggingface.co/mradermacher/Text2Graph-R1-Qwen2.5-0.5b-GGUF/resolve/main/Text2Graph-R1-Qwen2.5-0.5b.Q4_K_S.gguf",
+    name: "Para dispositivos topo de linha (recomendado)",
+    size: "1.12 GB",
+    url: "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/blob/main/qwen2.5-1.5b-instruct-q4_k_m.gguf",
   },
   {
-    name: "Qwen2.5-0.5B-Instruct-Q8_0.gguf",
-    size: "531MB",
-    url: "https://huggingface.co/bartowski/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/Qwen2.5-0.5B-Instruct-Q8_0.gguf",
+    name: "Para dispositivos modestos",
+    size: "531 MB",
+    url: "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/blob/main/qwen2.5-0.5b-instruct-q5_k_m.gguf",
   },
 ];
 
