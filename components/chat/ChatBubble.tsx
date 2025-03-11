@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
 
 interface MessageProps {
   text: string;
@@ -11,20 +11,30 @@ export default function ChatBubble({ message }: { message: MessageProps }) {
   const isUser = message.role === "user";
 
   return (
-    <View style={[styles.bubbleContainer, isUser ? styles.userBubble : styles.supportBubble]}>
-      <Text style={[styles.messageText, isUser ? styles.userMessageText : styles.supportMessageText]}>
-        {message.text}
+    <View style={styles.messageContainer}>
+      <View style={[styles.bubbleContainer, isUser ? styles.userBubble : styles.supportBubble]}>
+        {!isUser && message.text.trim() === "" ? (
+          <ActivityIndicator size="small" color="#000" />
+        ) : (
+          <Text style={[styles.messageText, isUser ? styles.userMessageText : styles.supportMessageText]}>
+            {message.text}
+          </Text>
+        )}
+      </View>
+      <Text style={[styles.timeText, isUser ? styles.userTimeText : styles.supportTimeText]}>
+        {message.time}
       </Text>
-      <Text style={styles.timeText}>{message.time}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  messageContainer: {
+    marginVertical: 8,
+    width: "100%",
+  },
   bubbleContainer: {
-    marginVertical: 20,
-    marginHorizontal: 8,
-    padding: 16,
+    padding: 12,
     borderRadius: 24,
     maxWidth: "80%",
   },
@@ -32,29 +42,36 @@ const styles = StyleSheet.create({
     backgroundColor: "#2A5224",
     alignSelf: "flex-end",
     borderBottomRightRadius: 4,
+    marginLeft: "20%",
   },
   supportBubble: {
     backgroundColor: "#DEFCC7",
     alignSelf: "flex-start",
     borderBottomLeftRadius: 4,
+    marginRight: "20%",
   },
   messageText: {
-    fontSize: 18,
+    fontSize: 16,
   },
   userMessageText: {
     color: "#fff",
-    fontWeight: "bold",
-    marginBottom: 8,
+    fontWeight: "500",
   },
   supportMessageText: {
-    marginBottom: 8,
     color: "#000",
-    fontWeight: "bold",
+    fontWeight: "500",
   },
   timeText: {
-    fontSize: 16,
+    fontSize: 12,
     color: "#757575",
     marginTop: 4,
-    textAlign: "right",
+  },
+  userTimeText: {
+    alignSelf: "flex-end",
+    marginRight: 4,
+  },
+  supportTimeText: {
+    alignSelf: "flex-start",
+    marginLeft: 4,
   },
 });
