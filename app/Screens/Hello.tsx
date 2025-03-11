@@ -32,8 +32,8 @@ export default function Hello() {
         style={{ flex: 1 }}
       >
         <SafeAreaView style={styles.rootContainer}>
-          <BackButton destination="/Screens/Carousel" />
-
+      {/* <BackButton destination="/Screens/Carousel" /> */}
+          <BackButton />  
           <View style={styles.sectionContainer}>
             <Image source={require('@/assets/images/fundo.png')} style={styles.imagef} />
             <View style={styles.logos}>
