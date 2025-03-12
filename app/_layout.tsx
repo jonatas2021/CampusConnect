@@ -45,6 +45,7 @@ export default function RootLayout() {
               <Stack.Screen name="Screens/Linha" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Calendar" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Support/ChatScreen" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/FAQ" options={{ headerShown: false }} />
               {/* <Stack.Screen name="Screens/Ai/Chat" options={{ headerShown: false }} /> */}
               <Stack.Screen name="Screens/Nucleos" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Nucleos/Neabi" options={{ headerShown: false }} />
