@@ -75,6 +75,10 @@ export default function RootLayout() {
               <Stack.Screen name="Screens/Bolsas/Monitoria" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Bolsas/Pesquisa" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Bolsas/Tutoria" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Whats" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Whats/Groups" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Whats/Comunidades" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Whats/Contatos" options={{ headerShown: false }} />
               <Stack.Screen name="+not-found"  />
             </Stack>
             <StatusBar style="dark" translucent />

@@ -152,9 +152,12 @@ export default function HomeScreen() {
     },
     {
       id: 10,
-      label: 'Grupos do WhatsApp',
+      label: 'WhatsApp',
       icon: 'whatsapp' as const,
-      onPress: () => console.log('WhatsApp Groups'),
+      onPress: () => {
+        router.push("/Screens/Whats");
+        console.log('WhatsApp');
+      }
     },
     {
       id: 11,
