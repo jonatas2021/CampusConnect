@@ -18,6 +18,7 @@ import { useRouter } from "expo-router";
 import { RFValue } from 'react-native-responsive-fontsize';
 import { useFocusEffect } from "@react-navigation/native";
 
+// Captura a largura da tela
 const screenWidth = Dimensions.get("window").width;
 
 interface CarouselProps {
@@ -180,17 +181,16 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     width: "100%",
-    height: undefined,  // Remova a altura fixa
-    aspectRatio: 1,  // Controla a proporção da imagem
-    justifyContent: 'center',  // Garante que a imagem fique centralizada verticalmente
-    alignItems: 'center',  // Garante que a imagem fique centralizada horizontalmente
-    overflow: 'hidden',  // Esconde qualquer parte da imagem que ultrapasse os limites
+    height: undefined,  // Remova altura fixa
+    aspectRatio: 1,     // Defina o aspecto como a proporção desejada
+    justifyContent: 'center', // Centraliza a imagem verticalmente
+    alignItems: 'center',  // Centraliza a imagem horizontalmente
+    overflow: 'hidden',  // Esconde qualquer parte da imagem que ultrapasse
   },
-  
   image: {
-    width: "100%",  // A imagem ocupa toda a largura do contêiner
-    height: "100%", // Agora a altura da imagem será ajustada conforme a altura do contêiner
-    resizeMode: "contain",  // A imagem será redimensionada mantendo a proporção
+    width: "100%",  // A imagem ocupará toda a largura do contêiner
+    height: undefined, // A altura será ajustada proporcionalmente
+    resizeMode: "contain",  // A imagem será redimensionada proporcionalmente
   },  
   title: {
     fontSize: RFValue(18),
