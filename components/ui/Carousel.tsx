@@ -239,6 +239,7 @@ const styles = StyleSheet.create({
     height: 2,    // Espessura da linha
     backgroundColor: "#263238",  // Preto
     marginBottom: '10%',  // Espaço acima e abaixo da linha
+    marginTop: '10%'
   },
   errorMessage: {
     color: 'red',
