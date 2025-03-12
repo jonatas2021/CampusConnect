@@ -89,20 +89,27 @@ const ChatView: React.FC<ChatViewProps> = ({
       };
       setMessages((prev) => [...prev, supportMessage]);
 
-      // Use the streaming version by calling the wrapper
+      // Use the non-streaming version - the wrapper now returns the full response in one go
       try {
         const stream = generateResponseStreamWrapper(fullMessages, modelPath);
-        for await (const chunk of stream) {
-          // Update the assistant's message text incrementally
-          setMessages((prev) =>
-            prev.map((msg) => {
-              if (msg.id === assistantId) {
-                return { ...msg, text: msg.text + chunk };
-              }
-              return msg;
-            })
-          );
-        }
+        
+        // Aguarde a resposta completa
+        const response = await (async () => {
+          for await (const chunk of stream) {
+            return chunk; // Retorna o primeiro (e único) chunk, que é a resposta completa
+          }
+          return "";
+        })();
+        
+        // Atualiza a mensagem do assistente com a resposta completa
+        setMessages((prev) =>
+          prev.map((msg) => {
+            if (msg.id === assistantId) {
+              return { ...msg, text: response };
+            }
+            return msg;
+          })
+        );
       } catch (modelError) {
         console.error("Error generating response:", modelError);
         
