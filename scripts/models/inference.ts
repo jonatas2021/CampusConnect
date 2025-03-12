@@ -138,10 +138,9 @@ export async function* generateResponseStreamWrapper(
       throw new Error("Model file not found or is empty. Please re-download the model.");
     }
     
-    // Use the streaming generator
-    for await (const chunk of generateResponseStream(messages, modelPath)) {
-      yield chunk;
-    }
+    // Instead of streaming, get the complete response and yield it at once
+    const response = await generateResponse(messages, modelPath);
+    yield response;
   } catch (error) {
     console.error("Error in stream wrapper:", error);
     throw error;
