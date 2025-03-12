@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Text, StyleSheet } from "react-native";
 
 interface MessageProps {
   text: string;
@@ -9,12 +9,30 @@ interface MessageProps {
 
 export default function ChatBubble({ message }: { message: MessageProps }) {
   const isUser = message.role === "user";
+  const [typingDots, setTypingDots] = useState(".");
+  
+  // Animação simples para o texto "Escrevendo..."
+  useEffect(() => {
+    if (!isUser && message.text.trim() === "") {
+      const interval = setInterval(() => {
+        setTypingDots(prev => {
+          if (prev === ".") return "..";
+          if (prev === "..") return "...";
+          return ".";
+        });
+      }, 500);
+      
+      return () => clearInterval(interval);
+    }
+  }, [isUser, message.text]);
 
   return (
     <View style={styles.messageContainer}>
       <View style={[styles.bubbleContainer, isUser ? styles.userBubble : styles.supportBubble]}>
         {!isUser && message.text.trim() === "" ? (
-          <ActivityIndicator size="small" color="#000" />
+          <Text style={styles.supportMessageText}>
+            Escrevendo{typingDots}
+          </Text>
         ) : (
           <Text style={[styles.messageText, isUser ? styles.userMessageText : styles.supportMessageText]}>
             {message.text}
