@@ -1,6 +1,5 @@
 import * as FileSystem from "expo-file-system";
 import { Model, DownloadState } from './types';
-import { availableModels } from './models';
 import { 
   saveDownloadState, 
   loadDownloadState, 
@@ -161,6 +160,13 @@ export async function startModelDownload(
       throw new Error(`Download failed with status: ${result?.status || 'unknown'}`);
     }
   } catch (error) {
+    // Verifique se o erro é relacionado à pausa
+    if (error instanceof Error && (error.message.includes('paused') || error.message.includes('Download failed with status: unknown'))) {
+      console.log(`Download for ${modelName} was intentionally paused or interrupted`);
+      // Não propagamos o erro se for uma pausa intencional
+      return;
+    }
+    
     // Handle download error
     const errorState: DownloadState = {
       modelName,
@@ -191,41 +197,39 @@ export async function pauseModelDownload(modelName: string): Promise<void> {
       // Get the current download state before pausing
       const currentState = await loadDownloadState(modelName);
       
-      // Call pauseAsync on the downloadResumable object
-      const pauseState = await downloadResumable.pauseAsync();
-      
-      // Save the resumable state after pausing
-      await saveDownloadResumable(modelName, downloadResumable);
-      
-      // Update the download state to paused, but preserve progress
-      if (currentState) {
-        const pausedState: DownloadState = {
-          ...currentState,
-          status: "paused",
-          timestamp: Date.now()
-        };
-        await saveDownloadState(modelName, pausedState);
-      } else {
-        // If we don't have a current state for some reason, create a minimal one
-        const pausedState: DownloadState = {
+      // Primeiro atualizamos o estado para paused antes de chamar pauseAsync
+      // Isso garante que o estado esteja correto mesmo que pauseAsync lance um erro
+      const pausedState: DownloadState = {
+        ...(currentState || {
           modelName,
           progress: 0,
-          status: "paused",
           bytesWritten: 0,
           bytesExpected: 0,
-          timestamp: Date.now()
-        };
-        await saveDownloadState(modelName, pausedState);
+        }),
+        status: "paused",
+        timestamp: Date.now()
+      };
+      await saveDownloadState(modelName, pausedState);
+      
+      try {
+        // Call pauseAsync on the downloadResumable object
+        await downloadResumable.pauseAsync();
+        
+        // Save the resumable state after pausing
+        await saveDownloadResumable(modelName, downloadResumable);
+      } catch (pauseError) {
+        // Ignoramos erros do pauseAsync pois já atualizamos o estado
+        console.log(`Non-critical pause error for ${modelName}:`, pauseError);
       }
       
       // Remove from active downloads
       delete activeDownloads[modelName];
     } catch (error) {
-      console.error(`Failed to pause download for ${modelName}:`, error);
-      throw error;
+      // Apenas logamos o erro mas não o propagamos
+      console.log(`Non-critical error while pausing download for ${modelName}:`, error);
     }
   } else {
-    console.warn(`No active download found for ${modelName} to pause`);
+    console.log(`No active download found for ${modelName} to pause`);
   }
 }
 
@@ -252,10 +256,63 @@ export async function cancelModelDownload(modelName: string, path: string): Prom
   try {
     const fileInfo = await FileSystem.getInfoAsync(path);
     if (fileInfo.exists) {
+      console.log(`Deleting partial download file for ${modelName} at ${path}`);
       await FileSystem.deleteAsync(path, { idempotent: true });
+      
+      // Verify file was deleted
+      const checkAfterDelete = await FileSystem.getInfoAsync(path);
+      if (checkAfterDelete.exists) {
+        console.error(`Failed to delete file for ${modelName}, it still exists!`);
+        // Try one more time with force option
+        await FileSystem.deleteAsync(path, { idempotent: true });
+      }
     }
   } catch (error) {
     console.error("Failed to delete partial download:", error);
+  }
+}
+
+// Remove a downloaded model completely
+export async function removeModel(modelName: string, path: string): Promise<void> {
+  console.log(`Removing model ${modelName} from path ${path}`);
+  
+  // First cancel any active download for this model if exists
+  await cancelModelDownload(modelName, path);
+  
+  // Then delete the file and clear all related data
+  try {
+    const fileInfo = await FileSystem.getInfoAsync(path);
+    
+    if (fileInfo.exists) {
+      console.log(`Deleting model file ${path}`);
+      
+      // Delete the file
+      await FileSystem.deleteAsync(path, { idempotent: true });
+      
+      // Verify deletion
+      const checkAfterDelete = await FileSystem.getInfoAsync(path);
+      if (checkAfterDelete.exists) {
+        console.error(`Failed to delete model ${modelName}, the file still exists!`);
+        // Try with alternative method - create an empty file to overwrite it first
+        try {
+          await FileSystem.writeAsStringAsync(path, "", { encoding: FileSystem.EncodingType.UTF8 });
+          await FileSystem.deleteAsync(path, { idempotent: true });
+        } catch (overwriteError) {
+          console.error(`Error during forced deletion:`, overwriteError);
+        }
+      } else {
+        console.log(`Successfully deleted model file for ${modelName}`);
+      }
+    } else {
+      console.log(`No file found at ${path} for model ${modelName}`);
+    }
+    
+    // Also make sure to clear any saved state data
+    await clearDownloadData(modelName);
+    
+  } catch (error) {
+    console.error(`Error removing model ${modelName}:`, error);
+    throw error;
   }
 }
 
