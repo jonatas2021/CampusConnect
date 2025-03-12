@@ -167,8 +167,14 @@ export default function HomeScreen() {
     },
     {
       id: 12,
-      label: 'Suporte',
+      label: 'FAQ',
       icon: 'help-circle' as const,
+      onPress: () => router.push("/Screens/FAQ"),
+    },
+    {
+      id: 13,
+      label: 'Suporte',
+      icon: 'headset' as const,
       onPress: () => router.push("/Screens/Support/ChatScreen"),
     },
   ];
