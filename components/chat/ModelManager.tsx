@@ -9,7 +9,9 @@ import {
   loadDownloadState,
   DownloadState,
   verifyModelFile,
-  activeDownloads
+  activeDownloads,
+  removeModel,
+  clearDownloadData
 } from "@/scripts/models";
 
 export interface ModelStatus {
@@ -26,6 +28,7 @@ export interface ModelManagerHandlers {
   handleDownload: (model: (typeof availableModels)[0]) => Promise<void>;
   handlePauseDownload: (modelName: string) => Promise<void>;
   handleResumeDownload: (model: (typeof availableModels)[0]) => Promise<void>;
+  handleCancelDownload: (modelName: string) => Promise<void>;
   handleRemove: (modelName: string) => Promise<void>;
   checkModels: () => Promise<void>;
 }
@@ -37,6 +40,7 @@ export const useModelManager = (
   const appState = useRef(AppState.currentState);
   const [modelStatuses, setModelStatuses] = useState<ModelStatus>({});
   const [downloadProgress, setDownloadProgress] = useState<DownloadProgress>({});
+  const [selectedModel, setSelectedModel] = useState<string | null>(null);
 
   // Handle app state changes (background/foreground)
   useEffect(() => {
@@ -72,32 +76,86 @@ export const useModelManager = (
     for (const model of availableModels) {
       const path = `${FileSystem.documentDirectory}models/${model.name}`;
       
-      // First check if there's an active download
+      // Primeiro, verifique se o diretório models existe
+      const modelsDir = `${FileSystem.documentDirectory}models`;
+      const dirInfo = await FileSystem.getInfoAsync(modelsDir);
+      if (!dirInfo.exists) {
+        try {
+          await FileSystem.makeDirectoryAsync(modelsDir, { intermediates: true });
+          console.log("Created models directory");
+        } catch (error) {
+          console.error("Failed to create models directory:", error);
+        }
+      }
+      
+      // Check if there's an active download
       const downloadState = await loadDownloadState(model.name);
       
       if (downloadState) {
         console.log(`Found download state for ${model.name}:`, downloadState.status, downloadState.progress);
         
         if (downloadState.status === "in_progress" || downloadState.status === "paused") {
-          // There's an active or paused download
-          statuses[model.name] = downloadState.status === "in_progress" ? "downloading" : "paused";
-          progress[model.name] = downloadState.progress;
+          // Primeiro verifique se o arquivo existe fisicamente
+          const fileInfo = await FileSystem.getInfoAsync(path, { size: true });
+          
+          if (fileInfo.exists && fileInfo.size) {
+            // O arquivo existe, agora vamos ver se está completo
+            if (fileInfo.size >= parseFileSize(model.size) * 0.99) {
+              // Se o arquivo está praticamente completo, considere-o como baixado
+              try {
+                await verifyModelFile(path, model.size);
+                statuses[model.name] = "downloaded";
+                progress[model.name] = 1;
+                console.log(`Model ${model.name} file is complete, marking as downloaded`);
+              } catch (error) {
+                console.error(`Model ${model.name} validation failed:`, error);
+                statuses[model.name] = downloadState.status === "in_progress" ? "downloading" : "paused";
+                progress[model.name] = downloadState.progress || 0;
+              }
+            } else {
+              // O arquivo existe mas não está completo
+              statuses[model.name] = downloadState.status === "in_progress" ? "downloading" : "paused";
+              progress[model.name] = downloadState.progress || (fileInfo.size / parseFileSize(model.size));
+            }
+          } else {
+            // O arquivo não existe, mas temos um estado de download
+            // Pode ser um arquivo corrompido ou parcialmente baixado que foi removido
+            statuses[model.name] = "not_downloaded";
+            progress[model.name] = 0;
+            
+            // Limpe o estado de download, pois o arquivo não existe mais
+            await clearDownloadData(model.name);
+          }
           
           // If the download was in progress but the app was closed/backgrounded,
           // we should mark it as paused since it's not actively downloading now
-          if (downloadState.status === "in_progress" && !activeDownloads[model.name]) {
+          if (statuses[model.name] === "downloading" && !activeDownloads[model.name]) {
             console.log(`Download for ${model.name} was in progress but is now paused`);
             statuses[model.name] = "paused";
           }
         } else if (downloadState.status === "completed") {
           // The download is marked as completed, verify the file
           try {
-            await verifyModelFile(path, model.size);
-            statuses[model.name] = "downloaded";
+            const fileInfo = await FileSystem.getInfoAsync(path, { size: true });
+            
+            if (fileInfo.exists && fileInfo.size) {
+              await verifyModelFile(path, model.size);
+              statuses[model.name] = "downloaded";
+              progress[model.name] = 1;
+            } else {
+              // State says completed but file doesn't exist
+              console.error(`Model ${model.name} marked as completed but file not found`);
+              statuses[model.name] = "not_downloaded";
+              progress[model.name] = 0;
+              await clearDownloadData(model.name);
+            }
           } catch (error) {
             console.error(`Model ${model.name} validation failed:`, error);
             statuses[model.name] = "not_downloaded";
             progress[model.name] = 0;
+            
+            // Clear invalid state
+            await clearDownloadData(model.name);
           }
         } else {
           // For any other status, check if the file exists and is valid
@@ -112,16 +170,55 @@ export const useModelManager = (
     setModelStatuses(statuses);
     setDownloadProgress(progress);
 
-    const downloadedModel = availableModels.find(
-      (m) => statuses[m.name] === "downloaded",
-    );
-    if (downloadedModel) {
-      onSelectedModelChange(downloadedModel.name);
+    // Find a downloaded model to select if none is currently selected
+    if (selectedModel === null) {
+      const downloadedModel = availableModels.find(
+        (m) => statuses[m.name] === "downloaded",
+      );
+      
+      if (downloadedModel) {
+        console.log(`Auto-selecting downloaded model ${downloadedModel.name}`);
+        setSelectedModel(downloadedModel.name);
+        onSelectedModelChange(downloadedModel.name);
+      }
     } else {
-      onSelectedModelChange(null);
+      // Verify if the currently selected model is still downloaded
+      if (statuses[selectedModel] !== "downloaded") {
+        console.log(`Currently selected model ${selectedModel} is no longer available`);
+        
+        // Find another downloaded model to select
+        const alternativeModel = availableModels.find(
+          (m) => statuses[m.name] === "downloaded",
+        );
+        
+        if (alternativeModel) {
+          console.log(`Selecting alternative model ${alternativeModel.name}`);
+          setSelectedModel(alternativeModel.name);
+          onSelectedModelChange(alternativeModel.name);
+        } else {
+          console.log("No downloaded models available");
+          setSelectedModel(null);
+          onSelectedModelChange(null);
+        }
+      }
     }
   };
   
+  // Utility function to parse file size string to bytes
+  const parseFileSize = (sizeStr: string): number => {
+    let size = 0;
+    if (sizeStr.includes("GB")) {
+      size = parseFloat(sizeStr.replace(" GB", "")) * 1024 * 1024 * 1024;
+    } else if (sizeStr.includes("MB")) {
+      size = parseFloat(sizeStr.replace(" MB", "")) * 1024 * 1024;
+    } else if (sizeStr.includes("KB")) {
+      size = parseFloat(sizeStr.replace(" KB", "")) * 1024;
+    } else {
+      size = parseFloat(sizeStr);
+    }
+    return size;
+  };
+
   // Helper function to check if a model file exists and is valid
   const checkModelFile = async (
     model: (typeof availableModels)[0],
@@ -183,6 +280,7 @@ export const useModelManager = (
             }));
           } else if (state.status === "completed") {
             setModelStatuses((prev) => ({ ...prev, [model.name]: "downloaded" }));
+            setSelectedModel(model.name);
             onSelectedModelChange(model.name);
           } else if (state.status === "failed") {
             setModelStatuses((prev) => ({ ...prev, [model.name]: "not_downloaded" }));
@@ -249,6 +347,7 @@ export const useModelManager = (
               ...prev,
               [model.name]: 1,
             }));
+            setSelectedModel(model.name);
             onSelectedModelChange(model.name);
           } else if (state.status === "failed") {
             setModelStatuses((prev) => ({ ...prev, [model.name]: "not_downloaded" }));
@@ -271,30 +370,79 @@ export const useModelManager = (
     }
   };
 
+  // Handle canceling a download
+  const handleCancelDownload = async (modelName: string) => {
+    const path = `${FileSystem.documentDirectory}models/${modelName}`;
+    try {
+      await cancelModelDownload(modelName, path);
+      setModelStatuses((prev) => ({ ...prev, [modelName]: "not_downloaded" }));
+      setDownloadProgress((prev) => ({ ...prev, [modelName]: 0 }));
+    } catch (error) {
+      console.log("Failed to cancel download:", error);
+    }
+  };
+
   // Handle model removal
   const handleRemove = async (modelName: string) => {
     const path = `${FileSystem.documentDirectory}models/${modelName}`;
     try {
-      // Cancel any active download first
-      await cancelModelDownload(modelName, path);
+      console.log(`Starting removal of model ${modelName}`);
       
-      // Delete the file if it exists
-      await FileSystem.deleteAsync(path, { idempotent: true });
-      
+      // Update UI state immediately to show model as not downloaded
       setModelStatuses((prev) => ({ ...prev, [modelName]: "not_downloaded" }));
+      setDownloadProgress((prev) => ({ ...prev, [modelName]: 0 }));
+      
+      // Use the new removeModel function that does more robust checking
+      await removeModel(modelName, path);
+      
+      console.log(`After removal, checking if model is actually removed`);
+      
+      // Verify file was actually removed
+      const fileInfo = await FileSystem.getInfoAsync(path);
+      if (fileInfo.exists) {
+        console.error(`Model file still exists after removal attempt!`);
+        
+        // Force delete again with a slight delay
+        setTimeout(async () => {
+          try {
+            await FileSystem.deleteAsync(path, { idempotent: true });
+            console.log(`Second deletion attempt completed`);
+          } catch (secondError) {
+            console.error(`Second deletion attempt failed:`, secondError);
+          }
+        }, 500);
+      } else {
+        console.log(`Model ${modelName} successfully removed`);
+      }
       
       // If the removed model was selected, find another downloaded model or set to null
-      const remainingModel = availableModels.find(
-        (m) => modelStatuses[m.name] === "downloaded" && m.name !== modelName,
-      );
-      
-      if (remainingModel) {
-        onSelectedModelChange(remainingModel.name);
-      } else {
-        onSelectedModelChange(null);
+      if (selectedModel === modelName) {
+        const remainingModel = availableModels.find(
+          (m) => m.name !== modelName && modelStatuses[m.name] === "downloaded",
+        );
+        
+        if (remainingModel) {
+          setSelectedModel(remainingModel.name);
+          onSelectedModelChange(remainingModel.name);
+        } else {
+          setSelectedModel(null);
+          onSelectedModelChange(null);
+        }
       }
+      
+      // Force a check of models to ensure UI is in sync with filesystem
+      await checkModels();
+      
     } catch (error) {
       console.error("Remove failed:", error);
+      Alert.alert(
+        "Erro na Remoção",
+        "Não foi possível remover o modelo. Por favor, tente novamente.",
+        [{ text: "OK" }]
+      );
+      
+      // Force check models to ensure UI is in sync
+      await checkModels();
     }
   };
 
@@ -304,6 +452,7 @@ export const useModelManager = (
     handleDownload,
     handlePauseDownload,
     handleResumeDownload,
+    handleCancelDownload,
     handleRemove,
     checkModels
   };
