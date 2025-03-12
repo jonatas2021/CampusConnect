@@ -107,7 +107,7 @@ export default function HomeScreen() {
     },
     {
       id: 5,
-      label: 'Horários do Ônibus',
+      label: 'Horários dos Ônibus',
       icon: 'clock' as const,
       onPress: () => {
         router.push("/Screens/Linha");
@@ -161,21 +161,18 @@ export default function HomeScreen() {
     },
     {
       id: 11,
-      label: 'Serviço de orientação Psicológica',
+      label: 'Serviço de Orientação Psicológica',
       icon: 'head-heart' as const,
-      onPress: () => console.log('Psychological Support'),
+      onPress: () => {
+        console.log('Psychological Support');
+        router.push("/Screens/Servico");
+      }
     },
     {
       id: 12,
       label: 'FAQ',
       icon: 'help-circle' as const,
       onPress: () => router.push("/Screens/FAQ"),
-    },
-    {
-      id: 13,
-      label: 'Suporte',
-      icon: 'headset' as const,
-      onPress: () => router.push("/Screens/Support/ChatScreen"),
     },
   ];
 

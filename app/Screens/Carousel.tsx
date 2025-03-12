@@ -21,7 +21,7 @@ const carouselData = [
     id: "2",
     title: "Conheça seu curso",
     description:
-      "Veja todas as disciplinas do seu curso, aqui você também pode encontrar as referências de livros e filmes de cada uma disciplina.",
+      "Veja todas as disciplinas do seu curso, aqui você também pode encontrar as referências de livros e filmes de cada uma das disciplina.",
     backgroundColor: "#DFFFD6",
     image: CarouselItem02,
   },
@@ -29,15 +29,15 @@ const carouselData = [
     id: "3",
     title: "Hórarios e Calendário Acadêmico",
     description:
-      "Acesse horários das disciplinas e o calendário acadêmico com datas importantes, como matrícula, feriados e início de semestres.",
+      "Acesse os horários das disciplinas e o calendário acadêmico com datas importantes, como matrícula, feriados e início de semestres.",
     backgroundColor: "#DFFFD6",
     image: CarouselItem03,
   },
   {
     id: "4",
-    title: "Saiba os horários do ônibus",
+    title: "Saiba os horários dos ônibus",
     description:
-      "Planeje seu transporte com facilidade! Aqui você encontra os horários atualizados dos ônibus para chegar ao campus no momento certo.",
+      "Planeje seus horários com mais praticidade! Aqui você encontra os horários atualizados dos ônibus para chegar ao campus no momento certo.",
     backgroundColor: "#DFFFD6",
     image: CarouselItem04,
   },

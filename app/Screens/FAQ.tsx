@@ -6,11 +6,14 @@ import {
   TextInput, 
   TouchableOpacity, 
   ScrollView, 
-  SafeAreaView,
+  SafeAreaView, 
+  Linking,
+  Alert
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
 import BackButton from '@/components/BackButton';
+import { RFValue } from "react-native-responsive-fontsize";
 
 interface FAQItem {
   id: number;
@@ -60,6 +63,26 @@ export default function FAQScreen() {
     item.answer.toLowerCase().includes(searchText.toLowerCase())
   );
 
+  const handleSendEmail = () => {
+    Alert.alert(
+      'Enviar email',
+      'Você deseja enviar um email para a equipe de desenvolvimento do app?',
+      [
+        {
+          text: 'Cancelar',
+          style: 'cancel'
+        },
+        {
+          text: 'Sim',
+          onPress: () => {
+            const email = 'csa8@discente.ifpe.edu.b'; // E-mail desejado
+            Linking.openURL(`mailto:${email}`);
+          }
+        }
+      ]
+    );
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -69,7 +92,7 @@ export default function FAQScreen() {
         <Text style={styles.headerTitle}>Suporte</Text>
       </View>
       
-      <View style={styles.divider} />
+       <View style={styles.separator} />
       
       <ScrollView style={styles.content}>
         <Text style={styles.subtitle}>Como podemos ajudá-lo?</Text>
@@ -118,12 +141,22 @@ export default function FAQScreen() {
       </ScrollView>
       
       <TouchableOpacity 
-        style={styles.supportButton}
+        style={styles.contactButton}
         onPress={() => router.push('/Screens/Support/ChatScreen')}
       >
         <View style={styles.supportButtonContent}>
-          <MaterialIcons name="headset" size={24} color="#e8f5e9" style={styles.supportIcon} />
-          <Text style={styles.supportButtonText}>Falar com suporte</Text>
+          <MaterialIcons name="help-outline" size={24} color="#e8f5e9" style={styles.supportIcon} />
+          <Text style={styles.supportButtonText}>Obter ajuda</Text>
+        </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+        style={styles.contactButton}
+        onPress={handleSendEmail}
+      >
+        <View style={styles.supportButtonContent}>
+          <MaterialIcons name="email" size={24} color="#e8f5e9" style={styles.supportIcon} />
+          <Text style={styles.supportButtonText}>Fale conosco</Text>
         </View>
       </TouchableOpacity>
     </SafeAreaView>
@@ -149,15 +182,18 @@ const styles = StyleSheet.create({
     left: 16,
   },
   headerTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#3B3939',
+    fontSize: RFValue(20),
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#000",
+    marginBottom: 10,
   },
-  divider: {
-    height: 1,
-    backgroundColor: '#000',
-    width: '100%',
-  },
+  separator: {
+    alignSelf:'center',
+    width: "94%",
+    height: 2,
+    backgroundColor: "#000",
+},
   content: {
     flex: 1,
     padding: 16,
@@ -239,9 +275,18 @@ const styles = StyleSheet.create({
     lineHeight: 20,
   },
   supportButton: {
-    backgroundColor: '#35672D',
+    backgroundColor: '#224805',
     paddingVertical: 15,
-    margin: 16,
+    marginHorizontal: 16,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  contactButton: {
+    backgroundColor: '#224805',
+    paddingVertical: 15,
+    marginHorizontal: 16,
+    marginBottom: 16,
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',

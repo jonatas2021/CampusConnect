@@ -80,6 +80,7 @@ export default function RootLayout() {
               <Stack.Screen name="Screens/Whats/Groups" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Whats/Comunidades" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/Whats/Contatos" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Servico" options={{ headerShown: false }} />
               <Stack.Screen name="+not-found"  />
             </Stack>
             <StatusBar style="dark" translucent />

@@ -40,7 +40,7 @@ const Bolsas = () => {
             <TouchableOpacity style={styles.button} 
               activeOpacity={0.5} // Reduz a opacidade ao pressionar
               onPress={() => router.push("/Screens/Bolsas/Manutencao")}>
-                <Text style={styles.buttonText}>Manutenção Academica</Text>
+                <Text style={styles.buttonText}>Manutenção Acadêmica</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.button} 

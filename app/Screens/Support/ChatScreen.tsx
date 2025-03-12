@@ -14,6 +14,7 @@ import { useModelManager, ModelStatus, DownloadProgress } from "@/components/cha
 import ModelSelectionModal from "@/components/chat/ModelSelectionModal";
 import ChatView, { MessageProps } from "@/components/chat/ChatView";
 import { Ionicons } from "@expo/vector-icons";
+import { RFValue } from "react-native-responsive-fontsize";
 
 export default function ChatScreen() {
   const router = useRouter();
@@ -52,8 +53,11 @@ export default function ChatScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <BackButton onPress={() => router.back()} />
+      <Text style={styles.title}>Suporte</Text>
+     <View style={styles.separator} />
+      
       <ChatHeader
-        headerLeft={<BackButton onPress={() => router.back()} />}
         headerRight={
           <TouchableOpacity style={styles.modelsButton} onPress={() => setModalVisible(true)}>
             <View style={styles.modelsButtonContent}>
@@ -99,7 +103,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFFFFF",
     paddingHorizontal: 0,
-    paddingTop: "10%",
+    paddingTop: "6%",
   },
   modelsButton: {
     minWidth: 105,
@@ -130,4 +134,18 @@ const styles = StyleSheet.create({
   modelsButtonIcon: {
     marginLeft: 6,
   },
+  separator: {
+    alignSelf:'center',
+    width: "94%",
+    height: 2,
+    backgroundColor: "#000",
+},
+title: {
+  fontSize: RFValue(20),
+  fontWeight: "bold",
+  textAlign: "center",
+  color: "#000",
+  marginBottom: 10,
+  marginTop: "10%",
+},
 });
