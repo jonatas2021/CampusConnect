@@ -179,17 +179,19 @@ const styles = StyleSheet.create({
     padding: "5%",
   },
   imageContainer: {
-    width: "100%", // Para ocupar toda a largura do contêiner
-    justifyContent: 'center', // Centraliza a imagem verticalmente
-    alignItems: "center", // Centraliza a imagem horizontalmente
-  },
-  image: {
     width: "100%",
-    height: "50%",
-    resizeMode: "contain",
-    marginLeft: "auto",
-    marginRight: "auto", // Isso força a centralização
+    height: undefined,  // Remova a altura fixa
+    aspectRatio: 1,  // Controla a proporção da imagem
+    justifyContent: 'center',  // Garante que a imagem fique centralizada verticalmente
+    alignItems: 'center',  // Garante que a imagem fique centralizada horizontalmente
+    overflow: 'hidden',  // Esconde qualquer parte da imagem que ultrapasse os limites
   },
+  
+  image: {
+    width: "100%",  // A imagem ocupa toda a largura do contêiner
+    height: "100%", // Agora a altura da imagem será ajustada conforme a altura do contêiner
+    resizeMode: "contain",  // A imagem será redimensionada mantendo a proporção
+  },  
   title: {
     fontSize: RFValue(18),
     fontWeight: "bold",

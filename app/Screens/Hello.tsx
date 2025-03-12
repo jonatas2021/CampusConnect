@@ -33,7 +33,6 @@ export default function Hello() {
       >
         <SafeAreaView style={styles.rootContainer}>
       {/* <BackButton destination="/Screens/Carousel" /> */}
-          <BackButton />  
           <View style={styles.sectionContainer}>
             <Image source={require('@/assets/images/fundo.png')} style={styles.imagef} />
             <View style={styles.logos}>
