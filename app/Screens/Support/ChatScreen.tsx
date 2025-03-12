@@ -7,11 +7,13 @@ import {
   StyleSheet,
   TouchableOpacity,
   Text,
+  View,
 } from "react-native";
 import { availableModels } from "@/scripts/models";
 import { useModelManager, ModelStatus, DownloadProgress } from "@/components/chat/ModelManager";
 import ModelSelectionModal from "@/components/chat/ModelSelectionModal";
 import ChatView, { MessageProps } from "@/components/chat/ChatView";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function ChatScreen() {
   const router = useRouter();
@@ -54,7 +56,10 @@ export default function ChatScreen() {
         headerLeft={<BackButton onPress={() => router.back()} />}
         headerRight={
           <TouchableOpacity style={styles.modelsButton} onPress={() => setModalVisible(true)}>
-            <Text style={styles.modelsButtonText}>Models</Text>
+            <View style={styles.modelsButtonContent}>
+              <Text style={styles.modelsButtonText}>Modelos</Text>
+              <Ionicons name="cog-outline" size={16} color="#FFFFFF" style={styles.modelsButtonIcon} />
+            </View>
           </TouchableOpacity>
         }
       />
@@ -77,11 +82,12 @@ export default function ChatScreen() {
         selectedModel={selectedModel}
         onSelectModel={(modelName: string) => {
           setSelectedModel(modelName);
-                        setModalVisible(false);
-                      }}
+          setModalVisible(false);
+        }}
         onDownload={modelManager.handleDownload}
         onPauseDownload={modelManager.handlePauseDownload}
         onResumeDownload={modelManager.handleResumeDownload}
+        onCancelDownload={modelManager.handleCancelDownload}
         onRemoveModel={modelManager.handleRemove}
       />
     </SafeAreaView>
@@ -96,20 +102,32 @@ const styles = StyleSheet.create({
     paddingTop: "10%",
   },
   modelsButton: {
-    width: 80,
+    minWidth: 105,
     height: 40,
     paddingHorizontal: 12,
     paddingVertical: 6,
-    backgroundColor: "#2A5224",
-    borderRadius: 6,
+    backgroundColor: "#2A5A06",
+    borderRadius: 8,
     marginRight: 2,
     marginTop: 35,
-    justifyContent: "center"
+    justifyContent: "center",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  modelsButtonContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   modelsButtonText: {
     color: "#FFFFFF",
     fontSize: 14,
-    fontWeight: "600",
-    alignSelf: "center"
+    fontWeight: "bold",
+  },
+  modelsButtonIcon: {
+    marginLeft: 6,
   },
 });
