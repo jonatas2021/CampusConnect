@@ -22,7 +22,7 @@ const groups = [
     id: '2',
     title: 'Informações/Campus Igarassu',
     description: 'Grupo destinado a troca de informações.',
-    link: 'https://chat.whatsapp.com/FBmLs5301j45GUJam7rtlA',
+    link: 'https://chat.whatsapp.com/L8cBAWoXWP6IO7LT7OS6Xt',
     image: Image2,
     buttonText: 'Entrar no grupo',
 
@@ -31,10 +31,9 @@ const groups = [
     id: '3',
     title: 'DAEE',
     description: 'Grupo destinado excluisivamente aos alunos inscritos na Manutenção Acadêmica',
-    link: 'https://chat.whatsapp.com/L8cBAWoXWP6IO7LT7OS6Xt',
     image: Image3,
     buttonText: 'Entrar no grupo',
-
+    link: 'https://chat.whatsapp.com/FBmLs5301j45GUJam7rtlA',
   },
 ];
 

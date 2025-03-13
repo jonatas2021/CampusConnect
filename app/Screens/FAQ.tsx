@@ -29,7 +29,7 @@ export default function FAQScreen() {
     {
       id: 1,
       question: 'Como faço para obter uma bolsa?',
-      answer: 'Open the Tradebase app to get started and follow the steps. Tradebase doesn\'t charge a fee to create or maintain your Tradebase account.',
+      answer: 'Verifique os editais dos programas de bolsas disponíveis, preencha o formulário, envie os documentos e acompanhe os prazos.',
       expanded: false
     },
     {
@@ -49,7 +49,43 @@ export default function FAQScreen() {
       question: 'Como faço para obter meu diploma?',
       answer: 'Para solicitar seu diploma, você deve ter integralizado todas as disciplinas e requisitos do curso. Após isso, abra um requerimento junto à Coordenação de Registro Acadêmico.',
       expanded: false
-    }
+    },
+    {
+      id: 5,
+      question: 'Como faço para trancar a matrícula?',
+      answer: 'Para trancar a matrícula, você deve solicitar o trancamento junto à Coordenação do curso dentro do prazo estabelecido no calendário acadêmico.',
+      expanded: false
+    },
+    {
+      id: 6,
+      question: 'Posso trocar de turma?',
+      answer: 'Sim, é possível solicitar a troca de turma junto à Coordenação, desde que haja vaga disponível e a solicitação esteja dentro do prazo.',
+      expanded: false
+    },
+    {
+      id: 7,
+      question: 'Como faço para acessar o sistema acadêmico?',
+      answer: 'Você pode acessar o sistema acadêmico usando seu login e senha cadastrados. Em caso de problemas, entre em contato com o suporte técnico.',
+      expanded: false
+    },
+    {
+      id: 8,
+      question: 'Quando serão divulgadas as notas?',
+      answer: 'As notas serão divulgadas no sistema acadêmico após o fechamento do semestre. Fique atento ao calendário acadêmico.',
+      expanded: false
+    },
+    {
+      id: 9,
+      question: 'Como faço para obter uma declaração de matrícula?',
+      answer: 'Você pode solicitar a declaração de matrícula pelo sistema acadêmico ou diretamente na Secretaria Acadêmica.',
+      expanded: false
+    },
+    {
+      id: 10,
+      question: 'Como faço para solicitar revisão de prova?',
+      answer: 'Você deve entrar em contato com o professor responsável pela disciplina e seguir os prazos e procedimentos estabelecidos no regulamento acadêmico.',
+      expanded: false
+    }        
   ]);
 
   const toggleExpand = (id: number) => {
