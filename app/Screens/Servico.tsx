@@ -12,7 +12,7 @@ import CarouselItem02 from "@/components/svg/Servico/ServicoText";
 const carouselData = [
     {
         id: "1",
-        title: " O que é o Serviço de Orientação Psicológica?",
+        title: "O que é o Serviço de Orientação Psicológica?",
         description:
             "O serviço de orientação psicológica tem como objetivo oferecer suporte aos estudantes no enfrentamento de desafios emocionais, sociais e acadêmicos, promovendo seu bem-estar e desenvolvimento integral.",
         backgroundColor: "#DFFFD6",
@@ -25,7 +25,7 @@ const carouselData = [
         description: "",
         backgroundColor: "#DFFFD6",
         image: CarouselItem02,
-        email: "cradt@igarasu.ifpe.edu.br"
+        email: "maria.almeida@igarassu.ifpe.edu.br"
     },
 ];
 
