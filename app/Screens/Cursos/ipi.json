@@ -3,53 +3,53 @@
     "semester": "1º Semestre",
     "subjects": [
       {
-        "name": "Português instrumental",
+        "name": "Português Instrumental",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1ovHkyqfTsawY3xipxbpDAYy1dMPTiF2v/view?usp=drive_link"
       },
       {
-        "name": "Fundamentos da informática",
+        "name": "Fundamentos da Informática",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1G849oqWVUzXXAr_9ByC1iebH2UqBijSR/view?usp=drive_link"
       },
       {
-        "name": "Inglês instrumental",
+        "name": "Inglês Instrumental",
         "hours": "40h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1mRCu9GtJuDxiK2W9xbx7rVZTc82lyjpO/view?usp=drive_link"
       },
       {
-        "name": "Matemática aplicada",
+        "name": "Matemática Aplicada",
         "hours": "80h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1hbNXRDx7_zfkf7kzxs2nR5ei4L0MwIRl/view?usp=drive_link"
       },
       {
-        "name": "Rede de computadores",
+        "name": "Rede de Computadores",
         "hours": "80h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1jKsEPslIUATipOORH582tVXrGkKX-o4l/view?usp=drive_link"
       },
       {
-        "name": "Lógica de programação e estrutura de dados",
+        "name": "Lógica de Programação e Estrutura de Dados",
         "hours": "100h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/11I3lekGFaSMFcrNzpF49BPy9EED9KaDb/view?usp=drive_link"
       },
       {
-        "name": "Segurança do trabalho",
+        "name": "Segurança do Trabalho",
         "hours": "40h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1HIGvIF4QH486YdD32CKAjACAk5IUFoFD/view?usp=drive_link"
       }
     ]
   },
@@ -57,53 +57,53 @@
     "semester": "2º Semestre",
     "subjects": [
       {
-        "name": "Sistemas operacionais",
+        "name": "Sistemas Operacionais",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1yYFBj-pKrGy2Y3yFygYYljpNpIMfLEUB/view?usp=drive_link"
       },
       {
-        "name": "Segurança de Sistemas para internet",
+        "name": "Segurança de Sistemas para Internet",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/14a_7yrLZCCWBGR5Bs96tz9xNr3HXH4ql/view?usp=drive_link"
       },
       {
-        "name": "Banco de dados",
+        "name": "Banco de Dados",
         "hours": "80h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1bshAi3xb5qcESqNBXhxmxBQCQrKI-tZd/view?usp=drive_link"
       },
       {
-        "name": "Desenvolvimento para web 1",
+        "name": "Desenvolvimento para Web I",
         "hours": "80h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1qLEoptv0tAx-JIh_Yoyjyo-hfzVygA2s/view?usp=drive_link"
       },
       {
-        "name": "Ética profissional e cidadania",
+        "name": "Ética Profissional e Cidadania",
         "hours": "40h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1xgK1lq0QzIofw7y5hwsEV5Z_70yMeINm/view?usp=drive_link"
       },
       {
-        "name": "Programação Orientada a objeto",
+        "name": "Programação Orientada a Objeto",
         "hours": "60h",
-        "requirements": "Nenhum",
+        "requirements": "Lógica de Programação e Estrutura de Dados",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1O3tXA544mD22o9Obh4na3CEqN-SGjb-8/view?usp=drive_link"
       },
       {
-        "name": "Projeto e Prática",
+        "name": "Projeto e Prática I",
         "hours": "80h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1q8_ECY14_65LAXFLwqE0WY7pNNWYUt-M/view?usp=drive_link"
       }
     ]
   },
@@ -111,46 +111,46 @@
     "semester": "3º Semestre",
     "subjects": [
       {
-        "name": "Interação humano computador",
+        "name": "Interação Humano-Computador",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/16EJOGfjEt2AmDMIwF0OAWX3dewlUSyqG/view?usp=drive_link"
       },
       {
-        "name": "Engenharia de software",
+        "name": "Engenharia de Software",
         "hours": "80h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/16-_7y7dfYVBXAeEOC5IEzTbCTeR8ZO6K/view?usp=drive_link"
       },
       {
-        "name": "Implantação e Administração de serviços web",
+        "name": "Implantação e Administração de Serviços Web",
         "hours": "100h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/17asZrQJmMhz29EllCHcXFq-MSfzRWoSL/view?usp=drive_link"
       },
       {
-        "name": "Desenvolvimento para web 2",
+        "name": "Desenvolvimento para Web II",
         "hours": "80h",
-        "requirements": "Nenhum",
+        "requirements": "Desenvolvimento para Web I",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1GOzZLEvUsuEws3gubfD3kIxAfyVux4G9/view?usp=drive_link"
       },
       {
         "name": "Empreendedorismo",
         "hours": "40h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/125DIGoP8eW0tgBEX1koEdXNKePkiH423/view?usp=drive_link"
       },
       {
-        "name": "Projeto e Prática 2",
+        "name": "Projeto e Prática II",
         "hours": "100h",
-        "requirements": "Nenhum",
+        "requirements": "Projeto e Prática I",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1KRzTheD_iXCajxzFhpC5gPypCzIG33Jc/view?usp=drive_link"
       }
     ]
   }

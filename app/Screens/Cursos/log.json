@@ -1,184 +1,184 @@
 [
   {
-    "semester": "1º Semestre",
+    "semester": "1º Período",
     "subjects": [
       {
-        "name": "Introdução à logística",
+        "name": "Introdução à Logística",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1ZMr3GahPX4_MpkQMqkxvzhnA-FKxLpuU/view?usp=drive_link"
       },
       {
-        "name": "Logística reversa e meio ambiente",
+        "name": "Logística Reversa e Meio Ambiente",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1OLJ0gfdneJtHfFVr4snyKO_-79P4fLtL/view?usp=drive_link"
       },
       {
-        "name": "Matemática aplicada",
+        "name": "Matemática Básica",
         "hours": "40h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1UhG3Qz0VxdENazULmpc0FalBEoDEdGVq/view?usp=drive_link"
       },
       {
-        "name": "Ética profissional",
+        "name": "Ética Profissional",
         "hours": "40h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1aUZQA95rYLs9H7vKmNeINKlQ1B5Ln2sD/view?usp=drive_link"
       },
       {
         "name": "Introdução à Administração",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/15ffOrgzzBm_ib0FCTXKFDan3l0-uIq2d/view?usp=drive_link"
       },
       {
-        "name": "Informática básica 1",
+        "name": "Informática Básica I",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1HEtkqMtzeAO4WK7dUVVWS7ecoJf8xP6b/view?usp=drive_link"
       },
       {
-        "name": "Português básico",
+        "name": "Português Aplicado",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1z2b_kK4CNlm7h3RcZxxPNBDL3t511S21/view?usp=drive_link"
       },
       {
-        "name": "Metodologia científica",
+        "name": "Metodologia Científica",
         "hours": "40h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1TO-gQU4fXCXUKxj8FEetwoMUg5CNEzFi/view?usp=drive_link"
       }
     ]
   },
   {
-    "semester": "2º Semestre",
+    "semester": "2º Período",
     "subjects": [
       {
-        "name": "Gestão de pessoas",
+        "name": "Gestão de Pessoas",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1TMmaFi8sKpiyAf9da2Im7yu6de9LJLJc/view?usp=drive_link"
       },
       {
         "name": "Estatística",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1jj5mL7Q8O6H1FO2x7hGSuFJMYPzc2pVO/view?usp=drive_link"
       },
       {
-        "name": "Gerenciamento e Esconde Sistemas Logísticos",
-        "hours": "60h",
+        "name": "Gerenciamento e Economia de Sistemas Logísticos",
+        "hours": "40h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1GeUUAsRYFUcXeG7O9AYt2o8D7arSBDaH/view?usp=drive_link"
       },
       {
         "name": "Logística de Transporte e Distribuição",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/15g6TqLtpUTPUPe8vVtTLxDu0FGlAmV83/view?usp=drive_link"
       },
       {
         "name": "Logística de Armazenagem",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1efQjm3_QiObeA2fPNLI218yKbJhdujT7/view?usp=drive_link"
       },
       {
-        "name": "Comércio e Relações internacionais",
+        "name": "Comércio e Relações Internacionais",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1TCwMe70F42h_ET8FvTXy8JHIDpBQUctA/view?usp=drive_link"
       },
       {
-        "name": "Lefustalacao6e tributação em logística",
+        "name": "Legislação e Tributação em Logística",
         "hours": "40h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1CFn6hK14pvyjoe-6_-PbDsBF3oJHWCci/view?usp=drive_link"
       },
       {
-        "name": "Inglês instrumental 1",
+        "name": "Inglês Instrumental I",
         "hours": "40h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/12315RUBC0SfiiGFaov7-rzBtW3aR0yJV/view?usp=drive_link"
       }
     ]
   },
   {
-    "semester": "3º Semestre",
+    "semester": "3º Período",
     "subjects": [
       {
-        "name": "Gestão de cadeia de suprimentos",
+        "name": "Gestão da Cadeia de Suprimentos",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1hyl8xXBkf0lYDHBzwkwrSCLUp4bqjIwX/view?usp=drive_link"
       },
       {
-        "name": "Gestão da qualidade",
+        "name": "Gestão da Qualidade",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1BrhATE9LM7IsCxBuYzY2pisPlDw03tN-/view?usp=drive_link"
       },
       {
-        "name": "Higiene e Segurança de Trabalho",
+        "name": "Higiene e Segurança do Trabalho",
         "hours": "40h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1pMOTchovyYWLoWGA9nPgUvYF4IuaAHqH/view?usp=drive_link"
       },
       {
-        "name": "Gestão de produção",
+        "name": "Gestão da Produção",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1Mc0hq6HdtpKrRidaKdwGBsUC5-Kp6sT9/view?usp=drive_link"
       },
       {
-        "name": "Gestão de Materiais, Estoque e Compras",
+        "name": "Gestão de Materiais, Estoques e Compras",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1QHWbUQE9PCSgydZX7wBYDoF6_VWRkxDq/view?usp=drive_link"
       },
       {
         "name": "Custos Logísticos",
         "hours": "40h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1gcW-exfUzt2ThNqwhZ1pD9HTeQG6o-EK/view?usp=drive_link"
       },
       {
         "name": "Tecnologia e Sistemas de Informação Logística",
         "hours": "40h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1fVrfgwc1-1L1-81byvCn37XrHapXWgzX/view?usp=drive_link"
       },
       {
-        "name": "Inglês instrumental 2",
+        "name": "Inglês Instrumental II",
         "hours": "40h",
-        "requirements": "Nenhum",
+        "requirements": "Inglês Instrumental I",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1xwfTRJrkzYlGVn2-7r1V8MN07YCtSSoA/view?usp=drive_link"
       }
     ]
   }
