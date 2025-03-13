@@ -3,18 +3,53 @@
     "semester": "1º Semestre",
     "subjects": [
       {
-        "name": "Comunicação Empresarial",
-        "hours": "40h",
+        "name": "Português instrumental",
+        "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": "https://drive.google.com/file/d/1SJf9atmc77SySJ7VR3IH-m0D0V8hnhx_/view?usp=drive_link"
+        "syllabusLink": ""
       },
       {
-        "name": "Ética Profissional em Administração",
+        "name": "Fundamentos da informática",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Inglês instrumental",
         "hours": "40h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": "https://drive.google.com/file/d/1SJf9atmc77SySJ7VR3IH-m0D0V8hnhx_/view?usp=drive_link"
+        "syllabusLink": ""
+      },
+      {
+        "name": "Matemática aplicada",
+        "hours": "80h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Rede de computadores",
+        "hours": "80h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Lógica de programação e estrutura de dados",
+        "hours": "100h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Segurança do trabalho",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
       }
     ]
   },
@@ -22,18 +57,100 @@
     "semester": "2º Semestre",
     "subjects": [
       {
-        "name": "Economia Brasileira",
+        "name": "Sistemas operacionais",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
+        "syllabusLink": ""
       },
       {
-        "name": "Estatística Aplicada",
+        "name": "Segurança de Sistemas para internet",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
+        "syllabusLink": ""
+      },
+      {
+        "name": "Banco de dados",
+        "hours": "80h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Desenvolvimento para web 1",
+        "hours": "80h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Ética profissional e cidadania",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Programação Orientada a objeto",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Projeto e Prática",
+        "hours": "80h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      }
+    ]
+  },
+  {
+    "semester": "3º Semestre",
+    "subjects": [
+      {
+        "name": "Interação humano computador",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Engenharia de software",
+        "hours": "80h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Implantação e Administração de serviços web",
+        "hours": "100h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Desenvolvimento para web 2",
+        "hours": "80h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Empreendedorismo",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Projeto e Prática 2",
+        "hours": "100h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
       }
     ]
   }

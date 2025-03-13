@@ -1,39 +1,278 @@
 [
   {
-    "semester": "1º Semestre",
+    "period": "1º Período",
     "subjects": [
       {
-        "name": "Comunicação Empresarial",
-        "hours": "40h",
+        "name": "Língua Portuguesa Aplicada",
+        "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": "https://drive.google.com/file/d/1SJf9atmc77SySJ7VR3IH-m0D0V8hnhx_/view?usp=drive_link"
+        "syllabusLink": "https://drive.google.com/file/d/1p128EC2MmlLVuJ4IjICDHKwfTXVrKB4f/view?usp=drive_link"
       },
       {
-        "name": "Ética Profissional em Administração",
+        "name": "Fundamentos da Economia",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/183i4OrHHaf_xxrrDf_VexKDwgiTmOXW5/view?usp=drive_link"
+      },
+      {
+        "name": "Fundamentos da Administração",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1fRbemiVOUnyXGs7wuf47JB1KRTov217m/view?usp=drive_link"
+      },
+      {
+        "name": "Ética, Cidadania e Sustentabilidade",
         "hours": "40h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": "https://drive.google.com/file/d/1SJf9atmc77SySJ7VR3IH-m0D0V8hnhx_/view?usp=drive_link"
+        "syllabusLink": "https://drive.google.com/file/d/1zEzYR3XSxMFNCHBlOdrenXLb00DcI9VJ/view?usp=drive_link"
+      },
+      {
+        "name": "Matemática Aplicada",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1IgrsMH_fPBoYdtgSIe1B0ZWWPEcvGrC-/view?usp=drive_link"
+      },
+      {
+        "name": "Introdução à Gestão da Qualidade",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1ItBiXnH68VTyjQHY_pAXT5RpRN0qfJ8k/view?usp=drive_link"
+      },
+      {
+        "name": "Informática",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/12LyI7IE2bjsvIGK8rv6BOetLjzq7wDoG/view?usp=drive_link"
       }
     ]
   },
   {
-    "semester": "2º Semestre",
+    "period": "2º Período",
     "subjects": [
       {
-        "name": "Economia Brasileira",
+        "name": "Metodologia Científica",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
+        "syllabusLink": "https://drive.google.com/file/d/1JpAKqDrtUaD7GQ7a0x03fjGeftyY4s40/view?usp=drive_link"
       },
       {
-        "name": "Estatística Aplicada",
+        "name": "Gestão de Pessoas",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
+        "syllabusLink": "https://drive.google.com/file/d/1EVJiG0LfvoY7sz3MkcGOgqvUrVBqTSoD/view?usp=drive_link"
+      },
+      {
+        "name": "Estatística I",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1C24FNYBJVL5DROqDrmaq7ba1XLAPjbAC/view?usp=drive_link"
+      },
+      {
+        "name": "Engenharia Econômica",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/14tlZQea5juNI-P7qDVccjK3uePYWok4z/view?usp=drive_link"
+      },
+      {
+        "name": "Gestão de Materiais e Logística",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1MQ21Jy2Fa7n5gwr7x1niUBbLd-woCp25/view?usp=drive_link"
+      },
+      {
+        "name": "Gestão Ambiental",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1V9QFGVIRBYG2RVFcI6wmgbddlDqqL1lr/view?usp=drive_link"
+      },
+      {
+        "name": "Ferramentas da Qualidade",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1lMGR86y8-MRPweVDkMNVGRsKQEzKlgzD/view?usp=drive_link"
+      },
+      {
+        "name": "Projeto Integrador I",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/16SYcpylfT89DOPvjMyzRi6QWcfQIb5Hm/view?usp=drive_link"
+      }
+    ]
+  },
+  {
+    "period": "3º Período",
+    "subjects": [
+      {
+        "name": "Gestão da Produção",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/15p3Jw7PISap-goTemLzA3z3yjFDyojxg/view?usp=drive_link"
+      },
+      {
+        "name": "Gestão do Processo",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/14tPFWUebKxLYzBc3j7_N9NldwyQNKcXZ/view?usp=drive_link"
+      },
+      {
+        "name": "Estatística II",
+        "hours": "60h",
+        "requirements": "Estatística I",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1c_G1kV9UBl-YGF_tPPH2Uz6AJ4duePIA/view?usp=drive_link"
+      },
+      {
+        "name": "Gestão de Desenvolvimento do Produto",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1dNDbDQyHzmTGQgNG8OfNzZX2_AulM2dP/view?usp=drive_link"
+      },
+      {
+        "name": "Gestão da Qualidade em Serviços",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1hQWb6-69h_TZmHJ4vBwIG1TuWIyS0OMr/view?usp=drive_link"
+      },
+      {
+        "name": "Tecnologia e Sistemas de Informação Aplicados",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1_Ckbft-7mBs6qldO9wJQixqzYThNYwgY/view?usp=drive_link"
+      },
+      {
+        "name": "Projeto Integrador II",
+        "hours": "60h",
+        "requirements": "Projeto Integrador I",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1_EtWUcoKAypNUxv8JtS_FRhCaHVU1Ejy/view?usp=drive_link"
+      }
+    ]
+  },
+  {
+    "period": "4º Período",
+    "subjects": [
+      {
+        "name": "Normatização e Certificação da Qualidade",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1Klj1I_BUGLjceOc963NjnICJoacv0mvR/view?usp=drive_link"
+      },
+      {
+        "name": "Metrologia",
+        "hours": "80h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1C8O0g25xe47NfvvPNcxRQoF5JHrphX0a/view?usp=drive_link"
+      },
+      {
+        "name": "Planejamento Estratégico",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1CMj8BJOANG8t_6POYIKQElFdwaDhIL0O/view?usp=drive_link"
+      },
+      {
+        "name": "Controle Estatístico da Qualidade",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1PfL76xfN0BvDLHs7mrpX_b-8XGpye4I7/view?usp=drive_link"
+      },
+      {
+        "name": "Gestão da Inovação",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1PfL76xfN0BvDLHs7mrpX_b-8XGpye4I7/view?usp=drive_link"
+      },
+      {
+        "name": "Custos de Produção",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1ZPNWle14AQ_7nuO-Ylp1qn9SmuyvWPKF/view?usp=drive_link"
+      },
+      {
+        "name": "Gestão Estratégica da Qualidade",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1c0lDpiybhlkgCvocQfYHh30HWnhI8vJV/view?usp=drive_link"
+      },
+      {
+        "name": "Metodologia da Pesquisa I",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1mtlxP7bhstKhZ-ExjXHMYI4sM_WF1YbD/view?usp=drive_link"
+      }
+    ]
+  },
+  {
+    "period": "5º Período",
+    "subjects": [
+      {
+        "name": "Ergonomia, Higiene e Segurança do Trabalho",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1Y5wux0qkkWnXGNUdVvWMVWS0eBhKr1cJ/view?usp=drive_link"
+      },
+      {
+        "name": "Gestão de Projetos",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1uS6g7A-JusxXglDeu6wyH2fbd4zXpuCS/view?usp=drive_link"
+      },
+      {
+        "name": "Auditoria da Qualidade",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1gKx5EdNnJVT0d-U5NN405Vg_8_3wFKAf/view?usp=drive_link"
+      },
+      {
+        "name": "Noções Gerais do Direito",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1VWs1UMBjZxOWgZeK3EGIni36bMQCaPU5/view?usp=drive_link"
+      },
+      {
+        "name": "Empreendedorismo",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/12N9iNq9UUJLk9-gFo4EYMkAVDuqpp1Eo/view?usp=drive_link"
+      },
+      {
+        "name": "Metodologia da Pesquisa II",
+        "hours": "40h",
+        "requirements": "Metodologia da Pesquisa I",
+        "type": "OBG",
+        "syllabusLink": "https://drive.google.com/file/d/1rkctHR4bAkFYcaoKU480WM4wh7f9j5iF/view?usp=drive_link"
       }
     ]
   }

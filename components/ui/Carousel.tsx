@@ -174,22 +174,18 @@ const styles = StyleSheet.create({
   },
   carouselItem: {
     width: screenWidth,
-    flex: 1,
     alignItems: "center",
     justifyContent: "center",
     padding: "5%",
   },
   imageContainer: {
     width: "100%",
-    height: undefined,  // Remova altura fixa
-    aspectRatio: 1,     // Defina o aspecto como a proporção desejada
     justifyContent: 'center', // Centraliza a imagem verticalmente
     alignItems: 'center',  // Centraliza a imagem horizontalmente
-    overflow: 'hidden',  // Esconde qualquer parte da imagem que ultrapasse
   },
   image: {
     width: "100%",  // A imagem ocupará toda a largura do contêiner
-    height: undefined, // A altura será ajustada proporcionalmente
+    height: "50%", // Ajuste a altura conforme necessário
     resizeMode: "contain",  // A imagem será redimensionada proporcionalmente
   },  
   title: {
@@ -200,7 +196,7 @@ const styles = StyleSheet.create({
     marginBottom: "2%",
   },
   description: {
-    fontSize: RFValue(12),
+    fontSize: RFValue(14),
     textAlign: "left",
     color: "#3C3939",
     marginBottom: "30%",

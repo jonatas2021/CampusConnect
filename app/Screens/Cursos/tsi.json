@@ -75,7 +75,7 @@
         "hours": "60h",
         "requirements": "Programação Imperativa",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1gG8YvxUt-arYjyRhABjIjviJ8Ui6PQgZ/view?usp=drive_link"
       },
       {
         "name": "Design de Interface",
@@ -103,7 +103,7 @@
         "hours": "60h",
         "requirements": "Redes de Computadores",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/1avDWbKz1Z1tuCuXcE3xyxmLRUnIpMt1h/view?usp=drive_link"
       },
       {
         "name": "Processos Psicológicos e Interação Social",
@@ -117,7 +117,7 @@
         "hours": "30h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": ""
+        "syllabusLink": "https://drive.google.com/file/d/13AQK5Dl7AiyJ0TbXAjspsS0eGNnzr_j0/view?usp=drive_link"
       }
     ]
   },
@@ -189,8 +189,8 @@
         "name": "Administração de Sistemas Operacionais",
         "hours": "60h",
         "requirements": "Nenhum",
-        "type": "OBG",
-        "syllabusLink": ""
+        "type": "OPT",
+        "syllabusLink": "https://drive.google.com/file/d/1EH_9H_LvDobYCwV13Bk2NYJ12yxPMGve/view?usp=drive_link"
       },
       {
         "name": "Algoritmos e Estruturas de Dados",
@@ -203,8 +203,8 @@
         "name": "Desenvolvimento para Dispositivos Móveis",
         "hours": "60h",
         "requirements": "Programação Imperativa",
-        "type": "OBG",
-        "syllabusLink": ""
+        "type": "OPT",
+        "syllabusLink": "https://drive.google.com/file/d/1gOk8Fe7Q3b7hPjIS84OHQCS1s-RWkMSt/view?usp=drive_link"
       },
       {
         "name": "Engenharia de Software",
@@ -252,8 +252,8 @@
         "name": "Tecnologias Assistivas",
         "hours": "60h",
         "requirements": "Nenhum",
-        "type": "OBG",
-        "syllabusLink": ""
+        "type": "OPT",
+        "syllabusLink": "https://drive.google.com/file/d/1g039mcOStEmY8vp8g4418piBvKDTABVQ/view?usp=drive_link"
       }
     ]
   },
@@ -264,8 +264,8 @@
         "name": "Administração Avançada de Sistemas Operacionais",
         "hours": "60h",
         "requirements": "Nenhum",
-        "type": "OBG",
-        "syllabusLink": ""
+        "type": "OPT",
+        "syllabusLink": "https://drive.google.com/file/d/1uGB5hwv-xvXtjTv6bC52qfv9c4dJTWUF/view?usp=drive_link"
       },
       {
         "name": "Empreendedorismo e Inovação",
@@ -278,8 +278,8 @@
         "name": "Gestão de Projetos",
         "hours": "60h",
         "requirements": "Nenhum",
-        "type": "OBG",
-        "syllabusLink": ""
+        "type": "OPT",
+        "syllabusLink": "https://drive.google.com/file/d/1RQWDJiJvJqjDscoBB6meKFvZaPKAOYH0/view?usp=drive_link"
       },
       {
         "name": "Inglês V",
@@ -292,8 +292,8 @@
         "name": "Inteligência Artificial",
         "hours": "60h",
         "requirements": "Algoritmos e Estruturas de Dados",
-        "type": "OBG",
-        "syllabusLink": ""
+        "type": "OPT",
+        "syllabusLink": "https://drive.google.com/file/d/1zzPiO_9HaO2lXVtrWwfpgcMPGPga8zmr/view?usp=drive_link"
       },
       {
         "name": "Projeto de Desenvolvimento IV",
@@ -313,15 +313,15 @@
         "name": "Tópicos Avançados em Análise e Processamento de Dados",
         "hours": "60h",
         "requirements": "Nenhum",
-        "type": "OBG",
-        "syllabusLink": ""
+        "type": "OPT",
+        "syllabusLink": "https://drive.google.com/file/d/1zzPiO_9HaO2lXVtrWwfpgcMPGPga8zmr/view?usp=drive_link"
       },
       {
         "name": "Tópicos Avançados em Bancos de Dados",
         "hours": "60h",
         "requirements": "Bancos de Dados",
-        "type": "OBG",
-        "syllabusLink": ""
+        "type": "OPT",
+        "syllabusLink": "https://drive.google.com/file/d/1HX84kRpqSil2kpa2wBSd3Q20FZrLhauN/view?usp=drive_link"
       }
     ]
   },
@@ -332,15 +332,15 @@
         "name": "Internet das Coisas",
         "hours": "60h",
         "requirements": "Nenhum",
-        "type": "OBG",
-        "syllabusLink": ""
+        "type": "OPT",
+        "syllabusLink": "https://drive.google.com/file/d/11WNbeNLAoM3sG6iYGmvcHIBxuu9xCgUI/view?usp=drive_link"
       },
       {
         "name": "Libras",
         "hours": "30h",
         "requirements": "Nenhum",
-        "type": "OBG",
-        "syllabusLink": ""
+        "type": "OPT",
+        "syllabusLink": "https://drive.google.com/file/d/1pf8Z7aoFXE24OffKgzLJEkr3hz6tnHNn/view?usp=drive_link"
       },
       {
         "name": "Prática Profissional",
@@ -353,7 +353,7 @@
         "name": "Tópicos Avançados em Desenvolvimento Web",
         "hours": "60h",
         "requirements": "Nenhum",
-        "type": "OBG",
+        "type": "OPT",
         "syllabusLink": "https://drive.google.com/file/d/1D018BWjV8lxW30BJTA87uHqq9oVkka76/view?usp=drive_link"
       },
       {

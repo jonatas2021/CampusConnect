@@ -3,18 +3,60 @@
     "semester": "1º Semestre",
     "subjects": [
       {
-        "name": "Comunicação Empresarial",
-        "hours": "40h",
+        "name": "Introdução à logística",
+        "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": "https://drive.google.com/file/d/1SJf9atmc77SySJ7VR3IH-m0D0V8hnhx_/view?usp=drive_link"
+        "syllabusLink": ""
       },
       {
-        "name": "Ética Profissional em Administração",
+        "name": "Logística reversa e meio ambiente",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Matemática aplicada",
         "hours": "40h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": "https://drive.google.com/file/d/1SJf9atmc77SySJ7VR3IH-m0D0V8hnhx_/view?usp=drive_link"
+        "syllabusLink": ""
+      },
+      {
+        "name": "Ética profissional",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Introdução à Administração",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Informática básica 1",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Português básico",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Metodologia científica",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
       }
     ]
   },
@@ -22,18 +64,121 @@
     "semester": "2º Semestre",
     "subjects": [
       {
-        "name": "Economia Brasileira",
+        "name": "Gestão de pessoas",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
+        "syllabusLink": ""
       },
       {
-        "name": "Estatística Aplicada",
+        "name": "Estatística",
         "hours": "60h",
         "requirements": "Nenhum",
         "type": "OBG",
-        "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
+        "syllabusLink": ""
+      },
+      {
+        "name": "Gerenciamento e Esconde Sistemas Logísticos",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Logística de Transporte e Distribuição",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Logística de Armazenagem",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Comércio e Relações internacionais",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Lefustalacao6e tributação em logística",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Inglês instrumental 1",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      }
+    ]
+  },
+  {
+    "semester": "3º Semestre",
+    "subjects": [
+      {
+        "name": "Gestão de cadeia de suprimentos",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Gestão da qualidade",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Higiene e Segurança de Trabalho",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Gestão de produção",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Gestão de Materiais, Estoque e Compras",
+        "hours": "60h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Custos Logísticos",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Tecnologia e Sistemas de Informação Logística",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
+      },
+      {
+        "name": "Inglês instrumental 2",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OBG",
+        "syllabusLink": ""
       }
     ]
   }

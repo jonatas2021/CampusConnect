@@ -52,14 +52,14 @@
         {
           "name": "Economia Brasileira",
           "hours": "60h",
-          "requirements": "Nenhum",
+          "requirements": "Introdução à Economia",
           "type": "OBG",
           "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
         },
         {
           "name": "Estatística Aplicada",
           "hours": "60h",
-          "requirements": "Nenhum",
+          "requirements": "Matemática Aplicada à Administração",
           "type": "OBG",
           "syllabusLink": "https://drive.google.com/file/d/1dLJoj2QklvwHFZuCa-w--GvUeW-OIWLN/view?usp=drive_link"
         },
@@ -106,7 +106,7 @@
         {
           "name": "Direito Empresarial e Trabalhista",
           "hours": "60h",
-          "requirements": "Nenhum",
+          "requirements": "Noções de Direito Publico e Privado",
           "type": "OBG",
           "syllabusLink": "https://drive.google.com/file/d/18B1PV6tcw_xC61PaQOX-9TMFTcWOcmeA/view?usp=drive_link"
         },
@@ -130,6 +130,241 @@
           "requirements": "Nenhum",
           "type": "OBG",
           "syllabusLink": "https://drive.google.com/file/d/18B1PV6tcw_xC61PaQOX-9TMFTcWOcmeA/view?usp=drive_link"
+        }
+      ]
+    },
+    {
+      "semester": "4º Semestre",
+      "subjects": [
+        {
+          "name": "Contabilidade e gerenciamento de custos",
+          "hours": "60h",
+          "requirements": "Introdução à Contabilidade",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1416QgTlXWe7byheg_iMQib6uNcnegc6u/view?usp=drive_link"
+        },
+        {
+          "name": "Empreendedorismo",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1F_q74y95xyoa5Uok7t5m77kKwgt07Tzk/view?usp=drive_link"
+        },
+        {
+          "name": "Finanças 1",
+          "hours": "60h",
+          "requirements": "Matemática Financeira",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1LzGJhTQZcdXkXdufyr-vFkBiQxBEDtC5/view?usp=drive_link"
+        },
+        {
+          "name": "Marketing 1",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1OjF2RiqIvIEcLxDBOPe1RWXN5-dmgxLT/view?usp=drive_link"
+        },
+        {
+          "name": "Terceiro setor",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1IdulRqKftLTtHkn_KdZ45rFuqGwFjhvg/view?usp=drive_link"
+        },
+        {
+          "name": "Tecnologia da informação",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1cQeaPWe-7i-l27HYS1s98tmMJmgfYaag/view?usp=drive_link"
+        }
+      ]
+    },
+    {
+      "semester": "5º Semestre",
+      "subjects": [
+        {
+          "name": "Administração da produção e Operações 1",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1ebw0ki3fRxRSiPTfjem_r3-kgXdMqrlZ/view?usp=drive_link"
+        },
+        {
+          "name": "Finanças 2",
+          "hours": "60h",
+          "requirements": "Finanças 1",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1ytfjx_wGJTsh8XD20WEXbo9epvXfV95v/view?usp=drive_link"
+        },
+        {
+          "name": "Gestão da qualidade",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1F91UjP_N5hm36YJ2uZlMMYk_DteU73dv/view?usp=drive_link"
+        },
+        {
+          "name": "Gestão de pessoas 2",
+          "hours": "60h",
+          "requirements": "Gestão de pessoas 1",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/118kVa0UTz3lUN2LsL9QniGrq9etHwLNi/view?usp=drive_link"
+        },
+        {
+          "name": "Marketing 2",
+          "hours": "60h",
+          "requirements": "Marketing 1",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1f6Z3b2EX1KRU0FCYY8svnSqdb4qO_ttv/view?usp=drive_link"
+        },
+        {
+          "name": "Processo Gerencial",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1T4zDmiBRh5WnFjVnuywav7CCExEWO1Vd/view?usp=drive_link"
+        }
+      ]
+    },
+    {
+      "semester": "6º Semestre",
+      "subjects": [
+        {
+          "name": "Administração da produção 2",
+          "hours": "60h",
+          "requirements": "Administração de produção 1",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1vC1d5bnniCdpp4KAb3SHHZYcaKMieOy_/view?usp=drive_link"
+        },
+        {
+          "name": "Análise dos desenvolvimentos financeiros",
+          "hours": "60h",
+          "requirements": "Introdução à Contabilidade",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1olFDGx8zarL3ej4CH7cKR0DqfGoNewde/view?usp=drive_link"
+        },
+        {
+          "name": "Gestão de Projetos",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/18wBzGZeOafTs2sqD13pkeXzxIps2_WY1/view?usp=drive_link"
+        },
+        {
+          "name": "Gestão de inovação Tecnológica",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1WBarjdsgSbZFBWdxsrnyC4ghW7EA8kW4/view?usp=drive_link"
+        },
+        {
+          "name": "Logística Empresarial",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1yMBafXhj_ioLwuyqqyYYuQkrLEtad-JA/view?usp=drive_link"
+        },
+        {
+          "name": "Pesquisa Operacional",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1ya7Qzf7v9Ldh8Mc3tWUxedCYk2OuMtoH/view?usp=drive_link"
+        }
+      ]
+    },
+    {
+      "semester": "7º Semestre",
+      "subjects": [
+        {
+          "name": "Administração Estratégica",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1Fh4l7rOxHRFStBnvQBALZ1wibt1HL3bB/view?usp=drive_link"
+        },
+        {
+          "name": "Administração de Materiais",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1Y0qoljB7qDSPrWZfxgxMSBFeiodHzviO/view?usp=drive_link"
+        },
+        {
+          "name": "Administração Pública",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1xFvFsX07aUDFO3M3Jz1wYJO5SwaZfc4b/view?usp=drive_link"
+        },
+        {
+          "name": "Gestão Ambiental e Sustentabilidade",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1m5_08m2hIdUbOGujZHG6YqWkT3ixkzaJ/view?usp=drive_link"
+        },
+        {
+          "name": "Liderança",
+          "hours": "40h",
+          "requirements": "Introdução à Psicologia",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1uVXQ5fJwSSBVCLxodg8ZYuNtn1p1ZlfE/view?usp=drive_link"
+        },
+        {
+          "name": "Metodologia de Pesquisa I",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1mG0XdUrZpbYY2Tnzm8ZM8udi2mOmuFqY/view?usp=drive_link"
+        }
+      ]
+    },    
+    {
+      "semester": "8º Semestre",
+      "subjects": [
+        {
+          "name": "Gestão de micro e pequenas empresas",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1T6i0gjDm5ghd5-grra5YS_r2Dp4bOZQ5/view?usp=drive_link"
+        },
+        {
+          "name": "Orçamento e Finanças Públicas",
+          "hours": "40h",
+          "requirements": "Administração Pública",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1l2SpJyi7FewITn6YDr0BmU9roKHmnHdU/view?usp=drive_link"
+        },
+        {
+          "name": "Mercado de Capitais",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": ""
+        },
+        {
+          "name": "Metodologia de pesquisa 2",
+          "hours": "60h",
+          "requirements": "Nenhum",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1ehJOoHxziI6rggkqlqbREbYO6sWdyBMu/view?usp=drive_link"
+        },
+        {
+          "name": "Simulações e Estratégias Empresariais",
+          "hours": "60h",
+          "requirements": "Introdução à Psicologia",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1p13klnr2tlfdXxMAaMAlsC0MA-iuWq3G/view?usp=drive_link"
+        },
+        {
+          "name": "Sistemas de Informação da Informação",
+          "hours": "40h",
+          "requirements": "Tecnologia da Informação",
+          "type": "OBG",
+          "syllabusLink": "https://drive.google.com/file/d/1VZbIFmnR7tHAo_tsAX4Ff2kQGpzZjrq8/view?usp=drive_link"
         }
       ]
     }

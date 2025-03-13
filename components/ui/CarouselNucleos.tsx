@@ -191,8 +191,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "50%", // Ajuste a altura conforme necessário
     resizeMode: "contain",
-    marginLeft: "auto", // Isso força a centralização
-    marginRight: "auto", // Isso força a centralização
   },
   textContainer: {
     alignItems: 'center', // Centraliza o texto
@@ -205,7 +203,7 @@ const styles = StyleSheet.create({
     marginBottom: "2%",
   },
   description: {
-    fontSize: RFValue(12),
+    fontSize: RFValue(14),
     color: "#3C3939",
     marginBottom: "30%",
   },

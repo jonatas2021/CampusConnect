@@ -33,7 +33,7 @@ const Adm1 = () => {
 
             <TouchableOpacity style={styles.button} 
               activeOpacity={0.5} // Reduz a opacidade ao pressionar
-              onPress={() => ToastAndroid.show("A Matriz Curricular do curso ainda não está disponível para visualização.", ToastAndroid.SHORT)}>
+                onPress={() => Linking.openURL("https://drive.google.com/file/d/1XTHFeENuHZmkYBg11IMG8FpmYwo5nH-n/view?usp=drive_link")}>
                 <Text style={styles.buttonText}>Matriz Curriclar do curso</Text>
             </TouchableOpacity>
             </View>
