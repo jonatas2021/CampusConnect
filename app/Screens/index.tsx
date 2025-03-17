@@ -5,46 +5,15 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from "@react-navigation/native";
 import { useRouter } from "expo-router";
 
-// Defina o tipo Notification
-interface Notification {
-  id: string;
-  title: string;
-  description: string;
-  link: string;
-  note: string;
-  read: boolean;
-}
 
 export default function HomeScreen() {
   const [name, setName] = useState('Usuário');
-  const [notifications, setNotifications] = useState<Notification[]>([]);
   const router = useRouter();
 
-  // Função para salvar as notificações atualizadas
-  const saveNotifications = async (updatedNotifications: Notification[]) => {
-    try {
-      await AsyncStorage.setItem('notifications', JSON.stringify(updatedNotifications));
-      console.log('Notificações salvas:', updatedNotifications);
-    } catch (error) {
-      console.error('Erro ao salvar notificações:', error);
-    }
-  };
-
-  // Função para carregar notificações da AsyncStorage
-  const loadNotificationsData = async () => {
-    const storedNotifications = await AsyncStorage.getItem('notifications');
-    if (storedNotifications) {
-      const parsedNotifications = JSON.parse(storedNotifications);
-      setNotifications(parsedNotifications);
-    }
-  };
 
   // Carrega notificações ao focar na tela
   useFocusEffect(
     useCallback(() => {
-      // Carrega as notificações sempre que a tela for acessada
-      loadNotificationsData();  // Usa a função renomeada
-
       // Carrega o nome do usuário da AsyncStorage
       const fetchName = async () => {
         const storedName = await AsyncStorage.getItem('userName');
@@ -96,22 +65,6 @@ export default function HomeScreen() {
         { text: "Sim", onPress: () => router.push("/Screens/Hello") },
       ]
     );
-  };
-
-  // Marcar como lida e abrir link
-  const handleNotificationPress = async (id: string, link?: string) => {
-    const updatedNotifications = notifications.map((notification) =>
-      notification.id === id ? { ...notification, read: true } : notification
-    );
-
-    setNotifications(updatedNotifications);
-    saveNotifications(updatedNotifications); // Salva as notificações atualizadas
-
-    if (link) {
-      Linking.openURL(link); // Abre o link da notificação
-    }
-
-    router.push('/Screens/Notifications'); // Redireciona para a tela de notificações
   };
 
   const menuItems = [
@@ -230,12 +183,6 @@ export default function HomeScreen() {
           {getGreeting()}, {name}!
         </Text>
         <Pressable onPress={() => router.push('/Screens/Notifications')} style={styles.notificationIcon}>
-          <MaterialCommunityIcons
-            name={notifications.some(notification => !notification.read) ? "bell" : "bell-outline"}
-            size={28}
-            color="#000"
-          />
-          {notifications.some(notification => !notification.read) && <View style={styles.notificationBadge} />}
         </Pressable>
       </View>
 
