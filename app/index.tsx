@@ -1,27 +1,105 @@
 import React, { useEffect } from 'react';
-import { View, StyleSheet, SafeAreaView, Image } from 'react-native';
+import { View, StyleSheet, SafeAreaView, Image, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import messaging from '@react-native-firebase/messaging';
+import { initializeApp, getApps } from '@react-native-firebase/app';
+
+if (getApps().length === 0) {
+  initializeApp(firebaseConfig);
+  console.log('Firebase inicializado');
+
+}
+import firebaseConfig from './firebaseConfig'; // Importação da configuração do Firebase
 
 const LoadingScreen = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const checkStoredName = async () => {
-      setTimeout(async () => {
-        const storedName = await AsyncStorage.getItem('userName');
+    // ✅ Inicializa o Firebase
+    const initializeFirebase = async () => {
+      try {
+        initializeApp(firebaseConfig); // Inicializa o Firebase com a configuração
+      } catch (error) {
+        console.error('Erro ao inicializar o Firebase:', error);
+      }
 
-        if (storedName) {
-          // Se já tiver um nome salvo, vai direto para a tela principal
-          router.push('/Screens');
+      // ✅ Solicita permissão e captura o token
+      const requestUserPermission = async () => {
+        console.log('Solicitando permissão...');
+        const authStatus = await messaging().requestPermission();
+        const enabled =
+          authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
+          authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+          console.log('Status da permissão:', authStatus);
+      
+        if (enabled) {
+          console.log('Permissão concedida:', authStatus);
+      
+          try {
+            const token = await messaging().getToken();
+            console.log('FCM Token:', token);
+            await AsyncStorage.setItem('fcmToken', token);
+          } catch (error) {
+            console.error('Erro ao obter o token FCM:', error);
+          }
         } else {
-          // Se não tiver nome salvo, redireciona para a tela de cadastro do nome
-          router.push('/Screens/Carousel');
+          console.log('Permissão não concedida');
         }
-      }, 3000); // Aguarda 3 segundos antes de verificar
+      };
+      
+
+      // Solicita permissão e obtém o token
+      await requestUserPermission();
+
+      // Escuta notificações em foreground
+      const unsubscribeForeground = messaging().onMessage(async remoteMessage => {
+        Alert.alert(
+          remoteMessage.notification?.title || 'Nova Notificação',
+          remoteMessage.notification?.body || ''
+        );
+      });
+
+      // Configura para receber notificações em background
+      messaging().setBackgroundMessageHandler(async remoteMessage => {
+        console.log('Notificação recebida em segundo plano:', remoteMessage);
+      });
+
+      // Escuta atualização de token (se o token for renovado)
+      const unsubscribeTokenRefresh = messaging().onTokenRefresh(async token => {
+        console.log('Token atualizado:', token);
+        await AsyncStorage.setItem('fcmToken', token);
+      });
+
+      // Limpa os listeners para evitar vazamento de memória
+      return () => {
+        unsubscribeForeground();
+        unsubscribeTokenRefresh();
+      };
     };
 
+    // Chama a função assíncrona para inicializar o app
+    initializeFirebase();
+
+    // Lógica de redirecionamento após 3 segundos
+    const checkStoredName = async () => {
+      try {
+        setTimeout(async () => {
+          const storedName = await AsyncStorage.getItem('userName');
+          if (storedName) {
+            router.push('/Screens');
+          } else {
+            router.push('/Screens/Carousel');
+          }
+        }, 3000);
+      } catch (error) {
+        console.error('Erro ao verificar o nome armazenado:', error);
+      }
+    };
+    
+
     checkStoredName();
+
   }, [router]);
 
   return (

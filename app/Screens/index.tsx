@@ -1,23 +1,60 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert, Linking } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from "@react-navigation/native";
 import { useRouter } from "expo-router";
 
+// Defina o tipo Notification
+interface Notification {
+  id: string;
+  title: string;
+  description: string;
+  link: string;
+  note: string;
+  read: boolean;
+}
+
 export default function HomeScreen() {
   const [name, setName] = useState('Usuário');
+  const [notifications, setNotifications] = useState<Notification[]>([]);
   const router = useRouter();
 
+  // Função para salvar as notificações atualizadas
+  const saveNotifications = async (updatedNotifications: Notification[]) => {
+    try {
+      await AsyncStorage.setItem('notifications', JSON.stringify(updatedNotifications));
+      console.log('Notificações salvas:', updatedNotifications);
+    } catch (error) {
+      console.error('Erro ao salvar notificações:', error);
+    }
+  };
+
+  // Função para carregar notificações da AsyncStorage
+  const loadNotificationsData = async () => {
+    const storedNotifications = await AsyncStorage.getItem('notifications');
+    if (storedNotifications) {
+      const parsedNotifications = JSON.parse(storedNotifications);
+      setNotifications(parsedNotifications);
+    }
+  };
+
+  // Carrega notificações ao focar na tela
   useFocusEffect(
     useCallback(() => {
+      // Carrega as notificações sempre que a tela for acessada
+      loadNotificationsData();  // Usa a função renomeada
+
+      // Carrega o nome do usuário da AsyncStorage
       const fetchName = async () => {
         const storedName = await AsyncStorage.getItem('userName');
         if (storedName) {
           setName(storedName);
         }
       };
+
       fetchName();
+
       const backAction = () => {
         Alert.alert("Sair do App", "Você realmente quer sair?", [
           {
@@ -39,7 +76,6 @@ export default function HomeScreen() {
     }, [])
   );
 
-  // Função para determinar a saudação baseada no horário
   const getGreeting = () => {
     const hours = new Date().getHours();
     if (hours < 12) {
@@ -56,16 +92,26 @@ export default function HomeScreen() {
       "Deseja alterar seu nome?",
       "",
       [
-        {
-          text: "Não",
-          style: "cancel",
-        },
-        {
-          text: "Sim",
-          onPress: () => router.push("/Screens/Hello"),
-        },
+        { text: "Não", style: "cancel" },
+        { text: "Sim", onPress: () => router.push("/Screens/Hello") },
       ]
     );
+  };
+
+  // Marcar como lida e abrir link
+  const handleNotificationPress = async (id: string, link?: string) => {
+    const updatedNotifications = notifications.map((notification) =>
+      notification.id === id ? { ...notification, read: true } : notification
+    );
+
+    setNotifications(updatedNotifications);
+    saveNotifications(updatedNotifications); // Salva as notificações atualizadas
+
+    if (link) {
+      Linking.openURL(link); // Abre o link da notificação
+    }
+
+    router.push('/Screens/Notifications'); // Redireciona para a tela de notificações
   };
 
   const menuItems = [
@@ -91,7 +137,7 @@ export default function HomeScreen() {
       id: 3,
       label: 'Cursos',
       icon: 'notebook-edit' as const,
-      onPress: () => { 
+      onPress: () => {
         router.push("/Screens/Cursos");
         console.log('Courses');
       }
@@ -117,7 +163,7 @@ export default function HomeScreen() {
     {
       id: 6,
       label: 'Núcleos de Apoio',
-      icon: 'account-group' as const, 
+      icon: 'account-group' as const,
       onPress: () => {
         router.push("/Screens/Nucleos");
         console.log('Núcleos de Apoio');
@@ -178,10 +224,22 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.greeting} onPress={handleNameClick}>
-        {getGreeting()}, {name}!
-      </Text>
+      {/* Header com saudação e ícone de notificações */}
+      <View style={styles.header}>
+        <Text style={styles.greeting} onPress={handleNameClick}>
+          {getGreeting()}, {name}!
+        </Text>
+        <Pressable onPress={() => router.push('/Screens/Notifications')} style={styles.notificationIcon}>
+          <MaterialCommunityIcons
+            name={notifications.some(notification => !notification.read) ? "bell" : "bell-outline"}
+            size={28}
+            color="#000"
+          />
+          {notifications.some(notification => !notification.read) && <View style={styles.notificationBadge} />}
+        </Pressable>
+      </View>
 
+      {/* Menu de opções */}
       <FlatList
         data={menuItems}
         keyExtractor={(item) => item.id.toString()}
@@ -205,12 +263,29 @@ const styles = StyleSheet.create({
     padding: 16,
     paddingTop: 62,
   },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 16,
+  },
   greeting: {
     fontSize: 24,
     fontWeight: 'bold',
-    textAlign: 'left',
-    margin: 16,
     color: '#000',
+  },
+  notificationIcon: {
+    position: 'relative',
+    padding: 8,
+  },
+  notificationBadge: {
+    position: 'absolute',
+    top: 6,
+    right: 6,
+    width: 12,
+    height: 12,
+    backgroundColor: 'red',
+    borderRadius: 6,
   },
   gridContainer: {
     flexGrow: 1,
