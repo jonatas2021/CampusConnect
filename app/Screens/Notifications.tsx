@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   unread: {
-    backgroundColor: '#ffcccb',
+    backgroundColor: '#92C36B',
   },
   read: {
     backgroundColor: '#e0e0e0',

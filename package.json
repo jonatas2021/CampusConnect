@@ -21,6 +21,7 @@
     "@react-native-firebase/auth": "^21.12.0",
     "@react-native-firebase/firestore": "^21.12.0",
     "@react-native-firebase/messaging": "^21.12.0",
+    "@react-native-firebase/remote-config": "^21.12.0",
     "@react-navigation/bottom-tabs": "^7.2.0",
     "@react-navigation/native": "^7.0.14",
     "@tsconfig/react-native": "^3.0.5",

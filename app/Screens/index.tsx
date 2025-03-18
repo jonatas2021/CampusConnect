@@ -4,21 +4,42 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from "@react-navigation/native";
 import { useRouter } from "expo-router";
+import firestore from '@react-native-firebase/firestore';
+import remoteConfig from '@react-native-firebase/remote-config';
 
 
 export default function HomeScreen() {
   const [name, setName] = useState('Usuário');
+  const [hasNewNotification, setHasNewNotification] = useState(false);
   const router = useRouter();
 
+  // Função para verificar se a notificação foi lida no AsyncStorage
+  const checkNotificationStatus = async () => {
+    try {
+      const status = await AsyncStorage.getItem('isNewNotification');
+      if (status === 'false') {
+        setHasNewNotification(false); // Se já foi lida, não mostra o ponto
+      } else {
+        setHasNewNotification(true); // Caso contrário, mostra o ponto
+      }
+    } catch (error) {
+      console.error("Erro ao verificar status de notificação local: ", error);
+    }
+  };
 
-  // Carrega notificações ao focar na tela
+  // Carregar notificações ao focar na tela
   useFocusEffect(
     useCallback(() => {
+      console.log("Tela focada - Carregando nome...");
+      
       // Carrega o nome do usuário da AsyncStorage
       const fetchName = async () => {
         const storedName = await AsyncStorage.getItem('userName');
+        console.log("Nome armazenado: ", storedName);
         if (storedName) {
           setName(storedName);
+        } else {
+          console.log("Nenhum nome encontrado no AsyncStorage.");
         }
       };
 
@@ -33,7 +54,10 @@ export default function HomeScreen() {
           },
           {
             text: "Sim",
-            onPress: () => BackHandler.exitApp()
+            onPress: () => {
+              console.log("Saindo do app...");
+              BackHandler.exitApp();
+            }
           }
         ]);
         return true;
@@ -41,12 +65,68 @@ export default function HomeScreen() {
 
       const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
 
-      return () => backHandler.remove(); // Remove o listener ao sair da tela
+      return () => {
+        console.log("Removendo listener de back press...");
+        backHandler.remove(); // Remove o listener ao sair da tela
+      };
     }, [])
   );
 
+  // Verificar o status da notificação
+  useEffect(() => {
+    console.log("Iniciando verificação de notificações...");
+    
+    // Verifica o status de leitura local no AsyncStorage
+    checkNotificationStatus();
+
+    // Acessar o Firestore para verificar o valor de isNewNotification
+    const unsubscribe = firestore()
+      .collection('buttonnotification')  // Coleção onde está o status
+      .doc('status')  // Documento onde está o campo isNewNotification
+      .onSnapshot(snapshot => {
+        if (snapshot.exists) {
+          const data = snapshot.data();
+          if (data && data.isNewNotification !== undefined) {  // Verifica se o campo existe e não é undefined
+            if (data.isNewNotification) {
+              console.log("Novo ponto de notificação detectado!");
+              setHasNewNotification(true);  // Atualiza o estado quando isNewNotification for true
+            } else {
+              console.log("Sem novas notificações.");
+              setHasNewNotification(false);  // Caso contrário, remove o ponto vermelho
+            }
+          } else {
+            console.log("Campo isNewNotification não encontrado.");
+            setHasNewNotification(false);  // Caso o campo não exista
+          }
+        }
+      }, (error) => {
+        console.error("Erro ao verificar status de notificações: ", error);
+      });
+    
+    return () => {
+      console.log("Limpeza do listener de notificações...");
+      unsubscribe();  // Limpeza do listener ao sair da tela
+    };
+  }, []);
+
+  const handleNotificationClick = async () => {
+    console.log("Clicado no botão de notificação...");
+
+    try {
+      // Armazena o status de notificação como lido no AsyncStorage
+      await AsyncStorage.setItem('isNewNotification', 'false');
+      console.log("Status de notificação armazenado no AsyncStorage.");
+      
+      // Atualiza o estado local
+      setHasNewNotification(false);
+    } catch (error) {
+      console.error("Erro ao armazenar status de notificação localmente: ", error);
+    }
+  };
+
   const getGreeting = () => {
     const hours = new Date().getHours();
+    console.log("Hora atual: ", hours);
     if (hours < 12) {
       return "Bom dia";
     } else if (hours < 18) {
@@ -57,6 +137,7 @@ export default function HomeScreen() {
   };
 
   const handleNameClick = () => {
+    console.log("Clicado no nome para alteração...");
     Alert.alert(
       "Deseja alterar seu nome?",
       "",
@@ -182,7 +263,15 @@ export default function HomeScreen() {
         <Text style={styles.greeting} onPress={handleNameClick}>
           {getGreeting()}, {name}!
         </Text>
-        <Pressable onPress={() => router.push('/Screens/Notifications')} style={styles.notificationIcon}>
+        <Pressable
+          onPress={() => {
+            router.push('/Screens/Notifications');
+            handleNotificationClick();  // Chama a função para atualizar o estado local
+          }}
+          style={styles.notificationIcon}
+        >
+          {hasNewNotification && <View style={styles.notificationBadge} />}
+          <MaterialCommunityIcons name="bell" size={28} color="black" />
         </Pressable>
       </View>
 
