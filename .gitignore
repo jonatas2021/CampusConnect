@@ -53,3 +53,5 @@ package-lock.json
 app-example
 
 docentes.json
+
+app/firebaseConfig.ts
