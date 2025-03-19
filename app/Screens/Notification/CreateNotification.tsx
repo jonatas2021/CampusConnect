@@ -3,12 +3,15 @@ import { View, Text, TextInput, Pressable, StyleSheet, Alert } from 'react-nativ
 import { RFValue } from 'react-native-responsive-fontsize';
 import BackButton from '@/components/BackButton';
 import firestore from '@react-native-firebase/firestore';
+import { useRouter } from "expo-router";
+
 
 export default function CreateNotificationScreen() {
   const [title, setTitle] = useState('');
   const [note, setNote] = useState('');
   const [description, setDescription] = useState('');
   const [link, setLink] = useState('');
+    const router = useRouter();
   const handleCreateNotification = async () => {
     if (!title || !note || !description) {
       Alert.alert('Erro', 'Preencha todos os campos obrigatórios.');
@@ -30,6 +33,8 @@ export default function CreateNotificationScreen() {
       setNote('');
       setDescription('');
       setLink('');
+      router.push('/Screens/Notification/UpdateNotification');
+
     } catch (error) {
       console.error('Erro ao criar notificação:', error);
       Alert.alert('Erro', 'Não foi possível criar a notificação.');

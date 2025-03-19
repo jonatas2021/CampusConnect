@@ -20,7 +20,7 @@ export default function LoginScreen() {
       Alert.alert('Sucesso', 'Login realizado com sucesso!');
 
       // Redireciona para a tela Admin após o login bem-sucedido
-      router.push('/Screens/UpdateNotification');  // Redireciona para a tela Admin
+      router.push('/Screens/Notification/UpdateNotification');  // Redireciona para a tela Admin
     } catch (error) {
       console.error('Erro de login: ', error);
       Alert.alert('Erro', 'Credenciais inválidas');

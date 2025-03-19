@@ -103,27 +103,47 @@ export default function ManageNotificationsScreen() {
       Alert.alert('Erro', 'Nenhuma notificação selecionada.');
       return;
     }
-
+  
     if (!user) {
       Alert.alert('Erro', 'Usuário não autenticado. Faça login para excluir.');
       return;
     }
-
-    try {
-      await firestore().collection('notifications').doc(selectedNotification.id).delete();
-
-      Alert.alert('Sucesso', 'Notificação excluída com sucesso!');
-      setSelectedNotification(null);
-      setTitle('');
-      setNote('');
-      setDescription('');
-      setLink('');
-    } catch (error) {
-      console.error('Erro ao excluir notificação:', error);
-      Alert.alert('Erro', 'Não foi possível excluir a notificação.');
-    }
+  
+    Alert.alert(
+      'Confirmar exclusão', // Título do alerta
+      `Tem certeza que deseja excluir a notificação "${selectedNotification.title}"?`, // Mensagem do alerta
+      [
+        {
+          text: 'Cancelar',
+          style: 'cancel',
+        },
+        {
+          text: 'Confirmar',
+          onPress: async () => {
+            try {
+              await firestore()
+                .collection('notifications')
+                .doc(selectedNotification.id)
+                .delete();
+  
+              Alert.alert('Sucesso', 'Notificação excluída com sucesso!');
+              setSelectedNotification(null);
+              setTitle('');
+              setNote('');
+              setDescription('');
+              setLink('');
+            } catch (error) {
+              console.error('Erro ao excluir notificação:', error);
+              Alert.alert('Erro', 'Não foi possível excluir a notificação.');
+            }
+          },
+          style: 'destructive', // Estilo "destructive" deixa o botão vermelho (iOS)
+        },
+      ],
+      { cancelable: true }
+    );
   };
-
+  
   const handleSelectNotification = (notification: Notification) => {
     setSelectedNotification(notification);
     setTitle(notification.title);
@@ -184,7 +204,7 @@ export default function ManageNotificationsScreen() {
         </View>
       )}
 
-      <Pressable style={[styles.button, styles.createButton]} onPress={() => router.push('/Screens/CreateNotification')}>
+      <Pressable style={[styles.button, styles.createButton]} onPress={() => router.push('/Screens/Notification/CreateNotification')}>
         <Text style={styles.buttonText}>Criar Nova Notificação</Text>
       </Pressable>
     </View>
