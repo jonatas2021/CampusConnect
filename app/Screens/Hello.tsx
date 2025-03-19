@@ -27,9 +27,7 @@ export default function Hello() {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-      <KeyboardAvoidingView 
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'} 
-        style={{ flex: 1 }}
+      <KeyboardAvoidingView style={{ flex: 1 }}
       >
         <SafeAreaView style={styles.rootContainer}>
       {/* <BackButton destination="/Screens/Carousel" /> */}

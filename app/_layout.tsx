@@ -84,6 +84,7 @@ export default function RootLayout() {
               <Stack.Screen name="Screens/Notifications" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/CreateNotification" options={{ headerShown: false }} />
               <Stack.Screen name="Screens/UpdateNotification" options={{ headerShown: false }} />
+              <Stack.Screen name="Screens/Login" options={{ headerShown: false }} />
               <Stack.Screen name="+not-found"  />
             </Stack>
             <StatusBar style="dark" translucent />

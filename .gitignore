@@ -54,6 +54,6 @@ app-example
 
 docentes.json
 
-app/firebaseConfig.ts
+firebaseConfig.ts
 
 .env

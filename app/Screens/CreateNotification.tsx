@@ -9,10 +9,8 @@ export default function CreateNotificationScreen() {
   const [note, setNote] = useState('');
   const [description, setDescription] = useState('');
   const [link, setLink] = useState('');
-  const [password, setPassword] = useState(''); // Estado para armazenar a senha
-
   const handleCreateNotification = async () => {
-    if (!title || !note || !description || !password) {
+    if (!title || !note || !description) {
       Alert.alert('Erro', 'Preencha todos os campos obrigatórios.');
       return;
     }
@@ -24,7 +22,6 @@ export default function CreateNotificationScreen() {
         note,
         description,
         link: link || null,
-        password, // Enviar a senha para o Firestore
         createdAt: firestore.FieldValue.serverTimestamp(),
       });
 
@@ -33,7 +30,6 @@ export default function CreateNotificationScreen() {
       setNote('');
       setDescription('');
       setLink('');
-      setPassword(''); // Limpar o campo de senha após a criação
     } catch (error) {
       console.error('Erro ao criar notificação:', error);
       Alert.alert('Erro', 'Não foi possível criar a notificação.');
@@ -68,14 +64,6 @@ export default function CreateNotificationScreen() {
         placeholder="Link (opcional)"
         value={link}
         onChangeText={setLink}
-      />
-      {/* Campo para a senha */}
-      <TextInput
-        style={styles.input}
-        placeholder="Senha"
-        secureTextEntry={true}
-        value={password}
-        onChangeText={setPassword}
       />
 
       <Pressable style={styles.button} onPress={handleCreateNotification}>

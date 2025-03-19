@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert, Linking } from 'react-native';
+import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert, Linking, ToastAndroid  } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from "@react-navigation/native";
@@ -270,18 +270,22 @@ export default function HomeScreen() {
     },
     {
       id: 12,
+      label: 'Carteira de Estudante',
+      icon: 'card-account-details' as const,
+      onPress: () => { ToastAndroid.show('A tela ainda não está pronta para ser visualizada', ToastAndroid.SHORT)},
+    }, 
+    {
+      id: 13,
       label: 'FAQ',
       icon: 'help-circle' as const,
       onPress: () => router.push("/Screens/FAQ"),
-    }, 
-    /*   
+    },
     {
-      id: 13,
+      id: 14,
       label: 'Administrador',
       icon: 'account-lock' as const,
-      onPress: () => router.push("/Screens/UpdateNotification"),
+      onPress: () => router.push("/Screens/Login"),
     },
-    */
   ];
 
   return (

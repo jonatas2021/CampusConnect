@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, Pressable, StyleSheet, Alert, FlatList } from 'react-native';
+import { View, Text, TextInput, Pressable, StyleSheet, Alert, FlatList, BackHandler } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import BackButton from '@/components/BackButton';
 import firestore from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';  // Importando Firebase Authentication
 import { useRouter } from "expo-router";
-import { PASSWORD } from '@env';
 
 interface Notification {
   id: string;
@@ -14,19 +14,35 @@ interface Notification {
   link?: string;
 }
 
-export default function ManageNotificationsScreen() {  // Adicionando a prop 'navigation'
+export default function ManageNotificationsScreen() {
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [selectedNotification, setSelectedNotification] = useState<Notification | null>(null);
   const [title, setTitle] = useState('');
   const [note, setNote] = useState('');
   const [description, setDescription] = useState('');
   const [link, setLink] = useState('');
-  const [password, setPassword] = useState('');
+  const [user, setUser] = useState<any>(null);  // Estado para o usuário autenticado
   const router = useRouter();
-  
 
   useEffect(() => {
-    const unsubscribe = firestore()
+    const backAction = () => {
+      // Navega para a rota desejada ao pressionar o botão de voltar
+      router.push('/Screens'); // Define a rota desejada
+      return true; // Indica que o evento foi tratado
+    };
+
+    const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+
+    return () => {
+      backHandler.remove(); // Remove o listener ao desmontar o componente
+    };
+  }, []);
+
+  // Verifica se o usuário está autenticado
+  useEffect(() => {
+    const unsubscribe = auth().onAuthStateChanged(setUser);  // Observa mudanças no estado de autenticação
+
+    const unsubscribeNotifications = firestore()
       .collection('notifications')
       .orderBy('createdAt', 'desc')
       .onSnapshot(snapshot => {
@@ -37,7 +53,10 @@ export default function ManageNotificationsScreen() {  // Adicionando a prop 'na
         setNotifications(notificationsData);
       });
 
-    return () => unsubscribe();
+    return () => {
+      unsubscribe();
+      unsubscribeNotifications();
+    };
   }, []);
 
   const handleEditNotification = async () => {
@@ -46,13 +65,13 @@ export default function ManageNotificationsScreen() {  // Adicionando a prop 'na
       return;
     }
 
-    if (!title || !note || !description || !password) {
+    if (!title || !note || !description) {
       Alert.alert('Erro', 'Preencha todos os campos obrigatórios.');
       return;
     }
 
-    if (password !== PASSWORD) {
-      Alert.alert('Erro', 'Senha incorreta.');
+    if (!user) {
+      Alert.alert('Erro', 'Usuário não autenticado. Faça login para editar.');
       return;
     }
 
@@ -65,7 +84,6 @@ export default function ManageNotificationsScreen() {  // Adicionando a prop 'na
           note,
           description,
           link: link || null,
-          password,
         });
 
       Alert.alert('Sucesso', 'Notificação editada com sucesso!');
@@ -74,7 +92,6 @@ export default function ManageNotificationsScreen() {  // Adicionando a prop 'na
       setNote('');
       setDescription('');
       setLink('');
-      setPassword('');
     } catch (error) {
       console.error('Erro ao editar notificação:', error);
       Alert.alert('Erro', 'Não foi possível editar a notificação.');
@@ -87,8 +104,8 @@ export default function ManageNotificationsScreen() {  // Adicionando a prop 'na
       return;
     }
 
-    if (password !== '946132123c') {
-      Alert.alert('Erro', 'Senha incorreta.');
+    if (!user) {
+      Alert.alert('Erro', 'Usuário não autenticado. Faça login para excluir.');
       return;
     }
 
@@ -101,7 +118,6 @@ export default function ManageNotificationsScreen() {  // Adicionando a prop 'na
       setNote('');
       setDescription('');
       setLink('');
-      setPassword('');
     } catch (error) {
       console.error('Erro ao excluir notificação:', error);
       Alert.alert('Erro', 'Não foi possível excluir a notificação.');
@@ -118,7 +134,7 @@ export default function ManageNotificationsScreen() {  // Adicionando a prop 'na
 
   return (
     <View style={styles.container}>
-      <BackButton />
+      <BackButton destination="/Screens" />
       <Text style={styles.title}>Gerenciar Notificações</Text>
       <View style={styles.separator} />
       <FlatList
@@ -157,13 +173,6 @@ export default function ManageNotificationsScreen() {  // Adicionando a prop 'na
             value={link}
             onChangeText={setLink}
           />
-          <TextInput
-            style={styles.input}
-            placeholder="Senha"
-            secureTextEntry={true}
-            value={password}
-            onChangeText={setPassword}
-          />
 
           <Pressable style={styles.button} onPress={handleEditNotification}>
             <Text style={styles.buttonText}>Editar Notificação</Text>
@@ -175,7 +184,6 @@ export default function ManageNotificationsScreen() {  // Adicionando a prop 'na
         </View>
       )}
 
-      {/* Botão para ir para a tela de criação de notificação */}
       <Pressable style={[styles.button, styles.createButton]} onPress={() => router.push('/Screens/CreateNotification')}>
         <Text style={styles.buttonText}>Criar Nova Notificação</Text>
       </Pressable>
@@ -219,7 +227,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f44336', // Vermelho para excluir
   },
   createButton: {
-    backgroundColor: '#00A8FF', // Vermelho para excluir
+    backgroundColor: '#00A8FF', // Azul para criar
   },
   buttonText: {
     fontSize: 16,

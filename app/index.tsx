@@ -4,55 +4,44 @@ import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import messaging from '@react-native-firebase/messaging';
 import { initializeApp, getApps } from '@react-native-firebase/app';
+import { LogBox } from 'react-native';
+import firebaseConfig from '../firebaseConfig';
 
-if (getApps().length === 0) {
-  initializeApp(firebaseConfig);
-  console.log('Firebase inicializado');
-
-}
-import firebaseConfig from './firebaseConfig'; // Importação da configuração do Firebase
+// Ignorar warnings do Firebase
+LogBox.ignoreLogs(['Setting a timer for a long period of time']);
 
 const LoadingScreen = () => {
   const router = useRouter();
 
   useEffect(() => {
-    // ✅ Inicializa o Firebase
+    // Função para inicializar o Firebase e solicitar permissão
     const initializeFirebase = async () => {
       try {
-        initializeApp(firebaseConfig); // Inicializa o Firebase com a configuração
-      } catch (error) {
-        console.error('Erro ao inicializar o Firebase:', error);
-      }
+        // Inicializa o Firebase apenas se não estiver já inicializado
+        if (getApps().length === 0) {
+          initializeApp(firebaseConfig);
+          console.log('Firebase inicializado');
+        }
 
-      // ✅ Solicita permissão e captura o token
-      const requestUserPermission = async () => {
-        console.log('Solicitando permissão...');
+        // Solicita permissão para notificações
         const authStatus = await messaging().requestPermission();
-        const enabled =
+        const enabled = 
           authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
           authStatus === messaging.AuthorizationStatus.PROVISIONAL;
-          console.log('Status da permissão:', authStatus);
-      
+
         if (enabled) {
           console.log('Permissão concedida:', authStatus);
-      
-          try {
-            const token = await messaging().getToken();
-            console.log('FCM Token:', token);
-            await AsyncStorage.setItem('fcmToken', token);
-          } catch (error) {
-            console.error('Erro ao obter o token FCM:', error);
-          }
+          const token = await messaging().getToken();
+          console.log('FCM Token:', token);
+          await AsyncStorage.setItem('fcmToken', token);
         } else {
           console.log('Permissão não concedida');
         }
-      };
-      
+      } catch (error) {
+        console.error('Erro ao inicializar o Firebase ou obter permissão:', error);
+      }
 
-      // Solicita permissão e obtém o token
-      await requestUserPermission();
-
-      // Escuta notificações em foreground
+      // Escuta notificações em primeiro plano
       const unsubscribeForeground = messaging().onMessage(async remoteMessage => {
         Alert.alert(
           remoteMessage.notification?.title || 'Nova Notificação',
@@ -60,28 +49,23 @@ const LoadingScreen = () => {
         );
       });
 
-      // Configura para receber notificações em background
-      messaging().setBackgroundMessageHandler(async remoteMessage => {
-        console.log('Notificação recebida em segundo plano:', remoteMessage);
-      });
-
-      // Escuta atualização de token (se o token for renovado)
+      // Escuta atualizações de token
       const unsubscribeTokenRefresh = messaging().onTokenRefresh(async token => {
         console.log('Token atualizado:', token);
         await AsyncStorage.setItem('fcmToken', token);
       });
 
-      // Limpa os listeners para evitar vazamento de memória
+      // Limpar listeners ao desmontar
       return () => {
         unsubscribeForeground();
         unsubscribeTokenRefresh();
       };
     };
 
-    // Chama a função assíncrona para inicializar o app
+    // Chama a função para inicializar o Firebase e permissões
     initializeFirebase();
 
-    // Lógica de redirecionamento após 3 segundos
+    // Verifica se há um nome armazenado para redirecionar o usuário
     const checkStoredName = async () => {
       try {
         setTimeout(async () => {
@@ -91,12 +75,11 @@ const LoadingScreen = () => {
           } else {
             router.push('/Screens/Carousel');
           }
-        }, 3000);
+        }, 3000);  // Atraso de 3 segundos para redirecionar
       } catch (error) {
         console.error('Erro ao verificar o nome armazenado:', error);
       }
     };
-    
 
     checkStoredName();
 
