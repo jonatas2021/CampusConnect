@@ -72,58 +72,56 @@ export default function HomeScreen() {
     }, [])
   );
 
-  // Verificar o status da notificação
   useEffect(() => {
-    console.log("Iniciando verificação de notificações...");
-    
-    // Verifica o status de leitura local no AsyncStorage
-    checkNotificationStatus();
-
-    // Acessar o Firestore para verificar o valor de isNewNotification
     const unsubscribe = firestore()
-      .collection('buttonnotification')  // Coleção onde está o status
-      .doc('status')  // Documento onde está o campo isNewNotification
-      .onSnapshot(snapshot => {
-        if (snapshot.exists) {
-          const data = snapshot.data();
-          if (data && data.isNewNotification !== undefined) {  // Verifica se o campo existe e não é undefined
-            if (data.isNewNotification) {
-              console.log("Novo ponto de notificação detectado!");
-              setHasNewNotification(true);  // Atualiza o estado quando isNewNotification for true
-            } else {
-              console.log("Sem novas notificações.");
-              setHasNewNotification(false);  // Caso contrário, remove o ponto vermelho
-            }
+      .collection('notifications')
+      .orderBy('createdAt', 'desc') // Ordena para pegar a notificação mais recente
+      .onSnapshot(async (snapshot) => {
+        console.log("📡 Snapshot recebido:", snapshot.docs.map(doc => doc.data()));
+  
+        if (!snapshot.empty) {
+          const latestNotification = snapshot.docs[0].id; // ID da notificação mais recente
+          console.log("🔔 Nova notificação detectada com ID:", latestNotification);
+  
+          const lastReadNotification = await AsyncStorage.getItem('lastReadNotification');
+          console.log("📥 Última notificação lida armazenada:", lastReadNotification);
+  
+          if (latestNotification !== lastReadNotification) {
+            console.log("🚨 Notificação não lida detectada! Atualizando estado...");
+            await AsyncStorage.setItem('lastReadNotification', latestNotification);
+            setHasNewNotification(true);
+            console.log("✅ Estado atualizado para nova notificação.");
           } else {
-            console.log("Campo isNewNotification não encontrado.");
-            setHasNewNotification(false);  // Caso o campo não exista
+            console.log("✅ Notificação já lida. Ponto vermelho não exibido.");
+            setHasNewNotification(false);
           }
+        } else {
+          console.log("🚫 Nenhuma notificação encontrada.");
+          setHasNewNotification(false);
         }
       }, (error) => {
-        console.error("Erro ao verificar status de notificações: ", error);
+        console.error("❌ Erro ao verificar notificações: ", error);
       });
-    
-    return () => {
-      console.log("Limpeza do listener de notificações...");
-      unsubscribe();  // Limpeza do listener ao sair da tela
-    };
+  
+    return () => unsubscribe();
   }, []);
-
+  
   const handleNotificationClick = async () => {
-    console.log("Clicado no botão de notificação...");
-
+    console.log("🖱️ Clicado no botão de notificação...");
+  
     try {
-      // Armazena o status de notificação como lido no AsyncStorage
+      console.log("💾 Salvando status de leitura como 'false' no AsyncStorage...");
       await AsyncStorage.setItem('isNewNotification', 'false');
-      console.log("Status de notificação armazenado no AsyncStorage.");
-      
-      // Atualiza o estado local
       setHasNewNotification(false);
+      console.log("✅ Status de leitura salvo com sucesso.");
     } catch (error) {
-      console.error("Erro ao armazenar status de notificação localmente: ", error);
+      console.error("❌ Erro ao armazenar status de notificação localmente: ", error);
     }
+  
+    console.log("🚀 Redirecionando para tela de notificações...");
+    router.push('/Screens/Notifications');
   };
-
+  
   const getGreeting = () => {
     const hours = new Date().getHours();
     console.log("Hora atual: ", hours);
