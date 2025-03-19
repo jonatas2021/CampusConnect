@@ -86,12 +86,34 @@ export default function HomeScreen() {
           const lastReadNotification = await AsyncStorage.getItem('lastReadNotification');
           console.log("📥 Última notificação lida armazenada:", lastReadNotification);
   
-          if (latestNotification !== lastReadNotification) {
+          // Verificar se a notificação mais recente é diferente da última lida
+          if (!lastReadNotification || latestNotification !== lastReadNotification) {
             console.log("🚨 Notificação não lida detectada! Atualizando estado...");
-            await AsyncStorage.setItem('lastReadNotification', latestNotification);
+  
+            // Atualizar o estado de nova notificação
             setHasNewNotification(true);
-            console.log("✅ Estado atualizado para nova notificação.");
+  
+            // Adicionar um atraso antes de salvar a notificação como lida
+            setTimeout(async () => {
+              console.log("⏳ Atraso antes de salvar notificação como lida...");
+  
+              // Verificar se a notificação ainda está presente antes de atualizar o AsyncStorage
+              const currentSnapshot = await firestore()
+                .collection('notifications')
+                .orderBy('createdAt', 'desc')
+                .get();
+              
+              const latestNotificationAfterDeletion = currentSnapshot.docs[0]?.id;
+              if (latestNotificationAfterDeletion === latestNotification) {
+                // Se a notificação ainda for a mais recente, salvar como lida
+                await AsyncStorage.setItem('lastReadNotification', latestNotification);
+                console.log("✅ Status de notificação atualizado após atraso.");
+              } else {
+                console.log("🚫 Notificação apagada ou não mais válida, não atualizando.");
+              }
+            }, 1000); // Atraso de 1 segundo (1000ms)
           } else {
+            // Caso a notificação já tenha sido lida
             console.log("✅ Notificação já lida. Ponto vermelho não exibido.");
             setHasNewNotification(false);
           }
@@ -251,7 +273,15 @@ export default function HomeScreen() {
       label: 'FAQ',
       icon: 'help-circle' as const,
       onPress: () => router.push("/Screens/FAQ"),
+    }, 
+    /*   
+    {
+      id: 13,
+      label: 'Administrador',
+      icon: 'account-lock' as const,
+      onPress: () => router.push("/Screens/UpdateNotification"),
     },
+    */
   ];
 
   return (
