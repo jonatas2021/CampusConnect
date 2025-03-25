@@ -40,143 +40,13 @@ const CalendarScreen: React.FC = () => {
     }
   };
 
-  const month = ["Janeiro", "Fevereiro", "Março", "Abril"];
+  const month = ["Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro",];
 
   const holidays: HolidayProps[] = [
-    {
-      day: "01",
-      name: "Feriado nacional - Confraternização universal",
-      type: "Feriados",
-      month: "Janeiro",
-    },
+    // ABRIL
     {
       day: "02",
-      name: "Início do Recesso escolar",
-      type: "Início/Fim do recesso",
-      month: "Janeiro",
-    },
-    {
-      day: "09",
-      name: "Fim do Recesso escolar",
-      type: "Início/Fim do recesso",
-      month: "Janeiro",
-    },
-    {
-      day: "27 e 28",
-      name: "Resultado da validação de conhecimentos e experiências anteriores",
-      type: "CRADT",
-      month: "Janeiro",
-    },
-
-    {
-      day: "03 a 04",
-      name: "Solicitação de reintegração curricular para o próximo semestre letivo (via formulário de requerimento)",
-      type: "CRADT",
-      month: "Fevereiro",
-    },
-    {
-      day: "03 a 04",
-      name: "Solicitação de reopção de curso para o próximo semestre letivo (via formulário de requerimento)",
-      type: "CRADT",
-      month: "Fevereiro",
-    },
-    {
-      day: "03 a 04",
-      name: "Solicitação de admissão por transferência entre Campi e de outros IF’s para o próximo semestre/ano letivo",
-      type: "CRADT",
-      month: "Fevereiro",
-    },
-    {
-      day: "03 a 04",
-      name: "Solicitação de mudança de turno para o próximo semestre letivo (via formulário de requerimento)",
-      type: "CRADT",
-      month: "Fevereiro",
-    },
-
-    {
-      day: "04 a 07",
-      name: "Resultado das solicitações de reintegração curricular e admissão por transferência entre Campi e de outros IF’s para o próximo semestre/ano letivo",
-      type: "CRADT",
-      month: "Março",
-    },
-    {
-      day: "04 a 07",
-      name: "Resultado da solicitação de mudança de turno para 2025.1",
-      type: "CRADT",
-      month: "Março",
-    },
-    {
-      day: "04 a 07",
-      name: "Resultado da solicitação de reopção de curso para o próximo semestre letivo",
-      type: "CRADT",
-      month: "Março",
-    },
-    {
-      day: "04 a 07",
-      name: "Solicitação de reabertura de matrícula para 2025.1 para alunos com matrículas trancadas (via formulário de requerimento)",
-      type: "CRADT",
-      month: "Março",
-    },
-
-    {
-      day: "10",
-      name: "Reunião dos Núcleos Docentes Estruturantes dos Cursos Superiores",
-      type: "Aula normal",
-      month: "Março",
-    },
-    {
-      day: "12",
-      name: "Término da 2ª unidade letiva",
-      type: "Início/Fim da unidade",
-      month: "Março",
-    },
-    { day: "13 e 14", name: "Demo Week", type: "Eventos", month: "Março" },
-    {
-      day: "17 e 18",
-      name: "Exames finais",
-      type: "Aula normal",
-      month: "Março",
-    },
-    {
-      day: "19",
-      name: "Reunião de conselho de classe",
-      type: "Reuniões",
-      month: "Março",
-    },
-    {
-      day: "20",
-      name: "Reunião de colegiado dos cursos superiores",
-      type: "Reuniões",
-      month: "Março",
-    },
-    {
-      day: "21",
-      name: "Último dia para entrega do Relatório de Atividades Desenvolvidas",
-      type: "Início/Fim do período",
-      month: "Março",
-    },
-    {
-      day: "21",
-      name: "Prazo final para envios/fechamento dos diários docentes",
-      type: "CRADT",
-      month: "Março",
-    },
-    {
-      day: "21",
-      name: "Encerramento do semestre letivo 2024.2",
-      type: "CRADT",
-      month: "Março",
-    },
-    {
-      day: "24",
-      name: "Início do Recesso acadêmico",
-      type: "Início/Fim do recesso",
-      month: "Março",
-    },
-
-    {
-      day: "02",
-      name: "Fim do Recesso acadêmico",
+      name: "Fim do Recesso Acadêmico",
       type: "Início/Fim do recesso",
       month: "Abril",
     },
@@ -187,15 +57,15 @@ const CalendarScreen: React.FC = () => {
       month: "Abril",
     },
     {
-      day: "03 e 04",
-      name: "Encontro pedagógico 2025.1",
-      type: "Aula normal",
-      month: "Abril",
-    },
-    {
       day: "03 a 06",
       name: "Matrícula Obrigatória para o próximo semestre/ano letivo",
       type: "CRADT",
+      month: "Abril",
+    },
+    {
+      day: "03 e 04",
+      name: "Encontro pedagógico 2025.1",
+      type: "Aula normal",
       month: "Abril",
     },
     {
@@ -203,6 +73,310 @@ const CalendarScreen: React.FC = () => {
       name: "INÍCIO DO SEMESTRE LETIVO 2025.1",
       type: "Início/Fim do período",
       month: "Abril",
+    },
+    {
+      day: "07",
+      name: "Boas vindas às (aos) estudantes",
+      type: "Eventos",
+      month: "Abril",
+    },
+    {
+      day: "14",
+      name: "Último dia para entrega do Plano Individual de Trabalho",
+      type: "CRADT",
+      month: "Abril",
+    },
+    {
+      day: "17",
+      name: "Recesso escolar/administrativo",
+      type: "Feriados",
+      month: "Abril",
+    },
+    {
+      day: "18",
+      name: "Paixão de Cristo - Feriado Nacional",
+      type: "Feriados",
+      month: "Abril",
+    },
+    {
+      day: "21",
+      name: "Tiradentes - Feriado Nacional",
+      type: "Feriados",
+      month: "Abril",
+    },
+    {
+      day: "28",
+      name: "Início do período de ajuste de matrícula nos componentes curriculares (via formulário de requerimento)",
+      type: "CRADT",
+      month: "Abril",
+    },
+
+    // MAIO
+    {
+      day: "01",
+      name: "Dia Mundial do Trabalho - Feriado Nacional",
+      type: "Feriados",
+      month: "Maio",
+    },
+    {
+      day: "06 a 08",
+      name: "Seminário de Agroecologia e Educação do Campo",
+      type: "Eventos",
+      month: "Maio",
+    },
+    {
+      day: "09",
+      name: "Último dia de Ajuste de matrícula nos componentes curriculares (via formulário de requerimento)",
+      type: "CRADT",
+      month: "Maio",
+    },
+    {
+      day: "13",
+      name: "Formatura dos Cursos",
+      type: "Eventos",
+      month: "Maio",
+    },
+    {
+      day: "13 a 16",
+      name: "Solicitação de isenção de componente curricular (via formulário de requerimento)",
+      type: "CRADT",
+      month: "Maio",
+    },
+    {
+      day: "19",
+      name: "Notificação de Evasão",
+      type: "CRADT",
+      month: "Maio",
+    },
+    {
+      day: "19 a 23",
+      name: "Semana contra LGBTfobia",
+      type: "Eventos",
+      month: "Maio",
+    },
+    {
+      day: "31",
+      name: "Último dia para solicitação de trancamento de matrícula e matrícula-vínculo - Veteranos (via formulário de requerimento)",
+      type: "CRADT",
+      month: "Maio",
+    },
+
+    // JUNHO
+    {
+      day: "11 e 12",
+      name: "Semana da Diversidade",
+      type: "Eventos",
+      month: "Junho",
+    },
+    {
+      day: "12",
+      name: "Término da 1ª unidade letiva",
+      type: "Início/Fim da unidade",
+      month: "Junho",
+    },
+    {
+      day: "12 e 13",
+      name: "Resultado da solicitação de isenção de componente curricular",
+      type: "CRADT",
+      month: "Junho",
+    },
+    {
+      day: "13",
+      name: "Reunião dos Núcleos Docentes Estruturantes dos Cursos Superiores",
+      type: "Reuniões",
+      month: "Junho",
+    },
+    {
+      day: "16 e 17",
+      name: "Reunião dos Colegiados dos Cursos Superiores",
+      type: "Reuniões",
+      month: "Junho",
+    },
+    {
+      day: "18",
+      name: "Conselho de Classe dos Cursos Técnicos Subsequentes",
+      type: "Reuniões",
+      month: "Junho",
+    },
+    {
+      day: "19",
+      name: "Corpus Christi - Ponto facultativo",
+      type: "Feriados",
+      month: "Junho",
+    },
+    {
+      day: "20",
+      name: "Prazo final para atualização dos diários – 1ª Unidade Letiva",
+      type: "CRADT",
+      month: "Junho",
+    },
+    {
+      day: "23",
+      name: "Ponto facultativo",
+      type: "Feriados",
+      month: "Junho",
+    },
+    {
+      day: "24",
+      name: "São João - Feriado Estadual",
+      type: "Feriados",
+      month: "Junho",
+    },
+    {
+      day: "25 e 26",
+      name: "Período para requerimento da validação de conhecimentos e experiências anteriores (via formulário de requerimento)",
+      type: "CRADT",
+      month: "Junho",
+    },
+
+    // JULHO
+    {
+      day: "01 a 04",
+      name: "Solicitação de reintegração curricular para o próximo semestre letivo (via formulário de requerimento)",
+      type: "CRADT",
+      month: "Julho",
+    },
+    {
+      day: "01 a 04",
+      name: "Solicitação de reopção de curso para o próximo semestre letivo (via formulário de requerimento)",
+      type: "CRADT",
+      month: "Julho",
+    },
+    {
+      day: "01 a 04",
+      name: "Solicitação de admissão por transferência entre Campi e de outros IF’s para o próximo semestre/ano letivo",
+      type: "CRADT",
+      month: "Julho",
+    },
+    {
+      day: "01 a 04",
+      name: "Solicitação de mudança de turno para o próximo semestre letivo (via formulário de requerimento)",
+      type: "CRADT",
+      month: "Julho",
+    },
+    {
+      day: "13 a 19",
+      name: "77ª Reunião Anual da SBPC",
+      type: "Eventos",
+      month: "Julho",
+    },
+    {
+      day: "21 e 22",
+      name: "Resultado da validação de conhecimentos e experiências anteriores",
+      type: "CRADT",
+      month: "Julho",
+    },
+
+    // AGOSTO
+    {
+      day: "04 a 05",
+      name: "Resultado das solicitações de reintegração curricular e admissão por transferência entre Campi e de outros IF’s para o próximo semestre/ano letivo",
+      type: "CRADT",
+      month: "Agosto",
+    },
+    {
+      day: "06 a 13",
+      name: "Solicitação de reabertura de matrícula para 2025.2 para alunos com matrículas trancadas",
+      type: "CRADT",
+      month: "Agosto",
+    },
+    {
+      day: "14 e 15",
+      name: "Demo Week",
+      type: "Eventos",
+      month: "Agosto",
+    },
+    {
+      day: "15",
+      name: "Término da 2ª unidade letiva",
+      type: "Início/Fim da unidade",
+      month: "Agosto",
+    },
+    {
+      day: "19",
+      name: "Reunião dos Núcleos Docentes Estruturantes dos Cursos Superiores",
+      type: "Reuniões",
+      month: "Agosto",
+    },
+    {
+      day: "20 e 21",
+      name: "Exames Finais",
+      type: "Provas",
+      month: "Agosto",
+    },
+    {
+      day: "22",
+      name: "Conselho de Classe dos Cursos Técnicos Subsequentes",
+      type: "Reuniões",
+      month: "Agosto",
+    },
+    {
+      day: "25",
+      name: "Reunião dos Colegiados dos Cursos Superiores",
+      type: "Reuniões",
+      month: "Agosto",
+    },
+    {
+      day: "25",
+      name: "Último dia para envio do relatório de atividades docentes",
+      type: "CRADT",
+      month: "Agosto",
+    },
+    {
+      day: "25",
+      name: "Prazo final para atualização dos diários – 2ª Unidade Letiva",
+      type: "CRADT",
+      month: "Agosto",
+    },
+    {
+      day: "25",
+      name: "Fechamento do Semestre no Q-acadêmico",
+      type: "CRADT",
+      month: "Agosto",
+    },
+    {
+      day: "25",
+      name: "Encerramento do semestre letivo 2025.1",
+      type: "Início/Fim do período",
+      month: "Agosto",
+    },
+    {
+      day: "26",
+      name: "Início do Recesso Acadêmico",
+      type: "Início/Fim do recesso",
+      month: "Agosto",
+    },
+
+    // SETEMBRO
+    {
+      day: "01",
+      name: "Resultado da solicitação de Reabertura de Matrícula",
+      type: "CRADT",
+      month: "Setembro",
+    },
+    {
+      day: "08 e 09",
+      name: "Matrícula Obrigatória para o próximo semestre/ano letivo",
+      type: "CRADT",
+      month: "Setembro",
+    },
+    {
+      day: "09",
+      name: "Fim do Recesso Acadêmico",
+      type: "Início/Fim do recesso",
+      month: "Setembro",
+    },
+    {
+      day: "10 e 11",
+      name: "Encontro pedagógico 2025.2",
+      type: "Aula normal",
+      month: "Setembro",
+    },
+    {
+      day: "12",
+      name: "INÍCIO DO SEMESTRE LETIVO 2025.2",
+      type: "Início/Fim do período",
+      month: "Setembro",
     },
   ];
 
@@ -223,7 +397,7 @@ const CalendarScreen: React.FC = () => {
 
       <Text style={styles.title}>Calendário 2024.2</Text>
       <View style={styles.separator} />
-      <Text style={styles.lastUpdate}>Última atualização: 07/02/2025</Text>
+      <Text style={styles.lastUpdate}>Última atualização: 25/03/2025</Text>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         {/* months and days */}
         <View style={styles.monthsContainer}>
@@ -274,7 +448,7 @@ const CalendarScreen: React.FC = () => {
             </View>
           ))}
         </View>
-      <View style={styles.separator2} />
+        <View style={styles.separator2} />
         <View style={styles.holidayTypeContainer}>
           {holidayType.map((item, index) => (
             <View key={index} style={styles.typeHolidayBox}>
