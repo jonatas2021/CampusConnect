@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Pressable, StyleSheet, Alert, FlatList, BackHandler } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import BackButton from '@/components/BackButton';
-import firestore from '@react-native-firebase/firestore';
-import auth from '@react-native-firebase/auth';  // Importando Firebase Authentication
+import { getFirestore, collection, query, orderBy, onSnapshot, doc, updateDoc, deleteDoc } from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';
 import { useRouter } from "expo-router";
 
 interface Notification {
@@ -23,6 +23,7 @@ export default function ManageNotificationsScreen() {
   const [link, setLink] = useState('');
   const [user, setUser] = useState<any>(null);  // Estado para o usuário autenticado
   const router = useRouter();
+  const db = getFirestore();
 
   useEffect(() => {
     const backAction = () => {
@@ -34,28 +35,28 @@ export default function ManageNotificationsScreen() {
     const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
 
     return () => {
-      backHandler.remove(); // Remove o listener ao desmontar o componente
+      backHandler.remove();
     };
   }, []);
 
   // Verifica se o usuário está autenticado
   useEffect(() => {
-    const unsubscribe = auth().onAuthStateChanged(setUser);  // Observa mudanças no estado de autenticação
+    const unsubscribe = auth().onAuthStateChanged(setUser);
 
-    const unsubscribeNotifications = firestore()
-      .collection('notifications')
-      .orderBy('createdAt', 'desc')
-      .onSnapshot(snapshot => {
+    const unsubscribeNotifications = onSnapshot(
+      query(collection(db, 'notifications'), orderBy('createdAt', 'desc')),
+      (snapshot) => {
         const notificationsData = snapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data(),
         })) as Notification[];
         setNotifications(notificationsData);
-      });
+      }
+    );
 
     return () => {
-      unsubscribe();
-      unsubscribeNotifications();
+      unsubscribe(); // Remove o listener de autenticação
+      unsubscribeNotifications(); // Remove o listener de notificações
     };
   }, []);
 
@@ -76,15 +77,13 @@ export default function ManageNotificationsScreen() {
     }
 
     try {
-      await firestore()
-        .collection('notifications')
-        .doc(selectedNotification.id)
-        .update({
-          title,
-          note,
-          description,
-          link: link || null,
-        });
+      const notificationRef = doc(db, 'notifications', selectedNotification.id);
+      await updateDoc(notificationRef, {
+        title,
+        note,
+        description,
+        link: link || null,
+      });
 
       Alert.alert('Sucesso', 'Notificação editada com sucesso!');
       setSelectedNotification(null);
@@ -103,15 +102,15 @@ export default function ManageNotificationsScreen() {
       Alert.alert('Erro', 'Nenhuma notificação selecionada.');
       return;
     }
-  
+
     if (!user) {
       Alert.alert('Erro', 'Usuário não autenticado. Faça login para excluir.');
       return;
     }
-  
+
     Alert.alert(
-      'Confirmar exclusão', // Título do alerta
-      `Tem certeza que deseja excluir a notificação "${selectedNotification.title}"?`, // Mensagem do alerta
+      'Confirmar exclusão',
+      `Tem certeza que deseja excluir a notificação "${selectedNotification.title}"?`,
       [
         {
           text: 'Cancelar',
@@ -121,11 +120,9 @@ export default function ManageNotificationsScreen() {
           text: 'Confirmar',
           onPress: async () => {
             try {
-              await firestore()
-                .collection('notifications')
-                .doc(selectedNotification.id)
-                .delete();
-  
+              const notificationRef = doc(db, 'notifications', selectedNotification.id);
+              await deleteDoc(notificationRef);
+
               Alert.alert('Sucesso', 'Notificação excluída com sucesso!');
               setSelectedNotification(null);
               setTitle('');
@@ -137,13 +134,13 @@ export default function ManageNotificationsScreen() {
               Alert.alert('Erro', 'Não foi possível excluir a notificação.');
             }
           },
-          style: 'destructive', // Estilo "destructive" deixa o botão vermelho (iOS)
+          style: 'destructive',
         },
       ],
       { cancelable: true }
     );
   };
-  
+
   const handleSelectNotification = (notification: Notification) => {
     setSelectedNotification(notification);
     setTitle(notification.title);
@@ -157,6 +154,10 @@ export default function ManageNotificationsScreen() {
       <BackButton destination="/Screens" />
       <Text style={styles.title}>Gerenciar Notificações</Text>
       <View style={styles.separator} />
+      <Text style={styles.userInfo}>
+        {user ? `Usuário: ${user.email}` : 'Nenhum usuário autenticado'}
+      </Text>
+
       <FlatList
         data={notifications}
         keyExtractor={(item) => item.id}
@@ -169,30 +170,10 @@ export default function ManageNotificationsScreen() {
 
       {selectedNotification && (
         <View>
-          <TextInput
-            style={styles.input}
-            placeholder="Título"
-            value={title}
-            onChangeText={setTitle}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Nota"
-            value={note}
-            onChangeText={setNote}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Descrição"
-            value={description}
-            onChangeText={setDescription}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Link (opcional)"
-            value={link}
-            onChangeText={setLink}
-          />
+          <TextInput style={styles.input} placeholder="Título" value={title} onChangeText={setTitle} />
+          <TextInput style={styles.input} placeholder="Nota" value={note} onChangeText={setNote} />
+          <TextInput style={styles.input} placeholder="Descrição" value={description} onChangeText={setDescription} />
+          <TextInput style={styles.input} placeholder="Link (opcional)" value={link} onChangeText={setLink} />
 
           <Pressable style={styles.button} onPress={handleEditNotification}>
             <Text style={styles.buttonText}>Editar Notificação</Text>
@@ -271,4 +252,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#333',
   },
+  userInfo: {
+    fontSize: RFValue(14),
+    color: '#666',
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+  
 });

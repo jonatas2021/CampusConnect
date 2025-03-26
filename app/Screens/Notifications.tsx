@@ -3,8 +3,8 @@ import { View, Text, FlatList, Pressable, StyleSheet, Linking } from 'react-nati
 import { RFValue } from 'react-native-responsive-fontsize';
 import BackButton from '@/components/BackButton';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import firestore from '@react-native-firebase/firestore';
-import messaging from '@react-native-firebase/messaging';
+import { getFirestore, collection, query, orderBy, getDocs } from '@react-native-firebase/firestore';
+import { getMessaging, onMessage } from '@react-native-firebase/messaging';
 
 interface Notification {
   id: string;
@@ -23,11 +23,10 @@ export default function NotificationsScreen() {
   useEffect(() => {
     const loadNotifications = async () => {
       try {
-        // Carregar notificações do Firestore
-        const snapshot = await firestore()
-          .collection('notifications')
-          .orderBy('createdAt', 'desc')
-          .get();
+        // Carregar notificações do Firestore com API modular
+        const db = getFirestore();
+        const notificationsQuery = query(collection(db, 'notifications'), orderBy('createdAt', 'desc'));
+        const snapshot = await getDocs(notificationsQuery);
 
         // Carregar notificações do AsyncStorage
         const storedNotifications = await AsyncStorage.getItem('notifications');
@@ -48,7 +47,6 @@ export default function NotificationsScreen() {
           };
         });
 
-        // Atualizar o estado com as notificações
         setNotifications(notificationsData);
       } catch (error) {
         console.error('Erro ao carregar notificações:', error);
@@ -58,6 +56,16 @@ export default function NotificationsScreen() {
     };
 
     loadNotifications();
+
+    // Configurar listener para notificações em primeiro plano
+    const messaging = getMessaging();
+    const unsubscribe = onMessage(messaging, async (remoteMessage) => {
+      console.log('Notificação recebida em primeiro plano:', remoteMessage);
+      // Aqui você pode atualizar as notificações no estado ou fazer outras ações
+    });
+
+    // Limpar listener ao desmontar o componente
+    return () => unsubscribe();
   }, []); // Executa apenas uma vez ao inicializar o componente
 
   // Salvar notificações no AsyncStorage
@@ -87,32 +95,6 @@ export default function NotificationsScreen() {
       }
     }
   };
-
-  // Listener de notificações do Firebase
-  useEffect(() => {
-    const unsubscribeForeground = messaging().onMessage(async (remoteMessage) => {
-      const newNotification: Notification = {
-        id: String(new Date().getTime()),
-        title: remoteMessage.notification?.title || 'Nova Notificação',
-        note: typeof remoteMessage.data?.note === 'string' 
-          ? remoteMessage.data.note 
-          : JSON.stringify(remoteMessage.data?.note), // Converte o note para string se for um objeto
-        description: remoteMessage.notification?.body || 'Você recebeu uma nova notificação.',
-        link: typeof remoteMessage.data?.link === 'string' 
-          ? remoteMessage.data.link 
-          : undefined, // Garantir que o link seja uma string ou undefined
-        read: false,
-      };
-
-      setNotifications((prev) => {
-        const updatedNotifications = [newNotification, ...prev];
-        saveNotifications(updatedNotifications); // Salvar as novas notificações
-        return updatedNotifications;
-      });
-    });
-
-    return () => unsubscribeForeground();
-  }, []);
 
   return (
     <View style={styles.container}>
@@ -146,7 +128,6 @@ export default function NotificationsScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: '6%',
     flex: 1,
     padding: 16,
     backgroundColor: '#f4f4f4',
@@ -180,7 +161,6 @@ const styles = StyleSheet.create({
   notificationTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#333',
   },
   notificationNote: {
     fontSize: 14,

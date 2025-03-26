@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Pressable, StyleSheet, Alert } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import BackButton from '@/components/BackButton';
-import firestore from '@react-native-firebase/firestore';
+import { getFirestore, collection, addDoc, serverTimestamp } from '@react-native-firebase/firestore';
 import { useRouter } from "expo-router";
+import { getAuth } from '@react-native-firebase/auth';  // Ajuste aqui para getAuth
 
 
 export default function CreateNotificationScreen() {
@@ -11,7 +12,11 @@ export default function CreateNotificationScreen() {
   const [note, setNote] = useState('');
   const [description, setDescription] = useState('');
   const [link, setLink] = useState('');
-    const router = useRouter();
+  const router = useRouter();
+  const db = getFirestore();
+  const auth = getAuth();  // Usando getAuth para obter a instância correta
+
+
   const handleCreateNotification = async () => {
     if (!title || !note || !description) {
       Alert.alert('Erro', 'Preencha todos os campos obrigatórios.');
@@ -20,12 +25,12 @@ export default function CreateNotificationScreen() {
 
     try {
       // Enviar os dados para o Firestore
-      await firestore().collection('notifications').add({
+      await addDoc(collection(db, 'notifications'), {
         title,
         note,
         description,
         link: link || null,
-        createdAt: firestore.FieldValue.serverTimestamp(),
+        createdAt: serverTimestamp(),
       });
 
       Alert.alert('Sucesso', 'Notificação criada com sucesso!');
@@ -45,31 +50,11 @@ export default function CreateNotificationScreen() {
     <View style={styles.container}>
       <BackButton />
       <Text style={styles.title}>Criar Notificação</Text>
-        <View style={styles.separator} />
-      <TextInput
-        style={styles.input}
-        placeholder="Título"
-        value={title}
-        onChangeText={setTitle}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Nota"
-        value={note}
-        onChangeText={setNote}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Descrição"
-        value={description}
-        onChangeText={setDescription}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Link (opcional)"
-        value={link}
-        onChangeText={setLink}
-      />
+      <View style={styles.separator} />
+      <TextInput style={styles.input} placeholder="Título" value={title} onChangeText={setTitle} />
+      <TextInput style={styles.input} placeholder="Nota" value={note} onChangeText={setNote} />
+      <TextInput style={styles.input} placeholder="Descrição" value={description} onChangeText={setDescription} />
+      <TextInput style={styles.input} placeholder="Link (opcional)" value={link} onChangeText={setLink} />
 
       <Pressable style={styles.button} onPress={handleCreateNotification}>
         <Text style={styles.buttonText}>Criar Notificação</Text>

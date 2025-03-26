@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert, Linking, ToastAndroid  } from 'react-native';
+import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert, Linking, ToastAndroid } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useFocusEffect } from "@react-navigation/native";
-import { useRouter } from "expo-router";
-import firestore from '@react-native-firebase/firestore';
-import remoteConfig from '@react-native-firebase/remote-config';
+import { useFocusEffect } from '@react-navigation/native';
+import { useRouter } from 'expo-router';
+import { getFirestore, collection, query, orderBy, onSnapshot, getDocs } from '@react-native-firebase/firestore';
 
 
 export default function HomeScreen() {
@@ -73,47 +72,37 @@ export default function HomeScreen() {
   );
 
   useEffect(() => {
-    const unsubscribe = firestore()
-      .collection('notifications')
-      .orderBy('createdAt', 'desc') // Ordena para pegar a notificação mais recente
-      .onSnapshot(async (snapshot) => {
+    const db = getFirestore();
+
+    const unsubscribe = onSnapshot(
+      query(collection(db, 'notifications'), orderBy('createdAt', 'desc')),
+      async (snapshot) => {
         console.log("📡 Snapshot recebido:", snapshot.docs.map(doc => doc.data()));
-  
+    
         if (!snapshot.empty) {
-          const latestNotification = snapshot.docs[0].id; // ID da notificação mais recente
+          const latestNotification = snapshot.docs[0].id;
           console.log("🔔 Nova notificação detectada com ID:", latestNotification);
-  
+    
           const lastReadNotification = await AsyncStorage.getItem('lastReadNotification');
           console.log("📥 Última notificação lida armazenada:", lastReadNotification);
-  
-          // Verificar se a notificação mais recente é diferente da última lida
+    
           if (!lastReadNotification || latestNotification !== lastReadNotification) {
-            console.log("🚨 Notificação não lida detectada! Atualizando estado...");
-  
-            // Atualizar o estado de nova notificação
             setHasNewNotification(true);
-  
-            // Adicionar um atraso antes de salvar a notificação como lida
+    
             setTimeout(async () => {
               console.log("⏳ Atraso antes de salvar notificação como lida...");
-  
-              // Verificar se a notificação ainda está presente antes de atualizar o AsyncStorage
-              const currentSnapshot = await firestore()
-                .collection('notifications')
-                .orderBy('createdAt', 'desc')
-                .get();
-              
+    
+              const currentSnapshot = await getDocs(query(collection(db, 'notifications'), orderBy('createdAt', 'desc')));
               const latestNotificationAfterDeletion = currentSnapshot.docs[0]?.id;
+    
               if (latestNotificationAfterDeletion === latestNotification) {
-                // Se a notificação ainda for a mais recente, salvar como lida
                 await AsyncStorage.setItem('lastReadNotification', latestNotification);
                 console.log("✅ Status de notificação atualizado após atraso.");
               } else {
                 console.log("🚫 Notificação apagada ou não mais válida, não atualizando.");
               }
-            }, 1000); // Atraso de 1 segundo (1000ms)
+            }, 1000);
           } else {
-            // Caso a notificação já tenha sido lida
             console.log("✅ Notificação já lida. Ponto vermelho não exibido.");
             setHasNewNotification(false);
           }
@@ -121,16 +110,19 @@ export default function HomeScreen() {
           console.log("🚫 Nenhuma notificação encontrada.");
           setHasNewNotification(false);
         }
-      }, (error) => {
+      },
+      (error) => {
         console.error("❌ Erro ao verificar notificações: ", error);
-      });
-  
+      }
+    );
+    
+
     return () => unsubscribe();
   }, []);
   
   const handleNotificationClick = async () => {
     console.log("🖱️ Clicado no botão de notificação...");
-  
+
     try {
       console.log("💾 Salvando status de leitura como 'false' no AsyncStorage...");
       await AsyncStorage.setItem('isNewNotification', 'false');
@@ -139,7 +131,7 @@ export default function HomeScreen() {
     } catch (error) {
       console.error("❌ Erro ao armazenar status de notificação localmente: ", error);
     }
-  
+
     console.log("🚀 Redirecionando para tela de notificações...");
     router.push('/Screens/Notifications');
   };

@@ -3,12 +3,23 @@ import { View, StyleSheet, SafeAreaView, Image, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import messaging from '@react-native-firebase/messaging';
-import { initializeApp, getApps } from '@react-native-firebase/app';
+import { getApp } from '@react-native-firebase/app';
+import { getFirestore, doc, getDoc } from '@react-native-firebase/firestore';
 import { LogBox } from 'react-native';
-import firebaseConfig from '../firebaseConfig';
+import { FirebaseApp, initializeApp } from '@react-native-firebase/app';
+import auth from '@react-native-firebase/auth';  // Importação correta
+import { firebaseConfig } from '../firebaseConfig';  // Certifique-se de que o arquivo de configuração está correto.
+import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 
-// Ignorar warnings do Firebase
-LogBox.ignoreLogs(['Setting a timer for a long period of time']);
+// Inicializa o Firebase com a configuração
+const app = initializeApp(firebaseConfig);
+
+// Inicializa o Firestore
+const db = getFirestore(app); // Agora você pode usar o Firestore
+
+
+export { db, auth, };
+
 
 const LoadingScreen = () => {
   const router = useRouter();
@@ -18,10 +29,8 @@ const LoadingScreen = () => {
     const initializeFirebase = async () => {
       try {
         // Inicializa o Firebase apenas se não estiver já inicializado
-        if (getApps().length === 0) {
-          initializeApp(firebaseConfig);
-          console.log('Firebase inicializado');
-        }
+        const app = getApp();
+        console.log('Firebase inicializado', app);
 
         // Solicita permissão para notificações
         const authStatus = await messaging().requestPermission();
@@ -69,6 +78,7 @@ const LoadingScreen = () => {
     const checkStoredName = async () => {
       try {
         setTimeout(async () => {
+          // Verifica se o nome está no AsyncStorage
           const storedName = await AsyncStorage.getItem('userName');
           if (storedName) {
             router.push('/Screens');
