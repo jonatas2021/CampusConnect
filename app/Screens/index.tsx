@@ -306,7 +306,6 @@ export default function HomeScreen() {
         </Text>
         <Pressable
           onPress={() => {
-            router.push('/Screens/Notifications');
             handleNotificationClick();  // Chama a função para atualizar o estado local
           }}
           style={styles.notificationIcon}
