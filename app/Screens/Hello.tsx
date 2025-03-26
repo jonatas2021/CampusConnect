@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; 
 import { 
   View, StyleSheet, SafeAreaView, Image, Text, TextInput, TouchableOpacity, 
-  KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard 
+  KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard 
 } from 'react-native';
 import BackButton from "@/components/BackButton2";
 import { useRouter } from 'expo-router';
@@ -13,9 +13,15 @@ export default function Hello() {
   const router = useRouter();
 
   const handleEnter = async () => {
-    console.log(`Nome enviado: ${name}`);
-    await AsyncStorage.setItem('userName', name);
-    router.push({ pathname: "/Screens", params: { name } });
+    // Remover espaços em branco no final do nome
+    const trimmedName = name.trim();
+    console.log(`Nome enviado: ${trimmedName}`);
+
+    // Salva o nome limpo (sem espaços no final) no AsyncStorage
+    await AsyncStorage.setItem('userName', trimmedName);
+
+    // Navega para a próxima tela com o nome
+    router.push({ pathname: "/Screens", params: { name: trimmedName } });
   };
 
   const getGreeting = () => {
@@ -27,10 +33,8 @@ export default function Hello() {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-      <KeyboardAvoidingView style={{ flex: 1 }}
-      >
+      <KeyboardAvoidingView style={{ flex: 1 }}>
         <SafeAreaView style={styles.rootContainer}>
-      {/* <BackButton destination="/Screens/Carousel" /> */}
           <View style={styles.sectionContainer}>
             <Image source={require('@/assets/images/fundo.png')} style={styles.imagef} />
             <View style={styles.logos}>
@@ -44,9 +48,9 @@ export default function Hello() {
 
             <TextInput
               style={styles.input}
-              placeholder="Digite seu nome"
               value={name}
               onChangeText={setName}
+              placeholder="Digite seu nome"
             />
             <TouchableOpacity
               style={[styles.botao, { backgroundColor: name ? '#2A5A06' : '#ccc' }]}
