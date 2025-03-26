@@ -4,7 +4,7 @@ import {
   KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, Alert
 } from 'react-native';
 import { useRouter } from 'expo-router';
-import auth from '@react-native-firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from '@react-native-firebase/auth'; // Atualizado para a API modular
 import { RFValue } from 'react-native-responsive-fontsize';
 import BackButton from '@/components/BackButton';
 
@@ -15,8 +15,8 @@ export default function LoginScreen() {
 
   const handleLogin = async () => {
     try {
-      // Realiza o login com Firebase Authentication
-      await auth().signInWithEmailAndPassword(email, password);
+      const auth = getAuth();  // Obtenha a instância do Firebase Auth
+      await signInWithEmailAndPassword(auth, email, password);  // Método modular
       Alert.alert('Sucesso', 'Login realizado com sucesso!');
 
       // Redireciona para a tela Admin após o login bem-sucedido
@@ -29,14 +29,13 @@ export default function LoginScreen() {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-      <KeyboardAvoidingView style={{ flex: 1 }}
-      >
+      <KeyboardAvoidingView style={{ flex: 1 }}>
         <SafeAreaView style={styles.rootContainer}>
-      <BackButton />
-        <View style={styles.caixa2}>
-        <Text style={styles.observacao}>
-          Esta tela é apenas para uso dos administradores do aplicativo. Apenas usuários autorizados têm permissão de acesso.
-              </Text>
+          <BackButton />
+          <View style={styles.caixa2}>
+            <Text style={styles.observacao}>
+              Esta tela é apenas para uso dos administradores do aplicativo. Apenas usuários autorizados têm permissão de acesso.
+            </Text>
           </View>
           {/* Imagem de fundo e logo */}
           <View style={styles.sectionContainer}>
@@ -98,14 +97,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  imagef: {
-    width: '100%',
-    height: '100%',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    opacity: 0.3,  // Reduzir a opacidade para dar foco ao conteúdo
-  },
   image2: {
     height: '50%',
     resizeMode: 'contain',
@@ -129,13 +120,13 @@ const styles = StyleSheet.create({
   },  
   caixa2: {
     width: '95%',
-    height: 'auto',  // Deixe a altura automática para que o banner se ajuste ao conteúdo
+    height: 'auto',
     backgroundColor: '#fff',
     position: 'absolute',
-    top: 0,  // Alinha o banner no topo
+    top: 0,
     marginTop: '30%',
     justifyContent: 'center',
-    borderRadius: 10,  // Deixe a borda inferior arredondadaa.
+    borderRadius: 10,
     padding: 5
   },
   observacaoContainer: {
@@ -160,7 +151,7 @@ const styles = StyleSheet.create({
   input: { 
     width: '95%', 
     height: 50, 
-    borderColor: '#2A5224',  // Cor de borda verde escuro
+    borderColor: '#2A5224',
     borderWidth: 2, 
     borderRadius: 8, 
     paddingLeft: '4%', 
@@ -181,5 +172,4 @@ const styles = StyleSheet.create({
     fontSize: RFValue(14), 
     fontWeight: 'bold' 
   },
-
 });

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'; 
 import { View, Text, TextInput, Pressable, StyleSheet, Alert, FlatList, BackHandler } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import BackButton from '@/components/BackButton';
 import { getFirestore, collection, query, orderBy, onSnapshot, doc, updateDoc, deleteDoc } from '@react-native-firebase/firestore';
-import auth from '@react-native-firebase/auth';
+import { getAuth, onAuthStateChanged } from '@react-native-firebase/auth'; // Atualizado
 import { useRouter } from "expo-router";
 
 interface Notification {
@@ -23,13 +23,12 @@ export default function ManageNotificationsScreen() {
   const [link, setLink] = useState('');
   const [user, setUser] = useState<any>(null);  // Estado para o usuário autenticado
   const router = useRouter();
-  const db = getFirestore();
+  const db = getFirestore();  // Firestore permanece igual
 
   useEffect(() => {
     const backAction = () => {
-      // Navega para a rota desejada ao pressionar o botão de voltar
-      router.push('/Screens'); // Define a rota desejada
-      return true; // Indica que o evento foi tratado
+      router.push('/Screens'); 
+      return true;
     };
 
     const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
@@ -39,9 +38,9 @@ export default function ManageNotificationsScreen() {
     };
   }, []);
 
-  // Verifica se o usuário está autenticado
   useEffect(() => {
-    const unsubscribe = auth().onAuthStateChanged(setUser);
+    const auth = getAuth(); // Uso do Firebase Auth atualizado
+    const unsubscribe = onAuthStateChanged(auth, setUser); // Substituído
 
     const unsubscribeNotifications = onSnapshot(
       query(collection(db, 'notifications'), orderBy('createdAt', 'desc')),
@@ -55,8 +54,8 @@ export default function ManageNotificationsScreen() {
     );
 
     return () => {
-      unsubscribe(); // Remove o listener de autenticação
-      unsubscribeNotifications(); // Remove o listener de notificações
+      unsubscribe(); 
+      unsubscribeNotifications(); 
     };
   }, []);
 
@@ -191,6 +190,9 @@ export default function ManageNotificationsScreen() {
     </View>
   );
 }
+
+// Estilos continuam os mesmos
+
 
 const styles = StyleSheet.create({
   container: {

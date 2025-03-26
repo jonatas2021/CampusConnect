@@ -1,46 +1,39 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';  
 import { View, StyleSheet, SafeAreaView, Image, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import messaging from '@react-native-firebase/messaging';
-import { getApp } from '@react-native-firebase/app';
-import { getFirestore, doc, getDoc } from '@react-native-firebase/firestore';
-import { LogBox } from 'react-native';
-import { FirebaseApp, initializeApp } from '@react-native-firebase/app';
-import auth from '@react-native-firebase/auth';  // Importação correta
+import { getApp, initializeApp } from '@react-native-firebase/app';
+import { getFirestore } from '@react-native-firebase/firestore';  // Importação correta
+import { getAuth } from '@react-native-firebase/auth';  // Importação correta
+import { getMessaging, requestPermission, AuthorizationStatus, getToken, onMessage, onTokenRefresh } from '@react-native-firebase/messaging';  // API modular para messaging
 import { firebaseConfig } from '../firebaseConfig';  // Certifique-se de que o arquivo de configuração está correto.
-import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 
-// Inicializa o Firebase com a configuração
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);  // Inicializa o Firebase com a configuração
 
-// Inicializa o Firestore
-const db = getFirestore(app); // Agora você pode usar o Firestore
+// Inicializa o Firestore, Auth e Messaging com a API modular
+const db = getFirestore(app);  // Agora você pode usar o Firestore
+const auth = getAuth(app);  // Agora você pode usar o Auth
+const messaging = getMessaging(app);  // Agora você pode usar o Messaging
 
-
-export { db, auth, };
-
+export { db, auth, messaging };  // Exportando as instâncias
 
 const LoadingScreen = () => {
   const router = useRouter();
 
   useEffect(() => {
-    // Função para inicializar o Firebase e solicitar permissão
     const initializeFirebase = async () => {
       try {
-        // Inicializa o Firebase apenas se não estiver já inicializado
-        const app = getApp();
         console.log('Firebase inicializado', app);
 
-        // Solicita permissão para notificações
-        const authStatus = await messaging().requestPermission();
+        // Solicita permissão para notificações (com a nova API modular)
+        const authStatus = await requestPermission(messaging);
         const enabled = 
-          authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
-          authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+          authStatus === AuthorizationStatus.AUTHORIZED ||
+          authStatus === AuthorizationStatus.PROVISIONAL;
 
         if (enabled) {
           console.log('Permissão concedida:', authStatus);
-          const token = await messaging().getToken();
+          const token = await getToken(messaging);
           console.log('FCM Token:', token);
           await AsyncStorage.setItem('fcmToken', token);
         } else {
@@ -50,16 +43,16 @@ const LoadingScreen = () => {
         console.error('Erro ao inicializar o Firebase ou obter permissão:', error);
       }
 
-      // Escuta notificações em primeiro plano
-      const unsubscribeForeground = messaging().onMessage(async remoteMessage => {
+      // Escuta notificações em primeiro plano (com a nova API modular)
+      const unsubscribeForeground = onMessage(messaging, async remoteMessage => {
         Alert.alert(
           remoteMessage.notification?.title || 'Nova Notificação',
           remoteMessage.notification?.body || ''
         );
       });
 
-      // Escuta atualizações de token
-      const unsubscribeTokenRefresh = messaging().onTokenRefresh(async token => {
+      // Escuta atualizações de token (com a nova API modular)
+      const unsubscribeTokenRefresh = onTokenRefresh(messaging, async token => {
         console.log('Token atualizado:', token);
         await AsyncStorage.setItem('fcmToken', token);
       });

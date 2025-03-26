@@ -5,12 +5,15 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
 import { useRouter } from 'expo-router';
 import { getFirestore, collection, query, orderBy, onSnapshot, getDocs } from '@react-native-firebase/firestore';
+import { getAuth, onAuthStateChanged } from '@react-native-firebase/auth'; // Atualizado
 
 
 export default function HomeScreen() {
   const [name, setName] = useState('Usuário');
   const [hasNewNotification, setHasNewNotification] = useState(false);
   const router = useRouter();
+    const db = getFirestore();  // Firestore permanece igual
+  
 
   // Função para verificar se a notificação foi lida no AsyncStorage
   const checkNotificationStatus = async () => {
@@ -160,6 +163,20 @@ export default function HomeScreen() {
     );
   };
 
+    // Verifica se o usuário está autenticado no momento do clique
+    const checkAuthentication = () => {
+    const auth = getAuth(); // Uso do Firebase Auth atualizado
+      
+      const user = auth.currentUser; // Obtém o usuário autenticado
+      if (user) {
+        // Se o usuário estiver autenticado, redireciona para outra tela
+        router.push("/Screens/Notification/UpdateNotification"); // Altere o caminho para a tela desejada
+      } else {
+        // Se o usuário não estiver autenticado, vai para a tela de login
+        router.push("/Screens/Login");
+      }
+    };
+
   const menuItems = [
     {
       id: 1,
@@ -276,8 +293,8 @@ export default function HomeScreen() {
       id: 14,
       label: 'Administrador',
       icon: 'account-lock' as const,
-      onPress: () => router.push("/Screens/Login"),
-    },
+      onPress: checkAuthentication,
+    }
   ];
 
   return (
