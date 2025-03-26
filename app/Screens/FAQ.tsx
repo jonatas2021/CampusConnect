@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
-import BackButton from '@/components/BackButton';
+import BackButton from '@/components/BackButton2';
 import { RFValue } from "react-native-responsive-fontsize";
 
 interface FAQItem {
@@ -29,31 +29,31 @@ export default function FAQScreen() {
     {
       id: 1,
       question: 'Como faço para obter uma bolsa?',
-      answer: 'Verifique os editais dos programas de bolsas disponíveis, preencha o formulário, envie os documentos e acompanhe os prazos.',
+      answer: 'Na tela de Bolsas e Estágio você pode verificar os editais dos programas de bolsas disponíveis e assim acompanhar os prazos, caso ocorra alguma dúvida você pode entrar em contato com o setor responsável clicando em setores.',
       expanded: false
     },
     {
       id: 2,
       question: 'O que fazemos em dias intensos de chuvas?',
-      answer: 'Em casos de chuvas intensas, a instituição avalia as condições de segurança e pode suspender as aulas. Fique atento às comunicações oficiais via e-mail e canais da instituição.',
+      answer: 'Em casos de chuvas intensas, a instituição avalia as condições de segurança e pode suspender as aulas. Fique atento às comunicações oficiais via e-mail e canais da instituição. Em caso de dúvidas entre em contato com a CRADT',
       expanded: false
     },
     {
       id: 3,
       question: 'Como faço para justificar as faltas?',
-      answer: 'Para justificar faltas, você deve apresentar documentação comprobatória (como atestados médicos) à Coordenação do seu curso dentro de 3 dias úteis após o retorno às atividades.',
+      answer: 'Para justificar faltas, você deve preencher um formulário, e enviar via requerimento para a CRADT solicitando a justificativa das faltas.',
       expanded: false
     },
     {
       id: 4,
-      question: 'Como faço para obter meu diploma?',
-      answer: 'Para solicitar seu diploma, você deve ter integralizado todas as disciplinas e requisitos do curso. Após isso, abra um requerimento junto à Coordenação de Registro Acadêmico.',
+      question: 'Como faço para obter meu certificado ou diploma?',
+      answer: 'Para solicitar seu diploma, você deve preencher um formulário, e enviar via requerimento para a CRADT solicitando o seu certificado ou diploma.',
       expanded: false
     },
     {
       id: 5,
       question: 'Como faço para trancar a matrícula?',
-      answer: 'Para trancar a matrícula, você deve solicitar o trancamento junto à Coordenação do curso dentro do prazo estabelecido no calendário acadêmico.',
+      answer: 'Para trancar a matrícula, você deve preencher um formulário, e enviar via requerimento para a CRADT solicitando o trancamento da matrícula, dentro do prazo estabelecido no calendário acadêmico.',
       expanded: false
     },
     {
@@ -65,27 +65,28 @@ export default function FAQScreen() {
     {
       id: 7,
       question: 'Como faço para acessar o sistema acadêmico?',
-      answer: 'Você pode acessar o sistema acadêmico usando seu login e senha cadastrados. Em caso de problemas, entre em contato com o suporte técnico.',
+      answer: 'Você pode acessar o sistema acadêmico que está disponível no menu usando sua matrícula e senha cadastrados. Em caso de problemas, entre em contato com a CRADT.',
       expanded: false
     },
     {
       id: 8,
       question: 'Quando serão divulgadas as notas?',
-      answer: 'As notas serão divulgadas no sistema acadêmico após o fechamento do semestre. Fique atento ao calendário acadêmico.',
+      answer: 'As notas serão divulgadas no QAcadêmico após o fechamento do semestre. Fique atento ao calendário acadêmico.',
       expanded: false
     },
     {
       id: 9,
       question: 'Como faço para obter uma declaração de matrícula?',
-      answer: 'Você pode solicitar a declaração de matrícula pelo sistema acadêmico ou diretamente na Secretaria Acadêmica.',
+      answer: 'Você pode solicitar a declaração de matrícula pelo QAcadêmico ou diretamente com a CRADT.',
       expanded: false
     },
     {
       id: 10,
       question: 'Como faço para solicitar revisão de prova?',
-      answer: 'Você deve entrar em contato com o professor responsável pela disciplina e seguir os prazos e procedimentos estabelecidos no regulamento acadêmico.',
+      answer: 'Você deve entrar em contato com o professor responsável pela disciplina e seguir as orientações, caso ainda reste dúvidas você pode entrar em contato com a CRADT.',
       expanded: false
-    }        
+    }
+           
   ]);
 
   const toggleExpand = (id: number) => {
@@ -129,8 +130,8 @@ export default function FAQScreen() {
       </View>
       
        <View style={styles.separator} />
-      
-      <ScrollView style={styles.content}>
+
+       <View style={styles.content2}>     
         <Text style={styles.subtitle}>Como podemos ajudá-lo?</Text>
         
         <View style={styles.searchContainer}>
@@ -143,14 +144,16 @@ export default function FAQScreen() {
             onChangeText={setSearchText}
           />
         </View>
-        
-        <View style={styles.faqSection}>
           <View style={styles.faqHeader}>
-            <Text style={styles.faqTitle}>Perguntas Frequentes</Text>
+            <Text style={styles.faqTitle}>Perguntas Frequentes:</Text>
             <TouchableOpacity style={{backgroundColor: '#e8f5e9'}}>
-              <Text style={styles.viewAllText}>Ver tudo</Text>
             </TouchableOpacity>
           </View>
+          </View>
+
+      <ScrollView style={styles.content}>
+        
+        <View style={styles.faqSection}>
           
           {filteredFAQs.map(item => (
             <View key={item.id} style={styles.faqItem}>
@@ -232,7 +235,12 @@ const styles = StyleSheet.create({
 },
   content: {
     flex: 1,
-    padding: 16,
+    paddingHorizontal: 16,
+    marginBottom:10
+  },
+  content2: {
+    paddingHorizontal: 16,
+    paddingTop:16
   },
   subtitle: {
     fontSize: 22,
@@ -266,7 +274,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 15,
+    marginBottom: 10,
   },
   faqTitle: {
     fontSize: 18,
