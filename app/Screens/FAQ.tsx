@@ -35,7 +35,7 @@ export default function FAQScreen() {
     {
       id: 2,
       question: 'O que fazemos em dias intensos de chuvas?',
-      answer: 'Em casos de chuvas intensas, a instituição avalia as condições de segurança e pode suspender as aulas. Fique atento às comunicações oficiais via e-mail e canais da instituição. Em caso de dúvidas entre em contato com a CRADT',
+      answer: 'Em casos de chuvas intensas, a instituição avalia as condições de segurança e pode suspender as aulas. Fique atento às comunicações oficiais via e-mail e canais da instituição. Em caso de dúvidas entre em contato com a CRADT.',
       expanded: false
     },
     {
