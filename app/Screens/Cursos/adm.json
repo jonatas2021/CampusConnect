@@ -271,6 +271,20 @@
           "requirements": "Nenhum",
           "type": "OBG",
           "syllabusLink": "https://drive.google.com/file/d/1ya7Qzf7v9Ldh8Mc3tWUxedCYk2OuMtoH/view?usp=drive_link"
+        },
+        {
+          "name": "Seis Sigma",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OPT",
+          "syllabusLink": "https://drive.google.com/file/d/16IBzuvSIeL_gS_6uljTdxVNWCKY6psnm/view?usp=drive_link"
+        },
+        {
+          "name": "Marketing Digital e E-commerce",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OPT",
+          "syllabusLink": "https://drive.google.com/file/d/1pXLTo-C5Ci9dYZAGzCSJ1OLFAHFcihmR/view?usp=drive_link"
         }
       ]
     },
@@ -318,6 +332,27 @@
           "requirements": "Nenhum",
           "type": "OBG",
           "syllabusLink": "https://drive.google.com/file/d/1mG0XdUrZpbYY2Tnzm8ZM8udi2mOmuFqY/view?usp=drive_link"
+        },
+        {
+          "name": "Avaliação de Empresas",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OPT",
+          "syllabusLink": "https://drive.google.com/file/d/1dcvDMYCb5DhfYxoa5RjQJepwwoVNvjDe/view?usp=drive_link"
+        },
+        {
+          "name": "Libras",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OPT",
+          "syllabusLink": "https://drive.google.com/file/d/16KT6xNZnWJDnkaTmEkB9yV7Z2xFF_Ny8/view?usp=drive_link"
+        },
+        {
+          "name": "Análise e Estratégia de Investimento",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OPT",
+          "syllabusLink": "https://drive.google.com/file/d/1k5ibpkqW5FvVxzBqm0aANDyiRMZknETw/view?usp=drive_link"
         }
       ]
     },    
@@ -365,6 +400,13 @@
           "requirements": "Tecnologia da Informação",
           "type": "OBG",
           "syllabusLink": "https://drive.google.com/file/d/1VZbIFmnR7tHAo_tsAX4Ff2kQGpzZjrq8/view?usp=drive_link"
+        },
+        {
+          "name": "Tópicos especiais em Administração da Produção e Operações",
+          "hours": "40h",
+          "requirements": "Nenhum",
+          "type": "OPT",
+          "syllabusLink": "https://drive.google.com/file/d/1hV8PY24I10F1ss59MyUMT4zvsS1TbSDp/view?usp=drive_link"
         }
       ]
     }

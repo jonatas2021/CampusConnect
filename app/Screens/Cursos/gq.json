@@ -165,6 +165,13 @@
         "requirements": "Projeto Integrador I",
         "type": "OBG",
         "syllabusLink": "https://drive.google.com/file/d/1_EtWUcoKAypNUxv8JtS_FRhCaHVU1Ejy/view?usp=drive_link"
+      },
+      {
+        "name": "Ferramentas Avançadas da Qualidade",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OPT",
+        "syllabusLink": "https://drive.google.com/file/d/1P_qU4Agy1kZwqJhfimnwJUD4hy7I3k9r/view?usp=drive_link"
       }
     ]
   },
@@ -226,6 +233,13 @@
         "requirements": "Nenhum",
         "type": "OBG",
         "syllabusLink": "https://drive.google.com/file/d/1mtlxP7bhstKhZ-ExjXHMYI4sM_WF1YbD/view?usp=drive_link"
+      },
+      {
+        "name": "Seis Sigma",
+        "hours": "40h",
+        "requirements": "Estatística II",
+        "type": "OPT",
+        "syllabusLink": "https://drive.google.com/file/d/1I0XdiQ578vKUUQwYmTeFTDwnj0JRgbeQ/view?usp=drive_link"
       }
     ]
   },
@@ -273,6 +287,13 @@
         "requirements": "Metodologia da Pesquisa I",
         "type": "OBG",
         "syllabusLink": "https://drive.google.com/file/d/1rkctHR4bAkFYcaoKU480WM4wh7f9j5iF/view?usp=drive_link"
+      },
+      {
+        "name": "Libras",
+        "hours": "40h",
+        "requirements": "Nenhum",
+        "type": "OPT",
+        "syllabusLink": "https://drive.google.com/file/d/1kHpYtMs89yUsh8DtcQE6BknCAGTL3-NQ/view?usp=drive_link"
       }
     ]
   }
