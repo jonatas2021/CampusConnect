@@ -3,7 +3,7 @@ import { View, Text, TextInput, Pressable, StyleSheet, Alert, FlatList, BackHand
 import { RFValue } from 'react-native-responsive-fontsize';
 import BackButton from '@/components/BackButton';
 import { getFirestore, collection, query, orderBy, onSnapshot, doc, updateDoc, deleteDoc } from '@react-native-firebase/firestore';
-import { getAuth, onAuthStateChanged } from '@react-native-firebase/auth'; // Atualizado
+import { getAuth, onAuthStateChanged, signOut } from '@react-native-firebase/auth'; // Atualizado
 import { useRouter } from "expo-router";
 
 interface Notification {
@@ -148,14 +148,31 @@ export default function ManageNotificationsScreen() {
     setLink(notification.link || '');
   };
 
+  const handleLogout = async () => {
+    try {
+      await signOut(getAuth());
+      Alert.alert('Sucesso', 'Você saiu com sucesso.');
+      router.push('/Screens'); // Redireciona para a tela de login após logout
+    } catch (error) {
+      Alert.alert('Erro', 'Não foi possível fazer logout.');
+    }
+  };
+
   return (
     <View style={styles.container}>
       <BackButton destination="/Screens" />
       <Text style={styles.title}>Gerenciar Notificações</Text>
       <View style={styles.separator} />
+      <View style={styles.sair}>
       <Text style={styles.userInfo}>
         {user ? `Usuário: ${user.email}` : 'Nenhum usuário autenticado'}
       </Text>
+      {user && (
+        <Pressable style={styles.logoutButton} onPress={handleLogout}>
+          <Text style={styles.logoutButtonText}>Sair</Text>
+        </Pressable>
+      )}
+      </View>
 
       <FlatList
         data={notifications}
@@ -190,9 +207,6 @@ export default function ManageNotificationsScreen() {
     </View>
   );
 }
-
-// Estilos continuam os mesmos
-
 
 const styles = StyleSheet.create({
   container: {
@@ -258,7 +272,23 @@ const styles = StyleSheet.create({
     fontSize: RFValue(14),
     color: '#666',
     textAlign: 'center',
+  },
+  logoutButton: {
+    backgroundColor: '#ff5722', // Laranja para o botão de logout
+    paddingVertical: 4,
+    paddingHorizontal: 10,
+    borderRadius: 8,
+    marginLeft: 10
+  },
+  sair: {
+    flexDirection: 'row', // Organiza os itens em linha (lado a lado)
+    justifyContent: 'center', // Distribui os itens igualmente, com espaço entre eles
+    alignItems: 'center', // Alinha os itens verticalmente no centro
     marginBottom: 10,
   },
-  
+  logoutButtonText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
 });
