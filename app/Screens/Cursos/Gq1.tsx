@@ -37,6 +37,8 @@ const Gq1 = () => {
         <Text style={styles.requirements}>
           Requisitos para conclusão:{'\n'}
           • 2 Projetos Integradores;{'\n'}
+          • Ter 6oh de Atividades Complementares;{"\n"}
+          • Ter 60h de Prática Profissional (Pode ser o TCC);{"\n"}
           • Realizar a defesa do Trabalho de Conclusão de Curso (TCC).{"\n"} 
         </Text>
 

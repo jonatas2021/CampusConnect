@@ -34,6 +34,8 @@ const Adm1 = () => {
       {/* Requisitos para conclusão */}
       <Text style={styles.requirements}>
         Para concluir o curso, é necessário:{"\n"}
+        • Ter 200h de Atividades Complementares;{"\n"}
+        • Ter 100h de Prática Profissional;{"\n"}
         • Realizar a defesa do Trabalho de Conclusão de Curso (TCC).{"\n"}
       </Text>
         <TouchableOpacity 
