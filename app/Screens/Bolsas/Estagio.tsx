@@ -32,7 +32,7 @@ const CarouselPage = () => {
     const router = useRouter();
 
     const handleButtonPressE = () => {
-        Linking.openURL("https://portal.ifpe.edu.br/wp-content/uploads/repositoriolegado/portal/documentos/regulamento-neabi-1.pdf");
+        Linking.openURL("https://portal.ifpe.edu.br/wp-content/uploads/repositoriolegado/igarassu/documentos/edital-no-01-2022-dgcigr-selecao-de-estagiarios_assinado.pdf");
     };
 
     return (

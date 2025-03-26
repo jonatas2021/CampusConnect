@@ -32,7 +32,7 @@ const CarouselPage = () => {
     const router = useRouter();
 
     const handleButtonPressE = () => {
-        Linking.openURL("https://portal.ifpe.edu.br/wp-content/uploads/repositoriolegado/portal/documentos/regulamento-neabi-1.pdf");
+        Linking.openURL("https://portal.ifpe.edu.br/wp-content/uploads/repositoriolegado/portal/documentos/edital-integrado-de-pesquisa-e-extensao-n-1_2020_gr_ifpe-final.pdf");
     };
 
     return (
