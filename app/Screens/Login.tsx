@@ -6,7 +6,7 @@ import {
 import { useRouter } from 'expo-router';
 import { getAuth, signInWithEmailAndPassword } from '@react-native-firebase/auth'; // Atualizado para a API modular
 import { RFValue } from 'react-native-responsive-fontsize';
-import BackButton from '@/components/BackButton';
+import BackButton from '@/components/BackButton2';
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
