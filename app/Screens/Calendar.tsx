@@ -85,7 +85,7 @@ const monthsWithHolidays = filteredHolidays.reduce((acc: string[], holiday: Holi
   return (
     <SafeAreaView style={styles.container}>
       <BackButton />
-      <Text style={styles.title}>Calendário 2024.2</Text>
+      <Text style={styles.title}>Calendário 2025.1</Text>
       <View style={styles.separator} />
       <Text style={styles.lastUpdate}>Última atualização: 25/03/2025</Text>
       <View style={styles.searchContainer}>
@@ -250,6 +250,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 10,
     fontWeight: "bold",
+    width: "95%"
   },
   searchContainer: {
     flexDirection: 'row',
