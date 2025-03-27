@@ -1,40 +1,31 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert, Linking, ToastAndroid } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert, ToastAndroid, Linking } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
 import { useRouter } from 'expo-router';
-import { getFirestore, collection, query, orderBy, onSnapshot, getDocs } from '@react-native-firebase/firestore';
+import { useNotifications } from '../context/NotificationsContext';  // Importando o hook do contexto
 import { getAuth, onAuthStateChanged } from '@react-native-firebase/auth'; // Atualizado
 
 
 export default function HomeScreen() {
   const [name, setName] = useState('Usuário');
+  const { notifications, markAsRead, loadNotifications } = useNotifications(); // Acessando notificações e função de marcação
   const [hasNewNotification, setHasNewNotification] = useState(false);
   const router = useRouter();
-    const db = getFirestore();  // Firestore permanece igual
-  
 
-  // Função para verificar se a notificação foi lida no AsyncStorage
-  const checkNotificationStatus = async () => {
-    try {
-      const status = await AsyncStorage.getItem('isNewNotification');
-      if (status === 'false') {
-        setHasNewNotification(false); // Se já foi lida, não mostra o ponto
-      } else {
-        setHasNewNotification(true); // Caso contrário, mostra o ponto
-      }
-    } catch (error) {
-      console.error("Erro ao verificar status de notificação local: ", error);
-    }
+  // Função para verificar se há notificações não lidas
+  const checkUnreadNotifications = () => {
+    const unreadNotifications = notifications.some((notification) => !notification.read);
+    setHasNewNotification(unreadNotifications);
   };
 
   // Carregar notificações ao focar na tela
   useFocusEffect(
-    useCallback(() => {
+    React.useCallback(() => {
       console.log("Tela focada - Carregando nome...");
-      
-      // Carrega o nome do usuário da AsyncStorage
+
+      // Carregar o nome após um tempo
       const fetchName = async () => {
         const storedName = await AsyncStorage.getItem('userName');
         console.log("Nome armazenado: ", storedName);
@@ -45,91 +36,42 @@ export default function HomeScreen() {
         }
       };
 
+      checkUnreadNotifications();
       fetchName();
 
+      // Simula um atraso de 3 segundos para verificar as notificações
+      const notificationTimeoutId = setTimeout(() => {
+        loadNotifications();
+        checkUnreadNotifications();
+      }, 10000); // 10000 milissegundos (10 segundos)
+
+      // Função para lidar com o botão de voltar
       const backAction = () => {
         Alert.alert("Sair do App", "Você realmente quer sair?", [
-          {
-            text: "Cancelar",
-            onPress: () => null,
-            style: "cancel"
-          },
-          {
-            text: "Sim",
-            onPress: () => {
-              console.log("Saindo do app...");
-              BackHandler.exitApp();
-            }
-          }
+          { text: "Não", onPress: () => null, style: "cancel" },
+          { text: "Sim", onPress: () => BackHandler.exitApp() }
         ]);
         return true;
       };
 
+      // Adicionando o listener de back press
       const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
 
       return () => {
         console.log("Removendo listener de back press...");
-        backHandler.remove(); // Remove o listener ao sair da tela
+        backHandler.remove(); // Remove o listener de back press
+        clearTimeout(notificationTimeoutId); // Limpa o timeout de checkUnreadNotifications
       };
-    }, [])
+    }, [notifications]) // Recarregar sempre que as notificações mudarem
   );
-
-  useEffect(() => {
-    const db = getFirestore();
-
-    const unsubscribe = onSnapshot(
-      query(collection(db, 'notifications'), orderBy('createdAt', 'desc')),
-      async (snapshot) => {
-        console.log("📡 Snapshot recebido:", snapshot.docs.map(doc => doc.data()));
-    
-        if (!snapshot.empty) {
-          const latestNotification = snapshot.docs[0].id;
-          console.log("🔔 Nova notificação detectada com ID:", latestNotification);
-    
-          const lastReadNotification = await AsyncStorage.getItem('lastReadNotification');
-          console.log("📥 Última notificação lida armazenada:", lastReadNotification);
-    
-          if (!lastReadNotification || latestNotification !== lastReadNotification) {
-            setHasNewNotification(true);
-    
-            setTimeout(async () => {
-              console.log("⏳ Atraso antes de salvar notificação como lida...");
-    
-              const currentSnapshot = await getDocs(query(collection(db, 'notifications'), orderBy('createdAt', 'desc')));
-              const latestNotificationAfterDeletion = currentSnapshot.docs[0]?.id;
-    
-              if (latestNotificationAfterDeletion === latestNotification) {
-                await AsyncStorage.setItem('lastReadNotification', latestNotification);
-                console.log("✅ Status de notificação atualizado após atraso.");
-              } else {
-                console.log("🚫 Notificação apagada ou não mais válida, não atualizando.");
-              }
-            }, 1000);
-          } else {
-            console.log("✅ Notificação já lida. Ponto vermelho não exibido.");
-            setHasNewNotification(false);
-          }
-        } else {
-          console.log("🚫 Nenhuma notificação encontrada.");
-          setHasNewNotification(false);
-        }
-      },
-      (error) => {
-        console.error("❌ Erro ao verificar notificações: ", error);
-      }
-    );
-    
-
-    return () => unsubscribe();
-  }, []);
-  
+  // Função de manipulação de notificações
   const handleNotificationClick = async () => {
     console.log("🖱️ Clicado no botão de notificação...");
 
     try {
-      console.log("💾 Salvando status de leitura como 'false' no AsyncStorage...");
+      console.log("💾 Salvando status de leitura como 'true' no AsyncStorage...");
       await AsyncStorage.setItem('isNewNotification', 'false');
-      setHasNewNotification(false);
+      setHasNewNotification(false); // Marca como lida
       console.log("✅ Status de leitura salvo com sucesso.");
     } catch (error) {
       console.error("❌ Erro ao armazenar status de notificação localmente: ", error);
@@ -138,7 +80,7 @@ export default function HomeScreen() {
     console.log("🚀 Redirecionando para tela de notificações...");
     router.push('/Screens/Notifications');
   };
-  
+
   const getGreeting = () => {
     const hours = new Date().getHours();
     console.log("Hora atual: ", hours);
@@ -163,19 +105,19 @@ export default function HomeScreen() {
     );
   };
 
-    // Verifica se o usuário está autenticado no momento do clique
-    const checkAuthentication = () => {
+  // Verifica se o usuário está autenticado no momento do clique
+  const checkAuthentication = () => {
     const auth = getAuth(); // Uso do Firebase Auth atualizado
-      
-      const user = auth.currentUser; // Obtém o usuário autenticado
-      if (user) {
-        // Se o usuário estiver autenticado, redireciona para outra tela
-        router.push("/Screens/Notification/UpdateNotification"); // Altere o caminho para a tela desejada
-      } else {
-        // Se o usuário não estiver autenticado, vai para a tela de login
-        router.push("/Screens/Login");
-      }
-    };
+
+    const user = auth.currentUser; // Obtém o usuário autenticado
+    if (user) {
+      // Se o usuário estiver autenticado, redireciona para outra tela
+      router.push("/Screens/Notification/UpdateNotification"); // Altere o caminho para a tela desejada
+    } else {
+      // Se o usuário não estiver autenticado, vai para a tela de login
+      router.push("/Screens/Login");
+    }
+  };
 
   const menuItems = [
     {
@@ -282,7 +224,7 @@ export default function HomeScreen() {
       label: 'Carteira de Estudante',
       icon: 'card-account-details' as const,
       onPress: () => { ToastAndroid.show('A tela ainda não está pronta para ser visualizada', ToastAndroid.SHORT)},
-    }, 
+    },
     {
       id: 13,
       label: 'FAQ',
@@ -305,9 +247,7 @@ export default function HomeScreen() {
           {getGreeting()}, {name}!
         </Text>
         <Pressable
-          onPress={() => {
-            handleNotificationClick();  // Chama a função para atualizar o estado local
-          }}
+          onPress={handleNotificationClick}
           style={styles.notificationIcon}
         >
           {hasNewNotification && <View style={styles.notificationBadge} />}

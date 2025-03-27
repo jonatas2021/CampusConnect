@@ -6,6 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import NotificationsProvider from '@/app/context/NotificationsContext';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
@@ -31,6 +32,7 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <GestureHandlerRootView style={{ flex: 1 }}>
+      <NotificationsProvider>
         <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
           <GestureHandlerRootView style={{ flex: 1 }}>
             <Stack>
@@ -90,6 +92,7 @@ export default function RootLayout() {
             <StatusBar style="dark" translucent />
           </GestureHandlerRootView>
         </ThemeProvider>
+        </NotificationsProvider>
       </GestureHandlerRootView>
     </GestureHandlerRootView>
   );

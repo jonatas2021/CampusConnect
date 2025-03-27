@@ -1,91 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View, Text, FlatList, Pressable, StyleSheet, Linking } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import BackButton from '@/components/BackButton';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { getFirestore, collection, query, orderBy, getDocs } from '@react-native-firebase/firestore';
-import { getMessaging, onMessage } from '@react-native-firebase/messaging';
-
-interface Notification {
-  id: string;
-  title: string;
-  note: string;
-  description: string;
-  link?: string;
-  read: boolean;
-}
+import { useNotifications } from '@/app/context/NotificationsContext';
 
 export default function NotificationsScreen() {
-  const [notifications, setNotifications] = useState<Notification[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const { notifications, markAsRead } = useNotifications(); // ✅ Remove 'setNotifications'
 
-  // Carregar notificações do Firestore + AsyncStorage
-  useEffect(() => {
-    const loadNotifications = async () => {
-      try {
-        // Carregar notificações do Firestore com API modular
-        const db = getFirestore();
-        const notificationsQuery = query(collection(db, 'notifications'), orderBy('createdAt', 'desc'));
-        const snapshot = await getDocs(notificationsQuery);
-
-        // Carregar notificações do AsyncStorage
-        const storedNotifications = await AsyncStorage.getItem('notifications');
-        const savedNotifications = storedNotifications ? JSON.parse(storedNotifications) : [];
-
-        // Atualizar o estado com as notificações
-        const notificationsData = snapshot.docs.map((doc) => {
-          const data = doc.data();
-          const savedNotification = savedNotifications.find((n: Notification) => n.id === doc.id);
-
-          return {
-            id: doc.id,
-            title: data.title,
-            note: data.note,
-            description: data.description,
-            link: data.link,
-            read: savedNotification ? savedNotification.read : false,
-          };
-        });
-
-        setNotifications(notificationsData);
-      } catch (error) {
-        console.error('Erro ao carregar notificações:', error);
-      } finally {
-        setLoading(false); // Marcar o carregamento como concluído
-      }
-    };
-
-    loadNotifications();
-
-    // Configurar listener para notificações em primeiro plano
-    const messaging = getMessaging();
-    const unsubscribe = onMessage(messaging, async (remoteMessage) => {
-      console.log('Notificação recebida em primeiro plano:', remoteMessage);
-      // Aqui você pode atualizar as notificações no estado ou fazer outras ações
-    });
-
-    // Limpar listener ao desmontar o componente
-    return () => unsubscribe();
-  }, []); // Executa apenas uma vez ao inicializar o componente
-
-  // Salvar notificações no AsyncStorage
-  const saveNotifications = async (updatedNotifications: Notification[]) => {
-    try {
-      await AsyncStorage.setItem('notifications', JSON.stringify(updatedNotifications));
-      console.log('Notificações salvas:', updatedNotifications);
-    } catch (error) {
-      console.error('Erro ao salvar notificações:', error);
-    }
-  };
-
-  // Marcar como lida e abrir link
   const handleNotificationPress = async (id: string, link?: string) => {
-    const updatedNotifications = notifications.map((notification) =>
-      notification.id === id ? { ...notification, read: true } : notification
-    );
-
-    setNotifications(updatedNotifications);
-    await saveNotifications(updatedNotifications); // Aguardar o retorno de saveNotifications
+    markAsRead(id); // ✅ Usa markAsRead para marcar como lida
 
     if (link) {
       try {
@@ -102,9 +25,7 @@ export default function NotificationsScreen() {
       <Text style={styles.title}>Notificações</Text>
       <View style={styles.separator} />
 
-      {loading ? (
-        <Text>Carregando notificações...</Text>
-      ) : notifications.length === 0 ? (
+      {notifications.length === 0 ? (
         <Text style={styles.noNotifications}>Nenhuma notificação nova.</Text>
       ) : (
         <FlatList
