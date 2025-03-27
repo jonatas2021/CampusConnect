@@ -26,7 +26,7 @@ const weekdaySchedules: BusTimeProps[] = [
   { departure: "09:15", arrival: "09:35" },
   { departure: "09:45", arrival: "10:05" },
   { departure: "10:50", arrival: "11:10" },
-  { departure: "11:20", arrival: "11:50" },
+  { departure: "11:20", arrival: "11:40" },
   { departure: "11:55", arrival: "12:15" },
   { departure: "12:30", arrival: "12:50" },
   { departure: "13:10", arrival: "13:30" },

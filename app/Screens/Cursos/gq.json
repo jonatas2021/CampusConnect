@@ -1,6 +1,6 @@
 [
   {
-    "period": "1º Período",
+    "semester": "1º Semestre",
     "subjects": [
       {
         "name": "Língua Portuguesa Aplicada",
@@ -54,7 +54,7 @@
     ]
   },
   {
-    "period": "2º Período",
+    "semester": "2º Semestre",
     "subjects": [
       {
         "name": "Metodologia Científica",
@@ -115,7 +115,7 @@
     ]
   },
   {
-    "period": "3º Período",
+    "semester": "3º Semestre",
     "subjects": [
       {
         "name": "Gestão da Produção",
@@ -176,7 +176,7 @@
     ]
   },
   {
-    "period": "4º Período",
+    "semester": "4º Semestre",
     "subjects": [
       {
         "name": "Normatização e Certificação da Qualidade",
@@ -244,7 +244,7 @@
     ]
   },
   {
-    "period": "5º Período",
+    "semester": "5º Semestre",
     "subjects": [
       {
         "name": "Ergonomia, Higiene e Segurança do Trabalho",
