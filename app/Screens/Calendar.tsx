@@ -7,11 +7,12 @@ import {
   ScrollView,
   TouchableOpacity,
   Animated,
+  TextInput,
 } from "react-native";
 import BackButton from "@/components/BackButton";
 import { RFValue } from "react-native-responsive-fontsize";
-import importedHolidays  from './Calendar/calendar.json';
-
+import importedHolidays from './Calendar/calendar.json'; // O arquivo JSON
+import { MaterialIcons } from '@expo/vector-icons';
 
 interface HolidayProps {
   month: string;
@@ -21,6 +22,7 @@ interface HolidayProps {
 }
 
 const CalendarScreen: React.FC = () => {
+  const [searchText, setSearchText] = useState('');
   const [selectedDay, setSelectedDay] = useState<string | null>(null);
   const [animatedHeight] = useState(new Animated.Value(80));
 
@@ -42,10 +44,15 @@ const CalendarScreen: React.FC = () => {
     }
   };
 
-  const month = ["Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro",];
+  // Listagem de meses a serem exibidos
+  const months = importedHolidays.reduce((acc: string[], holiday: HolidayProps) => {
+    if (!acc.includes(holiday.month)) {
+      acc.push(holiday.month);
+    }
+    return acc;
+  }, []);
 
-  const holidays: HolidayProps[] = importedHolidays  as HolidayProps[];
-
+  const holidays: HolidayProps[] = importedHolidays;
 
   const holidayType = [
     { type: "Início/Fim do período", color: "#92C36B" },
@@ -58,74 +65,87 @@ const CalendarScreen: React.FC = () => {
     { type: "Reuniões", color: "#EF7C52" },
   ];
 
+// Filtrar os feriados com base na pesquisa
+const filteredHolidays = holidays
+  .filter(
+    (holiday) =>
+      holiday.name.toLowerCase().includes(searchText.toLowerCase()) ||
+      holiday.type.toLowerCase().includes(searchText.toLowerCase())
+  );
+
+// Gerar uma lista de meses com feriados que atendem à pesquisa
+const monthsWithHolidays = filteredHolidays.reduce((acc: string[], holiday: HolidayProps) => {
+  if (!acc.includes(holiday.month)) {
+    acc.push(holiday.month);
+  }
+  return acc;
+}, []);
+
+
   return (
     <SafeAreaView style={styles.container}>
       <BackButton />
-
       <Text style={styles.title}>Calendário 2024.2</Text>
       <View style={styles.separator} />
       <Text style={styles.lastUpdate}>Última atualização: 25/03/2025</Text>
+      <View style={styles.searchContainer}>
+        <MaterialIcons name="search" size={24} color="#2A5224" style={styles.searchIcon} />
+        <TextInput
+          style={styles.searchInput}
+          placeholder="Faça uma busca entre as datas"
+          placeholderTextColor="#888"
+          value={searchText}
+          onChangeText={setSearchText}
+        />
+      </View>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
-        {/* months and days */}
-        <View style={styles.monthsContainer}>
-          {month.map((month, index) => (
-            <View key={index} style={styles.monthContainer}>
-              <View style={styles.monthBox}>
-                <Text style={styles.monthText}>{month}</Text>
-              </View>
+      <View style={styles.monthsContainer}>
+  {monthsWithHolidays.map((month, index) => (
+    <View key={index} style={styles.monthContainer}>
+      <View style={styles.monthBox}>
+        <Text style={styles.monthText}>{month}</Text>
+      </View>
 
-              <View style={styles.dayContainer}>
-                {holidays
-                  .filter((Holiday) => Holiday.month === month)
-                  .map((Holiday, i) => {
-                    const isSelected = selectedDay === Holiday.day;
-                    return (
-                      <Animated.View
-                        key={i}
-                        style={[
-                          styles.dayBox,
-                          {
-                            backgroundColor: holidayType.find(
-                              (t) => t.type === Holiday.type
-                            )?.color,
-                            height: isSelected ? animatedHeight : 80,
-                          },
-                        ]}
-                      >
-                        <TouchableOpacity
-                          style={styles.touchable}
-                          onPress={() => toggleDescription(Holiday.day)}
-                        >
-                          <View style={styles.dayContent}>
-                            <Text style={styles.dayText}>{Holiday.day}</Text>
-                            <Text style={styles.dayTypeText}>
-                              {Holiday.type}
-                            </Text>
-                          </View>
-                          {isSelected && (
-                            <Text style={styles.descriptionText}>
-                              {Holiday.name}
-                            </Text>
-                          )}
-                        </TouchableOpacity>
-                      </Animated.View>
-                    );
-                  })}
-              </View>
-            </View>
-          ))}
-        </View>
-        <View style={styles.separator2} />
-        <View style={styles.holidayTypeContainer}>
-          {holidayType.map((item, index) => (
-            <View key={index} style={styles.typeHolidayBox}>
-              <View
-                style={[styles.typeColorBox, { backgroundColor: item.color }]}
-              />
-              <Text style={styles.typeText}>{item.type}</Text>
-            </View>
-          ))}
-        </View>
+      <View style={styles.dayContainer}>
+        {filteredHolidays
+          .filter((holiday) => holiday.month === month)
+          .map((holiday, i) => {
+            const isSelected = selectedDay === holiday.day;
+            return (
+              <Animated.View
+                key={i}
+                style={[
+                  styles.dayBox,
+                  {
+                    backgroundColor: holidayType.find(
+                      (t) => t.type === holiday.type
+                    )?.color,
+                    height: isSelected ? animatedHeight : 80,
+                  },
+                ]}
+              >
+                <TouchableOpacity
+                  style={styles.touchable}
+                  onPress={() => toggleDescription(holiday.day)}
+                >
+                  <View style={styles.dayContent}>
+                    <Text style={styles.dayText}>{holiday.day}</Text>
+                    <Text style={styles.dayTypeText}>{holiday.type}</Text>
+                  </View>
+                  {isSelected && (
+                    <Text style={styles.descriptionText}>
+                      {holiday.name}
+                    </Text>
+                  )}
+                </TouchableOpacity>
+              </Animated.View>
+            );
+          })}
+      </View>
+    </View>
+  ))}
+</View>
+
       </ScrollView>
     </SafeAreaView>
   );
@@ -151,13 +171,6 @@ const styles = StyleSheet.create({
     height: 2,
     backgroundColor: "#000",
     marginBottom: 5,
-  },
-  separator2: {
-    width: "120%",
-    height: 2,
-    backgroundColor: "#000",
-    marginBottom: 5,
-    alignSelf: 'center'
   },
   lastUpdate: {
     fontSize: RFValue(12),
@@ -196,7 +209,6 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     justifyContent: "center",
   },
-
   dayBox: {
     borderRadius: 8,
     marginBottom: 10,
@@ -239,35 +251,23 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontWeight: "bold",
   },
-  holidayTypeContainer: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "flex-start",
-    marginTop: 30,
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#DEFCC7',
+    borderRadius: 25,
     paddingHorizontal: 15,
+    marginBottom: 25,
   },
-
-  typeHolidayBox: {
-    flexDirection: "row",
-    alignItems: "center",
-    width: "25%",
-    marginBottom: 15,
-    marginRight: "25%",
+  searchInput: {
+    flex: 1,
+    height: 50,
+    fontSize: 16,
+    color: '#333',
   },
-
-  typeColorBox: {
-    width: 20,
-    height: 20,
+  searchIcon: {
     marginRight: 10,
-    borderWidth: 1,
-    borderColor: "#000",
-    borderRadius: 4,
-  },
-
-  typeText: {
-    fontSize: RFValue(10),
-    color: "#000",
-    textAlign: "left",
+    color: '#2A5224',
   },
 });
 
