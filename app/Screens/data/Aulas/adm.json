@@ -1,22 +1,92 @@
 {
-    "1": {
-      "seg": [
-        { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-        { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" }
-      ],
-      "ter": [
-        { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" }
-      ]
-    },
-    "2": {
-      "seg": [
-        { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" }
-      ]
-    },
-    "3": {
-      "qui": [
-        { "time": "1m", "subject": "Química", "teacher": "Prof. Pedro" }
-      ]
-    }
+  "1°": {
+    "seg": [
+      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
+      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
+      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
+      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
+      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+    ],
+    "ter": [
+      { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" },
+      { "time": "2m", "subject": "Geografia", "teacher": "Prof. Lucas" },
+      { "time": "3m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
+      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
+      { "time": "5m", "subject": "Educação Física", "teacher": "Prof. Carla" }
+    ],
+    "qua": [
+      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
+      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
+      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
+      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
+      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+    ],
+    "qui": [
+      { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" },
+      { "time": "2m", "subject": "Geografia", "teacher": "Prof. Lucas" },
+      { "time": "3m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
+      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
+      { "time": "5m", "subject": "Educação Física", "teacher": "Prof. Carla" }
+    ],
+    "sex": [
+      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
+      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
+      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
+      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
+      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+    ]
+  },
+  "2": {
+    "seg": [
+      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
+      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
+      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
+      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
+      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+    ],
+    "ter": [
+      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
+      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
+      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
+      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
+      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
+    ],
+    "qua": [
+      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
+      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
+      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
+      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
+      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+    ],
+    "qui": [
+      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
+      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
+      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
+      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
+      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
+    ],
+    "sex": [
+      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
+      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
+      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
+      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
+      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+    ]
+  },
+  "3": {
+    "qui": [
+      { "time": "1m", "subject": "Química", "teacher": "Prof. Pedro" },
+      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
+      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
+      { "time": "4m", "subject": "História", "teacher": "Prof. Laura" },
+      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
+    ],
+    "sex": [
+      { "time": "1m", "subject": "Química", "teacher": "Prof. Pedro" },
+      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
+      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
+      { "time": "4m", "subject": "História", "teacher": "Prof. Laura" },
+      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
+    ]
   }
-  
+}
