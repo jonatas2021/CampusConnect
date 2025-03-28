@@ -223,7 +223,9 @@ export default function HomeScreen() {
       id: 12,
       label: 'Carteira de Estudante',
       icon: 'card-account-details' as const,
-      onPress: () => { ToastAndroid.show('A tela ainda não está pronta para ser visualizada', ToastAndroid.SHORT)},
+      onPress: () => {
+        router.push("/Screens/Aulas"),
+        ToastAndroid.show('A tela ainda não está pronta para ser visualizada', ToastAndroid.SHORT)},
     },
     {
       id: 13,

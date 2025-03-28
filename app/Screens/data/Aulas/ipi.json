@@ -1,0 +1,22 @@
+{
+    "1": {
+      "seg": [
+        { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
+        { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" }
+      ],
+      "ter": [
+        { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" }
+      ]
+    },
+    "2": {
+      "seg": [
+        { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" }
+      ]
+    },
+    "3": {
+      "qui": [
+        { "time": "1m", "subject": "Química", "teacher": "Prof. Pedro" }
+      ]
+    }
+  }
+  
