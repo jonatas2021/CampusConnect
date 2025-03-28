@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import {  } from 'react-native';import { View, Text, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
+import { } from 'react-native'; import { View, Text, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
 import data from './data/data';
+import BackButton from "@/components/BackButton2";
+import { RFValue } from "react-native-responsive-fontsize";
 
 // Mapeamento dos horários automáticos
 const TIME_MAP: Record<string, { start: string; end: string }> = {
@@ -61,6 +63,9 @@ const Aulas = () => {
 
   return (
     <View style={styles.container}>
+      <BackButton />
+      <Text style={styles.title}>Estagio</Text>
+      <View style={styles.separator} />
       {/* Seleção de Curso */}
       <View style={styles.selectionContainer}>
         {['IPI', 'TSI', 'LOG', 'ADM', 'GQ'].map((course) => (
@@ -71,7 +76,7 @@ const Aulas = () => {
           </TouchableOpacity>
         ))}
       </View>
-  
+
       {/* Seleção de Período */}
       {availablePeriods.length > 0 && (
         <View style={styles.selectionContainer}>
@@ -84,7 +89,7 @@ const Aulas = () => {
           ))}
         </View>
       )}
-  
+
       {/* Seleção de Dias */}
       {selectedPeriod && (
         <View style={styles.daysContainer}>
@@ -98,7 +103,7 @@ const Aulas = () => {
           ))}
         </View>
       )}
-  
+
       {/* Quadro de Horário */}
       <FlatList
         data={schedule}
@@ -121,62 +126,79 @@ const Aulas = () => {
       />
     </View>
   );
-  
+
 };
 
 const styles = StyleSheet.create({
-  container: { 
-    padding: 16 
+  container: {
+    flex: 1,
+    paddingTop: "6%",
+    backgroundColor: "#FFFFFF",
+    paddingHorizontal: "4%",
   },
-  selectionContainer: { 
-    flexDirection: 'row', 
-    justifyContent: 'space-between' 
+  selectionContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
-  dropdown: { 
-    padding: 12, 
-    backgroundColor: '#eee', 
-    marginBottom: 8 
+  dropdown: {
+    padding: 12,
+    backgroundColor: '#eee',
+    marginBottom: 8
   },
-  option: { 
-    padding: 12, 
-    backgroundColor: '#ddd' 
+  option: {
+    padding: 12,
+    backgroundColor: '#ddd'
   },
-  daysContainer: { 
-    flexDirection: 'row', 
-    justifyContent: 'space-between', 
-    marginBottom: 16 
+  daysContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 16
   },
-  dayButton: { 
-    padding: 10, 
-    backgroundColor: '#ccc', 
-    borderRadius: 5 
+  dayButton: {
+    padding: 10,
+    backgroundColor: '#ccc',
+    borderRadius: 5
   },
-  dayButtonSelected: { 
-    backgroundColor: '#aaa' 
+  dayButtonSelected: {
+    backgroundColor: '#aaa'
   },
   dayText: {
-     color: '#000' 
-    },
-  scheduleItem: { 
-    flexDirection: 'row', 
-    marginBottom: 12 
+    color: '#000'
   },
-  time: { 
-    width: 100, 
-    fontWeight: 'bold' 
+  scheduleItem: {
+    flexDirection: 'row',
+    marginBottom: 12
+  },
+  time: {
+    width: 100,
+    fontWeight: 'bold'
   },
   subjectContainer: {
-     flex: 1, 
-     backgroundColor: '#f9f9f9', 
-     padding: 8, 
-     borderRadius: 5 
-    },
-  subject: { 
-    fontWeight: 'bold' 
+    flex: 1,
+    backgroundColor: '#f9f9f9',
+    padding: 8,
+    borderRadius: 5
+  },
+  subject: {
+    fontWeight: 'bold'
   },
   teacher: {
-     color: '#555' 
-    },
+    color: '#555'
+  },
+  title: {
+    fontSize: RFValue(20),
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#000",
+    marginBottom: 10,
+    marginTop: "10%",
+},
+separator: {
+    width: "100%",
+    height: 2,
+    backgroundColor: "#000",
+    alignSelf: 'center',
+},
 });
 
 export default Aulas;
