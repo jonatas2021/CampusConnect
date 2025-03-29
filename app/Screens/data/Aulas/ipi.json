@@ -1,106 +1,109 @@
 {
   "1": {
     "seg": [
-      { "time": "1t", "subject": "Estatística I", "teacher": "Prof. Ana" },
-      { "time": "2t", "subject": "Estatística I", "teacher": "Prof. João" },
-      { "time": "3t", "subject": "Estatística I", "teacher": "Prof. Maria" }
+      { "time": "1t", "subject": "Redes de Computadores", "teacher": "Prof. David" },
+      { "time": "2t", "subject": "Redes de Computadores", "teacher": "Prof. David" },
+      { "time": "3t", "subject": "Redes de Computadores", "teacher": "Prof. David" },
+      { "time": "4t", "subject": "Redes de Computadores", "teacher": "Prof. David" }
     ],
     "ter": [
-      { "time": "1t", "subject": "Ferramentas da Qualidade", "teacher": "Prof. Flora" },
-      { "time": "2t", "subject": "Ferramentas da Qualidade", "teacher": "Prof. Flora" },
-      { "time": "3t", "subject": "Ferramentas da Qualidade", "teacher": "Prof. Flora" },
-      { "time": "4t", "subject": "Engenharia Econômica", "teacher": "Prof. Rodrigo" },
-      { "time": "5t", "subject": "Engenharia Econômica", "teacher": "Prof. Rodrigo" },
-      { "time": "6t", "subject": "Engenharia Econômica", "teacher": "Prof. Rodrigo" }
+      { "time": "1t", "subject": "Português Instrumental", "teacher": "Prof. Mari Tania" },
+      { "time": "2t", "subject": "Português Instrumental", "teacher": "Prof. Mari Tania" },
+      { "time": "3t", "subject": "Português Instrumental", "teacher": "Prof. Mari Tania" },
+      { "time": "4t", "subject": "Lógica de Programação Orientada e Estrutura de Dados", "teacher": "Prof. Allan" },
+      { "time": "5t", "subject": "Lógica de Programação Orientada e Estrutura de Dados", "teacher": "Prof. Allan" },
+      { "time": "6t", "subject": "Lógica de Programação Orientada e Estrutura de Dados", "teacher": "Prof. Allan" }
     ],
     "qua": [
-      { "time": "1t", "subject": "Gestão de Pessoas", "teacher": "Prof. Charles" },
-      { "time": "2t", "subject": "Gestão de Pessoas", "teacher": "Prof. Charles" },
-      { "time": "3t", "subject": "Gestão de Pessoas", "teacher": "Prof. Charles" }
+      { "time": "2t", "subject": "Matemática Aplicada", "teacher": "Prof. Hugo" },
+      { "time": "3t", "subject": "Matemática Aplicada", "teacher": "Prof. Hugo" },
+      { "time": "4t", "subject": "Matemática Aplicada", "teacher": "Prof. Hugo" }
     ],
     "qui": [
-      { "time": "1t", "subject": "Gestão de Materiais e L.", "teacher": "Prof. Inez" },
-      { "time": "2t", "subject": "Gestão de Materiais e L.", "teacher": "Prof. Inez" },
-      { "time": "3t", "subject": "Gestão de Materiais e L.", "teacher": "Prof. Inez" },
-      { "time": "4t", "subject": "Projeto Integrador II", "teacher": "Prof. Inez" },
-      { "time": "5t", "subject": "Projeto Integrador II", "teacher": "Prof. Inez" },
-      { "time": "6t", "subject": "Projeto Integrador II", "teacher": "Prof. Inez" }
+      { "time": "1t", "subject": "Segurança do Trabalho", "teacher": "Prof. Ana Carolina" },
+      { "time": "2t", "subject": "Segurança do Trabalho", "teacher": "Prof. Ana Carolina" },
+      { "time": "3t", "subject": "Inglês Instrumental", "teacher": "Prof. Ivo" },
+      { "time": "4t", "subject": "Inglês Instrumental", "teacher": "Prof. ivo" },
+      { "time": "5t", "subject": "Lógica de Programação Orientada e Estrutura de Dados", "teacher": "Prof. Allan" },
+      { "time": "6t", "subject": "Lógica de Programação Orientada e Estrutura de Dados", "teacher": "Prof. Allan" }
     ],
     "sex": [
-      { "time": "1t", "subject": "Metodologia Científica", "teacher": "Prof. Andreza" },
-      { "time": "2t", "subject": "Metodologia Científica", "teacher": "Prof. Andreza" },
-      { "time": "3t", "subject": "Metodologia Científica", "teacher": "Prof. Andreza" },
-      { "time": "4t", "subject": "Gestão Ambiental", "teacher": "Prof. Bruno" },
-      { "time": "5t", "subject": "Gestão Ambiental", "teacher": "Prof. Bruno" }
+      { "time": "1t", "subject": "Fundamentos da Informática", "teacher": "Prof. Emaur" },
+      { "time": "2t", "subject": "Fundamentos da Informática", "teacher": "Prof. Emaur" },
+      { "time": "3t", "subject": "Fundamentos da Informática", "teacher": "Prof. Emaur" }
     ]
   },
   "2": {
+    "seg": [
+      { "time": "3m", "subject": "Banco de Dados", "teacher": "Prof. Milton" },
+      { "time": "4m", "subject": "Banco de Dados", "teacher": "Prof. Milton" },
+      { "time": "5m", "subject": "Banco de Dados", "teacher": "Prof. Milton" },
+      { "time": "6m", "subject": "Banco de Dados", "teacher": "Prof. Milton" }
+    ],
     "ter": [
-      { "time": "1m", "subject": "Estatística II", "teacher": "Prof. Danniel" },
-      { "time": "2m", "subject": "Estatística II", "teacher": "Prof. Danniel" },
-      { "time": "3m", "subject": "Estatística II", "teacher": "Prof. Danniel" }
+      { "time": "2m", "subject": "Ética Profissional e Cidadania", "teacher": "Willyans" },
+      { "time": "3m", "subject": "Ética Profissional e Cidadania", "teacher": "Willyans" },
+      { "time": "4m", "subject": "Segurança de Sistemas para Internet", "teacher": "Prof. Ramon" },
+      { "time": "5m", "subject": "Segurança de Sistemas para Internet", "teacher": "Prof. Ramon" },
+      { "time": "6m", "subject": "Segurança de Sistemas para Internet", "teacher": "Prof. Ramon" }
     ],
     "qua": [
-      { "time": "1m", "subject": "Gestão de Desenvolvimento do P.", "teacher": "Prof. Flora" },
-      { "time": "2m", "subject": "Gestão de Desenvolvimento do P.", "teacher": "Prof. Flora" },
-      { "time": "3m", "subject": "Gestão de Desenvolvimento do P.", "teacher": "Prof. Flora" },
-      { "time": "4m", "subject": "Gestão do Processo", "teacher": "Prof. FranciscoTecnologia e Sistemas de I. A." },
-      { "time": "5m", "subject": "Gestão do Processo", "teacher": "Prof. FranciscoTecnologia e Sistemas de I. A." },
-      { "time": "6m", "subject": "Gestão do Processo", "teacher": "Prof. FranciscoTecnologia e Sistemas de I. A." }
+      { "time": "3m", "subject": "Desenvolvimento para Web1", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "4m", "subject": "Desenvolvimento para Web1", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "5m", "subject": "Desenvolvimento para Web1", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "6m", "subject": "Desenvolvimento para Web1", "teacher": "Prof. Alexandre Strapação" }
+      
     ],
     "qui": [
-      { "time": "1m", "subject": "Tecnologia e Sistemas de I. A.", "teacher": "Prof. Pedro" },
-      { "time": "2m", "subject": "Tecnologia e Sistemas de I. A.", "teacher": "Prof. Pedro" },
-      { "time": "3m", "subject": "Tecnologia e Sistemas de I. A.", "teacher": "Prof. Pedro" },
-      { "time": "4m", "subject": "Gestão de Produção", "teacher": "Prof. Inez" },
-      { "time": "5m", "subject": "Gestão de Produção", "teacher": "Prof. Inez" },
-      { "time": "6m", "subject": "Gestão de Produção", "teacher": "Prof. Inez" }
+      { "time": "2m", "subject": "Projeto e Prática", "teacher": "Prof. Emaur" },
+      { "time": "3m", "subject": "Projeto e Prática", "teacher": "Prof. Emaur" },
+      { "time": "4m", "subject": "Sistemas Operacionais", "teacher": "Prof. Pedro" },
+      { "time": "5m", "subject": "Sistemas Operacionais", "teacher": "Prof. Pedro" },
+      { "time": "6m", "subject": "Sistemas Operacionais", "teacher": "Prof. Pedro" }
     ],
     "sex": [
-      { "time": "1m", "subject": "Projeto Integrador II", "teacher": "Prof. Djalma" },
-      { "time": "2m", "subject": "Projeto Integrador II", "teacher": "Prof. Djalma" },
-      { "time": "3m", "subject": "Projeto Integrador II", "teacher": "Prof. Djalma" },
-      { "time": "4m", "subject": "Gestão de Qualidade em Serviços", "teacher": "Prof. Simonelle" },
-      { "time": "5m", "subject": "Gestão de Qualidade em Serviços", "teacher": "Prof. Simonelle" },
-      { "time": "6m", "subject": "Gestão de Qualidade em Serviços", "teacher": "Prof. Simonelle" }
+      { "time": "2m", "subject": "Projeto e Prática", "teacher": "Prof. Emaur" },
+      { "time": "3m", "subject": "Projeto e Prática", "teacher": "Prof. Emaur" },
+      { "time": "4m", "subject": "Programaçãp Orientada a Objeto", "teacher": "Prof. Gustavo nobrega" },
+      { "time": "5m", "subject": "Programaçãp Orientada a Objeto", "teacher": "Prof. Gustavo nobrega" },
+      { "time": "6m", "subject": "Programaçãp Orientada a Objeto", "teacher": "Prof. Gustavo nobrega" }
     ]
   },
   "3": {
     "seg": [
-      { "time": "1t", "subject": "Gestão da Inivação", "teacher": "Prof. Adriana" },
-      { "time": "2t", "subject": "Gestão da Inivação", "teacher": "Prof. Adriana" },
-      { "time": "3t", "subject": "Gestão da Inivação", "teacher": "Prof. Adriana" },
-      { "time": "4t", "subject": "Planejamento Estratégico", "teacher": "Prof. Adriana" },
-      { "time": "5t", "subject": "Planejamento Estratégico", "teacher": "Prof. Adriana" }
+      { "time": "1t", "subject": "Projeto e Prática 2", "teacher": "Prof. Liliane" },
+      { "time": "2t", "subject": "Projeto e Prática 2", "teacher": "Prof. Liliane" },
+      { "time": "3t", "subject": "Projeto e Prática 2", "teacher": "Prof. Raniere" },
+      { "time": "4t", "subject": "Projeto e Prática 2", "teacher": "Prof. Raniere" },
+      { "time": "5t", "subject": "Projeto e Prática 2", "teacher": "Prof. Raniere" }
     ],
     "ter": [
-      { "time": "1t", "subject": "Metrologia", "teacher": "Prof. Francisco" },
-      { "time": "2t", "subject": "Metrologia", "teacher": "Prof. Francisco" },
-      { "time": "3t", "subject": "Metrologia", "teacher": "Prof. Francisco" },
-      { "time": "4t", "subject": "Metrologia", "teacher": "Prof. Francisco" },
-      { "time": "5t", "subject": "Metodologia da PEsquisa I", "teacher": "Prof. Ana Carolina" },
-      { "time": "6t", "subject": "Metodologia da PEsquisa I", "teacher": "Prof. Ana Carolina" }
+      { "time": "2t", "subject": "Implantação e Administração de Serviços Web", "teacher": "Prof. Ramon" },
+      { "time": "3t", "subject": "Implantação e Administração de Serviços Web", "teacher": "Prof. Ramon" },
+      { "time": "4t", "subject": "Implantação e Administração de Serviços Web", "teacher": "Prof. Ramon" },
+      { "time": "5t", "subject": "Implantação e Administração de Serviços Web", "teacher": "Prof. Ramon" },
+      { "time": "6t", "subject": "Implantação e Administração de Serviços Web", "teacher": "Prof. Ramon" }
+
     ],
     "qua": [
-      { "time": "1t", "subject": "Gestão Estratégica da Q.", "teacher": "Prof. Adriana" },
-      { "time": "2t", "subject": "Gestão Estratégica da Q.", "teacher": "Prof. Adriana" },
-      { "time": "3t", "subject": "Gestão Estratégica da Q.", "teacher": "Prof. Adriana" }
+      { "time": "1t", "subject": "Desenvolvimento para Web2", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "2t", "subject": "Desenvolvimento para Web2", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "3t", "subject": "Desenvolvimento para Web2", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "4t", "subject": "Desenvolvimento para Web2", "teacher": "Prof. Alexandre Strapação" }
     ],
     "qui": [
-      { "time": "1t", "subject": "Normalização e Certificação da Q.", "teacher": "Prof. Jessyca" },
-      { "time": "2t", "subject": "Normalização e Certificação da Q.", "teacher": "Prof. Jessyca" },
-      { "time": "3t", "subject": "Normalização e Certificação da Q.", "teacher": "Prof. Jessyca" },
-      { "time": "4t", "subject": "Controle Estatístico da Qualidade", "teacher": "Prof. Djalma" },
-      { "time": "5t", "subject": "Controle Estatístico da Qualidade", "teacher": "Prof. Djalma" },
-      { "time": "6t", "subject": "Controle Estatístico da Qualidade", "teacher": "Prof. Djalma" }
+      { "time": "1t", "subject": "Engenharia de Software", "teacher": "Prof. Emaur" },
+      { "time": "2t", "subject": "Engenharia de Software", "teacher": "Prof. Emaur" },
+      { "time": "3t", "subject": "Engenharia de Software", "teacher": "Prof. Emaur" },
+      { "time": "4t", "subject": "Engenharia de Software", "teacher": "Prof. Emaur" },
+      { "time": "5t", "subject": "Empreendedorismo", "teacher": "Prof. Luiz" },
+      { "time": "6t", "subject": "Empreendedorismo", "teacher": "Prof. Luiz" }
 
     ],
     "sex": [
-      { "time": "1t", "subject": "Normalização e Certificação da Q.", "teacher": "Prof. Jessyca" },
-      { "time": "2t", "subject": "Normalização e Certificação da Q.", "teacher": "Prof. Jessyca" },
-      { "time": "3t", "subject": "Normalização e Certificação da Q.", "teacher": "Prof. Jessyca" },
-      { "time": "4t", "subject": "Custos de Produção", "teacher": "Prof. Djalma" },
-      { "time": "5t", "subject": "Custos de Produção", "teacher": "Prof. Djalma" }
+      { "time": "1t", "subject": "Interação Humano Computador", "teacher": "Prof. Erton" },
+      { "time": "2t", "subject": "Interação Humano Computador", "teacher": "Prof. Erton" },
+      { "time": "3t", "subject": "Interação Humano Computador", "teacher": "Prof. Erton" }
     ]
   }
 }
