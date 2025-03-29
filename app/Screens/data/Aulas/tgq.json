@@ -1,6 +1,36 @@
 {
   "1": {
     "seg": [
+      { "time": "1m", "subject": "Lingua Portuguesa Aplicada", "teacher": "Prof. Mari Tania" },
+      { "time": "2m", "subject": "Lingua Portuguesa Aplicada", "teacher": "Prof.Mari Tania" },
+      { "time": "3m", "subject": "Lingua Portuguesa Aplicada", "teacher": "Prof.Mari Tania" },
+      { "time": "4m", "subject": "Fundamentos da Economia", "teacher": "Prof. Marcelo" },
+      { "time": "5m", "subject": "Fundamentos da Economia", "teacher": "Prof. Marcelo" },
+      { "time": "6m", "subject": "Fundamentos da Economia", "teacher": "Prof. Marcelo" }
+    ],
+    "ter": [
+      { "time": "4m", "subject": "Fundamentos da Administração", "teacher": "Prof. Edilene" },
+      { "time": "5m", "subject": "Fundamentos da Administração", "teacher": "Prof. Edilene" },
+      { "time": "6m", "subject": "Fundamentos da Administração", "teacher": "Prof. Edilene" }
+    ],
+    "qua": [
+      { "time": "1m", "subject": "Introdução a Gestão da Qualidade", "teacher": "Prof. Francisco" },
+      { "time": "2m", "subject": "Introdução a Gestão da Qualidade", "teacher": "Prof. Francisco" },
+      { "time": "3m", "subject": "Introdução a Gestão da Qualidade", "teacher": "Prof. Francisco" },
+      { "time": "4m", "subject": "Matemática Aplicada", "teacher": "Prof. Cícero" },
+      { "time": "5m", "subject": "Matemática Aplicada", "teacher": "Prof. Cícero" },
+      { "time": "6m", "subject": "Matemática Aplicada", "teacher": "Prof. Cícero" }
+    ],
+    "qui": [
+      { "time": "2m", "subject": "Ética", "teacher": "Prof. Willyans" },
+      { "time": "3m", "subject": "Ética", "teacher": "Prof. Willyans" },
+      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
+      { "time": "5m", "subject": "Informática", "teacher": "Prof. Emaur" },
+      { "time": "6m", "subject": "Informática", "teacher": "Prof. Emaur" }
+    ]
+  },
+  "2": {
+    "seg": [
       { "time": "1t", "subject": "Estatística I", "teacher": "Prof. Ana" },
       { "time": "2t", "subject": "Estatística I", "teacher": "Prof. João" },
       { "time": "3t", "subject": "Estatística I", "teacher": "Prof. Maria" }
@@ -34,7 +64,7 @@
       { "time": "5t", "subject": "Gestão Ambiental", "teacher": "Prof. Bruno" }
     ]
   },
-  "2": {
+  "3": {
     "ter": [
       { "time": "1m", "subject": "Estatística II", "teacher": "Prof. Danniel" },
       { "time": "2m", "subject": "Estatística II", "teacher": "Prof. Danniel" },
@@ -65,7 +95,7 @@
       { "time": "6m", "subject": "Gestão de Qualidade em Serviços", "teacher": "Prof. Simonelle" }
     ]
   },
-  "3": {
+  "4": {
     "seg": [
       { "time": "1t", "subject": "Gestão da Inivação", "teacher": "Prof. Adriana" },
       { "time": "2t", "subject": "Gestão da Inivação", "teacher": "Prof. Adriana" },
@@ -101,6 +131,37 @@
       { "time": "3t", "subject": "Normalização e Certificação da Q.", "teacher": "Prof. Jessyca" },
       { "time": "4t", "subject": "Custos de Produção", "teacher": "Prof. Djalma" },
       { "time": "5t", "subject": "Custos de Produção", "teacher": "Prof. Djalma" }
+    ]
+  },
+  "5": {
+    "ter": [
+      { "time": "1m", "subject": "Noções Gerais do Direito", "teacher": "Prof. Leonardo" },
+      { "time": "2m", "subject": "Noções Gerais do Direito", "teacher": "Prof. Leonardo" },
+      { "time": "3m", "subject": "Noções Gerais do Direito", "teacher": "Prof. Leonardo" },
+      { "time": "4m", "subject": "Ergonomia H. e Segurança do T.", "teacher": "Prof. Ana Carolina" },
+      { "time": "5m", "subject": "Ergonomia H. e Segurança do T.", "teacher": "Prof. Ana Carolina" },
+      { "time": "5m", "subject": "Ergonomia H. e Segurança do T.", "teacher": "Prof. Ana Carolina" }
+
+    ],
+    "qua": [
+      { "time": "1m", "subject": "Gestão de Projetos", "teacher": "Prof. Charles" },
+      { "time": "2m", "subject": "Gestão de Projetos", "teacher": "Prof. Charles" },
+      { "time": "3m", "subject": "Gestão de Projetos", "teacher": "Prof. Charles" },
+      { "time": "4m", "subject": "Empreendedorismo", "teacher": "Prof. Yuri" },
+      { "time": "5m", "subject": "Empreendedorismo", "teacher": "Prof. Yuri" },
+      { "time": "6m", "subject": "Empreendedorismo", "teacher": "Prof. Yuri" }
+    ],
+    "qui": [
+      { "time": "4m", "subject": "Auditoria da Qualidade", "teacher": "Prof. Jessyca" },
+      { "time": "5m", "subject": "Auditoria da Qualidade", "teacher": "Prof. Jessyca" },
+      { "time": "6m", "subject": "Auditoria da Qualidade", "teacher": "Prof. Jessyca" }
+    ],
+    "sex": [
+      { "time": "1m", "subject": "Auditoria da Qualidade", "teacher": "Prof. Jessyca" },
+      { "time": "2m", "subject": "Auditoria da Qualidade", "teacher": "Prof. Jessyca" },
+      { "time": "3m", "subject": "Auditoria da Qualidade", "teacher": "Prof. Jessyca" },
+      { "time": "4m", "subject": "Metodologia da Pesquisa II", "teacher": "Prof. Djalma" },
+      { "time": "5m", "subject": "Metodologia da Pesquisa II", "teacher": "Prof. Djalma" }
     ]
   }
 }

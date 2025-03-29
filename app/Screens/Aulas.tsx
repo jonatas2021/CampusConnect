@@ -1,34 +1,82 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import { Button, Menu, Provider } from 'react-native-paper';
-import data from './data/data'; // Supondo que os dados de horários estão aqui
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import data from './data/data';
 import BackButton from "@/components/BackButton";
 import { RFValue } from "react-native-responsive-fontsize";
 
-// Mapeamento dos horários automáticos
 const TIME_MAP: Record<string, { start: string; end: string }> = {
-  '1m': { start: '07:00', end: '07:50' },
-  '2m': { start: '07:50', end: '08:40' },
-  '3m': { start: '08:40', end: '09:30' },
-  '4m': { start: '09:50', end: '10:40' },
-  '5m': { start: '10:40', end: '11:30' },
-  '1t': { start: '13:00', end: '13:50' },
-  '2t': { start: '13:50', end: '14:40' },
-  '3t': { start: '14:40', end: '15:30' },
-  '4t': { start: '15:50', end: '16:40' },
-  '5t': { start: '16:40', end: '17:30' },
+  '1m': { start: '07:00', end: '07:45' },
+  '2m': { start: '07:45', end: '08:30' },
+  '3m': { start: '08:30', end: '09:15' },
+  '4m': { start: '09:15', end: '10:00' },
+  '5m': { start: '10:20', end: '11:05' },
+  '6m': { start: '11:05', end: '11:50' },
+  '1t': { start: '12:50', end: '13:35' },
+  '2t': { start: '13:35', end: '14:20' },
+  '3t': { start: '14:20', end: '15:05' },
+  '4t': { start: '15:25', end: '16:10' },
+  '5t': { start: '16:10', end: '16:55' },
+  '6t': { start: '16:55', end: '17:40' },
 };
 
 const Aulas = () => {
   const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
   const [selectedPeriod, setSelectedPeriod] = useState<string | null>(null);
+  const [selectedDay, setSelectedDay] = useState<string | null>(null);
   const [availablePeriods, setAvailablePeriods] = useState<string[]>([]);
   const [schedule, setSchedule] = useState<any[]>([]);
-  const [selectedDay, setSelectedDay] = useState<string | null>(null);
-
-  // Lógica de dropdown
   const [isCourseDropdownOpen, setIsCourseDropdownOpen] = useState(false);
   const [isPeriodDropdownOpen, setIsPeriodDropdownOpen] = useState(false);
+
+  // Salvar seleção no AsyncStorage
+  const saveSelection = async (course: string, period: string, day: string) => {
+    try {
+      await AsyncStorage.setItem('selectedCourse', course);
+      await AsyncStorage.setItem('selectedPeriod', period);
+      await AsyncStorage.setItem('selectedDay', day);
+    } catch (error) {
+      console.error('Erro ao salvar seleção:', error);
+    }
+  };
+
+  // Carregar seleção do AsyncStorage
+  const loadSelection = async () => {
+    try {
+      const course = await AsyncStorage.getItem('selectedCourse');
+      const period = await AsyncStorage.getItem('selectedPeriod');
+      const day = await AsyncStorage.getItem('selectedDay');
+
+      if (course) setSelectedCourse(course);
+      if (period) setSelectedPeriod(period);
+      if (day) setSelectedDay(day);
+
+      if (course && period && day) {
+        loadSchedule(course, period, day);
+        loadAvailablePeriods(course);
+      }
+    } catch (error) {
+      console.error('Erro ao carregar seleção:', error);
+    }
+  };
+
+  useEffect(() => {
+    loadSelection(); // Recuperar seleção salva ao abrir a tela
+  }, []);
+
+  useEffect(() => {
+    if (selectedCourse) {
+      loadAvailablePeriods(selectedCourse);
+    }
+  }, [selectedCourse]);
+
+  useEffect(() => {
+    if (selectedCourse && selectedPeriod && selectedDay) {
+      loadSchedule(selectedCourse, selectedPeriod, selectedDay);
+      saveSelection(selectedCourse, selectedPeriod, selectedDay);
+    }
+  }, [selectedCourse, selectedPeriod, selectedDay]);
 
   const loadSchedule = (course: string, period: string, day: string) => {
     try {
@@ -40,30 +88,16 @@ const Aulas = () => {
     }
   };
 
-  useEffect(() => {
-    if (selectedCourse) {
-      loadAvailablePeriods(selectedCourse);
-    }
-  }, [selectedCourse]);
-
   const loadAvailablePeriods = (course: string) => {
     try {
       const courseData = data[course.toLowerCase()];
       if (courseData) {
-        const periods = Object.keys(courseData);
-        setAvailablePeriods(periods);
-        setSelectedDay(null);  // Resetando o dia selecionado
+        setAvailablePeriods(Object.keys(courseData));
       }
     } catch (error) {
       console.error('Erro ao carregar períodos:', error);
     }
   };
-
-  useEffect(() => {
-    if (selectedCourse && selectedPeriod && selectedDay) {
-      loadSchedule(selectedCourse, selectedPeriod, selectedDay);
-    }
-  }, [selectedCourse, selectedPeriod, selectedDay]);
 
   const renderCourseMenu = () => (
     <View style={styles.selectionContainer}>
@@ -84,11 +118,13 @@ const Aulas = () => {
           </Button>
         }
       >
-        {['IPI', 'TSI', 'LOG', 'ADM', 'GQ'].map((course) => (
+        {['IPI', 'TSI', 'LOG', 'ADM', 'TGQ'].map((course) => (
           <Menu.Item
             key={course}
             onPress={() => {
               setSelectedCourse(course);
+              setSelectedPeriod(null);
+              setSelectedDay(null);
               setIsCourseDropdownOpen(false);
             }}
             title={course}
@@ -104,7 +140,6 @@ const Aulas = () => {
             }}
           />
         ))}
-
       </Menu>
     </View>
   );
@@ -120,9 +155,10 @@ const Aulas = () => {
             onPress={() => setIsPeriodDropdownOpen(true)}
             disabled={!selectedCourse}
             textColor="#000" // Define a cor do texto
-            labelStyle={{ 
-              fontSize: RFValue(14), 
-              fontWeight: 'bold' }} // Define o tamanho da fonte e coloca o texto em negrito
+            labelStyle={{
+              fontSize: RFValue(14),
+              fontWeight: 'bold'
+            }} // Define o tamanho da fonte e coloca o texto em negrito
           >
             {selectedPeriod || 'Selecione'}
           </Button>
@@ -137,7 +173,7 @@ const Aulas = () => {
               setSelectedPeriod(period);
               setIsPeriodDropdownOpen(false);
             }}
-            title={`${period} Período`}
+            title={`${period}° Período`}
             style={{
               backgroundColor: '#2A5224', // Cor de fundo personalizada
               borderBottomWidth: 1, // Linha divisória entre os itens (opcional)
@@ -185,6 +221,15 @@ const Aulas = () => {
         </View>
 
         <View style={styles.container2}>
+          {selectedCourse && selectedPeriod && (
+            <View>
+            <Text style={styles.selectedInfo}>
+              Horário de {selectedCourse} - {selectedPeriod}° Período
+            </Text>
+            <View style={styles.separator4}></View>
+            </View>
+          )}
+
 
           {/* Seleção de Dias */}
           {selectedPeriod && (
@@ -242,11 +287,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: "4%",
   },
   container2: {
-    paddingTop: "9%",
+    paddingTop: "4%",
     backgroundColor: "#2A5224",
     paddingHorizontal: "4%",
     width: '100%',
-    height: '70%',
+    height: '82%',
     borderRadius: 20,
   },
   separator: {
@@ -268,6 +313,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
     alignSelf: 'center',
     marginVertical: 5
+  },
+  separator4: {
+    width: "90%",
+    height: 2,
+    backgroundColor: "#fff",
+    alignSelf: 'center',
+    marginBottom: 14
   },
   title: {
     fontSize: RFValue(20),
@@ -373,8 +425,8 @@ const styles = StyleSheet.create({
   selectionContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    marginBottom: 10,
-    marginTop: 15,
+    marginBottom: 5,
+    marginTop: 5,
     alignItems: 'center',
     alignSelf: 'center',
   },
@@ -395,7 +447,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#4285F4', // Cor única para todos os cursos
   },
-
+  selectedInfo: {
+    fontSize: RFValue(16),
+    fontWeight: 'bold',
+    color: '#FFF',
+    textAlign: 'center',
+  },  
 
 });
 
