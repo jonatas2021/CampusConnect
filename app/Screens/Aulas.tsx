@@ -173,7 +173,7 @@ const Aulas = () => {
               setSelectedPeriod(period);
               setIsPeriodDropdownOpen(false);
             }}
-            title={`${period}° Período`}
+            title={`${period} Período`}
             style={{
               backgroundColor: '#2A5224', // Cor de fundo personalizada
               borderBottomWidth: 1, // Linha divisória entre os itens (opcional)
@@ -224,7 +224,7 @@ const Aulas = () => {
           {selectedCourse && selectedPeriod && (
             <View>
             <Text style={styles.selectedInfo}>
-              Horário de {selectedCourse} - {selectedPeriod}° Período
+              Horário de {selectedCourse} - {selectedPeriod} Período
             </Text>
             <View style={styles.separator4}></View>
             </View>

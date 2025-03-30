@@ -131,15 +131,6 @@ export default function HomeScreen() {
     },
     {
       id: 2,
-      label: 'Bolsas e Estágios',
-      icon: 'briefcase-account' as const,
-      onPress: () => {
-        router.push("/Screens/Bolsas");
-        console.log('Scholarships');
-      }
-    },
-    {
-      id: 3,
       label: 'Cursos',
       icon: 'notebook-edit' as const,
       onPress: () => {
@@ -148,7 +139,34 @@ export default function HomeScreen() {
       }
     },
     {
+      id: 3,
+      label: 'Horários dos Ônibus',
+      icon: 'bus-clock' as const,
+      onPress: () => {
+        router.push("/Screens/Linha");
+        console.log('Horários do Ônibus');
+      }
+    },
+    {
       id: 4,
+      label: 'Horários das Aulas',
+      icon: 'clock' as const,
+      onPress: () => {
+        router.push("/Screens/Aulas");
+        console.log('Horários das aulas');
+      }
+    },
+    {
+      id: 5,
+      label: 'Bolsas e Estágios',
+      icon: 'briefcase-account' as const,
+      onPress: () => {
+        router.push("/Screens/Bolsas");
+        console.log('Scholarships');
+      }
+    },
+    {
+      id: 6,
       label: 'Contatos',
       icon: 'email' as const,
       onPress: () => {
@@ -157,16 +175,7 @@ export default function HomeScreen() {
       }
     },
     {
-      id: 5,
-      label: 'Horários dos Ônibus',
-      icon: 'clock' as const,
-      onPress: () => {
-        router.push("/Screens/Linha");
-        console.log('Horários do Ônibus');
-      }
-    },
-    {
-      id: 6,
+      id: 7,
       label: 'Núcleos de Apoio',
       icon: 'account-group' as const,
       onPress: () => {
@@ -175,7 +184,7 @@ export default function HomeScreen() {
       }
     },
     {
-      id: 7,
+      id: 8,
       label: 'Acesso ao QAcadêmico',
       icon: 'web' as const,
       onPress: () => {
@@ -184,7 +193,7 @@ export default function HomeScreen() {
       }
     },
     {
-      id: 8,
+      id: 9,
       label: 'Requerimentos CRADT',
       icon: 'file-document-edit' as const,
       onPress: () => {
@@ -193,7 +202,7 @@ export default function HomeScreen() {
       }
     },
     {
-      id: 9,
+      id: 10,
       label: 'Setores',
       icon: 'office-building' as const,
       onPress: () => {
@@ -202,7 +211,7 @@ export default function HomeScreen() {
       }
     },
     {
-      id: 10,
+      id: 11,
       label: 'WhatsApp',
       icon: 'whatsapp' as const,
       onPress: () => {
@@ -211,7 +220,7 @@ export default function HomeScreen() {
       }
     },
     {
-      id: 11,
+      id: 12,
       label: 'Serviço de Orientação Psicológica',
       icon: 'head-heart' as const,
       onPress: () => {
@@ -220,21 +229,27 @@ export default function HomeScreen() {
       }
     },
     {
-      id: 12,
+      id: 13,
       label: 'Carteira de Estudante',
       icon: 'card-account-details' as const,
       onPress: () => {
-        router.push("/Screens/Aulas"),
         ToastAndroid.show('A tela ainda não está pronta para ser visualizada', ToastAndroid.SHORT)},
     },
     {
-      id: 13,
+      id: 14,
+      label: 'Diploma e Certificado',
+      icon: 'certificate' as const,
+      onPress: () => {
+        ToastAndroid.show('A tela ainda não está pronta para ser visualizada', ToastAndroid.SHORT)},
+    },
+    {
+      id: 15,
       label: 'FAQ',
       icon: 'help-circle' as const,
       onPress: () => router.push("/Screens/FAQ"),
     },
     {
-      id: 14,
+      id: 16,
       label: 'Administrador',
       icon: 'account-lock' as const,
       onPress: checkAuthentication,

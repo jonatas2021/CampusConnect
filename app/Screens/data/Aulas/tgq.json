@@ -1,5 +1,5 @@
 {
-  "1": {
+  "1°": {
     "seg": [
       { "time": "1m", "subject": "Lingua Portuguesa Aplicada", "teacher": "Prof. Mari Tania" },
       { "time": "2m", "subject": "Lingua Portuguesa Aplicada", "teacher": "Prof.Mari Tania" },
@@ -24,16 +24,16 @@
     "qui": [
       { "time": "2m", "subject": "Ética", "teacher": "Prof. Willyans" },
       { "time": "3m", "subject": "Ética", "teacher": "Prof. Willyans" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
+      { "time": "4m", "subject": "Ética", "teacher": "Prof. Willyans" },
       { "time": "5m", "subject": "Informática", "teacher": "Prof. Emaur" },
       { "time": "6m", "subject": "Informática", "teacher": "Prof. Emaur" }
     ]
   },
-  "2": {
+  "2°": {
     "seg": [
-      { "time": "1t", "subject": "Estatística I", "teacher": "Prof. Ana" },
-      { "time": "2t", "subject": "Estatística I", "teacher": "Prof. João" },
-      { "time": "3t", "subject": "Estatística I", "teacher": "Prof. Maria" }
+      { "time": "1t", "subject": "Estatística I", "teacher": "Prof. Danniel" },
+      { "time": "2t", "subject": "Estatística I", "teacher": "Prof. Danniel" },
+      { "time": "3t", "subject": "Estatística I", "teacher": "Prof. Danniel" }
     ],
     "ter": [
       { "time": "1t", "subject": "Ferramentas da Qualidade", "teacher": "Prof. Flora" },
@@ -64,7 +64,7 @@
       { "time": "5t", "subject": "Gestão Ambiental", "teacher": "Prof. Bruno" }
     ]
   },
-  "3": {
+  "3°": {
     "ter": [
       { "time": "1m", "subject": "Estatística II", "teacher": "Prof. Danniel" },
       { "time": "2m", "subject": "Estatística II", "teacher": "Prof. Danniel" },
@@ -74,9 +74,9 @@
       { "time": "1m", "subject": "Gestão de Desenvolvimento do P.", "teacher": "Prof. Flora" },
       { "time": "2m", "subject": "Gestão de Desenvolvimento do P.", "teacher": "Prof. Flora" },
       { "time": "3m", "subject": "Gestão de Desenvolvimento do P.", "teacher": "Prof. Flora" },
-      { "time": "4m", "subject": "Gestão do Processo", "teacher": "Prof. FranciscoTecnologia e Sistemas de I. A." },
-      { "time": "5m", "subject": "Gestão do Processo", "teacher": "Prof. FranciscoTecnologia e Sistemas de I. A." },
-      { "time": "6m", "subject": "Gestão do Processo", "teacher": "Prof. FranciscoTecnologia e Sistemas de I. A." }
+      { "time": "4m", "subject": "Gestão do Processo", "teacher": "Prof. Francisco" },
+      { "time": "5m", "subject": "Gestão do Processo", "teacher": "Prof. Francisco" },
+      { "time": "6m", "subject": "Gestão do Processo", "teacher": "Prof. Francisco" }
     ],
     "qui": [
       { "time": "1m", "subject": "Tecnologia e Sistemas de I. A.", "teacher": "Prof. Pedro" },
@@ -95,7 +95,7 @@
       { "time": "6m", "subject": "Gestão de Qualidade em Serviços", "teacher": "Prof. Simonelle" }
     ]
   },
-  "4": {
+  "4°": {
     "seg": [
       { "time": "1t", "subject": "Gestão da Inivação", "teacher": "Prof. Adriana" },
       { "time": "2t", "subject": "Gestão da Inivação", "teacher": "Prof. Adriana" },
@@ -133,7 +133,7 @@
       { "time": "5t", "subject": "Custos de Produção", "teacher": "Prof. Djalma" }
     ]
   },
-  "5": {
+  "5°": {
     "ter": [
       { "time": "1m", "subject": "Noções Gerais do Direito", "teacher": "Prof. Leonardo" },
       { "time": "2m", "subject": "Noções Gerais do Direito", "teacher": "Prof. Leonardo" },

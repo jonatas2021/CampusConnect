@@ -1,5 +1,5 @@
 {
-  "1": {
+  "1°": {
     "seg": [
       { "time": "1t", "subject": "Redes de Computadores", "teacher": "Prof. David" },
       { "time": "2t", "subject": "Redes de Computadores", "teacher": "Prof. David" },
@@ -10,9 +10,9 @@
       { "time": "1t", "subject": "Português Instrumental", "teacher": "Prof. Mari Tania" },
       { "time": "2t", "subject": "Português Instrumental", "teacher": "Prof. Mari Tania" },
       { "time": "3t", "subject": "Português Instrumental", "teacher": "Prof. Mari Tania" },
-      { "time": "4t", "subject": "Lógica de Programação Orientada e Estrutura de Dados", "teacher": "Prof. Allan" },
-      { "time": "5t", "subject": "Lógica de Programação Orientada e Estrutura de Dados", "teacher": "Prof. Allan" },
-      { "time": "6t", "subject": "Lógica de Programação Orientada e Estrutura de Dados", "teacher": "Prof. Allan" }
+      { "time": "4t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan" },
+      { "time": "5t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan" },
+      { "time": "6t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan" }
     ],
     "qua": [
       { "time": "2t", "subject": "Matemática Aplicada", "teacher": "Prof. Hugo" },
@@ -24,8 +24,8 @@
       { "time": "2t", "subject": "Segurança do Trabalho", "teacher": "Prof. Ana Carolina" },
       { "time": "3t", "subject": "Inglês Instrumental", "teacher": "Prof. Ivo" },
       { "time": "4t", "subject": "Inglês Instrumental", "teacher": "Prof. ivo" },
-      { "time": "5t", "subject": "Lógica de Programação Orientada e Estrutura de Dados", "teacher": "Prof. Allan" },
-      { "time": "6t", "subject": "Lógica de Programação Orientada e Estrutura de Dados", "teacher": "Prof. Allan" }
+      { "time": "5t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan" },
+      { "time": "6t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan" }
     ],
     "sex": [
       { "time": "1t", "subject": "Fundamentos da Informática", "teacher": "Prof. Emaur" },
@@ -33,7 +33,7 @@
       { "time": "3t", "subject": "Fundamentos da Informática", "teacher": "Prof. Emaur" }
     ]
   },
-  "2": {
+  "2°": {
     "seg": [
       { "time": "3m", "subject": "Banco de Dados", "teacher": "Prof. Milton" },
       { "time": "4m", "subject": "Banco de Dados", "teacher": "Prof. Milton" },
@@ -55,21 +55,21 @@
       
     ],
     "qui": [
-      { "time": "2m", "subject": "Projeto e Prática", "teacher": "Prof. Emaur" },
-      { "time": "3m", "subject": "Projeto e Prática", "teacher": "Prof. Emaur" },
+      { "time": "2m", "subject": "Projeto e Prática I", "teacher": "Prof. Emaur" },
+      { "time": "3m", "subject": "Projeto e Prática I", "teacher": "Prof. Emaur" },
       { "time": "4m", "subject": "Sistemas Operacionais", "teacher": "Prof. Pedro" },
       { "time": "5m", "subject": "Sistemas Operacionais", "teacher": "Prof. Pedro" },
       { "time": "6m", "subject": "Sistemas Operacionais", "teacher": "Prof. Pedro" }
     ],
     "sex": [
-      { "time": "2m", "subject": "Projeto e Prática", "teacher": "Prof. Emaur" },
-      { "time": "3m", "subject": "Projeto e Prática", "teacher": "Prof. Emaur" },
+      { "time": "2m", "subject": "Projeto e Prática I", "teacher": "Prof. Emaur" },
+      { "time": "3m", "subject": "Projeto e Prática I", "teacher": "Prof. Emaur" },
       { "time": "4m", "subject": "Programaçãp Orientada a Objeto", "teacher": "Prof. Gustavo nobrega" },
       { "time": "5m", "subject": "Programaçãp Orientada a Objeto", "teacher": "Prof. Gustavo nobrega" },
       { "time": "6m", "subject": "Programaçãp Orientada a Objeto", "teacher": "Prof. Gustavo nobrega" }
     ]
   },
-  "3": {
+  "3°": {
     "seg": [
       { "time": "1t", "subject": "Projeto e Prática 2", "teacher": "Prof. Liliane" },
       { "time": "2t", "subject": "Projeto e Prática 2", "teacher": "Prof. Liliane" },
@@ -78,18 +78,18 @@
       { "time": "5t", "subject": "Projeto e Prática 2", "teacher": "Prof. Raniere" }
     ],
     "ter": [
-      { "time": "2t", "subject": "Implantação e Administração de Serviços Web", "teacher": "Prof. Ramon" },
-      { "time": "3t", "subject": "Implantação e Administração de Serviços Web", "teacher": "Prof. Ramon" },
-      { "time": "4t", "subject": "Implantação e Administração de Serviços Web", "teacher": "Prof. Ramon" },
-      { "time": "5t", "subject": "Implantação e Administração de Serviços Web", "teacher": "Prof. Ramon" },
-      { "time": "6t", "subject": "Implantação e Administração de Serviços Web", "teacher": "Prof. Ramon" }
+      { "time": "2t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon" },
+      { "time": "3t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon" },
+      { "time": "4t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon" },
+      { "time": "5t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon" },
+      { "time": "6t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon" }
 
     ],
     "qua": [
-      { "time": "1t", "subject": "Desenvolvimento para Web2", "teacher": "Prof. Alexandre Strapação" },
-      { "time": "2t", "subject": "Desenvolvimento para Web2", "teacher": "Prof. Alexandre Strapação" },
-      { "time": "3t", "subject": "Desenvolvimento para Web2", "teacher": "Prof. Alexandre Strapação" },
-      { "time": "4t", "subject": "Desenvolvimento para Web2", "teacher": "Prof. Alexandre Strapação" }
+      { "time": "1t", "subject": "Desenvolvimento para Web II", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "2t", "subject": "Desenvolvimento para Web II", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "3t", "subject": "Desenvolvimento para Web II", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "4t", "subject": "Desenvolvimento para Web II", "teacher": "Prof. Alexandre Strapação" }
     ],
     "qui": [
       { "time": "1t", "subject": "Engenharia de Software", "teacher": "Prof. Emaur" },

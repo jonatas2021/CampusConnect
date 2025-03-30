@@ -1,320 +1,176 @@
 {
-  "1": {
+  "1°": {
     "seg": [
-      { "time": "1m", "subject": "Lingua Portuguesa Aplicada", "teacher": "Prof. Mari Tania" },
-      { "time": "2m", "subject": "Lingua Portuguesa Aplicada", "teacher": "Prof.Mari Tania" },
-      { "time": "3m", "subject": "Lingua Portuguesa Aplicada", "teacher": "Prof.Mari Tania" },
-      { "time": "4m", "subject": "Fundamentos da Economia", "teacher": "Prof. Marcelo" },
-      { "time": "5m", "subject": "Fundamentos da Economia", "teacher": "Prof. Marcelo" },
-      { "time": "6m", "subject": "Fundamentos da Economia", "teacher": "Prof. Marcelo" }
+      { "time": "1m", "subject": "Redes de Computadores", "teacher": "Prof. David" },
+      { "time": "2m", "subject": "Redes de Computadores", "teacher": "Prof. David" },
+      { "time": "3m", "subject": "Redes de Computadores", "teacher": "Prof. David" },
+      { "time": "4m", "subject": "Cálculo para Computação", "teacher": "Prof. Cícero" },
+      { "time": "5m", "subject": "Cálculo para Computação", "teacher": "Prof. Cícero" },
+      { "time": "6m", "subject": "Cálculo para Computação", "teacher": "Prof. Cícero" }
     ],
     "ter": [
-      { "time": "4m", "subject": "Fundamentos da Administração", "teacher": "Prof. Edilene" },
-      { "time": "5m", "subject": "Fundamentos da Administração", "teacher": "Prof. Edilene" },
-      { "time": "6m", "subject": "Fundamentos da Administração", "teacher": "Prof. Edilene" }
+      { "time": "1m", "subject": "Ética, Cidadania e S.", "teacher": "Prof. Ana Carolina" },
+      { "time": "2m", "subject": "Ética, Cidadania e S.", "teacher": "Prof. Ana Carolina" },
+      { "time": "4m", "subject": "Programação Imperativa", "teacher": "Prof. Allan" },
+      { "time": "5m", "subject": "Programação Imperativa", "teacher": "Prof. Allan" }
     ],
     "qua": [
-      { "time": "1m", "subject": "Introdução a Gestão da Qualidade", "teacher": "Prof. Francisco" },
-      { "time": "2m", "subject": "Introdução a Gestão da Qualidade", "teacher": "Prof. Francisco" },
-      { "time": "3m", "subject": "Introdução a Gestão da Qualidade", "teacher": "Prof. Francisco" },
-      { "time": "4m", "subject": "Matemática Aplicada", "teacher": "Prof. Cícero" },
-      { "time": "5m", "subject": "Matemática Aplicada", "teacher": "Prof. Cícero" },
-      { "time": "6m", "subject": "Matemática Aplicada", "teacher": "Prof. Cícero" }
+      { "time": "2m", "subject": "Fundamentos de Computação para I.", "teacher": "Prof. Liliane" },
+      { "time": "3m", "subject": "Fundamentos de Computação para I.", "teacher": "Prof. Liliane" },
+      { "time": "4m", "subject": "Redes de Computadores", "teacher": "Prof. David" },
+      { "time": "5m", "subject": "Redes de Computadores", "teacher": "Prof. David" },
+      { "time": "6m", "subject": "Redes de Computadores", "teacher": "Prof. David" }
     ],
     "qui": [
-      { "time": "2m", "subject": "Ética", "teacher": "Prof. Willyans" },
-      { "time": "3m", "subject": "Ética", "teacher": "Prof. Willyans" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Informática", "teacher": "Prof. Emaur" },
-      { "time": "5m", "subject": "Informática", "teacher": "Prof. Emaur" }
-    ],
-    "sex": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1m", "subject": "Inglês I", "teacher": "Prof. Ivo" },
+      { "time": "2m", "subject": "Inglês I", "teacher": "Prof. Ivo" },
+      { "time": "3m", "subject": "Inglês I", "teacher": "Prof. Ivo" },
+      { "time": "4m", "subject": "Programação Imperativa", "teacher": "Prof. Allan" },
+      { "time": "5m", "subject": "Programação Imperativa", "teacher": "Prof. Allan" }
     ]
   },
-  "2": {
+  "2°": {
     "seg": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Estatística e Probabilidade", "teacher": "Prof. Cícero" },
+      { "time": "2t", "subject": "Estatística e Probabilidade", "teacher": "Prof. Cícero" },
+      { "time": "3t", "subject": "Estatística e Probabilidade", "teacher": "Prof. Cícero" },
+      { "time": "5t", "subject": "Banco de Dados", "teacher": "Prof. Milton" },
+      { "time": "6t", "subject": "Banco de Dados", "teacher": "Prof. Milton" }
     ],
     "ter": [
-      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
+      { "time": "1t", "subject": "Processos Psicológicos e I. S.", "teacher": "Prof. Willyans" },
+      { "time": "2t", "subject": "Processos Psicológicos e I. S.", "teacher": "Prof. Willyans" },
+      { "time": "3t", "subject": "Processos Psicológicos e I. S.", "teacher": "Prof. Willyans" },
+      { "time": "4t", "subject": "Banco de Dados", "teacher": "Prof. Milton" },
+      { "time": "5t", "subject": "Banco de Dados", "teacher": "Prof. Milton" }
     ],
     "qua": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Projeto de Desenvolvimento I", "teacher": "Prof. Liliane" },
+      { "time": "2t", "subject": "Projeto de Desenvolvimento I", "teacher": "Prof. Liliane" },
+      { "time": "3t", "subject": "Inglês II", "teacher": "Prof. Ivo" },
+      { "time": "4t", "subject": "Inglês II", "teacher": "Prof. Ivo" },
+      { "time": "5t", "subject": "Inglês II", "teacher": "Prof. Ivo" }
     ],
     "qui": [
-      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
+      { "time": "1t", "subject": "Interconexão e servicos de R.", "teacher": "Prof. Gustavo Nóbrega" },
+      { "time": "2t", "subject": "Interconexão e servicos de R.", "teacher": "Prof. Gustavo Nóbrega" },
+      { "time": "3t", "subject": "Design de Interface", "teacher": "Prof. Erton" },
+      { "time": "4t", "subject": "Design de Interface", "teacher": "Prof. Erton" },
+      { "time": "5t", "subject": "Design de Interface", "teacher": "Prof. Erton" }
     ],
     "sex": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Interconexão e servicos de R.", "teacher": "Prof. Gustavo Nóbrega" },
+      { "time": "2t", "subject": "Interconexão e servicos de R.", "teacher": "Prof. Gustavo Nóbrega" },
+      { "time": "3t", "subject": "Desenvolvimento para Web I", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "4t", "subject": "Desenvolvimento para Web I", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "5t", "subject": "Desenvolvimento para Web I", "teacher": "Prof. Alexandre Strapação" }
     ]
   },
-  "3": {
-    "seg": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
-    ],
+  "3°": {
     "ter": [
-      { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" },
-      { "time": "2m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "3m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Educação Física", "teacher": "Prof. Carla" }
+      { "time": "3m", "subject": "Segurança de Sistemas para I.", "teacher": "Prof. Ramon" },
+      { "time": "4m", "subject": "Segurança de Sistemas para I.", "teacher": "Prof. Ramon" },
+      { "time": "5m", "subject": "Segurança de Sistemas para I.", "teacher": "Prof. Ramon" },
+      { "time": "6m", "subject": "Segurança de Sistemas para I.", "teacher": "Prof. Ramon" }
+
     ],
     "qua": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1m", "subject": "Metodologia Científica", "teacher": "Prof. Allan" },
+      { "time": "2m", "subject": "Metodologia Científica", "teacher": "Prof. Allan" },
+      { "time": "3m", "subject": "Metodologia Científica", "teacher": "Prof. Allan" },
+      { "time": "4m", "subject": "Pesquisa e Análize de C.", "teacher": "Prof. Willyans" },
+      { "time": "5m", "subject": "Pesquisa e Análize de C.", "teacher": "Prof. Willyans" },
+      { "time": "6m", "subject": "Pesquisa e Análize de C.", "teacher": "Prof. Willyans" }
     ],
     "qui": [
-      { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" },
-      { "time": "2m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "3m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Educação Física", "teacher": "Prof. Carla" }
+      { "time": "1m", "subject": "Design de Interação", "teacher": "Prof. Erton" },
+      { "time": "2m", "subject": "Design de Interação", "teacher": "Prof. Erton" },
+      { "time": "3m", "subject": "Design de Interação", "teacher": "Prof. Erton" },
+      { "time": "4m", "subject": "Design de Interação", "teacher": "Prof. Erton" },
+      { "time": "5m", "subject": "Programação Orientada a O.", "teacher": "Prof. Gustavo Nóbrega" },
+      { "time": "6m", "subject": "Programação Orientada a O.", "teacher": "Prof. Gustavo Nóbrega" }
     ],
     "sex": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1m", "subject": "Programação Orientada a O.", "teacher": "Prof. Gustavo Nóbrega" },
+      { "time": "2m", "subject": "Programação Orientada a O.", "teacher": "Prof. Gustavo Nóbrega" },
+      { "time": "3m", "subject": "Desenvolvimento para Web II", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "4m", "subject": "Desenvolvimento para Web II", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "5m", "subject": "Desenvolvimento para Web II", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "6m", "subject": "Desenvolvimento para Web II", "teacher": "Prof. Alexandre Strapação" }
     ]
   },
-  "4": {
+  "4°": {
     "seg": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Algoritimo e Estrutura de Dados", "teacher": "Prof. Milton" },
+      { "time": "2t", "subject": "Algoritimo e Estrutura de Dados", "teacher": "Prof. Milton" },
+      { "time": "3t", "subject": "Algoritimo e Estrutura de Dados", "teacher": "Prof. Milton" },
+      { "time": "4t", "subject": "Algoritimo e Estrutura de Dados", "teacher": "Prof. Milton" },
+      { "time": "5t", "subject": "Algoritimo e Estrutura de Dados", "teacher": "Prof. Milton" }
     ],
     "ter": [
-      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
+      { "time": "1t", "subject": "Engenharia de Software", "teacher": "Prof. Milton" },
+      { "time": "2t", "subject": "Engenharia de Software", "teacher": "Prof. Milton" },
+      { "time": "3t", "subject": "Engenharia de Software", "teacher": "Prof. Milton" }
     ],
     "qua": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Gestão de Pessoas", "teacher": "Prof. Yuri" },
+      { "time": "2t", "subject": "Gestão de Pessoas", "teacher": "Prof. Yuri" },
+      { "time": "3t", "subject": "Gestão de Pessoas", "teacher": "Prof. Yuri" }
     ],
     "qui": [
-      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
+      { "time": "1t", "subject": "Inglês IV", "teacher": "Prof. Ivo" },
+      { "time": "2t", "subject": "Inglês IV", "teacher": "Prof. Ivo" },
+      { "time": "3t", "subject": "Sistemas Distribuídos", "teacher": "Prof. Ranieri" },
+      { "time": "4t", "subject": "Sistemas Distribuídos", "teacher": "Prof. Ranieri" },
+      { "time": "5t", "subject": "Sistemas Distribuídos", "teacher": "Prof. Ranieri" },
+      { "time": "6t", "subject": "Sistemas Distribuídos", "teacher": "Prof. Ranieri" }
+
     ],
     "sex": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Projeto de Desenvolvimento III", "teacher": "Prof. Pedro" },
+      { "time": "2t", "subject": "Projeto de Desenvolvimento III", "teacher": "Prof. Pedro" },
+      { "time": "3t", "subject": "Projeto de Desenvolvimento III", "teacher": "Prof. Pedro" },
+      { "time": "4t", "subject": "Interação Humano-computador", "teacher": "Prof. Erton" },
+      { "time": "5t", "subject": "Interação Humano-computador", "teacher": "Prof. Erton" },
+      { "time": "6t", "subject": "Interação Humano-computador", "teacher": "Prof. Erton" }
     ]
   },
-  "5": {
+  "5°": {
     "seg": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "4m", "subject": "Testes e Qualidade de Software", "teacher": "Prof. Liliane" },
+      { "time": "5m", "subject": "Testes e Qualidade de Software", "teacher": "Prof. Liliane" },
+      { "time": "5m", "subject": "Testes e Qualidade de Software", "teacher": "Prof. Liliane" }
+
     ],
     "ter": [
-      { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" },
-      { "time": "2m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "3m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Educação Física", "teacher": "Prof. Carla" }
+      { "time": "4m", "subject": "Empreendedorismo e Inovação", "teacher": "Prof. Luíz Henrique" },
+      { "time": "5m", "subject": "Empreendedorismo e Inovação", "teacher": "Prof. Luíz Henrique" },
+      { "time": "5m", "subject": "Empreendedorismo e Inovação", "teacher": "Prof. Luíz Henrique" }
+
     ],
     "qua": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
-    ],
-    "qui": [
-      { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" },
-      { "time": "2m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "3m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Educação Física", "teacher": "Prof. Carla" }
+      { "time": "4m", "subject": "Inglês V", "teacher": "Prof. Ivo" },
+      { "time": "5m", "subject": "Inglês V", "teacher": "Prof. Ivo" },
+      { "time": "6m", "subject": "Inglês V", "teacher": "Prof. Ivo" }
     ],
     "sex": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "4m", "subject": "Projeto de Desenvolvimento IV", "teacher": "Prof. Pedro" },
+      { "time": "5m", "subject": "Projeto de Desenvolvimento IV", "teacher": "Prof. Pedro" },
+      { "time": "6m", "subject": "Projeto de Desenvolvimento IV", "teacher": "Prof. Pedro" }
     ]
   },
-  "6": {
-    "seg": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
-    ],
+  "6°": {
     "ter": [
-      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
-    ],
-    "qua": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Inteligência Artificial", "teacher": "Prof. Allan" },
+      { "time": "2t", "subject": "Inteligência Artificial", "teacher": "Prof. Allan" }
     ],
     "qui": [
-      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
-    ],
-    "sex": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
-    ]
-  },
-  "7": {
-    "seg": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
-    ],
-    "ter": [
-      { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" },
-      { "time": "2m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "3m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Educação Física", "teacher": "Prof. Carla" }
-    ],
-    "qua": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
-    ],
-    "qui": [
-      { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" },
-      { "time": "2m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "3m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Educação Física", "teacher": "Prof. Carla" }
-    ],
-    "sex": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
-    ]
-  },
-  "8": {
-    "seg": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
-    ],
-    "ter": [
-      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
-    ],
-    "qua": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
-    ],
-    "qui": [
-      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
-    ],
-    "sex": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" },
-      { "time": "6m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Inteligência Artificial", "teacher": "Prof. Allan" },
+      { "time": "2t", "subject": "Inteligência Artificial", "teacher": "Prof. Allan" },
+      { "time": "3t", "subject": "Internet das Coisas", "teacher": "Prof. Gustavo Nóbrega" },
+      { "time": "4t", "subject": "Internet das Coisas", "teacher": "Prof. Gustavo Nóbrega" },
+      { "time": "5t", "subject": "Internet das Coisas", "teacher": "Prof. Gustavo Nóbrega" },
+      { "time": "6t", "subject": "Internet das Coisas", "teacher": "Prof. Gustavo Nóbrega" }
     ]
   }
 }
