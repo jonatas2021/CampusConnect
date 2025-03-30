@@ -106,16 +106,13 @@ const Aulas = () => {
         visible={isCourseDropdownOpen}
         onDismiss={() => setIsCourseDropdownOpen(false)}
         anchor={
-          <Button
+          <TouchableOpacity
+            style={styles.selectionButton}
             onPress={() => setIsCourseDropdownOpen(true)}
-            textColor="#000" // Define a cor do texto
-            labelStyle={{
-              fontSize: RFValue(14), // Define o tamanho da fonte
-              fontWeight: 'bold', // Define o texto em negrito
-            }}
           >
-            {selectedCourse || 'Selecione'}
-          </Button>
+            <Text style={styles.selectionText}>{selectedCourse || "Selecione"}</Text>
+          </TouchableOpacity>
+
         }
       >
         {['IPI', 'TSI', 'LOG', 'ADM', 'TGQ'].map((course) => (
@@ -123,10 +120,12 @@ const Aulas = () => {
             key={course}
             onPress={() => {
               setSelectedCourse(course);
-              setSelectedPeriod(null);
-              setSelectedDay(null);
+              setSelectedPeriod(null); // Resetar o período ao trocar de curso
+              setSelectedDay(null); // Resetar o dia ao trocar de curso
+              setSchedule([]); // Limpar a grade de horários
               setIsCourseDropdownOpen(false);
             }}
+
             title={course}
             style={{
               backgroundColor: '#2A5224', // Cor de fundo personalizada
@@ -146,24 +145,20 @@ const Aulas = () => {
 
   const renderPeriodMenu = () => (
     <View style={styles.selectionContainer}>
-      <Text style={styles.courseText}>Período:</Text>
+      <Text style={styles.periodText}>Período:</Text>
       <Menu
         visible={isPeriodDropdownOpen}
         onDismiss={() => setIsPeriodDropdownOpen(false)}
         anchor={
-          <Button
+          <TouchableOpacity
+            style={styles.selectionButton}
             onPress={() => setIsPeriodDropdownOpen(true)}
             disabled={!selectedCourse}
-            textColor="#000" // Define a cor do texto
-            labelStyle={{
-              fontSize: RFValue(14),
-              fontWeight: 'bold'
-            }} // Define o tamanho da fonte e coloca o texto em negrito
           >
-            {selectedPeriod || 'Selecione'}
-          </Button>
-
-
+            <Text style={[styles.selectionText, !selectedCourse && { opacity: 0.5 }]}>
+              {selectedPeriod || "Selecione"}
+            </Text>
+          </TouchableOpacity>
         }
       >
         {availablePeriods.map((period) => (
@@ -186,7 +181,6 @@ const Aulas = () => {
             }}
           />
         ))}
-
       </Menu>
 
     </View>
@@ -223,10 +217,10 @@ const Aulas = () => {
         <View style={styles.container2}>
           {selectedCourse && selectedPeriod && (
             <View>
-            <Text style={styles.selectedInfo}>
-              Horário de {selectedCourse} - {selectedPeriod} Período
-            </Text>
-            <View style={styles.separator4}></View>
+              <Text style={styles.selectedInfo}>
+                Horário de {selectedCourse} - {selectedPeriod} Período
+              </Text>
+              <View style={styles.separator4}></View>
             </View>
           )}
 
@@ -254,7 +248,7 @@ const Aulas = () => {
           <FlatList
             data={schedule}
             keyExtractor={(item, index) => index.toString()}
-            ListEmptyComponent={<Text style={styles.noScheduleText}>Selecione o curso e período para ver a grade de horário.</Text>}
+            ListEmptyComponent={<Text style={styles.noScheduleText}>Selecione o curso e período para ver a grade de horário.{"\n"}  {"\n"}OBS: Se ao selecionar seu período os horários não aparecerem, significa que não há aulas para o dia escolhido.</Text>}
             renderItem={({ item }) => {
               const time = TIME_MAP[item.time] || { start: '--:--', end: '--:--' };
               return (
@@ -287,11 +281,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: "4%",
   },
   container2: {
-    paddingTop: "4%",
+    paddingVertical: "4%",
     backgroundColor: "#2A5224",
     paddingHorizontal: "4%",
-    width: '100%',
-    height: '82%',
     borderRadius: 20,
   },
   separator: {
@@ -441,6 +433,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     justifyContent: 'center',
     lineHeight: RFValue(25),
+  },  
+  periodText: {
+    fontSize: RFValue(14),
+    fontWeight: 'bold',
+    color: '#fff',
+    backgroundColor: "#2A5224",
+    height: RFValue(30),
+    width: RFValue(70),
+    borderRadius: 8,
+    textAlign: 'center',
+    justifyContent: 'center',
+    lineHeight: RFValue(25),
+    marginLeft: 10
   },
   optionButtonText: {
     fontSize: RFValue(16),
@@ -452,8 +457,22 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FFF',
     textAlign: 'center',
-  },  
-
+  },
+  selectionButton: {
+    backgroundColor: "#DEFCC7", // Verde claro
+    borderWidth: 2,
+    borderColor: "#2A5224", // Verde escuro
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    alignItems: "center",
+    marginLeft: 3
+  },
+  selectionText: {
+    color: "#2A5224", // Verde escuro
+    fontWeight: "bold",
+    fontSize: RFValue(14),
+  },
 });
 
 export default Aulas;

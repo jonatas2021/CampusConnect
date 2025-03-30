@@ -41,17 +41,17 @@
       { "time": "6m", "subject": "Banco de Dados", "teacher": "Prof. Milton" }
     ],
     "ter": [
-      { "time": "2m", "subject": "Ética Profissional e Cidadania", "teacher": "Willyans" },
-      { "time": "3m", "subject": "Ética Profissional e Cidadania", "teacher": "Willyans" },
-      { "time": "4m", "subject": "Segurança de Sistemas para Internet", "teacher": "Prof. Ramon" },
-      { "time": "5m", "subject": "Segurança de Sistemas para Internet", "teacher": "Prof. Ramon" },
-      { "time": "6m", "subject": "Segurança de Sistemas para Internet", "teacher": "Prof. Ramon" }
+      { "time": "2m", "subject": "Ética Profissional e Cidadania", "teacher": "Prof. Willyans" },
+      { "time": "3m", "subject": "Ética Profissional e Cidadania", "teacher": "Prof. Willyans" },
+      { "time": "4m", "subject": "Segurança de Sistemas p. I.", "teacher": "Prof. Ramon" },
+      { "time": "5m", "subject": "Segurança de Sistemas p. I.", "teacher": "Prof. Ramon" },
+      { "time": "6m", "subject": "Segurança de Sistemas p. I.", "teacher": "Prof. Ramon" }
     ],
     "qua": [
-      { "time": "3m", "subject": "Desenvolvimento para Web1", "teacher": "Prof. Alexandre Strapação" },
-      { "time": "4m", "subject": "Desenvolvimento para Web1", "teacher": "Prof. Alexandre Strapação" },
-      { "time": "5m", "subject": "Desenvolvimento para Web1", "teacher": "Prof. Alexandre Strapação" },
-      { "time": "6m", "subject": "Desenvolvimento para Web1", "teacher": "Prof. Alexandre Strapação" }
+      { "time": "3m", "subject": "Desenvolvimento para Web I", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "4m", "subject": "Desenvolvimento para Web I", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "5m", "subject": "Desenvolvimento para Web I", "teacher": "Prof. Alexandre Strapação" },
+      { "time": "6m", "subject": "Desenvolvimento para Web I", "teacher": "Prof. Alexandre Strapação" }
       
     ],
     "qui": [
@@ -71,11 +71,11 @@
   },
   "3°": {
     "seg": [
-      { "time": "1t", "subject": "Projeto e Prática 2", "teacher": "Prof. Liliane" },
-      { "time": "2t", "subject": "Projeto e Prática 2", "teacher": "Prof. Liliane" },
-      { "time": "3t", "subject": "Projeto e Prática 2", "teacher": "Prof. Raniere" },
-      { "time": "4t", "subject": "Projeto e Prática 2", "teacher": "Prof. Raniere" },
-      { "time": "5t", "subject": "Projeto e Prática 2", "teacher": "Prof. Raniere" }
+      { "time": "1t", "subject": "Projeto e Prática II", "teacher": "Prof. Liliane" },
+      { "time": "2t", "subject": "Projeto e Prática II", "teacher": "Prof. Liliane" },
+      { "time": "3t", "subject": "Projeto e Prática II", "teacher": "Prof. Raniere" },
+      { "time": "4t", "subject": "Projeto e Prática II", "teacher": "Prof. Raniere" },
+      { "time": "5t", "subject": "Projeto e Prática II", "teacher": "Prof. Raniere" }
     ],
     "ter": [
       { "time": "2t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon" },

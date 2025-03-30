@@ -15,8 +15,8 @@
       { "time": "5m", "subject": "Programação Imperativa", "teacher": "Prof. Allan" }
     ],
     "qua": [
-      { "time": "2m", "subject": "Fundamentos de Computação para I.", "teacher": "Prof. Liliane" },
-      { "time": "3m", "subject": "Fundamentos de Computação para I.", "teacher": "Prof. Liliane" },
+      { "time": "2m", "subject": "Fundamentos de C. para I.", "teacher": "Prof. Liliane" },
+      { "time": "3m", "subject": "Fundamentos de C. para I.", "teacher": "Prof. Liliane" },
       { "time": "4m", "subject": "Redes de Computadores", "teacher": "Prof. David" },
       { "time": "5m", "subject": "Redes de Computadores", "teacher": "Prof. David" },
       { "time": "6m", "subject": "Redes de Computadores", "teacher": "Prof. David" }
@@ -27,13 +27,20 @@
       { "time": "3m", "subject": "Inglês I", "teacher": "Prof. Ivo" },
       { "time": "4m", "subject": "Programação Imperativa", "teacher": "Prof. Allan" },
       { "time": "5m", "subject": "Programação Imperativa", "teacher": "Prof. Allan" }
+    ],
+    "sex": [
+      { "time": "1m", "subject": "Inglês I", "teacher": "Prof. Ivo" },
+      { "time": "2m", "subject": "Inglês I", "teacher": "Prof. Ivo" },
+      { "time": "3m", "subject": "Inglês I", "teacher": "Prof. Ivo" },
+      { "time": "4m", "subject": "Programação Imperativa", "teacher": "Prof. Allan" },
+      { "time": "5m", "subject": "Programação Imperativa", "teacher": "Prof. Allan" }
     ]
   },
   "2°": {
     "seg": [
-      { "time": "1t", "subject": "Estatística e Probabilidade", "teacher": "Prof. Cícero" },
-      { "time": "2t", "subject": "Estatística e Probabilidade", "teacher": "Prof. Cícero" },
-      { "time": "3t", "subject": "Estatística e Probabilidade", "teacher": "Prof. Cícero" },
+      { "time": "1t", "subject": "Introdução a ADM", "teacher": "Prof. Sominelle" },
+      { "time": "2t", "subject": "Introdução a ADM", "teacher": "Prof. Sominelle" },
+      { "time": "3t", "subject": "Introdução a ADM", "teacher": "Prof. Sominelle" },
       { "time": "5t", "subject": "Banco de Dados", "teacher": "Prof. Milton" },
       { "time": "6t", "subject": "Banco de Dados", "teacher": "Prof. Milton" }
     ],
@@ -41,8 +48,9 @@
       { "time": "1t", "subject": "Processos Psicológicos e I. S.", "teacher": "Prof. Willyans" },
       { "time": "2t", "subject": "Processos Psicológicos e I. S.", "teacher": "Prof. Willyans" },
       { "time": "3t", "subject": "Processos Psicológicos e I. S.", "teacher": "Prof. Willyans" },
-      { "time": "4t", "subject": "Banco de Dados", "teacher": "Prof. Milton" },
-      { "time": "5t", "subject": "Banco de Dados", "teacher": "Prof. Milton" }
+      { "time": "4t", "subject": "F. do Design Digital", "teacher": "Prof. Erton" },
+      { "time": "5t", "subject": "F. do Design Digital", "teacher": "Prof. Erton" },
+      { "time": "6t", "subject": "F. do Design Digital", "teacher": "Prof. Erton" }
     ],
     "qua": [
       { "time": "1t", "subject": "Projeto de Desenvolvimento I", "teacher": "Prof. Liliane" },
