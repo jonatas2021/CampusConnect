@@ -65,21 +65,21 @@ const CalendarScreen: React.FC = () => {
     { type: "Reuniões", color: "#EF7C52" },
   ];
 
-// Filtrar os feriados com base na pesquisa
-const filteredHolidays = holidays
-  .filter(
-    (holiday) =>
-      holiday.name.toLowerCase().includes(searchText.toLowerCase()) ||
-      holiday.type.toLowerCase().includes(searchText.toLowerCase())
-  );
+  // Filtrar os feriados com base na pesquisa
+  const filteredHolidays = holidays
+    .filter(
+      (holiday) =>
+        holiday.name.toLowerCase().includes(searchText.toLowerCase()) ||
+        holiday.type.toLowerCase().includes(searchText.toLowerCase())
+    );
 
-// Gerar uma lista de meses com feriados que atendem à pesquisa
-const monthsWithHolidays = filteredHolidays.reduce((acc: string[], holiday: HolidayProps) => {
-  if (!acc.includes(holiday.month)) {
-    acc.push(holiday.month);
-  }
-  return acc;
-}, []);
+  // Gerar uma lista de meses com feriados que atendem à pesquisa
+  const monthsWithHolidays = filteredHolidays.reduce((acc: string[], holiday: HolidayProps) => {
+    if (!acc.includes(holiday.month)) {
+      acc.push(holiday.month);
+    }
+    return acc;
+  }, []);
 
 
   return (
@@ -99,52 +99,64 @@ const monthsWithHolidays = filteredHolidays.reduce((acc: string[], holiday: Holi
         />
       </View>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <View style={styles.monthsContainer}>
-  {monthsWithHolidays.map((month, index) => (
-    <View key={index} style={styles.monthContainer}>
-      <View style={styles.monthBox}>
-        <Text style={styles.monthText}>{month}</Text>
-      </View>
+        <View style={styles.monthsContainer}>
+          {monthsWithHolidays.map((month, index) => (
+            <View key={index} style={styles.monthContainer}>
+              <View style={styles.monthBox}>
+                <Text style={styles.monthText}>{month}</Text>
+              </View>
 
-      <View style={styles.dayContainer}>
-        {filteredHolidays
-          .filter((holiday) => holiday.month === month)
-          .map((holiday, i) => {
-            const isSelected = selectedDay === holiday.day;
-            return (
-              <Animated.View
-                key={i}
-                style={[
-                  styles.dayBox,
-                  {
-                    backgroundColor: holidayType.find(
-                      (t) => t.type === holiday.type
-                    )?.color,
-                    height: isSelected ? animatedHeight : 80,
-                  },
-                ]}
-              >
-                <TouchableOpacity
-                  style={styles.touchable}
-                  onPress={() => toggleDescription(holiday.day)}
-                >
-                  <View style={styles.dayContent}>
-                    <Text style={styles.dayText}>{holiday.day}</Text>
-                    <Text style={styles.dayTypeText}>{holiday.type}</Text>
-                  </View>
-                  {isSelected && (
-                    <Text style={styles.descriptionText}>
-                      {holiday.name}
-                    </Text>
-                  )}
-                </TouchableOpacity>
-              </Animated.View>
-            );
-          })}
-      </View>
-    </View>
-  ))}
-</View>
+              <View style={styles.dayContainer}>
+                {filteredHolidays
+                  .filter((holiday) => holiday.month === month)
+                  .map((holiday, i) => {
+                    const isSelected = selectedDay === holiday.day;
+                    return (
+                      <Animated.View
+                        key={i}
+                        style={[
+                          styles.dayBox,
+                          {
+                            backgroundColor: holidayType.find(
+                              (t) => t.type === holiday.type
+                            )?.color,
+                            height: isSelected ? animatedHeight : 80,
+                          },
+                        ]}
+                      >
+                        <TouchableOpacity
+                          style={styles.touchable}
+                          onPress={() => toggleDescription(holiday.day)}
+                        >
+                          <View style={styles.dayContent}>
+                            <Text style={styles.dayText}>{holiday.day}</Text>
+                            <Text style={styles.dayTypeText}>{holiday.type}</Text>
+                          </View>
+                          {isSelected && (
+                            <Text style={styles.descriptionText}>
+                              {holiday.name}
+                            </Text>
+                          )}
+                        </TouchableOpacity>
+                      </Animated.View>
+                    );
+                  })}
+              </View>
+            </View>
+          ))}
+        </View>
+
+        <View style={styles.separator2} />
+        <View style={styles.holidayTypeContainer}>
+          {holidayType.map((item, index) => (
+            <View key={index} style={styles.typeHolidayBox}>
+              <View
+                style={[styles.typeColorBox, { backgroundColor: item.color }]}
+              />
+              <Text style={styles.typeText}>{item.type}</Text>
+            </View>
+          ))}
+        </View>
 
       </ScrollView>
     </SafeAreaView>
@@ -269,6 +281,42 @@ const styles = StyleSheet.create({
   searchIcon: {
     marginRight: 10,
     color: '#2A5224',
+  },
+  separator2: {
+    width: "120%",
+    height: 2,
+    backgroundColor: "#000",
+    marginBottom: 5,
+    alignSelf: 'center'
+  },
+  holidayTypeContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "flex-start",
+    marginTop: 30,
+    paddingHorizontal: 15,
+  },
+  typeHolidayBox: {
+    flexDirection: "row",
+    alignItems: "center",
+    width: "25%",
+    marginBottom: 15,
+    marginRight: "25%",
+  },
+
+  typeColorBox: {
+    width: 20,
+    height: 20,
+    marginRight: 10,
+    borderWidth: 1,
+    borderColor: "#000",
+    borderRadius: 4,
+  },
+
+  typeText: {
+    fontSize: RFValue(10),
+    color: "#000",
+    textAlign: "left",
   },
 });
 
