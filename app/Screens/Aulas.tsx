@@ -324,8 +324,7 @@ const styles = StyleSheet.create({
   daysContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 20,
-    height: 35,
+    marginBottom: RFValue(8),
     alignSelf: 'center',
   },
   dayButton: {
@@ -333,7 +332,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 4,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 35, // Defina uma altura fixa, se necessário
+    height: RFValue(30),
     borderRadius: 5,
   },
   dayText: {
@@ -345,25 +344,23 @@ const styles = StyleSheet.create({
   rectanglesContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 20,
+    marginBottom: RFValue(10),
   },
   rectangle: {
     backgroundColor: '#92C36B',
-    padding: 10,
     borderRadius: 8,
     alignItems: 'center',
-    width: 75,
-    height: 40,
+    width: "22%",
+    height: RFValue(30),
     marginRight: 10,
     justifyContent: 'center',
   },
   rectangle1: {
     backgroundColor: '#42860D',
-    padding: 10,
     borderRadius: 8,
     flex: 1,
     alignItems: 'center',
-    height: 40,
+    height: RFValue(30),
     justifyContent: 'center',
   },
   rectangleText: {
@@ -371,15 +368,14 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: RFValue(14),
     textAlign: 'center', // Alinhamento horizontal do texto
-    lineHeight: 20, // Certifique-se de que o lineHeight seja igual à altura do retângulo para alinhamento vertical
   },
   scheduleItem: {
     flexDirection: 'row',
     marginBottom: 12,
   },
   time: {
-    width: 75,
-    height: 75,
+    width: "22%",
+    height: RFValue(60),
     marginRight: 10,
     fontWeight: 'bold',
     backgroundColor: '#92C36B',
@@ -390,9 +386,9 @@ const styles = StyleSheet.create({
   subjectContainer: {
     flex: 1,
     backgroundColor: '#42860D',
-    padding: 8,
+    padding: RFValue(6),
     borderRadius: 8,
-    height: 75,
+    height: RFValue(60),
   },
   subject: {
     textAlign: 'center',
