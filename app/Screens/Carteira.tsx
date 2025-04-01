@@ -146,6 +146,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     imagens: {
+        flex: 1, // Permite que o ImageBackground ocupe espaço dentro do container
         justifyContent: 'center',
         alignItems: 'center',
         height: "100%",
@@ -252,7 +253,6 @@ const styles = StyleSheet.create({
     },
     containerButton2: {
         width: "55%",
-        height: 110,
         alignSelf: 'center',
         alignItems: 'center',
         justifyContent: 'center',
