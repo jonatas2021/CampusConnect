@@ -77,10 +77,17 @@ const Carteira = () => {
                     />
                 </View>
 
-                <View style={styles.descricaositeview}>
-                    <Text style={styles.descricaopagamentotext}>
+                <View style={styles.descricaositeviewp}>
+                <ImageBackground
+                        source={require('./Carteira/Imagens/diner.png')}
+                        style={styles.imagens}
+                        resizeMode="contain"
+                    >
+                    <Text style={styles.descricaopagamentotextp}>
                         Pague a taxa de emissão e pronto! Sua carteirinha estará pronta para ser retirada ou entregue na sua casa.
                     </Text>
+                    </ImageBackground>
+
                 </View>
 
                 <View style={styles.pagamentoview}>
@@ -106,7 +113,7 @@ const Carteira = () => {
                     <TouchableOpacity
                         style={styles.button2}
                         activeOpacity={0.5}
-                        onPress={() => ToastAndroid.show('A tela ainda não está pronta para ser visualizada', ToastAndroid.SHORT)}
+                        onPress={() => router.push("/Screens/Carteirafree")}
                     >
                         <Text style={styles.buttonText}>Saiba mais</Text>
                     </TouchableOpacity>
@@ -182,6 +189,22 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         alignItems: 'center',
         marginTop: 10
+    },
+    descricaositeviewp: {
+        width: "100%",
+        alignSelf: 'center',
+        alignItems: 'center',
+        marginTop: 10,
+        height: RFValue(140)
+    },
+    descricaopagamentotextp: {
+        fontSize: RFValue(14),
+        fontWeight: "bold",
+        color: "#000",
+        textAlign: 'center',
+        width: "75%",
+        marginTop: 20,
+        marginBottom: 20
     },
     setasview: {
         width: "100%",

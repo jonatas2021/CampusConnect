@@ -87,6 +87,7 @@ export default function RootLayout() {
             <Stack.Screen name="Screens/Login" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/Aulas" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/Carteira" options={{ headerShown: false }} />
+            <Stack.Screen name="Screens/Carteirafree" options={{ headerShown: false }} />
             <Stack.Screen name="+not-found"  />
           </Stack>
           <StatusBar style="dark" translucent />
