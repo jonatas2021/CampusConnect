@@ -1,175 +1,215 @@
 {
   "1° período": {
     "seg": [
-      { "time": "1t", "subject": "Introdução à Economia", "teacher": "Prof. Marcelo R. S. Reis" },
-      { "time": "2t", "subject": "Introdução à Economia", "teacher": "Prof. Marcelo R. S. Reis" },
-      { "time": "3t", "subject": "Introdução à Economia", "teacher": "Prof. Marcelo R. S. Reis" },
-      { "time": "4t", "subject": "Comunicação Empresarial", "teacher": "Prof. Josefa R. Q. Costa Gomes" },
-      { "time": "5t", "subject": "Comunicação Empresarial", "teacher": "Prof. Josefa R. Q. Costa Gomes" }
-    ],
-    "ter": [
-      { "time": "1t", "subject": "Matemática Aplicada à Administração", "teacher": "Prof. Cícero R. S. Júnior" },
-      { "time": "2t", "subject": "Matemática Aplicada à Administração", "teacher": "Prof. Cícero R. S. Júnior" },
-      { "time": "3t", "subject": "Matemática Aplicada à Administração", "teacher": "Prof. Cícero R. S. Júnior" },
-      { "time": "4t", "subject": "Introdução à Contabilidade", "teacher": "Prof. Mariane B. Nóbrega" },
-      { "time": "5t", "subject": "Introdução à Contabilidade", "teacher": "Prof. Mariane B. Nóbrega" }
+      { "time": "1tadm", "subject": "Introdução à Economia", "teacher": "Prof. Marcelo R. S. Reis" },
+      { "time": "2tadm", "subject": "Introdução à Economia", "teacher": "Prof. Marcelo R. S. Reis" },
+      { "time": "3tadm", "subject": "Introdução à Economia", "teacher": "Prof. Marcelo R. S. Reis" }
     ],
     "qua": [
-      { "time": "1t", "subject": "Ética Profissional em Administração", "teacher": "Prof. Willyans G. Coelho" },
-      { "time": "2t", "subject": "Ética Profissional em Administração", "teacher": "Prof. Willyans G. Coelho" },
-      { "time": "3t", "subject": "Introdução à Contabilidade", "teacher": "Prof. Mariane B. Nóbrega" },
-      { "time": "4t", "subject": "Introdução à Contabilidade", "teacher": "Prof. Mariane B. Nóbrega" }
+      { "time": "1tadm", "subject": "Matemática Aplicada à A.", "teacher": "Prof. Cícero R. S. Júnior" },
+      { "time": "2tadm", "subject": "Matemática Aplicada à A.", "teacher": "Prof. Cícero R. S. Júnior" },
+      { "time": "3tadm", "subject": "Matemática Aplicada à A.", "teacher": "Prof. Cícero R. S. Júnior" },
+      { "time": "4tadm", "subject": "Comunicação Empresarial", "teacher": "Prof. Josefa R. Q. C. Gomes" },
+      { "time": "5tadm", "subject": "Comunicação Empresarial", "teacher": "Prof. Josefa R. Q. C. Gomes" }
     ],
     "qui": [
-      { "time": "1t", "subject": "Introdução à Administração", "teacher": "Prof. Simonelle W. do Nascimento" },
-      { "time": "2t", "subject": "Introdução à Administração", "teacher": "Prof. Simonelle W. do Nascimento" },
-      { "time": "3t", "subject": "Introdução à Administração", "teacher": "Prof. Simonelle W. do Nascimento" }
+      { "time": "1tadm", "subject": "Ética Profissional em A.", "teacher": "Prof. Willyans G. Coelho" },
+      { "time": "2tadm", "subject": "Ética Profissional em A.", "teacher": "Prof. Willyans G. Coelho" },
+      { "time": "3tadm", "subject": "Introdução à Contabilidade", "teacher": "Prof. Mariane B. Nóbrega" },
+      { "time": "4tadm", "subject": "Introdução à Contabilidade", "teacher": "Prof. Mariane B. Nóbrega" },
+      { "time": "5tadm", "subject": "Introdução à Contabilidade", "teacher": "Prof. Mariane B. Nóbrega" }
+    ],
+    "sex": [
+      { "time": "1tadm", "subject": "Introdução à Administração", "teacher": "Prof. Simonelle W. Nascimento" },
+      { "time": "2tadm", "subject": "Introdução à Administração", "teacher": "Prof. Simonelle W. Nascimento" },
+      { "time": "3tadm", "subject": "Introdução à Administração", "teacher": "Prof. Simonelle W. Nascimento" }
     ]
   },
   "2° período": {
     "seg": [
-      { "time": "1m", "subject": "Noções de Direito Público e Privado", "teacher": "Prof. Leonardo M. Pereira" },
-      { "time": "2m", "subject": "Matemática Financeira", "teacher": "Prof. Rodrigo L. F. Araújo" },
-      { "time": "3m", "subject": "Matemática Financeira", "teacher": "Prof. Rodrigo L. F. Araújo" },
-      { "time": "4m", "subject": "Matemática Financeira", "teacher": "Prof. Rodrigo L. F. Araújo" }
+      { "time": "3madm", "subject": "Matemática Financeira", "teacher": "Prof. Rodrigo L. F. Araújo" },
+      { "time": "4madm", "subject": "Matemática Financeira", "teacher": "Prof. Rodrigo L. F. Araújo" },
+      { "time": "5madm", "subject": "Matemática Financeira", "teacher": "Prof. Rodrigo L. F. Araújo" }
     ],
     "ter": [
-      { "time": "2m", "subject": "Estatística Aplicada", "teacher": "Prof. Danniel C. Araújo" },
-      { "time": "3m", "subject": "Estatística Aplicada", "teacher": "Prof. Danniel C. Araújo" },
-      { "time": "4m", "subject": "Estatística Aplicada", "teacher": "Prof. Danniel C. Araújo" }
+      { "time": "3madm", "subject": "Estatística Aplicada", "teacher": "Prof. Danniel C. Araújo" },
+      { "time": "4madm", "subject": "Estatística Aplicada", "teacher": "Prof. Danniel C. Araújo" },
+      { "time": "5madm", "subject": "Estatística Aplicada", "teacher": "Prof. Danniel C. Araújo" }
     ],
     "qua": [
-      { "time": "2m", "subject": "Economia Brasileira", "teacher": "Prof. Marcelo R. S. Reis" },
-      { "time": "3m", "subject": "Economia Brasileira", "teacher": "Prof. Marcelo R. S. Reis" },
-      { "time": "4m", "subject": "Economia Brasileira", "teacher": "Prof. Marcelo R. S. Reis" }
+      { "time": "3madm", "subject": "Economia Brasileira", "teacher": "Prof. Marcelo R. S. Reis" },
+      { "time": "4madm", "subject": "Economia Brasileira", "teacher": "Prof. Marcelo R. S. Reis" },
+      { "time": "4madm", "subject": "Economia Brasileira", "teacher": "Prof. Marcelo R. S. Reis" }
     ],
     "qui": [
-      { "time": "3m", "subject": "Introdução à Psicologia", "teacher": "Prof. Willyans G. Coelho" },
-      { "time": "4m", "subject": "Introdução à Psicologia", "teacher": "Prof. Willyans G. Coelho" }
+      { "time": "2madm", "subject": "Noções de Direito P. e P.", "teacher": "Prof. Leonardo M. Pereira" },
+      { "time": "3madm", "subject": "Noções de Direito P. e P.", "teacher": "Prof. Leonardo M. Pereira" },
+      { "time": "4madm", "subject": "Introdução à Psicologia", "teacher": "Prof. Willyans G. Coelho" },
+      { "time": "3madm", "subject": "Introdução à Psicologia", "teacher": "Prof. Willyans G. Coelho" }
     ],
     "sex": [
-      { "time": "2m", "subject": "Sociologia", "teacher": "Prof. Andreza S. Cordeiro" },
-      { "time": "3m", "subject": "Sociologia", "teacher": "Prof. Andreza S. Cordeiro" },
-      { "time": "4m", "subject": "Sociologia", "teacher": "Prof. Andreza S. Cordeiro" }
+      { "time": "3madm", "subject": "Sociologia", "teacher": "Prof. Andreza S. Cordeiro" },
+      { "time": "4madm", "subject": "Sociologia", "teacher": "Prof. Andreza S. Cordeiro" },
+      { "time": "5madm", "subject": "Sociologia", "teacher": "Prof. Andreza S. Cordeiro" }
     ]
   },
   "3° período": {
-    "seg": [
-      { "time": "1t", "subject": "Direito Empresarial e Trabalhista", "teacher": "Prof. Leonardo M. Pereira" },
-      { "time": "2t", "subject": "Direito Empresarial e Trabalhista", "teacher": "Prof. Leonardo M. Pereira" },
-      { "time": "3t", "subject": "Direito Empresarial e Trabalhista", "teacher": "Prof. Leonardo M. Pereira" }
-    ],
     "ter": [
-      { "time": "2t", "subject": "Gestão de Pessoas I", "teacher": "Prof. Yuri C. T. Araújo" },
-      { "time": "3t", "subject": "Gestão de Pessoas I", "teacher": "Prof. Yuri C. T. Araújo" }
+      { "time": "1tadm", "subject": "Direito Empresarial e T.", "teacher": "Prof. Leonardo M. Pereira" },
+      { "time": "2tadm", "subject": "Direito Empresarial e T.", "teacher": "Prof. Leonardo M. Pereira" },
+      { "time": "3tadm", "subject": "Direito Empresarial e T.", "teacher": "Prof. Leonardo M. Pereira" },
+      { "time": "4tadm", "subject": "Organização Sistema e Método", "teacher": "Prof. Francisco C. Pinto" },
+      { "time": "5tadm", "subject": "Organização Sistema e Método", "teacher": "Prof. Francisco C. Pinto" }
+
     ],
     "qua": [
-      { "time": "1t", "subject": "Administração e Legislação Tributária", "teacher": "Prof. Michelle S. O. Cedraz" },
-      { "time": "2t", "subject": "Administração e Legislação Tributária", "teacher": "Prof. Michelle S. O. Cedraz" }
+      { "time": "3tadm", "subject": "Comportamento Organizacional", "teacher": "Prof. Charles G. Martins" },
+      { "time": "4tadm", "subject": "Comportamento Organizacional", "teacher": "Prof. Charles G. Martins" },
+      { "time": "5tadm", "subject": "Comportamento Organizacional", "teacher": "Prof. Charles G. Martins" }
     ],
     "qui": [
-      { "time": "3t", "subject": "Comportamento Organizacional", "teacher": "Prof. Charles G. Martins" },
-      { "time": "4t", "subject": "Comportamento Organizacional", "teacher": "Prof. Charles G. Martins" },
-      { "time": "5t", "subject": "Comportamento Organizacional", "teacher": "Prof. Charles G. Martins" }
+      { "time": "1tadm", "subject": "Gestão de Pessoas I", "teacher": "Prof. Yuri C. T. Araújo" },
+      { "time": "2tadm", "subject": "Gestão de Pessoas I", "teacher": "Prof. Yuri C. T. Araújo" },
+      { "time": "3tadm", "subject": "Gestão de Pessoas I", "teacher": "Prof. Yuri C. T. Araújo" }
     ],
     "sex": [
-      { "time": "4t", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" },
-      { "time": "5t", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" }
+      { "time": "1tadm", "subject": "Administração e Legislação Tributária", "teacher": "Prof. Michelle S. O. Cedraz" },
+      { "time": "2tadm", "subject": "Administração e Legislação Tributária", "teacher": "Prof. Michelle S. O. Cedraz" },
+      { "time": "3tadm", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" },
+      { "time": "4tadm", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" },
+      { "time": "5tadm", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" }
     ]
   },
   "4° período": {
     "seg": [
-      { "time": "1m", "subject": "Tecnologia da Informação", "teacher": "Prof. David J. M. Cavalcanti" },
-      { "time": "2m", "subject": "Tecnologia da Informação", "teacher": "Prof. David J. M. Cavalcanti" }
-    ],
-    "ter": [
-      { "time": "3m", "subject": "Empreendedorismo", "teacher": "Prof. Luiz H. O. Martins" },
-      { "time": "4m", "subject": "Empreendedorismo", "teacher": "Prof. Luiz H. O. Martins" }
+      { "time": "3madm", "subject": "Marketing I", "teacher": "Prof. Adriana F. V. Bastos" },
+      { "time": "4madm", "subject": "Marketing I", "teacher": "Prof. Adriana F. V. Bastos" },
+      { "time": "2madm", "subject": "Marketing I", "teacher": "Prof. Adriana F. V. Bastos" }
     ],
     "qua": [
-      { "time": "2m", "subject": "Marketing I", "teacher": "Prof. Adriana F. V. Bastos" },
-      { "time": "3m", "subject": "Marketing I", "teacher": "Prof. Adriana F. V. Bastos" },
-      { "time": "4m", "subject": "Marketing I", "teacher": "Prof. Adriana F. V. Bastos" }
+      { "time": "1madm", "subject": "Tecnologia da Informação", "teacher": "Prof. David J. M. Cavalcanti" },
+      { "time": "2madm", "subject": "Tecnologia da Informação", "teacher": "Prof. David J. M. Cavalcanti" },
+      { "time": "3madm", "subject": "Tecnologia da Informação", "teacher": "Prof. David J. M. Cavalcanti" },
+      { "time": "4madm", "subject": "Terceiro Setor", "teacher": "Prof. Charles G. Martins" },
+      { "time": "5madm", "subject": "Terceiro Setor", "teacher": "Prof. Charles G. Martins" }
     ],
     "qui": [
-      { "time": "2m", "subject": "Contabilidade Gerencial", "teacher": "Prof. Djalma A. Rangel" },
-      { "time": "3m", "subject": "Contabilidade Gerencial", "teacher": "Prof. Djalma A. Rangel" },
-      { "time": "4m", "subject": "Contabilidade Gerencial", "teacher": "Prof. Djalma A. Rangel" }
+      { "time": "1madm", "subject": "Empreendedorismo", "teacher": "Prof. Luiz H. O. Martins" },
+      { "time": "2madm", "subject": "Empreendedorismo", "teacher": "Prof. Luiz H. O. Martins" },
+      { "time": "3madm", "subject": "Contabilidade Gerencial", "teacher": "Prof. Djalma A. Rangel" },
+      { "time": "4madm", "subject": "Contabilidade Gerencial", "teacher": "Prof. Djalma A. Rangel" },
+      { "time": "5madm", "subject": "Contabilidade Gerencial", "teacher": "Prof. Djalma A. Rangel" }
     ],
     "sex": [
-      { "time": "2m", "subject": "Finanças I", "teacher": "Prof. Mariane B. Nóbrega" },
-      { "time": "3m", "subject": "Finanças I", "teacher": "Prof. Mariane B. Nóbrega" },
-      { "time": "4m", "subject": "Finanças I", "teacher": "Prof. Mariane B. Nóbrega" }
+      { "time": "3madm", "subject": "Finanças I", "teacher": "Prof. Mariane B. Nóbrega" },
+      { "time": "4madm", "subject": "Finanças I", "teacher": "Prof. Mariane B. Nóbrega" },
+      { "time": "55madm", "subject": "Finanças I", "teacher": "Prof. Mariane B. Nóbrega" }
     ]
   },
   "5° período": {
-    "seg": [
-      { "time": "1t", "subject": "Gestão de Qualidade", "teacher": "Josefa R. Costa Gomes" },
-      { "time": "2t", "subject": "Gestão de Qualidade", "teacher": "Josefa R. Costa Gomes" },
-      { "time": "3t", "subject": "Administração da Produção I", "teacher": "Flora M. Vilar" },
-      { "time": "4t", "subject": "Administração da Produção I", "teacher": "Flora M. Vilar" },
-      { "time": "5t", "subject": "Administração da Produção I", "teacher": "Flora M. Vilar" }
-    ],
     "ter": [
-      { "time": "1t", "subject": "Marketing II", "teacher": "Edilene F. Santos" },
-      { "time": "2t", "subject": "Marketing II", "teacher": "Edilene F. Santos" },
-      { "time": "3t", "subject": "Gestão de Pessoas II", "teacher": "Yuri C. Araújo" },
-      { "time": "4t", "subject": "Gestão de Pessoas II", "teacher": "Yuri C. Araújo" },
-      { "time": "5t", "subject": "Gestão de Pessoas II", "teacher": "Yuri C. Araújo" }
+      { "time": "3tadm", "subject": "Administração da P. e O. I", "teacher": "Flora M. Vilar" },
+      { "time": "4tadm", "subject": "Administração da P. e O. I", "teacher": "Flora M. Vilar" },
+      { "time": "5tadm", "subject": "Administração da P. e O. I", "teacher": "Flora M. Vilar" }
     ],
     "qua": [
-      { "time": "1t", "subject": "Finanças II", "teacher": "Mariane B. Nóbrega" },
-      { "time": "2t", "subject": "Finanças II", "teacher": "Mariane B. Nóbrega" },
-      { "time": "3t", "subject": "Marketing II", "teacher": "Edilene F. Santos" },
-      { "time": "4t", "subject": "Processo Gerencial", "teacher": "Charles G. Martins" },
-      { "time": "5t", "subject": "Processo Gerencial", "teacher": "Charles G. Martins" }
+      { "time": "1tadm", "subject": "Gestão de Qualidade", "teacher": "Josefa R. C. Gomes" },
+      { "time": "2tadm", "subject": "Gestão de Qualidade", "teacher": "Josefa R. C. Gomes" },
+      { "time": "3tadm", "subject": "Gestão de Pessoas II", "teacher": "Yuri C. Araújo" },
+      { "time": "4tadm", "subject": "Gestão de Pessoas II", "teacher": "Yuri C. Araújo" },
+      { "time": "5tadm", "subject": "Gestão de Pessoas II", "teacher": "Yuri C. Araújo" }
+    ],
+    "qui": [
+      { "time": "1tadm", "subject": "Marketing II", "teacher": "Edilene F. Santos" },
+      { "time": "2tadm", "subject": "Marketing II", "teacher": "Edilene F. Santos" },
+      { "time": "3tadm", "subject": "Marketing II", "teacher": "Edilene F. Santos" }
+    ],
+    "sex": [
+      { "time": "1tadm", "subject": "Finanças II", "teacher": "Mariane B. Nóbrega" },
+      { "time": "2tadm", "subject": "Finanças II", "teacher": "Mariane B. Nóbrega" },
+      { "time": "3tadm", "subject": "Finanças II", "teacher": "Mariane B. Nóbrega" },
+      { "time": "4tadm", "subject": "Processo Gerencial", "teacher": "Charles G. Martins" },
+      { "time": "5tadm", "subject": "Processo Gerencial", "teacher": "Charles G. Martins" }
     ]
   },
   "6° período": {
     "seg": [
-      { "time": "1m", "subject": "Gestão e Inovação Tecnológica", "teacher": "Adriana F. Valente Bastos" },
-      { "time": "2m", "subject": "Gestão e Inovação Tecnológica", "teacher": "Adriana F. Valente Bastos" },
-      { "time": "3m", "subject": "Pesquisa Operacional", "teacher": "Danniel C. Araujo" },
-      { "time": "4m", "subject": "Pesquisa Operacional", "teacher": "Danniel C. Araujo" },
-      { "time": "5m", "subject": "Pesquisa Operacional", "teacher": "Danniel C. Araujo" }
+      { "time": "3madm", "subject": "Pesquisa Operacional", "teacher": "Danniel C. Araujo" },
+      { "time": "4madm", "subject": "Pesquisa Operacional", "teacher": "Danniel C. Araujo" },
+      { "time": "5madm", "subject": "Pesquisa Operacional", "teacher": "Danniel C. Araujo" }
     ],
     "ter": [
-      { "time": "1m", "subject": "Análise dos Demonstrativos Financeiros", "teacher": "Michelle S. Cedraz" },
-      { "time": "2m", "subject": "Análise dos Demonstrativos Financeiros", "teacher": "Michelle S. Cedraz" },
-      { "time": "3m", "subject": "Administração da Produção II", "teacher": "Flora M. Vilar" },
-      { "time": "4m", "subject": "Logística Empresarial", "teacher": "José T. P. Magalhães" },
-      { "time": "5m", "subject": "Logística Empresarial", "teacher": "José T. P. Magalhães" }
+      { "time": "4madm", "subject": "Logística Empresarial", "teacher": "José T. P. Magalhães" },
+      { "time": "5madm", "subject": "Logística Empresarial", "teacher": "José T. P. Magalhães" }
+    ],
+    "qua": [
+      { "time": "1madm", "subject": "Gestão e Inovação T.", "teacher": "Prof. Adriana F. V. Bastos" },
+      { "time": "2madm", "subject": "Gestão e Inovação T.", "teacher": "Prof. Adriana F. V. Bastos" },
+      { "time": "3madm", "subject": "Administração da P. O. II", "teacher": "Flora M. Vilar" },
+      { "time": "4madm", "subject": "Administração da P. O. II", "teacher": "Flora M. Vilar" },
+      { "time": "5madm", "subject": "Administração da P. O. II", "teacher": "Flora M. Vilar" }
+    ],
+    "qui": [
+      { "time": "4madm", "subject": "Marketing D. e E-commerce", "teacher": "Edilene F. Santos" },
+      { "time": "5madm", "subject": "Marketing D. e E-commerce", "teacher": "Edilene F. Santos" }
+    ],
+    "sex": [
+      { "time": "1madm", "subject": "Análise dos D. F.", "teacher": "Michelle S. O. Cedraz" },
+      { "time": "2madm", "subject": "Análise dos D. F.", "teacher": "Michelle S. O. Cedraz" },
+      { "time": "2madm", "subject": "Análise dos D. F.", "teacher": "Michelle S. O. Cedraz" },
+      { "time": "4madm", "subject": "Gestão de Projetos", "teacher": "Charles G. Martins" },
+      { "time": "5madm", "subject": "Gestão de Projetos", "teacher": "Charles G. Martins" }
     ]
   },
   "7° período": {
     "seg": [
-      { "time": "1t", "subject": "Administração Estratégica", "teacher": "Josefa R. Costa Gomes" },
-      { "time": "2t", "subject": "Administração Estratégica", "teacher": "Josefa R. Costa Gomes" },
-      { "time": "3t", "subject": "Gestão Ambiental e Sustentabilidade", "teacher": "Alexandre M. A. Oliveira" },
-      { "time": "4t", "subject": "Gestão Ambiental e Sustentabilidade", "teacher": "Alexandre M. A. Oliveira" }
+      { "time": "1tadm", "subject": "Administração Estratégica", "teacher": "Josefa R. C. Gomes" },
+      { "time": "2tadm", "subject": "Administração Estratégica", "teacher": "Josefa R. C. Gomes" },
+      { "time": "3tadm", "subject": "Gestão Ambiental e Sustentabilidade", "teacher": "Alexandre M. A. Oliveira" },
+      { "time": "4tadm", "subject": "Gestão Ambiental e Sustentabilidade", "teacher": "Alexandre M. A. Oliveira" }
     ],
-    "ter": [
-      { "time": "1t", "subject": "Avaliação de Empresas", "teacher": "Rodrigo L. F. Araújo" },
-      { "time": "2t", "subject": "Avaliação de Empresas", "teacher": "Rodrigo L. F. Araújo" },
-      { "time": "3t", "subject": "Administração de Materiais", "teacher": "José R. D. Melo" },
-      { "time": "4t", "subject": "Administração de Materiais", "teacher": "José R. D. Melo" },
-      { "time": "5t", "subject": "Administração de Materiais", "teacher": "José R. D. Melo" }
+    "ter": [      
+      { "time": "1tadm", "subject": "Avaliação de Empresas", "teacher": "Rodrigo L. F. Araújo" },
+      { "time": "2tadm", "subject": "Avaliação de Empresas", "teacher": "Rodrigo L. F. Araújo" },
+      { "time": "3tadm", "subject": "Gestão Ambiental e Sustentabilidade", "teacher": "Alexandre M. A. Oliveira" },
+      { "time": "4tadm", "subject": "Gestão Ambiental e Sustentabilidade", "teacher": "Alexandre M. A. Oliveira" }
+    ],    
+    "qua": [
+      { "time": "3tadm", "subject": "Administração de Materiais", "teacher": "José R. D. Melo" },
+      { "time": "4tadm", "subject": "Administração de Materiais", "teacher": "José R. D. Melo" },
+      { "time": "5tadm", "subject": "Administração de Materiais", "teacher": "José R. D. Melo" }
+    ],
+    "sex": [
+      { "time": "1tadm", "subject": "Administração Pública", "teacher": "Charles G. Martins" },
+      { "time": "2tadm", "subject": "Administração Pública", "teacher": "Charles G. Martins" },
+      { "time": "2tadm", "subject": "Administração Pública", "teacher": "Charles G. Martins" }
     ]
   },
   "8° período": {
-    "seg": [
-      { "time": "1m", "subject": "Mercado de Capitais", "teacher": "Rodrigo L. F. Araújo" },
-      { "time": "2m", "subject": "Mercado de Capitais", "teacher": "Rodrigo L. F. Araújo" },
-      { "time": "3m", "subject": "Mercado de Capitais", "teacher": "Rodrigo L. F. Araújo" },
-      { "time": "4m", "subject": "Gestão de Micro e Pequenas Empresas", "teacher": "Michelle S. Cedraz" },
-      { "time": "5m", "subject": "Gestão de Micro e Pequenas Empresas", "teacher": "Michelle S. Cedraz" }
+    "ter": [
+      { "time": "1madm", "subject": "Mercado de Capitais", "teacher": "Rodrigo L. F. Araújo" },
+      { "time": "2madm", "subject": "Mercado de Capitais", "teacher": "Rodrigo L. F. Araújo" },
+      { "time": "3madm", "subject": "Mercado de Capitais", "teacher": "Rodrigo L. F. Araújo" },
+      { "time": "4madm", "subject": "Gestão de Micro e P. E.", "teacher": "Michelle S. O. Cedraz" },
+      { "time": "5madm", "subject": "Gestão de Micro e P. E.", "teacher": "Michelle S. O. Cedraz" }
     ],
     "qua": [
-      { "time": "1m", "subject": "Sistemas de Informação", "teacher": "Pedro H. T. M. Nogueira" },
-      { "time": "2m", "subject": "Sistemas de Informação", "teacher": "Pedro H. T. M. Nogueira" },
-      { "time": "3m", "subject": "Metodologia de Pesquisa II", "teacher": "Mariane B. Nóbrega" },
-      { "time": "4m", "subject": "Metodologia de Pesquisa II", "teacher": "Mariane B. Nóbrega" },
-      { "time": "5m", "subject": "Metodologia de Pesquisa II", "teacher": "Mariane B. Nóbrega" }
+      { "time": "3madm", "subject": "Simulações e E. E.", "teacher": "Josefa R. C. Gomes" },
+      { "time": "4madm", "subject": "Simulações e E. E.", "teacher": "Josefa R. C. Gomes" },
+      { "time": "5madm", "subject": "Simulações e E. E.", "teacher": "Josefa R. C. Gomes" }
+    ],
+    "qui": [
+      { "time": "1madm", "subject": "Tópicos Especiais em A.", "teacher": "Prof. Simonelle W. Nascimento" },
+      { "time": "2madm", "subject": "Tópicos Especiais em A.", "teacher": "Prof. Simonelle W. Nascimento" },
+      { "time": "3madm", "subject": "Metodologia de Pesquisa II", "teacher": "Mariane B. Nóbrega" },
+      { "time": "4madm", "subject": "Metodologia de Pesquisa II", "teacher": "Mariane B. Nóbrega" },
+      { "time": "5madm", "subject": "Metodologia de Pesquisa II", "teacher": "Mariane B. Nóbrega" }
+    ],
+    "sex": [
+      { "time": "1madm", "subject": "Sistemas de Informação", "teacher": "Pedro H. T. M. Nogueira" },
+      { "time": "2madm", "subject": "Sistemas de Informação", "teacher": "Pedro H. T. M. Nogueira" },
+      { "time": "4madm", "subject": "Orçamento e Finanças P.", "teacher": "Michelle S. O. Cedraz" },
+      { "time": "5madm", "subject": "Orçamento e Finanças P.", "teacher": "Michelle S. O. Cedraz" }
     ]
   }
 }

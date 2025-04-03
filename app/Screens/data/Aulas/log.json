@@ -1,61 +1,60 @@
 {
   "1°": {
     "seg": [
-      { "time": "1t", "subject": "Matemática Básica", "teacher": "Prof. Roberto" },
-      { "time": "2t", "subject": "Matemática Básica", "teacher": "Prof. Roberto" }
+      { "time": "1t", "subject": "Matemática Básica", "teacher": "Prof. Roberto D. Cahu" },
+      { "time": "2t", "subject": "Matemática Básica", "teacher": "Prof. Roberto D. Cahu" }
     ],
     "ter": [
-      { "time": "1t", "subject": "Introdução a ADM", "teacher": "Prof. Edillene" },
-      { "time": "2t", "subject": "Introdução a ADM", "teacher": "Prof. Edillene" },
-      { "time": "3t", "subject": "Introdução a ADM", "teacher": "Prof. Edillene" },
-      { "time": "4t", "subject": "Portugês Aplicado", "teacher": "Prof. Mari Tania" },
-      { "time": "5t", "subject": "Portugês Aplicado", "teacher": "Prof. Mari Tania" },
-      { "time": "6t", "subject": "Portugês Aplicado", "teacher": "Prof. Mari Tania" }
+      { "time": "1t", "subject": "Introdução a ADM", "teacher": "Prof. Edilene F. Santos" },
+      { "time": "2t", "subject": "Introdução a ADM", "teacher": "Prof. Edilene F. Santos" },
+      { "time": "3t", "subject": "Introdução a ADM", "teacher": "Prof. Edilene F. Santos" },
+      { "time": "4t", "subject": "Português Aplicado", "teacher": "Prof. Mari T. S. Soares" },
+      { "time": "5t", "subject": "Português Aplicado", "teacher": "Prof. Mari T. S. Soares" },
+      { "time": "6t", "subject": "Português Aplicado", "teacher": "Prof. Mari T. S. Soares" }
     ],
     "qua": [
-      { "time": "2t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre Magno" },
-      { "time": "3t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre Magno" },
-      { "time": "4t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre Magno" }
+      { "time": "2t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre M. A. Oliveira" },
+      { "time": "3t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre M. A. Oliveira" },
+      { "time": "4t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre M. A. Oliveira" }
     ],
     "qui": [
-      { "time": "2t", "subject": "Metodologia Científica", "teacher": "Prof. Andreza" },
-      { "time": "3t", "subject": "Metodologia Científica", "teacher": "Prof. Andreza" },
-      { "time": "4t", "subject": "Ética Profissional", "teacher": "Prof. Willyans" },
-      { "time": "5t", "subject": "Ética Profissional", "teacher": "Prof. Willyans" }
+      { "time": "2t", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" },
+      { "time": "3t", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" },
+      { "time": "4t", "subject": "Ética Profissional", "teacher": "Prof. Willyans G. Coelho" },
+      { "time": "5t", "subject": "Ética Profissional", "teacher": "Prof. Willyans G. Coelho" }
     ],
     "sex": [
-      { "time": "1t", "subject": "Logística Reversa e M. A.", "teacher": "Prof. Bruno" },
-      { "time": "2t", "subject": "Logística Reversa e M. A.", "teacher": "Prof. Bruno" },
-      { "time": "3t", "subject": "Logística Reversa e M. A.", "teacher": "Prof. Bruno" },
-      { "time": "4t", "subject": "Informática Básica", "teacher": "Prof. Emaur" },
-      { "time": "5t", "subject": "Informática Básica", "teacher": "Prof. Emaur" },
-      { "time": "6t", "subject": "Informática Básica", "teacher": "Prof. Emaur" }
+      { "time": "1t", "subject": "Logística Reversa e M. A.", "teacher": "Prof. Bruno R. Monteiro" },
+      { "time": "2t", "subject": "Logística Reversa e M. A.", "teacher": "Prof. Bruno R. Monteiro" },
+      { "time": "3t", "subject": "Logística Reversa e M. A.", "teacher": "Prof. Bruno R. Monteiro" },
+      { "time": "4t", "subject": "Informática Básica", "teacher": "Prof. Emaur F. Oliveira" },
+      { "time": "5t", "subject": "Informática Básica", "teacher": "Prof. Emaur F. Oliveira" },
+      { "time": "6t", "subject": "Informática Básica", "teacher": "Prof. Emaur F. Oliveira" }
     ]
   },
   "2°": {
     "seg": [
-      { "time": "4m", "subject": "Inglês I", "teacher": "Prof. Mari Tania" },
-      { "time": "5m", "subject": "Inglês I", "teacher": "Prof. Mari Tania" }
+      { "time": "4m", "subject": "Inglês I", "teacher": "Prof. Mari T. S. Soares" },
+      { "time": "5m", "subject": "Inglês I", "teacher": "Prof. Mari T. S. Soares" }
     ],
     "ter": [
-      { "time": "2m", "subject": "Estatística", "teacher": "Prof. Hugo" },
-      { "time": "3m", "subject": "Estatística", "teacher": "Prof. Hugo" },
-      { "time": "4m", "subject": "Estatística", "teacher": "Prof. Hugo" },
-      { "time": "5m", "subject": "Logística e Tributação em L.", "teacher": "Prof. Leonardo" },
-      { "time": "6m", "subject": "Logística e Tributação em L.", "teacher": "Prof. Leonardo" }
+      { "time": "2m", "subject": "Estatística", "teacher": "Prof. Hugo L. C. Dantas" },
+      { "time": "3m", "subject": "Estatística", "teacher": "Prof. Hugo L. C. Dantas" },
+      { "time": "4m", "subject": "Estatística", "teacher": "Prof. Hugo L. C. Dantas" },
+      { "time": "5m", "subject": "Logística e Tributação em L.", "teacher": "Prof. Leonardo M. Pereira" },
+      { "time": "6m", "subject": "Logística e Tributação em L.", "teacher": "Prof. Leonardo M. Pereira" }
     ],
     "qua": [
-      { "time": "2m", "subject": "Gerenciamento e Economia", "teacher": "Prof. Marcerlo" },
-      { "time": "3m", "subject": "Gerenciamento e Economia", "teacher": "Prof. Marcerlo" },
-      { "time": "4m", "subject": "Logística de Transporte e D.", "teacher": "Prof. Alexandre Magno" },
-      { "time": "5m", "subject": "Logística de Transporte e D.", "teacher": "Prof. Alexandre Magno" },
-      { "time": "6m", "subject": "Logística de Transporte e D.", "teacher": "Prof. Alexandre Magno" }
-      
+      { "time": "2m", "subject": "Gerenciamento e Economia", "teacher": "Prof. Marcelo R. S. Reis" },
+      { "time": "3m", "subject": "Gerenciamento e Economia", "teacher": "Prof. Marcelo R. S. Reis" },
+      { "time": "4m", "subject": "Logística de Transporte e D.", "teacher": "Prof. Alexandre M. A. Oliveira" },
+      { "time": "5m", "subject": "Logística de Transporte e D.", "teacher": "Prof. Alexandre M. A. Oliveira" },
+      { "time": "6m", "subject": "Logística de Transporte e D.", "teacher": "Prof. Alexandre M. A. Oliveira" }
     ],
     "qui": [
-      { "time": "4m", "subject": "Gestão de Pessoas", "teacher": "Prof. Yuri" },
-      { "time": "5m", "subject": "Gestão de Pessoas", "teacher": "Prof. Yuri" },
-      { "time": "6m", "subject": "Gestão de Pessoas", "teacher": "Prof. Yuri" }
+      { "time": "4m", "subject": "Gestão de Pessoas", "teacher": "Prof. Yuri C. T. Araújo" },
+      { "time": "5m", "subject": "Gestão de Pessoas", "teacher": "Prof. Yuri C. T. Araújo" },
+      { "time": "6m", "subject": "Gestão de Pessoas", "teacher": "Prof. Yuri C. T. Araújo" }
     ],
     "sex": [
       { "time": "1m", "subject": "Logística de Armazenagem", "teacher": "Prof. Tarcisio" },
@@ -68,41 +67,37 @@
   },
   "3°": {
     "seg": [
-      { "time": "4m", "subject": "Gestão da Qualidade", "teacher": "Prof. renata" },
-      { "time": "5m", "subject": "Gestão da Qualidade", "teacher": "Prof. renata" },
-      { "time": "6m", "subject": "Gestão da Qualidade", "teacher": "Prof. renata" }
+      { "time": "4m", "subject": "Gestão da Qualidade", "teacher": "Prof. Josefa R. Q. C. Gomes" },
+      { "time": "5m", "subject": "Gestão da Qualidade", "teacher": "Prof. Josefa R. Q. C. Gomes" },
+      { "time": "6m", "subject": "Gestão da Qualidade", "teacher": "Prof. Josefa R. Q. C. Gomes" }
     ],
     "ter": [
-      { "time": "1m", "subject": "Custos Logístics", "teacher": "Prof. Tarcisio" },
-      { "time": "2m", "subject": "Custos Logístics", "teacher": "Prof. Tarcisio" },
-      { "time": "3m", "subject": "Inglês II", "teacher": "Prof. Mari Tania" },
-      { "time": "4m", "subject": "Inglês II", "teacher": "Prof. Mari Tania" },
-      { "time": "5m", "subject": "Tecnologia e Sistemas de I. L.", "teacher": "Prof. Alexandre Magno" },
-      { "time": "6m", "subject": "Tecnologia e Sistemas de I. L.", "teacher": "Prof. Alexandre Magno" }
+      { "time": "1m", "subject": "Custos Logísticos", "teacher": "Prof. José T. P. Magalhães" },
+      { "time": "2m", "subject": "Custos Logísticos", "teacher": "Prof. José T. P. Magalhães" },
+      { "time": "3m", "subject": "Inglês II", "teacher": "Prof. Mari T. S. Soares" },
+      { "time": "4m", "subject": "Inglês II", "teacher": "Prof. Mari T. S. Soares" },
+      { "time": "5m", "subject": "Tecnologia e Sistemas de I. L.", "teacher": "Prof. Alexandre M. A. Oliveira" },
+      { "time": "6m", "subject": "Tecnologia e Sistemas de I. L.", "teacher": "Prof. Alexandre M. A. Oliveira" }
     ],
     "qua": [
-      { "time": "1m", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José Rinaldo" },
-      { "time": "2m", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José Rinaldo" },
-      { "time": "3m", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José Rinaldo" },
-      { "time": "4m", "subject": "Tópicos Especiais", "teacher": "Prof. Adriana" },
-      { "time": "5m", "subject": "Tópicos Especiais", "teacher": "Prof. Adriana" },
-      { "time": "6m", "subject": "Tópicos Especiais", "teacher": "Prof. Adriana" }
+      { "time": "1m", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José R. D. Melo" },
+      { "time": "2m", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José R. D. Melo" },
+      { "time": "3m", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José R. D. Melo" }
     ],
     "qui": [
-      { "time": "1m", "subject": "Gestâo de Produção", "teacher": "Prof. Djalma" },
-      { "time": "2m", "subject": "Gestâo de Produção", "teacher": "Prof. Djalma" },
-      { "time": "3m", "subject": "Gestâo de Produção", "teacher": "Prof. Djalma" },
-      { "time": "5m", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana Carolina" },
-      { "time": "6m", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana Carolina" }
-
+      { "time": "1m", "subject": "Gestão de Produção", "teacher": "Prof. Jessyca S. F. Aires" },
+      { "time": "2m", "subject": "Gestão de Produção", "teacher": "Prof. Jessyca S. F. Aires" },
+      { "time": "3m", "subject": "Gestão de Produção", "teacher": "Prof. Jessyca S. F. Aires" },
+      { "time": "5m", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana C. M. R. Lemos" },
+      { "time": "6m", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana C. M. R. Lemos" }
     ],
     "sex": [
-      { "time": "1m", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José Rinaldo" },
-      { "time": "2m", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José Rinaldo" },
-      { "time": "3m", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José Rinaldo" },
-      { "time": "4m", "subject": "Gestâo de Produção", "teacher": "Prof. Djalma" },
-      { "time": "5m", "subject": "Gestâo de Produção", "teacher": "Prof. Djalma" },
-      { "time": "6m", "subject": "Gestâo de Produção", "teacher": "Prof. Djalma" }
+      { "time": "1m", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José R. D. Melo" },
+      { "time": "2m", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José R. D. Melo" },
+      { "time": "3m", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José R. D. Melo" },
+      { "time": "4m", "subject": "Gestâo de Produção", "teacher": "Prof. Jessyca S. F. Aires" },
+      { "time": "5m", "subject": "Gestâo de Produção", "teacher": "Prof. Jessyca S. F. Aires" },
+      { "time": "6m", "subject": "Gestâo de Produção", "teacher": "Prof. Jessyca S. F. Aires" }
     ]
   }
 }

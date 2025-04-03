@@ -19,6 +19,16 @@ const TIME_MAP: Record<string, { start: string; end: string }> = {
   '4t': { start: '15:25', end: '16:10' },
   '5t': { start: '16:10', end: '16:55' },
   '6t': { start: '16:55', end: '17:40' },
+  '1madm': { start: '07:00', end: '08:00' },
+  '2madm': { start: '08:00', end: '09:00' },
+  '3madm': { start: '09:00', end: '10:00' },
+  '4madm': { start: '10:00', end: '11:00' },
+  '5madm': { start: '11:00', end: '12:00' },
+  '1tadm': { start: '13:00', end: '14:00' },
+  '2tadm': { start: '14:00', end: '15:00' },
+  '3tadm': { start: '15:00', end: '16:00' },
+  '4tadm': { start: '16:00', end: '17:00' },
+  '5tadm': { start: '17:00', end: '18:00' },
 };
 
 const Aulas = () => {

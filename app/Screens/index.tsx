@@ -19,7 +19,7 @@ export default function HomeScreen() {
     try {
       const message = `🎉 O Campus Connect é para TODOS! 📲
   
-  Se você é aluno do campus, independentemente do seu curso - seja Administração, Logística, Qualidade ou qualquer outro - SIM, você pode baixar e usar o nosso app! 🚀✨
+  Se você é aluno do campus, independentemente do seu curso, seja Administração, Logística, Qualidade ou qualquer outro. Sim, você pode baixar e usar o nosso app! 🚀✨
   
   🔗 Baixe o app agora mesmo: 
   https://drive.google.com/file/d/1qnnT8aKB82pP_gu0CuLFApVelYzWGzm7/view?usp=drive_link
