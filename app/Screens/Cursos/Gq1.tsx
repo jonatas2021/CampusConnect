@@ -27,31 +27,32 @@ const Gq1 = () => {
 
         {/* Descrição do curso */}
         <Text style={styles.description}>
-          O curso de Gestão da Qualidade forma profissionais capacitados para implementar, 
-          monitorar e melhorar processos organizacionais, garantindo a qualidade de produtos 
-          e serviços. Os alunos desenvolvem competências em auditoria, certificação e 
+          O curso de Gestão da Qualidade forma profissionais capacitados para implementar,
+          monitorar e melhorar processos organizacionais, garantindo a qualidade de produtos
+          e serviços. Os alunos desenvolvem competências em auditoria, certificação e
           metodologias de melhoria contínua.
         </Text>
 
         {/* Requisitos para conclusão */}
         <Text style={styles.requirements}>
+          Duração: 5 períodos (2 anos e 6 meses); {"\n"}
           Requisitos para conclusão:{'\n'}
           • 2 Projetos Integradores;{'\n'}
           • Ter 6oh de Atividades Complementares;{"\n"}
           • Ter 60h de Prática Profissional (Pode ser o TCC);{"\n"}
-          • Realizar a defesa do Trabalho de Conclusão de Curso (TCC).{"\n"} 
+          • Realizar a defesa do Trabalho de Conclusão de Curso (TCC).{"\n"}
         </Text>
 
-        <TouchableOpacity 
-          style={styles.button} 
+        <TouchableOpacity
+          style={styles.button}
           activeOpacity={0.5}
           onPress={() => router.push("/Screens/Cursos/Gq2")}
         >
           <Text style={styles.buttonText}>Disciplinas e Ementas</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={styles.button} 
+        <TouchableOpacity
+          style={styles.button}
           activeOpacity={0.5}
           onPress={() => Linking.openURL("https://drive.google.com/file/d/1216dj71cur72Cb3bxCsov8PbbBF702EJ/view?usp=drive_link")}
         >

@@ -78,7 +78,7 @@ const Carteirafree = () => {
 
                 <View style={styles.subtitleview}>
                     <Text style={styles.subtitletext}>
-                        Etapas para a solitação:
+                        Etapas para a solicitação:
                     </Text>
                 </View>
 

@@ -79,9 +79,6 @@
       { "time": "6m", "subject": "Gestão do Processo", "teacher": "Prof. Francisco" }
     ],
     "qui": [
-      { "time": "1m", "subject": "Tecnologia e Sistemas de I. A.", "teacher": "Prof. Pedro" },
-      { "time": "2m", "subject": "Tecnologia e Sistemas de I. A.", "teacher": "Prof. Pedro" },
-      { "time": "3m", "subject": "Tecnologia e Sistemas de I. A.", "teacher": "Prof. Pedro" },
       { "time": "4m", "subject": "Gestão de Produção", "teacher": "Prof. Inez" },
       { "time": "5m", "subject": "Gestão de Produção", "teacher": "Prof. Inez" },
       { "time": "6m", "subject": "Gestão de Produção", "teacher": "Prof. Inez" }

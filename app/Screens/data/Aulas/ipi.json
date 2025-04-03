@@ -1,88 +1,60 @@
 {
   "1°": {
     "seg": [
-      { "time": "1t", "subject": "Redes de Computadores", "teacher": "Prof. David" },
-      { "time": "2t", "subject": "Redes de Computadores", "teacher": "Prof. David" },
-      { "time": "3t", "subject": "Redes de Computadores", "teacher": "Prof. David" },
-      { "time": "4t", "subject": "Redes de Computadores", "teacher": "Prof. David" }
+      {"time": "1t", "subject": "Redes de Computadores", "teacher": "Prof. David J. Cavalcanti"},
+      {"time": "2t", "subject": "Redes de Computadores", "teacher": "Prof. David J. Cavalcanti"},
+      {"time": "3t", "subject": "Redes de Computadores", "teacher": "Prof. David J. Cavalcanti"},
+      {"time": "4t", "subject": "Redes de Computadores", "teacher": "Prof. David J. Cavalcanti"}
     ],
     "ter": [
-      { "time": "1t", "subject": "Português Instrumental", "teacher": "Prof. Mari Tania" },
-      { "time": "2t", "subject": "Português Instrumental", "teacher": "Prof. Mari Tania" },
-      { "time": "3t", "subject": "Português Instrumental", "teacher": "Prof. Mari Tania" },
-      { "time": "4t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan" },
-      { "time": "5t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan" },
-      { "time": "6t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan" }
+      {"time": "1t", "subject": "Português Instrumental", "teacher": "Prof. Mari T. Soares"},
+      {"time": "2t", "subject": "Português Instrumental", "teacher": "Prof. Mari T. Soares"},
+      {"time": "3t", "subject": "Português Instrumental", "teacher": "Prof. Mari T. Soares"},
+      {"time": "4t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan D. Lima"},
+      {"time": "5t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan D. Lima"},
+      {"time": "6t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan D. Lima"}
     ],
     "qua": [
-      { "time": "2t", "subject": "Matemática Aplicada", "teacher": "Prof. Hugo" },
-      { "time": "3t", "subject": "Matemática Aplicada", "teacher": "Prof. Hugo" },
-      { "time": "4t", "subject": "Matemática Aplicada", "teacher": "Prof. Hugo" }
+      {"time": "2t", "subject": "Matemática Aplicada", "teacher": "Prof. Hugo L. Dantas"},
+      {"time": "3t", "subject": "Matemática Aplicada", "teacher": "Prof. Hugo L. Dantas"},
+      {"time": "4t", "subject": "Matemática Aplicada", "teacher": "Prof. Hugo L. Dantas"}
     ],
     "qui": [
-      { "time": "1t", "subject": "Segurança do Trabalho", "teacher": "Prof. Ana Carolina" },
-      { "time": "2t", "subject": "Segurança do Trabalho", "teacher": "Prof. Ana Carolina" },
-      { "time": "3t", "subject": "Inglês Instrumental", "teacher": "Prof. Ivo" },
-      { "time": "4t", "subject": "Inglês Instrumental", "teacher": "Prof. ivo" },
-      { "time": "5t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan" },
-      { "time": "6t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan" }
+      {"time": "1t", "subject": "Segurança do Trabalho", "teacher": "Prof. Ana C. Lemos"},
+      {"time": "2t", "subject": "Segurança do Trabalho", "teacher": "Prof. Ana C. Lemos"},
+      {"time": "3t", "subject": "Inglês Instrumental", "teacher": "Prof. Ivo F. Sá"},
+      {"time": "4t", "subject": "Inglês Instrumental", "teacher": "Prof. Ivo F. Sá"},
+      {"time": "5t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan D. Lima"},
+      {"time": "6t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan D. Lima"}
     ],
     "sex": [
-      { "time": "1t", "subject": "Fundamentos da Informática", "teacher": "Prof. Emaur" },
-      { "time": "2t", "subject": "Fundamentos da Informática", "teacher": "Prof. Emaur" },
-      { "time": "3t", "subject": "Fundamentos da Informática", "teacher": "Prof. Emaur" }
+      {"time": "1t", "subject": "Fundamentos da Informática", "teacher": "Prof. Emaur F. Oliveira"},
+      {"time": "2t", "subject": "Fundamentos da Informática", "teacher": "Prof. Emaur F. Oliveira"},
+      {"time": "3t", "subject": "Fundamentos da Informática", "teacher": "Prof. Emaur F. Oliveira"}
     ]
   },
   "2°": {
     "seg": [
-      { "time": "3m", "subject": "Banco de Dados", "teacher": "Prof. Milton" },
-      { "time": "4m", "subject": "Banco de Dados", "teacher": "Prof. Milton" },
-      { "time": "5m", "subject": "Banco de Dados", "teacher": "Prof. Milton" },
-      { "time": "6m", "subject": "Banco de Dados", "teacher": "Prof. Milton" }
-    ],
-    "ter": [
-      { "time": "2m", "subject": "Ética Profissional e Cidadania", "teacher": "Prof. Willyans" },
-      { "time": "3m", "subject": "Ética Profissional e Cidadania", "teacher": "Prof. Willyans" },
-      { "time": "4m", "subject": "Segurança de Sistemas p. I.", "teacher": "Prof. Ramon" },
-      { "time": "5m", "subject": "Segurança de Sistemas p. I.", "teacher": "Prof. Ramon" },
-      { "time": "6m", "subject": "Segurança de Sistemas p. I.", "teacher": "Prof. Ramon" }
-    ],
-    "qua": [
-      { "time": "3m", "subject": "Desenvolvimento para Web I", "teacher": "Prof. Alexandre Strapação" },
-      { "time": "4m", "subject": "Desenvolvimento para Web I", "teacher": "Prof. Alexandre Strapação" },
-      { "time": "5m", "subject": "Desenvolvimento para Web I", "teacher": "Prof. Alexandre Strapação" },
-      { "time": "6m", "subject": "Desenvolvimento para Web I", "teacher": "Prof. Alexandre Strapação" }
-      
-    ],
-    "qui": [
-      { "time": "2m", "subject": "Projeto e Prática I", "teacher": "Prof. Emaur" },
-      { "time": "3m", "subject": "Projeto e Prática I", "teacher": "Prof. Emaur" },
-      { "time": "4m", "subject": "Sistemas Operacionais", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "Sistemas Operacionais", "teacher": "Prof. Pedro" },
-      { "time": "6m", "subject": "Sistemas Operacionais", "teacher": "Prof. Pedro" }
-    ],
-    "sex": [
-      { "time": "2m", "subject": "Projeto e Prática I", "teacher": "Prof. Emaur" },
-      { "time": "3m", "subject": "Projeto e Prática I", "teacher": "Prof. Emaur" },
-      { "time": "4m", "subject": "Programaçãp Orientada a Objeto", "teacher": "Prof. Gustavo nobrega" },
-      { "time": "5m", "subject": "Programaçãp Orientada a Objeto", "teacher": "Prof. Gustavo nobrega" },
-      { "time": "6m", "subject": "Programaçãp Orientada a Objeto", "teacher": "Prof. Gustavo nobrega" }
+      {"time": "3m", "subject": "Banco de Dados", "teacher": "Prof. Milton S. Junior"},
+      {"time": "4m", "subject": "Banco de Dados", "teacher": "Prof. Milton S. Junior"},
+      {"time": "5m", "subject": "Banco de Dados", "teacher": "Prof. Milton S. Junior"},
+      {"time": "6m", "subject": "Banco de Dados", "teacher": "Prof. Milton S. Junior"}
     ]
   },
   "3°": {
     "seg": [
-      { "time": "1t", "subject": "Projeto e Prática II", "teacher": "Prof. Liliane" },
-      { "time": "2t", "subject": "Projeto e Prática II", "teacher": "Prof. Liliane" },
-      { "time": "3t", "subject": "Projeto e Prática II", "teacher": "Prof. Raniere" },
-      { "time": "4t", "subject": "Projeto e Prática II", "teacher": "Prof. Raniere" },
-      { "time": "5t", "subject": "Projeto e Prática II", "teacher": "Prof. Raniere" }
+      { "time": "1t", "subject": "Projeto e Prática II", "teacher": "Prof. Liliane A. do N. Sales" },
+      { "time": "2t", "subject": "Projeto e Prática II", "teacher": "Prof. Liliane A. do N. Sales" },
+      { "time": "3t", "subject": "Projeto e Prática II", "teacher": "Prof. Ranieri V. Carvalho" },
+      { "time": "4t", "subject": "Projeto e Prática II", "teacher": "Prof. Ranieri V. Carvalho" },
+      { "time": "5t", "subject": "Projeto e Prática II", "teacher": "Prof. Ranieri V. Carvalho" }
     ],
     "ter": [
-      { "time": "2t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon" },
-      { "time": "3t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon" },
-      { "time": "4t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon" },
-      { "time": "5t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon" },
-      { "time": "6t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon" }
+      { "time": "2t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon M. de S. Farias" },
+      { "time": "3t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon M. de S. Farias" },
+      { "time": "4t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon M. de S. Farias" },
+      { "time": "5t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon M. de S. Farias" },
+      { "time": "6t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon M. de S. Farias" }
 
     ],
     "qua": [
@@ -92,18 +64,18 @@
       { "time": "4t", "subject": "Desenvolvimento para Web II", "teacher": "Prof. Alexandre Strapação" }
     ],
     "qui": [
-      { "time": "1t", "subject": "Engenharia de Software", "teacher": "Prof. Emaur" },
-      { "time": "2t", "subject": "Engenharia de Software", "teacher": "Prof. Emaur" },
-      { "time": "3t", "subject": "Engenharia de Software", "teacher": "Prof. Emaur" },
-      { "time": "4t", "subject": "Engenharia de Software", "teacher": "Prof. Emaur" },
-      { "time": "5t", "subject": "Empreendedorismo", "teacher": "Prof. Luiz" },
-      { "time": "6t", "subject": "Empreendedorismo", "teacher": "Prof. Luiz" }
+      { "time": "1t", "subject": "Engenharia de Software", "teacher": "Prof. Emaur F. Oliveira" },
+      { "time": "2t", "subject": "Engenharia de Software", "teacher": "Prof. Emaur F. Oliveira" },
+      { "time": "3t", "subject": "Engenharia de Software", "teacher": "Prof. Emaur F. Oliveira" },
+      { "time": "4t", "subject": "Engenharia de Software", "teacher": "Prof. Emaur F. Oliveira" },
+      { "time": "5t", "subject": "Empreendedorismo", "teacher": "Prof. Luiz H. O. Martins" },
+      { "time": "6t", "subject": "Empreendedorismo", "teacher": "Prof. Luiz H. O. Martins" }
 
     ],
     "sex": [
-      { "time": "1t", "subject": "Interação Humano Computador", "teacher": "Prof. Erton" },
-      { "time": "2t", "subject": "Interação Humano Computador", "teacher": "Prof. Erton" },
-      { "time": "3t", "subject": "Interação Humano Computador", "teacher": "Prof. Erton" }
+      {"time": "1t", "subject": "Interação Humano Computador", "teacher": "Prof. Erton W. Silva"},
+      {"time": "2t", "subject": "Interação Humano Computador", "teacher": "Prof. Erton W. Silva"},
+      {"time": "3t", "subject": "Interação Humano Computador", "teacher": "Prof. Erton W. Silva"}
     ]
   }
 }

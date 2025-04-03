@@ -3,21 +3,29 @@ import { View, Text, FlatList, Pressable, StyleSheet, Linking } from 'react-nati
 import { RFValue } from 'react-native-responsive-fontsize';
 import BackButton from '@/components/BackButton';
 import { useNotifications } from '@/app/context/NotificationsContext';
+import { useRouter } from 'expo-router';
+import { KnownRoute, knownRoutes } from "@/src/config/routes"; // Importe o tipo e a lista de rotas
 
 export default function NotificationsScreen() {
-  const { notifications, markAsRead } = useNotifications(); // ✅ Remove 'setNotifications'
+  const { notifications, markAsRead } = useNotifications();
+  const router = useRouter();
 
   const handleNotificationPress = async (id: string, link?: string) => {
-    markAsRead(id); // ✅ Usa markAsRead para marcar como lida
-
-    if (link) {
+    markAsRead(id);
+  
+    if (!link) return;
+  
+    // 🔹 Verifica se o link está na lista de rotas conhecidas
+    if (knownRoutes.includes(link as KnownRoute)) {
+      router.push(link as any); // ✅ FORÇA a tipagem para evitar erro
+    } else {
       try {
         await Linking.openURL(link);
       } catch (err) {
-        console.error('Erro ao abrir o link:', err);
+        console.error("Erro ao abrir o link externo:", err);
       }
     }
-  };
+  };  
 
   return (
     <View style={styles.container}>

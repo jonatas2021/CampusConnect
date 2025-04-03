@@ -1,298 +1,175 @@
 {
   "1° período": {
     "seg": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Introdução à Economia", "teacher": "Prof. Marcelo R. S. Reis" },
+      { "time": "2t", "subject": "Introdução à Economia", "teacher": "Prof. Marcelo R. S. Reis" },
+      { "time": "3t", "subject": "Introdução à Economia", "teacher": "Prof. Marcelo R. S. Reis" },
+      { "time": "4t", "subject": "Comunicação Empresarial", "teacher": "Prof. Josefa R. Q. Costa Gomes" },
+      { "time": "5t", "subject": "Comunicação Empresarial", "teacher": "Prof. Josefa R. Q. Costa Gomes" }
     ],
     "ter": [
-      { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" },
-      { "time": "2m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "3m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Educação Física", "teacher": "Prof. Carla" }
+      { "time": "1t", "subject": "Matemática Aplicada à Administração", "teacher": "Prof. Cícero R. S. Júnior" },
+      { "time": "2t", "subject": "Matemática Aplicada à Administração", "teacher": "Prof. Cícero R. S. Júnior" },
+      { "time": "3t", "subject": "Matemática Aplicada à Administração", "teacher": "Prof. Cícero R. S. Júnior" },
+      { "time": "4t", "subject": "Introdução à Contabilidade", "teacher": "Prof. Mariane B. Nóbrega" },
+      { "time": "5t", "subject": "Introdução à Contabilidade", "teacher": "Prof. Mariane B. Nóbrega" }
     ],
     "qua": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Ética Profissional em Administração", "teacher": "Prof. Willyans G. Coelho" },
+      { "time": "2t", "subject": "Ética Profissional em Administração", "teacher": "Prof. Willyans G. Coelho" },
+      { "time": "3t", "subject": "Introdução à Contabilidade", "teacher": "Prof. Mariane B. Nóbrega" },
+      { "time": "4t", "subject": "Introdução à Contabilidade", "teacher": "Prof. Mariane B. Nóbrega" }
     ],
     "qui": [
-      { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" },
-      { "time": "2m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "3m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Educação Física", "teacher": "Prof. Carla" }
-    ],
-    "sex": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Introdução à Administração", "teacher": "Prof. Simonelle W. do Nascimento" },
+      { "time": "2t", "subject": "Introdução à Administração", "teacher": "Prof. Simonelle W. do Nascimento" },
+      { "time": "3t", "subject": "Introdução à Administração", "teacher": "Prof. Simonelle W. do Nascimento" }
     ]
   },
   "2° período": {
     "seg": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1m", "subject": "Noções de Direito Público e Privado", "teacher": "Prof. Leonardo M. Pereira" },
+      { "time": "2m", "subject": "Matemática Financeira", "teacher": "Prof. Rodrigo L. F. Araújo" },
+      { "time": "3m", "subject": "Matemática Financeira", "teacher": "Prof. Rodrigo L. F. Araújo" },
+      { "time": "4m", "subject": "Matemática Financeira", "teacher": "Prof. Rodrigo L. F. Araújo" }
     ],
     "ter": [
-      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
+      { "time": "2m", "subject": "Estatística Aplicada", "teacher": "Prof. Danniel C. Araújo" },
+      { "time": "3m", "subject": "Estatística Aplicada", "teacher": "Prof. Danniel C. Araújo" },
+      { "time": "4m", "subject": "Estatística Aplicada", "teacher": "Prof. Danniel C. Araújo" }
     ],
     "qua": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "2m", "subject": "Economia Brasileira", "teacher": "Prof. Marcelo R. S. Reis" },
+      { "time": "3m", "subject": "Economia Brasileira", "teacher": "Prof. Marcelo R. S. Reis" },
+      { "time": "4m", "subject": "Economia Brasileira", "teacher": "Prof. Marcelo R. S. Reis" }
     ],
     "qui": [
-      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
+      { "time": "3m", "subject": "Introdução à Psicologia", "teacher": "Prof. Willyans G. Coelho" },
+      { "time": "4m", "subject": "Introdução à Psicologia", "teacher": "Prof. Willyans G. Coelho" }
     ],
     "sex": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "2m", "subject": "Sociologia", "teacher": "Prof. Andreza S. Cordeiro" },
+      { "time": "3m", "subject": "Sociologia", "teacher": "Prof. Andreza S. Cordeiro" },
+      { "time": "4m", "subject": "Sociologia", "teacher": "Prof. Andreza S. Cordeiro" }
     ]
   },
   "3° período": {
     "seg": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Direito Empresarial e Trabalhista", "teacher": "Prof. Leonardo M. Pereira" },
+      { "time": "2t", "subject": "Direito Empresarial e Trabalhista", "teacher": "Prof. Leonardo M. Pereira" },
+      { "time": "3t", "subject": "Direito Empresarial e Trabalhista", "teacher": "Prof. Leonardo M. Pereira" }
     ],
     "ter": [
-      { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" },
-      { "time": "2m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "3m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Educação Física", "teacher": "Prof. Carla" }
+      { "time": "2t", "subject": "Gestão de Pessoas I", "teacher": "Prof. Yuri C. T. Araújo" },
+      { "time": "3t", "subject": "Gestão de Pessoas I", "teacher": "Prof. Yuri C. T. Araújo" }
     ],
     "qua": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Administração e Legislação Tributária", "teacher": "Prof. Michelle S. O. Cedraz" },
+      { "time": "2t", "subject": "Administração e Legislação Tributária", "teacher": "Prof. Michelle S. O. Cedraz" }
     ],
     "qui": [
-      { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" },
-      { "time": "2m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "3m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Educação Física", "teacher": "Prof. Carla" }
+      { "time": "3t", "subject": "Comportamento Organizacional", "teacher": "Prof. Charles G. Martins" },
+      { "time": "4t", "subject": "Comportamento Organizacional", "teacher": "Prof. Charles G. Martins" },
+      { "time": "5t", "subject": "Comportamento Organizacional", "teacher": "Prof. Charles G. Martins" }
     ],
     "sex": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "4t", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" },
+      { "time": "5t", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" }
     ]
   },
   "4° período": {
     "seg": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1m", "subject": "Tecnologia da Informação", "teacher": "Prof. David J. M. Cavalcanti" },
+      { "time": "2m", "subject": "Tecnologia da Informação", "teacher": "Prof. David J. M. Cavalcanti" }
     ],
     "ter": [
-      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
+      { "time": "3m", "subject": "Empreendedorismo", "teacher": "Prof. Luiz H. O. Martins" },
+      { "time": "4m", "subject": "Empreendedorismo", "teacher": "Prof. Luiz H. O. Martins" }
     ],
     "qua": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "2m", "subject": "Marketing I", "teacher": "Prof. Adriana F. V. Bastos" },
+      { "time": "3m", "subject": "Marketing I", "teacher": "Prof. Adriana F. V. Bastos" },
+      { "time": "4m", "subject": "Marketing I", "teacher": "Prof. Adriana F. V. Bastos" }
     ],
     "qui": [
-      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
+      { "time": "2m", "subject": "Contabilidade Gerencial", "teacher": "Prof. Djalma A. Rangel" },
+      { "time": "3m", "subject": "Contabilidade Gerencial", "teacher": "Prof. Djalma A. Rangel" },
+      { "time": "4m", "subject": "Contabilidade Gerencial", "teacher": "Prof. Djalma A. Rangel" }
     ],
     "sex": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "2m", "subject": "Finanças I", "teacher": "Prof. Mariane B. Nóbrega" },
+      { "time": "3m", "subject": "Finanças I", "teacher": "Prof. Mariane B. Nóbrega" },
+      { "time": "4m", "subject": "Finanças I", "teacher": "Prof. Mariane B. Nóbrega" }
     ]
   },
   "5° período": {
     "seg": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Gestão de Qualidade", "teacher": "Josefa R. Costa Gomes" },
+      { "time": "2t", "subject": "Gestão de Qualidade", "teacher": "Josefa R. Costa Gomes" },
+      { "time": "3t", "subject": "Administração da Produção I", "teacher": "Flora M. Vilar" },
+      { "time": "4t", "subject": "Administração da Produção I", "teacher": "Flora M. Vilar" },
+      { "time": "5t", "subject": "Administração da Produção I", "teacher": "Flora M. Vilar" }
     ],
     "ter": [
-      { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" },
-      { "time": "2m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "3m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Educação Física", "teacher": "Prof. Carla" }
+      { "time": "1t", "subject": "Marketing II", "teacher": "Edilene F. Santos" },
+      { "time": "2t", "subject": "Marketing II", "teacher": "Edilene F. Santos" },
+      { "time": "3t", "subject": "Gestão de Pessoas II", "teacher": "Yuri C. Araújo" },
+      { "time": "4t", "subject": "Gestão de Pessoas II", "teacher": "Yuri C. Araújo" },
+      { "time": "5t", "subject": "Gestão de Pessoas II", "teacher": "Yuri C. Araújo" }
     ],
     "qua": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
-    ],
-    "qui": [
-      { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" },
-      { "time": "2m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "3m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Educação Física", "teacher": "Prof. Carla" }
-    ],
-    "sex": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Finanças II", "teacher": "Mariane B. Nóbrega" },
+      { "time": "2t", "subject": "Finanças II", "teacher": "Mariane B. Nóbrega" },
+      { "time": "3t", "subject": "Marketing II", "teacher": "Edilene F. Santos" },
+      { "time": "4t", "subject": "Processo Gerencial", "teacher": "Charles G. Martins" },
+      { "time": "5t", "subject": "Processo Gerencial", "teacher": "Charles G. Martins" }
     ]
   },
   "6° período": {
     "seg": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1m", "subject": "Gestão e Inovação Tecnológica", "teacher": "Adriana F. Valente Bastos" },
+      { "time": "2m", "subject": "Gestão e Inovação Tecnológica", "teacher": "Adriana F. Valente Bastos" },
+      { "time": "3m", "subject": "Pesquisa Operacional", "teacher": "Danniel C. Araujo" },
+      { "time": "4m", "subject": "Pesquisa Operacional", "teacher": "Danniel C. Araujo" },
+      { "time": "5m", "subject": "Pesquisa Operacional", "teacher": "Danniel C. Araujo" }
     ],
     "ter": [
-      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
-    ],
-    "qua": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
-    ],
-    "qui": [
-      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
-    ],
-    "sex": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1m", "subject": "Análise dos Demonstrativos Financeiros", "teacher": "Michelle S. Cedraz" },
+      { "time": "2m", "subject": "Análise dos Demonstrativos Financeiros", "teacher": "Michelle S. Cedraz" },
+      { "time": "3m", "subject": "Administração da Produção II", "teacher": "Flora M. Vilar" },
+      { "time": "4m", "subject": "Logística Empresarial", "teacher": "José T. P. Magalhães" },
+      { "time": "5m", "subject": "Logística Empresarial", "teacher": "José T. P. Magalhães" }
     ]
   },
   "7° período": {
     "seg": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Administração Estratégica", "teacher": "Josefa R. Costa Gomes" },
+      { "time": "2t", "subject": "Administração Estratégica", "teacher": "Josefa R. Costa Gomes" },
+      { "time": "3t", "subject": "Gestão Ambiental e Sustentabilidade", "teacher": "Alexandre M. A. Oliveira" },
+      { "time": "4t", "subject": "Gestão Ambiental e Sustentabilidade", "teacher": "Alexandre M. A. Oliveira" }
     ],
     "ter": [
-      { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" },
-      { "time": "2m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "3m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Educação Física", "teacher": "Prof. Carla" }
-    ],
-    "qua": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
-    ],
-    "qui": [
-      { "time": "1m", "subject": "Inglês", "teacher": "Prof. José" },
-      { "time": "2m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "3m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Educação Física", "teacher": "Prof. Carla" }
-    ],
-    "sex": [
-      { "time": "1m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "2m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "3m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1t", "subject": "Avaliação de Empresas", "teacher": "Rodrigo L. F. Araújo" },
+      { "time": "2t", "subject": "Avaliação de Empresas", "teacher": "Rodrigo L. F. Araújo" },
+      { "time": "3t", "subject": "Administração de Materiais", "teacher": "José R. D. Melo" },
+      { "time": "4t", "subject": "Administração de Materiais", "teacher": "José R. D. Melo" },
+      { "time": "5t", "subject": "Administração de Materiais", "teacher": "José R. D. Melo" }
     ]
   },
   "8° período": {
     "seg": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
-    ],
-    "ter": [
-      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
+      { "time": "1m", "subject": "Mercado de Capitais", "teacher": "Rodrigo L. F. Araújo" },
+      { "time": "2m", "subject": "Mercado de Capitais", "teacher": "Rodrigo L. F. Araújo" },
+      { "time": "3m", "subject": "Mercado de Capitais", "teacher": "Rodrigo L. F. Araújo" },
+      { "time": "4m", "subject": "Gestão de Micro e Pequenas Empresas", "teacher": "Michelle S. Cedraz" },
+      { "time": "5m", "subject": "Gestão de Micro e Pequenas Empresas", "teacher": "Michelle S. Cedraz" }
     ],
     "qua": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
-    ],
-    "qui": [
-      { "time": "1m", "subject": "Geografia", "teacher": "Prof. Lucas" },
-      { "time": "2m", "subject": "Biologia", "teacher": "Prof. Fernanda" },
-      { "time": "3m", "subject": "Educação Física", "teacher": "Prof. Carla" },
-      { "time": "4m", "subject": "Arte", "teacher": "Prof. Ricardo" },
-      { "time": "5m", "subject": "Inglês", "teacher": "Prof. José" }
-    ],
-    "sex": [
-      { "time": "1m", "subject": "Física", "teacher": "Prof. Ana" },
-      { "time": "2m", "subject": "Matemática", "teacher": "Prof. João" },
-      { "time": "3m", "subject": "Português", "teacher": "Prof. Maria" },
-      { "time": "4m", "subject": "Química", "teacher": "Prof. Pedro" },
-      { "time": "5m", "subject": "História", "teacher": "Prof. Laura" }
+      { "time": "1m", "subject": "Sistemas de Informação", "teacher": "Pedro H. T. M. Nogueira" },
+      { "time": "2m", "subject": "Sistemas de Informação", "teacher": "Pedro H. T. M. Nogueira" },
+      { "time": "3m", "subject": "Metodologia de Pesquisa II", "teacher": "Mariane B. Nóbrega" },
+      { "time": "4m", "subject": "Metodologia de Pesquisa II", "teacher": "Mariane B. Nóbrega" },
+      { "time": "5m", "subject": "Metodologia de Pesquisa II", "teacher": "Mariane B. Nóbrega" }
     ]
   }
 }

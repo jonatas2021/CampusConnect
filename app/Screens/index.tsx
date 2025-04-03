@@ -6,6 +6,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import { useRouter } from 'expo-router';
 import { useNotifications } from '../context/NotificationsContext';  // Importando o hook do contexto
 import { getAuth, onAuthStateChanged } from '@react-native-firebase/auth'; // Atualizado
+import Share from 'react-native-share';
 
 
 export default function HomeScreen() {
@@ -13,6 +14,23 @@ export default function HomeScreen() {
   const { notifications, markAsRead, loadNotifications } = useNotifications(); // Acessando notificações e função de marcação
   const [hasNewNotification, setHasNewNotification] = useState(false);
   const router = useRouter();
+
+  const handleShare = async () => {
+    try {
+      const message = `🎉 O Campus Connect é para TODOS! 📲
+  
+  Se você é aluno do campus, independentemente do seu curso - seja Administração, Logística, Qualidade ou qualquer outro - SIM, você pode baixar e usar o nosso app! 🚀✨
+  
+  🔗 Baixe o app agora mesmo: 
+  https://drive.google.com/file/d/1qnnT8aKB82pP_gu0CuLFApVelYzWGzm7/view?usp=drive_link
+  
+  A equipe do Campus Connect agradece! 💚📚`;
+
+      await Share.open({ message });
+    } catch (error) {
+      console.log('Erro ao compartilhar:', error);
+    }
+  };
 
   // Função para verificar se há notificações não lidas
   const checkUnreadNotifications = () => {
@@ -242,7 +260,8 @@ export default function HomeScreen() {
       label: 'Diploma e Certificado',
       icon: 'certificate' as const,
       onPress: () => {
-        ToastAndroid.show('A tela ainda não está pronta para ser visualizada', ToastAndroid.SHORT)},
+        ToastAndroid.show('A tela ainda não está pronta para ser visualizada', ToastAndroid.SHORT)
+      },
     },
     {
       id: 15,
@@ -265,14 +284,19 @@ export default function HomeScreen() {
         <Text style={styles.greeting} onPress={handleNameClick}>
           {getGreeting()}, {name}!
         </Text>
-        <Pressable
-          onPress={handleNotificationClick}
-          style={styles.notificationIcon}
-        >
-          {hasNewNotification && <View style={styles.notificationBadge} />}
-          <MaterialCommunityIcons name="bell" size={28} color="black" />
-        </Pressable>
+
+        <View style={styles.headerIcons}>
+          <Pressable onPress={handleShare} style={styles.iconButton}>
+            <MaterialCommunityIcons name="share-variant" size={28} color="black" />
+          </Pressable>
+
+          <Pressable onPress={handleNotificationClick} style={styles.notificationIcon}>
+            {hasNewNotification && <View style={styles.notificationBadge} />}
+            <MaterialCommunityIcons name="bell" size={28} color="black" />
+          </Pressable>
+        </View>
       </View>
+
 
       {/* Menu de opções */}
       <FlatList
@@ -343,4 +367,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 8,
   },
+  headerIcons: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  iconButton: {
+    marginRight: 12,
+  },
+
 });

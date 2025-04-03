@@ -29,27 +29,29 @@ const Ipi1 = () => {
 
         {/* Descrição do curso */}
         <Text style={styles.description}>
-          O curso técnico em Informática para Internet capacita os alunos a 
-          desenvolverem e implantarem websites e aplicações web, utilizando 
-          linguagens de programação e ferramentas de design. Também aborda 
+          O curso técnico em Informática para Internet capacita os alunos a
+          desenvolverem e implantarem websites e aplicações web, utilizando
+          linguagens de programação e ferramentas de design. Também aborda
           aspectos de segurança, usabilidade e banco de dados.
         </Text>
 
         {/* Sem requisitos para conclusão */}
         <Text style={styles.requirements}>
-        Este curso não possui requisitos obrigatórios para conclusão.
+          Duração: 3 períodos (1 ano e 6 meses); {"\n"}
+          Requisitos para conclusão:{'\n'}
+          Este curso não possui requisitos obrigatórios para conclusão.
         </Text>
 
-        <TouchableOpacity 
-          style={styles.button} 
+        <TouchableOpacity
+          style={styles.button}
           activeOpacity={0.5}
           onPress={() => router.push("/Screens/Cursos/Ipi2")}
         >
           <Text style={styles.buttonText}>Disciplinas e Ementas</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={styles.button} 
+        <TouchableOpacity
+          style={styles.button}
           activeOpacity={0.5}
           onPress={() => Linking.openURL("https://drive.google.com/file/d/1sxHQSI5YXApvFiTvMi4k0fYtLGULV2Ys/view?usp=drive_link")}
         >

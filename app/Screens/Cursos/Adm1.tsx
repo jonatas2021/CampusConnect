@@ -23,31 +23,32 @@ const Adm1 = () => {
 
       {/* Botões */}
       <View style={styles.containerButton}>
-        
-      {/* Descrição do curso */}
-      <Text style={styles.description}>
-        O curso de Administração forma profissionais capacitados para atuar na gestão de empresas e organizações. 
-        Os estudantes desenvolvem habilidades em planejamento, organização, liderança e controle, com foco em 
-        tomada de decisão e estratégias de mercado.
-      </Text>
 
-      {/* Requisitos para conclusão */}
-      <Text style={styles.requirements}>
-        Para concluir o curso, é necessário:{"\n"}
-        • Ter 200h de Atividades Complementares;{"\n"}
-        • Ter 100h de Prática Profissional;{"\n"}
-        • Realizar a defesa do Trabalho de Conclusão de Curso (TCC).{"\n"}
-      </Text>
-        <TouchableOpacity 
-          style={styles.button} 
+        {/* Descrição do curso */}
+        <Text style={styles.description}>
+          O curso de Administração forma profissionais capacitados para atuar na gestão de empresas e organizações.
+          Os estudantes desenvolvem habilidades em planejamento, organização, liderança e controle, com foco em
+          tomada de decisão e estratégias de mercado.
+        </Text>
+
+        {/* Requisitos para conclusão */}
+        <Text style={styles.requirements}>
+          Duração: 8 períodos (4 anos); {"\n"}
+          Para concluir o curso, é necessário:{"\n"}
+          • Ter 200h de Atividades Complementares;{"\n"}
+          • Ter 100h de Prática Profissional;{"\n"}
+          • Realizar a defesa do Trabalho de Conclusão de Curso (TCC).{"\n"}
+        </Text>
+        <TouchableOpacity
+          style={styles.button}
           activeOpacity={0.5}
           onPress={() => router.push("/Screens/Cursos/Adm2")}
         >
           <Text style={styles.buttonText}>Disciplinas e Ementas</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={styles.button} 
+        <TouchableOpacity
+          style={styles.button}
           activeOpacity={0.5}
           onPress={() => Linking.openURL("https://drive.google.com/file/d/1XTHFeENuHZmkYBg11IMG8FpmYwo5nH-n/view?usp=drive_link")}
         >
@@ -133,7 +134,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center', // Para centralizar os botões verticalmente dentro do container
     alignSelf: 'center',
   }
-  
+
 });
 
 export default Adm1;

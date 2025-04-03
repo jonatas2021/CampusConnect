@@ -2,9 +2,7 @@
   "1°": {
     "seg": [
       { "time": "1t", "subject": "Matemática Básica", "teacher": "Prof. Roberto" },
-      { "time": "2t", "subject": "Matemática Básica", "teacher": "Prof. Roberto" },
-      { "time": "3t", "subject": "Matemática-POIFPE", "teacher": "Prof. Roberto" },
-      { "time": "4t", "subject": "Matemática-POIFPE", "teacher": "Prof. Roberto" }
+      { "time": "2t", "subject": "Matemática Básica", "teacher": "Prof. Roberto" }
     ],
     "ter": [
       { "time": "1t", "subject": "Introdução a ADM", "teacher": "Prof. Edillene" },
@@ -49,12 +47,13 @@
     "qua": [
       { "time": "2m", "subject": "Gerenciamento e Economia", "teacher": "Prof. Marcerlo" },
       { "time": "3m", "subject": "Gerenciamento e Economia", "teacher": "Prof. Marcerlo" },
-      { "time": "4m", "subject": "Gerenciamento e Economia", "teacher": "Prof. Marcerlo" },
+      { "time": "4m", "subject": "Logística de Transporte e D.", "teacher": "Prof. Alexandre Magno" },
       { "time": "5m", "subject": "Logística de Transporte e D.", "teacher": "Prof. Alexandre Magno" },
       { "time": "6m", "subject": "Logística de Transporte e D.", "teacher": "Prof. Alexandre Magno" }
       
     ],
     "qui": [
+      { "time": "4m", "subject": "Gestão de Pessoas", "teacher": "Prof. Yuri" },
       { "time": "5m", "subject": "Gestão de Pessoas", "teacher": "Prof. Yuri" },
       { "time": "6m", "subject": "Gestão de Pessoas", "teacher": "Prof. Yuri" }
     ],
@@ -69,39 +68,41 @@
   },
   "3°": {
     "seg": [
-      { "time": "1t", "subject": "Gestão da Qualidade", "teacher": "Prof. renata" },
-      { "time": "2t", "subject": "Gestão da Qualidade", "teacher": "Prof. renata" },
-      { "time": "3t", "subject": "Gestão da Qualidade", "teacher": "Prof. renata" },
-      { "time": "4t", "subject": "Inglês II", "teacher": "Prof. Mari Tania" },
-      { "time": "5t", "subject": "Inglês II", "teacher": "Prof. Mari Tania" }
+      { "time": "4m", "subject": "Gestão da Qualidade", "teacher": "Prof. renata" },
+      { "time": "5m", "subject": "Gestão da Qualidade", "teacher": "Prof. renata" },
+      { "time": "6m", "subject": "Gestão da Qualidade", "teacher": "Prof. renata" }
     ],
     "ter": [
-      { "time": "1t", "subject": "Tecnologia e Sistemas de I. L.", "teacher": "Prof. Alexandre Magno" },
-      { "time": "2t", "subject": "Tecnologia e Sistemas de I. L.", "teacher": "Prof. Alexandre Magno" },
-      { "time": "3t", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana Carolina" },
-      { "time": "4t", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana Carolina" }
-
+      { "time": "1m", "subject": "Custos Logístics", "teacher": "Prof. Tarcisio" },
+      { "time": "2m", "subject": "Custos Logístics", "teacher": "Prof. Tarcisio" },
+      { "time": "3m", "subject": "Inglês II", "teacher": "Prof. Mari Tania" },
+      { "time": "4m", "subject": "Inglês II", "teacher": "Prof. Mari Tania" },
+      { "time": "5m", "subject": "Tecnologia e Sistemas de I. L.", "teacher": "Prof. Alexandre Magno" },
+      { "time": "6m", "subject": "Tecnologia e Sistemas de I. L.", "teacher": "Prof. Alexandre Magno" }
     ],
     "qua": [
-      { "time": "1t", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José Rinaldo" },
-      { "time": "2t", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José Rinaldo" },
-      { "time": "3t", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José Rinaldo" },
-      { "time": "4t", "subject": "Tópicos Especiais", "teacher": "Prof. Adriana" },
-      { "time": "5t", "subject": "Tópicos Especiais", "teacher": "Prof. Adriana" },
-      { "time": "6t", "subject": "Tópicos Especiais", "teacher": "Prof. Adriana" }
+      { "time": "1m", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José Rinaldo" },
+      { "time": "2m", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José Rinaldo" },
+      { "time": "3m", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José Rinaldo" },
+      { "time": "4m", "subject": "Tópicos Especiais", "teacher": "Prof. Adriana" },
+      { "time": "5m", "subject": "Tópicos Especiais", "teacher": "Prof. Adriana" },
+      { "time": "6m", "subject": "Tópicos Especiais", "teacher": "Prof. Adriana" }
     ],
     "qui": [
-      { "time": "1t", "subject": "Gestâo de Produção", "teacher": "Prof. Djalma" },
-      { "time": "2t", "subject": "Gestâo de Produção", "teacher": "Prof. Djalma" },
-      { "time": "3t", "subject": "Gestâo de Produção", "teacher": "Prof. Djalma" }
+      { "time": "1m", "subject": "Gestâo de Produção", "teacher": "Prof. Djalma" },
+      { "time": "2m", "subject": "Gestâo de Produção", "teacher": "Prof. Djalma" },
+      { "time": "3m", "subject": "Gestâo de Produção", "teacher": "Prof. Djalma" },
+      { "time": "5m", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana Carolina" },
+      { "time": "6m", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana Carolina" }
 
     ],
     "sex": [
-      { "time": "1t", "subject": "Custos Logístics", "teacher": "Prof. Tarcisio" },
-      { "time": "2t", "subject": "Custos Logístics", "teacher": "Prof. Tarcisio" },
-      { "time": "4t", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José Rinaldo" },
-      { "time": "5t", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José Rinaldo" },
-      { "time": "6t", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José Rinaldo" }
+      { "time": "1m", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José Rinaldo" },
+      { "time": "2m", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José Rinaldo" },
+      { "time": "3m", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José Rinaldo" },
+      { "time": "4m", "subject": "Gestâo de Produção", "teacher": "Prof. Djalma" },
+      { "time": "5m", "subject": "Gestâo de Produção", "teacher": "Prof. Djalma" },
+      { "time": "6m", "subject": "Gestâo de Produção", "teacher": "Prof. Djalma" }
     ]
   }
 }

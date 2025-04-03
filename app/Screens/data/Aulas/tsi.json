@@ -22,25 +22,26 @@
       { "time": "6m", "subject": "Redes de Computadores", "teacher": "Prof. David" }
     ],
     "qui": [
-      { "time": "1m", "subject": "Inglês I", "teacher": "Prof. Ivo" },
       { "time": "2m", "subject": "Inglês I", "teacher": "Prof. Ivo" },
       { "time": "3m", "subject": "Inglês I", "teacher": "Prof. Ivo" },
-      { "time": "4m", "subject": "Programação Imperativa", "teacher": "Prof. Allan" },
-      { "time": "5m", "subject": "Programação Imperativa", "teacher": "Prof. Allan" }
+      { "time": "4m", "subject": "Inglês I", "teacher": "Prof. Ivo" },
+      { "time": "5m", "subject": "Programação Imperativa", "teacher": "Prof. Allan" },
+      { "time": "6m", "subject": "Programação Imperativa", "teacher": "Prof. Allan" }
     ],
     "sex": [
-      { "time": "1m", "subject": "Inglês I", "teacher": "Prof. Ivo" },
-      { "time": "2m", "subject": "Inglês I", "teacher": "Prof. Ivo" },
-      { "time": "3m", "subject": "Inglês I", "teacher": "Prof. Ivo" },
-      { "time": "4m", "subject": "Programação Imperativa", "teacher": "Prof. Allan" },
-      { "time": "5m", "subject": "Programação Imperativa", "teacher": "Prof. Allan" }
+      { "time": "1m", "subject": "Introdução a Administração", "teacher": "Prof. Simonelle" },
+      { "time": "2m", "subject": "Introdução a Administração", "teacher": "Prof. Simonelle" },
+      { "time": "3m", "subject": "Introdução a Administração", "teacher": "Prof. Simonelle" },
+      { "time": "4m", "subject": "Fundamentos do Design", "teacher": "Prof. Erton" },
+      { "time": "5m", "subject": "Fundamentos do Design", "teacher": "Prof. Erton" },
+      { "time": "5m", "subject": "Fundamentos do Design", "teacher": "Prof. Erton" }
     ]
   },
   "2°": {
     "seg": [
-      { "time": "1t", "subject": "Introdução a ADM", "teacher": "Prof. Sominelle" },
-      { "time": "2t", "subject": "Introdução a ADM", "teacher": "Prof. Sominelle" },
-      { "time": "3t", "subject": "Introdução a ADM", "teacher": "Prof. Sominelle" },
+      { "time": "1t", "subject": "Estatística e Probabilidade", "teacher": "Prof. Cícero" },
+      { "time": "2t", "subject": "Estatística e Probabilidade", "teacher": "Prof. Cícero" },
+      { "time": "3t", "subject": "Estatística e Probabilidade", "teacher": "Prof. Cícero" },
       { "time": "5t", "subject": "Banco de Dados", "teacher": "Prof. Milton" },
       { "time": "6t", "subject": "Banco de Dados", "teacher": "Prof. Milton" }
     ],
@@ -48,9 +49,8 @@
       { "time": "1t", "subject": "Processos Psicológicos e I. S.", "teacher": "Prof. Willyans" },
       { "time": "2t", "subject": "Processos Psicológicos e I. S.", "teacher": "Prof. Willyans" },
       { "time": "3t", "subject": "Processos Psicológicos e I. S.", "teacher": "Prof. Willyans" },
-      { "time": "4t", "subject": "F. do Design Digital", "teacher": "Prof. Erton" },
-      { "time": "5t", "subject": "F. do Design Digital", "teacher": "Prof. Erton" },
-      { "time": "6t", "subject": "F. do Design Digital", "teacher": "Prof. Erton" }
+      { "time": "4t", "subject": "Banco de Dados", "teacher": "Prof. Milton" },
+      { "time": "5t", "subject": "Banco de Dados", "teacher": "Prof. Milton" }
     ],
     "qua": [
       { "time": "1t", "subject": "Projeto de Desenvolvimento I", "teacher": "Prof. Liliane" },
@@ -75,20 +75,28 @@
     ]
   },
   "3°": {
-    "ter": [
+    "seg": [
       { "time": "3m", "subject": "Segurança de Sistemas para I.", "teacher": "Prof. Ramon" },
       { "time": "4m", "subject": "Segurança de Sistemas para I.", "teacher": "Prof. Ramon" },
       { "time": "5m", "subject": "Segurança de Sistemas para I.", "teacher": "Prof. Ramon" },
       { "time": "6m", "subject": "Segurança de Sistemas para I.", "teacher": "Prof. Ramon" }
 
     ],
-    "qua": [
+    "ter": [
       { "time": "1m", "subject": "Metodologia Científica", "teacher": "Prof. Allan" },
       { "time": "2m", "subject": "Metodologia Científica", "teacher": "Prof. Allan" },
       { "time": "3m", "subject": "Metodologia Científica", "teacher": "Prof. Allan" },
       { "time": "4m", "subject": "Pesquisa e Análize de C.", "teacher": "Prof. Willyans" },
       { "time": "5m", "subject": "Pesquisa e Análize de C.", "teacher": "Prof. Willyans" },
       { "time": "6m", "subject": "Pesquisa e Análize de C.", "teacher": "Prof. Willyans" }
+    ],    
+    "qua": [
+      { "time": "1m", "subject": "Inglês III", "teacher": "Prof. Ivo" },
+      { "time": "2m", "subject": "Inglês III", "teacher": "Prof. Ivo" },
+      { "time": "3m", "subject": "Inglês III", "teacher": "Prof. Ivo" },
+      { "time": "4m", "subject": "Projeto de Desenvolvimento IT", "teacher": "Prof. Liliane" },
+      { "time": "5m", "subject": "Projeto de Desenvolvimento IT", "teacher": "Prof. Liliane" },
+      { "time": "6m", "subject": "Projeto de Desenvolvimento IT", "teacher": "Prof. Liliane" }
     ],
     "qui": [
       { "time": "1m", "subject": "Design de Interação", "teacher": "Prof. Erton" },
@@ -112,8 +120,7 @@
       { "time": "1t", "subject": "Algoritimo e Estrutura de Dados", "teacher": "Prof. Milton" },
       { "time": "2t", "subject": "Algoritimo e Estrutura de Dados", "teacher": "Prof. Milton" },
       { "time": "3t", "subject": "Algoritimo e Estrutura de Dados", "teacher": "Prof. Milton" },
-      { "time": "4t", "subject": "Algoritimo e Estrutura de Dados", "teacher": "Prof. Milton" },
-      { "time": "5t", "subject": "Algoritimo e Estrutura de Dados", "teacher": "Prof. Milton" }
+      { "time": "4t", "subject": "Algoritimo e Estrutura de Dados", "teacher": "Prof. Milton" }
     ],
     "ter": [
       { "time": "1t", "subject": "Engenharia de Software", "teacher": "Prof. Milton" },

@@ -34,6 +34,8 @@ const Log1 = () => {
 
         {/* Requisitos para conclusão */}
         <Text style={styles.requirements}>
+          Duração: 3 períodos (1 ano e 6 meses); {"\n"}
+          Requisitos para conclusão:{'\n'}
           Este curso não possui requisitos obrigatórios para conclusão.
         </Text>
 
