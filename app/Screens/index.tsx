@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert, ToastAndroid, Linking } from 'react-native';
+import { View, Text, Pressable, FlatList, StyleSheet, BackHandler, Alert, ToastAndroid, Linking, Image } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
@@ -7,6 +7,7 @@ import { useRouter } from 'expo-router';
 import { useNotifications } from '../context/NotificationsContext';  // Importando o hook do contexto
 import { getAuth, onAuthStateChanged } from '@react-native-firebase/auth'; // Atualizado
 import Share from 'react-native-share';
+import { RFValue } from "react-native-responsive-fontsize";
 
 
 export default function HomeScreen() {
@@ -176,11 +177,11 @@ export default function HomeScreen() {
     },
     {
       id: 5,
-      label: 'Bolsas e Estágios',
-      icon: 'briefcase-account' as const,
+      label: 'WhatsApp',
+      icon: 'whatsapp' as const,
       onPress: () => {
-        router.push("/Screens/Bolsas");
-        console.log('Scholarships');
+        router.push("/Screens/Whats");
+        console.log('WhatsApp');
       }
     },
     {
@@ -194,15 +195,6 @@ export default function HomeScreen() {
     },
     {
       id: 7,
-      label: 'Núcleos de Apoio',
-      icon: 'account-group' as const,
-      onPress: () => {
-        router.push("/Screens/Nucleos");
-        console.log('Núcleos de Apoio');
-      }
-    },
-    {
-      id: 8,
       label: 'Acesso ao QAcadêmico',
       icon: 'web' as const,
       onPress: () => {
@@ -211,7 +203,7 @@ export default function HomeScreen() {
       }
     },
     {
-      id: 9,
+      id: 8,
       label: 'Requerimentos CRADT',
       icon: 'file-document-edit' as const,
       onPress: () => {
@@ -220,21 +212,30 @@ export default function HomeScreen() {
       }
     },
     {
+      id: 9,
+      label: 'Bolsas e Estágios',
+      icon: 'briefcase-account' as const,
+      onPress: () => {
+        router.push("/Screens/Bolsas");
+        console.log('Scholarships');
+      }
+    },
+    {
       id: 10,
+      label: 'Núcleos de Apoio',
+      icon: 'account-group' as const,
+      onPress: () => {
+        router.push("/Screens/Nucleos");
+        console.log('Núcleos de Apoio');
+      }
+    },
+    {
+      id: 11,
       label: 'Setores',
       icon: 'office-building' as const,
       onPress: () => {
         router.push("/Screens/Setores");
         console.log('Departments');
-      }
-    },
-    {
-      id: 11,
-      label: 'WhatsApp',
-      icon: 'whatsapp' as const,
-      onPress: () => {
-        router.push("/Screens/Whats");
-        console.log('WhatsApp');
       }
     },
     {
@@ -257,10 +258,10 @@ export default function HomeScreen() {
     },
     {
       id: 14,
-      label: 'Diploma e Certificado',
-      icon: 'certificate' as const,
+      label: 'Uni Food',
+      icon: require('./Unifood/Logounifood.png'), // Caminho correto para a imagem
       onPress: () => {
-        ToastAndroid.show('A tela ainda não está pronta para ser visualizada', ToastAndroid.SHORT)
+        ToastAndroid.show('A tela ainda não está pronta para ser visualizada', ToastAndroid.SHORT);
       },
     },
     {
@@ -306,7 +307,13 @@ export default function HomeScreen() {
         contentContainerStyle={styles.gridContainer}
         renderItem={({ item }) => (
           <Pressable style={styles.menuButton} onPress={item.onPress}>
-            <MaterialCommunityIcons name={item.icon} size={66} color="white" />
+            {typeof item.icon === 'string' ? (
+              // Se for string, usa um ícone da biblioteca
+              <MaterialCommunityIcons name={item.icon as any} size={66} color="white" />
+            ) : (
+              // Se não for string, renderiza uma imagem PNG
+              <Image source={item.icon} style={{ width: 90, height: 90 }} resizeMode="contain" />
+            )}
             <Text style={styles.buttonText}>{item.label}</Text>
           </Pressable>
         )}
@@ -329,7 +336,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   greeting: {
-    fontSize: 24,
+    fontSize: RFValue(20),
     fontWeight: 'bold',
     color: '#000',
   },
