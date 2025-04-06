@@ -258,10 +258,11 @@ export default function HomeScreen() {
     },
     {
       id: 14,
-      label: 'Uni Food',
-      icon: require('./Unifood/Logounifood.png'), // Caminho correto para a imagem
+      label: 'Portal Campus Igarassu',
+      icon: require('./Menuindex/Logoif.png'), // Caminho correto para a imagem
       onPress: () => {
-        ToastAndroid.show('A tela ainda não está pronta para ser visualizada', ToastAndroid.SHORT);
+        Linking.openURL("https://portal.ifpe.edu.br/igarassu/");
+        console.log('Portal');
       },
     },
     {
@@ -312,7 +313,7 @@ export default function HomeScreen() {
               <MaterialCommunityIcons name={item.icon as any} size={66} color="white" />
             ) : (
               // Se não for string, renderiza uma imagem PNG
-              <Image source={item.icon} style={{ width: 90, height: 90 }} resizeMode="contain" />
+              <Image source={item.icon} style={{ width: 66, height: 66 }} resizeMode="contain" />
             )}
             <Text style={styles.buttonText}>{item.label}</Text>
           </Pressable>

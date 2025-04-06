@@ -164,9 +164,7 @@
   "7° período": {
     "seg": [
       { "time": "1tadm", "subject": "Administração Estratégica", "teacher": "Josefa R. C. Gomes" },
-      { "time": "2tadm", "subject": "Administração Estratégica", "teacher": "Josefa R. C. Gomes" },
-      { "time": "3tadm", "subject": "Gestão Ambiental e Sustentabilidade", "teacher": "Alexandre M. A. Oliveira" },
-      { "time": "4tadm", "subject": "Gestão Ambiental e Sustentabilidade", "teacher": "Alexandre M. A. Oliveira" }
+      { "time": "2tadm", "subject": "Administração Estratégica", "teacher": "Josefa R. C. Gomes" }
     ],
     "ter": [      
       { "time": "1tadm", "subject": "Avaliação de Empresas", "teacher": "Rodrigo L. F. Araújo" },

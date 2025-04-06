@@ -39,12 +39,40 @@
       {"time": "4m", "subject": "Banco de Dados", "teacher": "Prof. Milton S. Junior"},
       {"time": "5m", "subject": "Banco de Dados", "teacher": "Prof. Milton S. Junior"},
       {"time": "6m", "subject": "Banco de Dados", "teacher": "Prof. Milton S. Junior"}
-    ]
+    ],
+"ter": [
+       { "time": "2m", "subject": "Ética Profissional e C.", "teacher": "Prof. Willyans G. Coelho" },
+       { "time": "3m", "subject": "Ética Profissional e C.", "teacher": "Prof. Willyans G. Coelho" },
+       { "time": "4m", "subject": "Segurança de Sistemas p. I.", "teacher": "Prof. Ramon M. S. Farias" },
+       { "time": "5m", "subject": "Segurança de Sistemas p. I.", "teacher": "Prof. Ramon M. S. Farias" },
+       { "time": "6m", "subject": "Segurança de Sistemas p. I.", "teacher": "Prof. Ramon M. S. Farias" }
+     ],
+     "qua": [
+       { "time": "3m", "subject": "Desenvolvimento para Web I", "teacher": "Prof. Alexandre S. G. Viana" },
+       { "time": "4m", "subject": "Desenvolvimento para Web I", "teacher": "Prof. Alexandre S. G. Viana" },
+       { "time": "5m", "subject": "Desenvolvimento para Web I", "teacher": "Prof. Alexandre S. G. Viana" },
+       { "time": "6m", "subject": "Desenvolvimento para Web I", "teacher": "Prof. Alexandre S. G. Viana" }
+       
+     ],
+     "qui": [
+       { "time": "2m", "subject": "Projeto e Prática I", "teacher": "Prof. Emaur F. Oliveira" },
+       { "time": "3m", "subject": "Projeto e Prática I", "teacher": "Prof. Emaur F. Oliveira" },
+       { "time": "4m", "subject": "Sistemas Operacionais", "teacher": "Prof. Pedro H. T. M. Nogueira" },
+       { "time": "5m", "subject": "Sistemas Operacionais", "teacher": "Prof. Pedro H. T. M. Nogueira" },
+       { "time": "6m", "subject": "Sistemas Operacionais", "teacher": "Prof. Pedro H. T. M. Nogueira" }
+     ],
+     "sex": [
+       { "time": "2m", "subject": "Projeto e Prática I", "teacher": "Prof. Emaur F. Oliveira" },
+       { "time": "3m", "subject": "Projeto e Prática I", "teacher": "Prof. Emaur F. Oliveira" },
+       { "time": "4m", "subject": "Programaçãp Orientada a Objeto", "teacher": "Prof. Gustavo N. Martins" },
+       { "time": "5m", "subject": "Programaçãp Orientada a Objeto", "teacher": "Prof. Gustavo N. Martins" },
+       { "time": "6m", "subject": "Programaçãp Orientada a Objeto", "teacher": "Prof. Gustavo N. Martins" }
+    ] 
   },
   "3°": {
     "seg": [
-      { "time": "1t", "subject": "Projeto e Prática II", "teacher": "Prof. Liliane A. do N. Sales" },
-      { "time": "2t", "subject": "Projeto e Prática II", "teacher": "Prof. Liliane A. do N. Sales" },
+      { "time": "1t", "subject": "Projeto e Prática II", "teacher": "Prof. Ranieri V. Carvalho" },
+      { "time": "2t", "subject": "Projeto e Prática II", "teacher": "Prof. Ranieri V. Carvalho" },
       { "time": "3t", "subject": "Projeto e Prática II", "teacher": "Prof. Ranieri V. Carvalho" },
       { "time": "4t", "subject": "Projeto e Prática II", "teacher": "Prof. Ranieri V. Carvalho" },
       { "time": "5t", "subject": "Projeto e Prática II", "teacher": "Prof. Ranieri V. Carvalho" }

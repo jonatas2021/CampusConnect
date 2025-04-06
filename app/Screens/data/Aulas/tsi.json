@@ -94,9 +94,9 @@
       { "time": "1m", "subject": "Inglês III", "teacher": "Prof. Ivo F. G. Sá" },
       { "time": "2m", "subject": "Inglês III", "teacher": "Prof. Ivo F. G. Sá" },
       { "time": "3m", "subject": "Inglês III", "teacher": "Prof. Ivo F. G. Sá" },
-      { "time": "4m", "subject": "Projeto de Desenvolvimento IT", "teacher": "Prof. Liliane A. N. Sales" },
-      { "time": "5m", "subject": "Projeto de Desenvolvimento IT", "teacher": "Prof. Liliane A. N. Sales" },
-      { "time": "6m", "subject": "Projeto de Desenvolvimento IT", "teacher": "Prof. Liliane A. N. Sales" }
+      { "time": "4m", "subject": "Projeto de Desenvolvimento II", "teacher": "Prof. Liliane A. N. Sales" },
+      { "time": "5m", "subject": "Projeto de Desenvolvimento II", "teacher": "Prof. Liliane A. N. Sales" },
+      { "time": "6m", "subject": "Projeto de Desenvolvimento II", "teacher": "Prof. Liliane A. N. Sales" }
     ],
     "qui": [
       { "time": "1m", "subject": "Design de Interação", "teacher": "Prof. Erton W. V. Silva" },
@@ -180,12 +180,9 @@
       { "time": "2t", "subject": "Inteligência Artificial", "teacher": "Prof. Allan D. S. Lima" }
     ],
     "qui": [
-      { "time": "1t", "subject": "Inteligência Artificial", "teacher": "Prof. Allan D. S. Lima" },
-      { "time": "2t", "subject": "Inteligência Artificial", "teacher": "Prof. Allan D. S. Lima" },
-      { "time": "3t", "subject": "Internet das Coisas", "teacher": "Prof. Gustavo N. Martins" },
-      { "time": "4t", "subject": "Internet das Coisas", "teacher": "Prof. Gustavo N. Martins" },
-      { "time": "5t", "subject": "Internet das Coisas", "teacher": "Prof. Gustavo N. Martins" },
-      { "time": "6t", "subject": "Internet das Coisas", "teacher": "Prof. Gustavo N. Martins" }
+      { "time": "3me", "subject": "Desenvolvimento para D. M.", "teacher": "Prof. Ranieri V. Carvalho" },
+      { "time": "1te", "subject": "Inteligência Artificial", "teacher": "Prof. Allan D. S. Lima" },
+      { "time": "3te", "subject": "Internet das Coisas", "teacher": "Prof. Gustavo N. Martins" }
     ]
   }
 }

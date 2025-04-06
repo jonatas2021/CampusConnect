@@ -22,9 +22,9 @@
       { "time": "6m", "subject": "Matemática Aplicada", "teacher": "Prof. Cícero R. S. Júnior" }
     ],
     "qui": [
-      { "time": "2m", "subject": "Ética", "teacher": "Prof. Willyans G. Coelho" },
-      { "time": "3m", "subject": "Ética", "teacher": "Prof. Willyans G. Coelho" },
-      { "time": "4m", "subject": "Ética", "teacher": "Prof. Willyans G. Coelho" },
+      { "time": "2m", "subject": "Ética Cidadania e S.", "teacher": "Prof. Willyans G. Coelho" },
+      { "time": "3m", "subject": "Ética Cidadania e S.", "teacher": "Prof. Willyans G. Coelho" },
+      { "time": "4m", "subject": "Ética Cidadania e S.", "teacher": "Prof. Willyans G. Coelho" },
       { "time": "5m", "subject": "Informática", "teacher": "Prof. Emaur F. Oliveira" },
       { "time": "6m", "subject": "Informática", "teacher": "Prof. Emaur F. Oliveira" }
     ]
@@ -105,8 +105,8 @@
       { "time": "2t", "subject": "Metrologia", "teacher": "Prof. Francisco C. Pinto" },
       { "time": "3t", "subject": "Metrologia", "teacher": "Prof. Francisco C. Pinto" },
       { "time": "4t", "subject": "Metrologia", "teacher": "Prof. Francisco C. Pinto" },
-      { "time": "5t", "subject": "Metodologia da PEsquisa I", "teacher": "Prof. Ana C. M. R. Lemos" },
-      { "time": "6t", "subject": "Metodologia da PEsquisa I", "teacher": "Prof. Ana C. M. R. Lemos" }
+      { "time": "5t", "subject": "Metodologia da Pesquisa I", "teacher": "Prof. Ana C. M. R. Lemos" },
+      { "time": "6t", "subject": "Metodologia da Pesquisa I", "teacher": "Prof. Ana C. M. R. Lemos" }
     ],
     "qua": [
       { "time": "1t", "subject": "Gestão Estratégica da Q.", "teacher": "Prof. Adriana de F. V. Bastos" },

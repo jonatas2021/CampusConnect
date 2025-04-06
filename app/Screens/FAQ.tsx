@@ -178,16 +178,6 @@ export default function FAQScreen() {
           ))}
         </View>
       </ScrollView>
-      
-      <TouchableOpacity 
-        style={styles.contactButton}
-        onPress={() => router.push('/Screens/Support/ChatScreen')}
-      >
-        <View style={styles.supportButtonContent}>
-          <MaterialIcons name="help-outline" size={24} color="#e8f5e9" style={styles.supportIcon} />
-          <Text style={styles.supportButtonText}>Obter ajuda</Text>
-        </View>
-      </TouchableOpacity>
 
       <TouchableOpacity 
         style={styles.contactButton}

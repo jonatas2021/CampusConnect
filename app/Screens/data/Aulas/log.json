@@ -13,9 +13,9 @@
       { "time": "6t", "subject": "Português Aplicado", "teacher": "Prof. Mari T. S. Soares" }
     ],
     "qua": [
+      { "time": "1t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre M. A. Oliveira" },
       { "time": "2t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre M. A. Oliveira" },
-      { "time": "3t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre M. A. Oliveira" },
-      { "time": "4t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre M. A. Oliveira" }
+      { "time": "3t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre M. A. Oliveira" }
     ],
     "qui": [
       { "time": "2t", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" },
@@ -82,14 +82,17 @@
     "qua": [
       { "time": "1m", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José R. D. Melo" },
       { "time": "2m", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José R. D. Melo" },
-      { "time": "3m", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José R. D. Melo" }
+      { "time": "3m", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José R. D. Melo" },
+      { "time": "4m", "subject": "Tópicos Especiais em L.", "teacher": "Prof. Adriana F. V. Bastos" },
+      { "time": "5m", "subject": "Tópicos Especiais em L.", "teacher": "Prof. Adriana F. V. Bastos" },
+      { "time": "6m", "subject": "Tópicos Especiais em L.", "teacher": "Prof. Adriana F. V. Bastos" }
     ],
     "qui": [
       { "time": "1m", "subject": "Gestão de Produção", "teacher": "Prof. Jessyca S. F. Aires" },
       { "time": "2m", "subject": "Gestão de Produção", "teacher": "Prof. Jessyca S. F. Aires" },
       { "time": "3m", "subject": "Gestão de Produção", "teacher": "Prof. Jessyca S. F. Aires" },
-      { "time": "5m", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana C. M. R. Lemos" },
-      { "time": "6m", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana C. M. R. Lemos" }
+      { "time": "4m", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana C. M. R. Lemos" },
+      { "time": "5m", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana C. M. R. Lemos" }
     ],
     "sex": [
       { "time": "1m", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José R. D. Melo" },
