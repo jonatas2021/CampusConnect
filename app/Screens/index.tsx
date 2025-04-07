@@ -46,24 +46,30 @@ export default function HomeScreen() {
   const checkAppVersion = async () => {
     const currentVersion = DeviceInfo.getVersion();
     console.log('[Versão Atual]:', currentVersion);
-
+  
     try {
+      const lastCheck = await AsyncStorage.getItem('lastVersionCheck');
+      const today = new Date().toISOString().slice(0, 10); // formato: "2025-04-06"
+  
+      // Verifica se já foi feito hoje
+      if (lastCheck === today) {
+        console.log('[Verificação de versão já feita hoje]');
+        return;
+      }
+  
       const db = getFirestore();
-      console.log('[Firestore com nova API modular já inicializado]');
-
-      const docRef = doc(db, 'app_version', 'current'); // Correto para acessar um documento específico
-      const docSnap = await getDoc(docRef); // Correto para pegar um único documento
-
+      const docRef = doc(db, 'app_version', 'current');
+      const docSnap = await getDoc(docRef);
+  
       if (docSnap.exists) {
         const data = docSnap.data();
         const latestVersion = data?.latest_version;
         const updateUrl = data?.update_url;
-
+  
         console.log('[Versão mais recente no Firestore]:', latestVersion);
         console.log('[URL de atualização]:', updateUrl);
-
+  
         if (latestVersion && currentVersion !== latestVersion) {
-          console.log('[Versão desatualizada] Mostrando alerta de atualização');
           Alert.alert(
             'Atualização disponível',
             `Sua versão do app é ${currentVersion} \nA versão mais recente é ${latestVersion}.`,
@@ -71,22 +77,22 @@ export default function HomeScreen() {
               {
                 text: 'Atualizar agora',
                 onPress: () => {
-                  console.log('[Usuário clicou em Atualizar]');
-                  if (updateUrl) {
-                    Linking.openURL(updateUrl);
-                  }
+                  if (updateUrl) Linking.openURL(updateUrl);
                 }
               },
               {
-                text: 'Depois',
+                text: 'Lembrar novamente amanhã',
                 style: 'cancel',
-                onPress: () => console.log('[Usuário clicou em Depois]')
+                onPress: () => console.log('[Lembrar novamente amanhã]')
               }
             ]
           );
         } else {
           console.log('[App está atualizado]');
         }
+  
+        // Atualiza o AsyncStorage com a data de hoje
+        await AsyncStorage.setItem('lastVersionCheck', today);
       } else {
         console.log('[Documento não encontrado no Firestore]');
       }
