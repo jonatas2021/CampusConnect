@@ -53,6 +53,7 @@
     "react-dom": "18.3.1",
     "react-native": "0.76.7",
     "react-native-config": "^1.5.5",
+    "react-native-device-info": "^14.0.4",
     "react-native-dotenv": "^3.4.11",
     "react-native-elements": "^3.4.3",
     "react-native-emoji-selector": "^0.2.0",

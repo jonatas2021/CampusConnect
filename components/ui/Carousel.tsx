@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
   paginationContainer: {
     position: "absolute",
     width: "100%",
-    bottom: "15%",
+    bottom: "5%",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",

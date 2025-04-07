@@ -34,7 +34,7 @@ const Adm1 = () => {
         {/* Requisitos para conclusão */}
         <Text style={styles.requirements}>
           Duração: 8 períodos (4 anos); {"\n"}
-          Para concluir o curso, é necessário:{"\n"}
+          Requisitos para conclusão:{'\n'}
           • Ter 200h de Atividades Complementares;{"\n"}
           • Ter 100h de Prática Profissional;{"\n"}
           • Realizar a defesa do Trabalho de Conclusão de Curso (TCC).{"\n"}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';  
+import React, { useEffect } from 'react';
 import { View, StyleSheet, SafeAreaView, Image, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -8,7 +8,12 @@ import { getAuth } from '@react-native-firebase/auth';  // Importação correta
 import { getMessaging, requestPermission, AuthorizationStatus, getToken, onMessage, onTokenRefresh } from '@react-native-firebase/messaging';  // API modular para messaging
 import { firebaseConfig } from '../firebaseConfig';  // Certifique-se de que o arquivo de configuração está correto.
 
-const app = initializeApp(firebaseConfig);  // Inicializa o Firebase com a configuração
+let app;
+try {
+  app = getApp(); // Tenta obter a instância existente
+} catch (err) {
+  app = initializeApp(firebaseConfig); // Se não existir, inicializa
+}
 
 // Inicializa o Firestore, Auth e Messaging com a API modular
 const db = getFirestore(app);  // Agora você pode usar o Firestore
@@ -27,7 +32,7 @@ const LoadingScreen = () => {
 
         // Solicita permissão para notificações (com a nova API modular)
         const authStatus = await requestPermission(messaging);
-        const enabled = 
+        const enabled =
           authStatus === AuthorizationStatus.AUTHORIZED ||
           authStatus === AuthorizationStatus.PROVISIONAL;
 

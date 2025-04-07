@@ -36,7 +36,7 @@ const Tsi1 = () => {
         {/* Duração e requisitos */}
         <Text style={styles.requirements}>
           Duração: 6 períodos (3 anos); {"\n"}
-          Para concluir o curso, é necessário:{"\n"}
+          Requisitos para conclusão:{'\n'}
           • Cursar 3 disciplinas optativas;{"\n"}
           • Ter 60h de Prática Profissional.{"\n"}
           • Realizar a defesa do Trabalho de Conclusão de Curso (TCC).{"\n"} 

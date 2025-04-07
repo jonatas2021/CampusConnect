@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
   paginationContainer: {
     position: "absolute",
     width: "100%",
-    bottom: "10%",
+    bottom: "5%",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
@@ -243,15 +243,12 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   button: {
-    width: "100%", // Para o botão ocupar toda a largura
-    height: RFValue(50),
-    paddingVertical: "4%",
+    width: "80%", // Para o botão ocupar toda a largura
+    paddingVertical: "2%",
     backgroundColor: "#2A5A06",
     borderRadius: 8,
     alignItems: "center",
     marginBottom: "5%", // Adiciona espaço entre os botões
-    alignSelf: 'center',
-    justifyContent: "center"
   },
   buttonContent: {
     flexDirection: 'row',

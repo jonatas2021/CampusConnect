@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
   paginationContainer: {
     position: "absolute",
     width: "100%",
-    bottom: "10%",
+    bottom: "5%",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     position: "absolute",
-    bottom: "30%", // Ajuste para que fique sobre os dots
+    bottom: "35%", // Ajuste para que fique sobre os dots
     width: "80%",
     alignItems: "center",
     alignContent: 'center',
@@ -252,8 +252,8 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   button: {
-    width: "100%", // Para o botão ocupar toda a largura
-    height: RFValue(50),
+    width: "80%", // Para o botão ocupar toda a largura
+    height: RFValue(40),
     paddingVertical: "4%",
     backgroundColor: "#2A5A06",
     borderRadius: 8,

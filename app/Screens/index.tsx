@@ -8,6 +8,9 @@ import { useNotifications } from '../context/NotificationsContext';  // Importan
 import { getAuth, onAuthStateChanged } from '@react-native-firebase/auth'; // Atualizado
 import Share from 'react-native-share';
 import { RFValue } from "react-native-responsive-fontsize";
+import DeviceInfo from 'react-native-device-info';
+import { getFirestore, doc, getDoc } from '@react-native-firebase/firestore';
+
 
 
 export default function HomeScreen() {
@@ -39,7 +42,59 @@ export default function HomeScreen() {
     setHasNewNotification(unreadNotifications);
   };
 
-  // Carregar notificações ao focar na tela
+
+  const checkAppVersion = async () => {
+    const currentVersion = DeviceInfo.getVersion();
+    console.log('[Versão Atual]:', currentVersion);
+
+    try {
+      const db = getFirestore();
+      console.log('[Firestore com nova API modular já inicializado]');
+
+      const docRef = doc(db, 'app_version', 'current'); // Correto para acessar um documento específico
+      const docSnap = await getDoc(docRef); // Correto para pegar um único documento
+
+      if (docSnap.exists) {
+        const data = docSnap.data();
+        const latestVersion = data?.latest_version;
+        const updateUrl = data?.update_url;
+
+        console.log('[Versão mais recente no Firestore]:', latestVersion);
+        console.log('[URL de atualização]:', updateUrl);
+
+        if (latestVersion && currentVersion !== latestVersion) {
+          console.log('[Versão desatualizada] Mostrando alerta de atualização');
+          Alert.alert(
+            'Atualização disponível',
+            `Sua versão do app é ${currentVersion} \nA versão mais recente é ${latestVersion}.`,
+            [
+              {
+                text: 'Atualizar agora',
+                onPress: () => {
+                  console.log('[Usuário clicou em Atualizar]');
+                  if (updateUrl) {
+                    Linking.openURL(updateUrl);
+                  }
+                }
+              },
+              {
+                text: 'Depois',
+                style: 'cancel',
+                onPress: () => console.log('[Usuário clicou em Depois]')
+              }
+            ]
+          );
+        } else {
+          console.log('[App está atualizado]');
+        }
+      } else {
+        console.log('[Documento não encontrado no Firestore]');
+      }
+    } catch (error) {
+      console.error('[Erro ao verificar versão]:', error);
+    }
+  };
+
   useFocusEffect(
     React.useCallback(() => {
       console.log("Tela focada - Carregando nome...");
@@ -57,12 +112,7 @@ export default function HomeScreen() {
 
       checkUnreadNotifications();
       fetchName();
-
-      // Simula um atraso de 3 segundos para verificar as notificações
-      const notificationTimeoutId = setTimeout(() => {
-        loadNotifications();
-        checkUnreadNotifications();
-      }, 10000); // 10000 milissegundos (10 segundos)
+      checkAppVersion();
 
       // Função para lidar com o botão de voltar
       const backAction = () => {
@@ -75,10 +125,24 @@ export default function HomeScreen() {
 
       // Adicionando o listener de back press
       const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
-
       return () => {
         console.log("Removendo listener de back press...");
         backHandler.remove(); // Remove o listener de back press
+      };
+    }, [])
+  );
+
+
+  // Carregar notificações ao focar na tela
+  useFocusEffect(
+    React.useCallback(() => {
+
+      // Simula um atraso de 3 segundos para verificar as notificações
+      const notificationTimeoutId = setTimeout(() => {
+        loadNotifications();
+        checkUnreadNotifications();
+      }, 10000); // 10000 milissegundos (10 segundos)
+      return () => {
         clearTimeout(notificationTimeoutId); // Limpa o timeout de checkUnreadNotifications
       };
     }, [notifications]) // Recarregar sempre que as notificações mudarem
