@@ -157,16 +157,6 @@ export default function HomeScreen() {
   // Função de manipulação de notificações
   const handleNotificationClick = async () => {
     console.log("🖱️ Clicado no botão de notificação...");
-
-    try {
-      console.log("💾 Salvando status de leitura como 'true' no AsyncStorage...");
-      await AsyncStorage.setItem('isNewNotification', 'false');
-      setHasNewNotification(false); // Marca como lida
-      console.log("✅ Status de leitura salvo com sucesso.");
-    } catch (error) {
-      console.error("❌ Erro ao armazenar status de notificação localmente: ", error);
-    }
-
     console.log("🚀 Redirecionando para tela de notificações...");
     router.push('/Screens/Notifications');
   };
