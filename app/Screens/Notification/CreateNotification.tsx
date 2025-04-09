@@ -12,6 +12,7 @@ export default function CreateNotificationScreen() {
   const [note, setNote] = useState('');
   const [description, setDescription] = useState('');
   const [link, setLink] = useState('');
+  const [image, setImage] = useState('');
   const router = useRouter();
   const db = getFirestore();
   const auth = getAuth();  // Usando getAuth para obter a instância correta
@@ -30,6 +31,7 @@ export default function CreateNotificationScreen() {
         note,
         description,
         link: link || null,
+        image: image || null,
         createdAt: serverTimestamp(),
       });
 
@@ -38,6 +40,7 @@ export default function CreateNotificationScreen() {
       setNote('');
       setDescription('');
       setLink('');
+      setImage('');
       router.push('/Screens/Notification/UpdateNotification');
 
     } catch (error) {
@@ -55,6 +58,7 @@ export default function CreateNotificationScreen() {
       <TextInput style={styles.input} placeholder="Nota" value={note} onChangeText={setNote} />
       <TextInput style={styles.input} placeholder="Descrição" value={description} onChangeText={setDescription} />
       <TextInput style={styles.input} placeholder="Link (opcional)" value={link} onChangeText={setLink} />
+      <TextInput style={styles.input} placeholder="Link da Imagem (opcional)" value={image} onChangeText={setImage} />
 
       <Pressable style={styles.button} onPress={handleCreateNotification}>
         <Text style={styles.buttonText}>Criar Notificação</Text>

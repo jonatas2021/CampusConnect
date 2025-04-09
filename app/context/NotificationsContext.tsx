@@ -10,6 +10,7 @@ export interface Notification {
   note: string;
   description: string;
   link?: string;
+  image?: string;
   read: boolean;
 }
 
@@ -43,6 +44,7 @@ const NotificationsProvider = ({ children }: { children: React.ReactNode }) => {
           note: data.note,
           description: data.description,
           link: data.link,
+          image: data.image,
           read: savedNotification ? savedNotification.read : false,
         };
       });

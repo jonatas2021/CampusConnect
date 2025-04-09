@@ -12,6 +12,7 @@ interface Notification {
   note: string;
   description: string;
   link?: string;
+  image?: string;
 }
 
 export default function ManageNotificationsScreen() {
@@ -21,6 +22,7 @@ export default function ManageNotificationsScreen() {
   const [note, setNote] = useState('');
   const [description, setDescription] = useState('');
   const [link, setLink] = useState('');
+  const [image, setImage] = useState('');
   const [user, setUser] = useState<any>(null);  // Estado para o usuário autenticado
   const router = useRouter();
   const db = getFirestore();  // Firestore permanece igual
@@ -82,6 +84,7 @@ export default function ManageNotificationsScreen() {
         note,
         description,
         link: link || null,
+        image: image || null,
       });
 
       Alert.alert('Sucesso', 'Notificação editada com sucesso!');
@@ -90,6 +93,7 @@ export default function ManageNotificationsScreen() {
       setNote('');
       setDescription('');
       setLink('');
+      setImage('');
     } catch (error) {
       console.error('Erro ao editar notificação:', error);
       Alert.alert('Erro', 'Não foi possível editar a notificação.');
@@ -128,6 +132,7 @@ export default function ManageNotificationsScreen() {
               setNote('');
               setDescription('');
               setLink('');
+              setImage('');
             } catch (error) {
               console.error('Erro ao excluir notificação:', error);
               Alert.alert('Erro', 'Não foi possível excluir a notificação.');
@@ -146,6 +151,7 @@ export default function ManageNotificationsScreen() {
     setNote(notification.note);
     setDescription(notification.description);
     setLink(notification.link || '');
+    setImage(notification.image || '');
   };
 
   const handleLogout = async () => {
@@ -190,6 +196,7 @@ export default function ManageNotificationsScreen() {
           <TextInput style={styles.input} placeholder="Nota" value={note} onChangeText={setNote} />
           <TextInput style={styles.input} placeholder="Descrição" value={description} onChangeText={setDescription} />
           <TextInput style={styles.input} placeholder="Link (opcional)" value={link} onChangeText={setLink} />
+          <TextInput style={styles.input} placeholder="Link da Imagen (opcional)" value={image} onChangeText={setImage} />
 
           <Pressable style={styles.button} onPress={handleEditNotification}>
             <Text style={styles.buttonText}>Editar Notificação</Text>
