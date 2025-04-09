@@ -49,7 +49,7 @@ export default function HomeScreen() {
   
     try {
       const lastCheck = await AsyncStorage.getItem('lastVersionCheck');
-      const today = new Date().toISOString().slice(0, 10); // formato: "2025-04-06"
+      const today = new Date().toISOString().slice(0, 10); // formato: "2025-04-07"
   
       // Verifica se já foi feito hoje
       if (lastCheck === today) {
@@ -83,16 +83,18 @@ export default function HomeScreen() {
               {
                 text: 'Lembrar novamente amanhã',
                 style: 'cancel',
-                onPress: () => console.log('[Lembrar novamente amanhã]')
+                onPress: async () => {
+                  console.log('[Lembrar novamente amanhã]');
+                  await AsyncStorage.setItem('lastVersionCheck', today);
+                }
               }
             ]
           );
         } else {
           console.log('[App está atualizado]');
+          // Marca como verificado apenas se o app já estiver atualizado
+          await AsyncStorage.setItem('lastVersionCheck', today);
         }
-  
-        // Atualiza o AsyncStorage com a data de hoje
-        await AsyncStorage.setItem('lastVersionCheck', today);
       } else {
         console.log('[Documento não encontrado no Firestore]');
       }
@@ -100,7 +102,7 @@ export default function HomeScreen() {
       console.error('[Erro ao verificar versão]:', error);
     }
   };
-
+  
   useFocusEffect(
     React.useCallback(() => {
       console.log("Tela focada - Carregando nome...");
