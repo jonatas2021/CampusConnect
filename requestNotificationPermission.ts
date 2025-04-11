@@ -37,8 +37,8 @@ export const requestNotificationPermission = async () => {
         if (granted !== PermissionsAndroid.RESULTS.GRANTED) {
           console.warn('Permissão de notificação negada no Android');
           Alert.alert(
-            'Permissão de Notificações negada',
-            'Você não está recebendo notificações do aplicativo na área de notificações, mas não se preocupe: você pode ativar as notificações manualmente nas configurações do sistema.'
+            'Permissão de notificações negada',
+            'Você não está recebendo notificações do aplicativo na área de notificações, mas não se preocupe, você pode ativar as notificações manualmente nas configurações do sistema.'
           );
           return;
         }
