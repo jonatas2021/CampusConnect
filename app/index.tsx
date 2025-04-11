@@ -1,96 +1,146 @@
 import React, { useEffect } from 'react';
-import { View, StyleSheet, SafeAreaView, Image, Alert } from 'react-native';
+import { View, StyleSheet, SafeAreaView, Image, Linking } from 'react-native';
 import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getApp, initializeApp } from '@react-native-firebase/app';
-import { getFirestore } from '@react-native-firebase/firestore';  // Importação correta
-import { getAuth } from '@react-native-firebase/auth';  // Importação correta
-import { getMessaging, requestPermission, AuthorizationStatus, getToken, onMessage, onTokenRefresh } from '@react-native-firebase/messaging';  // API modular para messaging
-import { firebaseConfig } from '../firebaseConfig';  // Certifique-se de que o arquivo de configuração está correto.
+import { getFirestore } from '@react-native-firebase/firestore';
+import { getAuth } from '@react-native-firebase/auth';
+import { getMessaging, requestPermission, AuthorizationStatus, getToken, onMessage, onTokenRefresh } from '@react-native-firebase/messaging';
+import notifee, { EventType } from '@notifee/react-native';
+import { firebaseConfig } from '../firebaseConfig';
+import { requestNotificationPermission } from '@/requestNotificationPermission';
+
+// index.tsx
+import 'react-native-gesture-handler';
+import { AppRegistry } from 'react-native';
+import App from '../app'; // ou './App', dependendo do nome
+import firebaseMessagingHeadless from '../firebase-messaging-headless';
+import '../notifeeBackgroundHandler'; // cria o canal de notificação aqui
+
+const appName = 'CampusConnect';
+
+// Registra o handler de mensagens em segundo plano
+getMessaging().setBackgroundMessageHandler(firebaseMessagingHeadless);
+
+// Registro do app principal
+AppRegistry.registerComponent(appName, () => App);
 
 let app;
 try {
-  app = getApp(); // Tenta obter a instância existente
+  app = getApp();
 } catch (err) {
-  app = initializeApp(firebaseConfig); // Se não existir, inicializa
+  app = initializeApp(firebaseConfig);
 }
 
-// Inicializa o Firestore, Auth e Messaging com a API modular
-const db = getFirestore(app);  // Agora você pode usar o Firestore
-const auth = getAuth(app);  // Agora você pode usar o Auth
-const messaging = getMessaging(app);  // Agora você pode usar o Messaging
+const db = getFirestore(app);
+const auth = getAuth(app);
+const messaging = getMessaging(app);
 
-export { db, auth, messaging };  // Exportando as instâncias
+export { db, auth, messaging };
 
 const LoadingScreen = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const initializeFirebase = async () => {
-      try {
-        console.log('Firebase inicializado', app);
+    let unsubscribeForeground: any;
+    let unsubscribeTokenRefresh: any;
+    let unsubscribeOpenedApp: any;
+    let unsubscribeNotifee: any;
 
-        // Solicita permissão para notificações (com a nova API modular)
+
+    const initializeFirebase = async () => {
+      requestNotificationPermission();
+
+      try {
         const authStatus = await requestPermission(messaging);
         const enabled =
           authStatus === AuthorizationStatus.AUTHORIZED ||
           authStatus === AuthorizationStatus.PROVISIONAL;
 
         if (enabled) {
-          console.log('Permissão concedida:', authStatus);
           const token = await getToken(messaging);
-          console.log('FCM Token:', token);
           await AsyncStorage.setItem('fcmToken', token);
-        } else {
-          console.log('Permissão não concedida');
+          console.log('FCM Token:', token);
         }
       } catch (error) {
-        console.error('Erro ao inicializar o Firebase ou obter permissão:', error);
+        console.error('Erro ao inicializar o Firebase:', error);
       }
 
-      // Escuta notificações em primeiro plano (com a nova API modular)
-      const unsubscribeForeground = onMessage(messaging, async remoteMessage => {
-        Alert.alert(
-          remoteMessage.notification?.title || 'Nova Notificação',
-          remoteMessage.notification?.body || ''
-        );
+      // 👉 App em segundo plano
+      unsubscribeOpenedApp = messaging.onNotificationOpenedApp(remoteMessage => {
+        handleNotification(remoteMessage);
       });
 
-      // Escuta atualizações de token (com a nova API modular)
-      const unsubscribeTokenRefresh = onTokenRefresh(messaging, async token => {
-        console.log('Token atualizado:', token);
+      // 👉 App fechado
+      messaging.getInitialNotification().then(remoteMessage => {
+        handleNotification(remoteMessage);
+      });
+
+      // 👉 App em primeiro plano
+      unsubscribeForeground = onMessage(messaging, async remoteMessage => {
+        if (remoteMessage?.data) {
+          const title = remoteMessage.notification?.title || 'Notificação';
+          const body = remoteMessage.notification?.body || 'Você tem uma nova mensagem!';
+
+          await notifee.displayNotification({
+            title,
+            body,
+            data: remoteMessage.data,
+            android: {
+              channelId: 'default-channel-id',
+            },
+          });
+        }
+      });
+
+      // 👉 Listener para toques nas notificações do notifee em primeiro plano
+      unsubscribeNotifee = notifee.onForegroundEvent(({ type, detail }) => {
+        if (type === EventType.PRESS && detail.notification?.data) {
+          handleNotification({ data: detail.notification.data });
+        }
+      });
+
+      // Token atualizado
+      unsubscribeTokenRefresh = onTokenRefresh(messaging, async token => {
         await AsyncStorage.setItem('fcmToken', token);
+        console.log('Token atualizado:', token);
       });
-
-      // Limpar listeners ao desmontar
-      return () => {
-        unsubscribeForeground();
-        unsubscribeTokenRefresh();
-      };
     };
 
-    // Chama a função para inicializar o Firebase e permissões
+    const handleNotification = (remoteMessage: any) => {
+      if (remoteMessage?.data?.tipo === 'link' && typeof remoteMessage.data.link === 'string') {
+        Linking.openURL(remoteMessage.data.link).catch(console.error);
+      } else if (remoteMessage?.data?.tipo === 'tela' && typeof remoteMessage.data.tela === 'string') {
+        router.push(remoteMessage.data.tela as any);
+      }
+    };
+
     initializeFirebase();
 
-    // Verifica se há um nome armazenado para redirecionar o usuário
     const checkStoredName = async () => {
       try {
         setTimeout(async () => {
-          // Verifica se o nome está no AsyncStorage
           const storedName = await AsyncStorage.getItem('userName');
           if (storedName) {
             router.push('/Screens');
           } else {
             router.push('/Screens/Carousel');
           }
-        }, 3000);  // Atraso de 3 segundos para redirecionar
+        }, 3000);
       } catch (error) {
-        console.error('Erro ao verificar o nome armazenado:', error);
+        console.error('Erro ao verificar nome armazenado:', error);
       }
     };
 
     checkStoredName();
 
+    // ✅ Limpa listeners ao desmontar
+    return () => {
+      if (unsubscribeForeground) unsubscribeForeground();
+      if (unsubscribeTokenRefresh) unsubscribeTokenRefresh();
+      if (unsubscribeOpenedApp) unsubscribeOpenedApp();
+      if (unsubscribeNotifee) unsubscribeNotifee();
+    };
   }, [router]);
 
   return (
