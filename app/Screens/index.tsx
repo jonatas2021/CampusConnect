@@ -438,10 +438,10 @@ export default function HomeScreen() {
           <Pressable style={styles.menuButton} onPress={item.onPress}>
             {typeof item.icon === 'string' ? (
               // Se for string, usa um ícone da biblioteca
-              <MaterialCommunityIcons name={item.icon as any} size={66} color="white" />
+              <MaterialCommunityIcons name={item.icon as any} size={RFValue(52)} color="white" />
             ) : (
               // Se não for string, renderiza uma imagem PNG
-              <Image source={item.icon} style={{ width: 66, height: 66 }} resizeMode="contain" />
+              <Image source={item.icon} style={{ width: RFValue(52), height: RFValue(52) }} resizeMode="contain" />
             )}
             <Text style={styles.buttonText}>{item.label}</Text>
           </Pressable>
@@ -498,7 +498,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
-    fontSize: 20,
+    fontSize: RFValue(16),
     fontWeight: '500',
     textAlign: 'center',
     marginTop: 8,
