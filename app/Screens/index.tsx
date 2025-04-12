@@ -9,15 +9,14 @@ import { getAuth, onAuthStateChanged } from '@react-native-firebase/auth'; // At
 import Share from 'react-native-share';
 import { RFValue } from "react-native-responsive-fontsize";
 import DeviceInfo from 'react-native-device-info';
-import { getFirestore, doc, getDoc } from '@react-native-firebase/firestore';
-
-
+import { getFirestore, doc, getDoc, setDoc } from '@react-native-firebase/firestore';
 
 export default function HomeScreen() {
   const [name, setName] = useState('Usuário');
   const { notifications, markAsRead, loadNotifications } = useNotifications(); // Acessando notificações e função de marcação
   const [hasNewNotification, setHasNewNotification] = useState(false);
   const router = useRouter();
+  const uniqueId = DeviceInfo.getUniqueId(); // ID exclusivo do dispositivo
 
   const handleShare = async () => {
     try {
@@ -110,6 +109,63 @@ export default function HomeScreen() {
       console.error('[Erro ao verificar versão]:', error);
     }
   };  
+
+  const saveUserIfNotExists = async () => {
+    try {
+      const db = getFirestore();
+      const userId = await DeviceInfo.getUniqueId();
+      const savedUserId = await AsyncStorage.getItem('@user_id');
+      const isUserCreated = await AsyncStorage.getItem('@user_created'); // Verifica se o usuário já foi registrado no Firestore
+  
+      if (isUserCreated === 'true') {
+        console.log('✅ O usuário', userId, 'já foi registrado no Firestore.');
+        return;
+      }
+  
+      if (savedUserId) {
+        console.log('🆔 ID do usuário já salvo no AsyncStorage:', savedUserId);
+  
+        // Verifica se o usuário já existe no Firestore
+        const userRef = doc(db, 'users', savedUserId);
+        const docSnap = await getDoc(userRef);
+  
+        if (docSnap.exists) {
+          console.log('✅ Usuário já existe no Firestore!');
+          await AsyncStorage.setItem('@user_created', 'true'); // Marca o usuário como registrado
+          return;
+        } else {
+          console.log('⚠️ Usuário no AsyncStorage, mas não existe no Firestore');
+        }
+      }
+  
+      // Se não houver ID salvo, ou se o ID no AsyncStorage não estiver no Firestore, cria um novo ID
+      console.log('🆔 Novo ID gerado:', userId);
+  
+      // Salva o ID no AsyncStorage
+      await AsyncStorage.setItem('@user_id', userId);
+      console.log('📦 Novo ID registrado no AsyncStorage.');
+  
+      // Verifica se o usuário já existe no Firestore
+      const userRef = doc(db, 'users', userId);
+      const docSnap = await getDoc(userRef);
+  
+      if (!docSnap.exists) {
+        // Se não existir, cria o documento no Firestore
+        await setDoc(userRef, {
+          createdAt: new Date(),
+          platform: DeviceInfo.getSystemName(),
+          model: DeviceInfo.getModel(),
+        });
+        console.log('✅ Usuário salvo no Firestore!');
+        await AsyncStorage.setItem('@user_created', 'true'); // Marca o usuário como registrado
+      } else {
+        console.log('⚠️ Usuário já existe no Firestore.');
+      }
+  
+    } catch (error) {
+      console.error('❌ Erro ao salvar/verificar usuário:', error);
+    }
+  };
   
   useFocusEffect(
     React.useCallback(() => {
@@ -126,6 +182,7 @@ export default function HomeScreen() {
         }
       };
 
+      saveUserIfNotExists();
       fetchName();
       checkAppVersion();
 
