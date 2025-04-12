@@ -2,7 +2,14 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { getFirestore, collection, query, orderBy, getDocs } from '@react-native-firebase/firestore';
+import {
+  getFirestore,
+  collection,
+  query,
+  orderBy,
+  onSnapshot,
+  FirebaseFirestoreTypes,
+} from '@react-native-firebase/firestore';
 
 export interface Notification {
   id: string;
@@ -17,7 +24,7 @@ export interface Notification {
 interface NotificationsContextData {
   notifications: Notification[];
   markAsRead: (id: string) => void;
-  loadNotifications: () => Promise<void>;
+  loadNotifications: (snapshot: FirebaseFirestoreTypes.QuerySnapshot) => Promise<void>;
 }
 
 const NotificationsContext = createContext<NotificationsContextData>({} as NotificationsContextData);
@@ -25,12 +32,8 @@ const NotificationsContext = createContext<NotificationsContextData>({} as Notif
 const NotificationsProvider = ({ children }: { children: React.ReactNode }) => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
 
-  const loadNotifications = async () => {
+  const loadNotifications = async (snapshot: FirebaseFirestoreTypes.QuerySnapshot) => {
     try {
-      const db = getFirestore();
-      const notificationsQuery = query(collection(db, 'notifications'), orderBy('createdAt', 'desc'));
-      const snapshot = await getDocs(notificationsQuery);
-
       const storedNotifications = await AsyncStorage.getItem('notifications');
       const savedNotifications = storedNotifications ? JSON.parse(storedNotifications) : [];
 
@@ -51,7 +54,7 @@ const NotificationsProvider = ({ children }: { children: React.ReactNode }) => {
 
       setNotifications(notificationsData);
     } catch (error) {
-      console.error('Erro ao carregar notificações:', error);
+      console.error('Erro ao processar notificações:', error);
     }
   };
 
@@ -70,7 +73,14 @@ const NotificationsProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   useEffect(() => {
-    loadNotifications();
+    const db = getFirestore();
+    const notificationsQuery = query(collection(db, 'notifications'), orderBy('createdAt', 'desc'));
+
+    const unsubscribe = onSnapshot(notificationsQuery, (snapshot) => {
+      loadNotifications(snapshot);
+    });
+
+    return () => unsubscribe();
   }, []);
 
   return (
@@ -80,7 +90,6 @@ const NotificationsProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// Alteração aqui para exportar como default
 export default NotificationsProvider;
 
 export const useNotifications = () => useContext(NotificationsContext);

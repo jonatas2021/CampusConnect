@@ -204,20 +204,14 @@ export default function HomeScreen() {
     }, [])
   );
 
-
   // Carregar notificações ao focar na tela
   useFocusEffect(
     React.useCallback(() => {
 
       checkUnreadNotifications();
 
-      // Simula um atraso de 3 segundos para verificar as notificações
-      const notificationTimeoutId = setTimeout(() => {
-        loadNotifications();
-        checkUnreadNotifications();
-      }, 10000); // 10000 milissegundos (10 segundos)
       return () => {
-        clearTimeout(notificationTimeoutId); // Limpa o timeout de checkUnreadNotifications
+
       };
     }, [notifications]) // Recarregar sempre que as notificações mudarem
   );

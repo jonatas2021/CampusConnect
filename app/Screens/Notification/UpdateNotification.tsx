@@ -40,11 +40,8 @@ export default function ManageNotificationsScreen() {
     };
   }, []);
 
-  useEffect(() => {
-    const auth = getAuth(); // Uso do Firebase Auth atualizado
-    const unsubscribe = onAuthStateChanged(auth, setUser); // Substituído
-
-    const unsubscribeNotifications = onSnapshot(
+  const loadNotificationsRealtime = () => {
+    return onSnapshot(
       query(collection(db, 'notifications'), orderBy('createdAt', 'desc')),
       (snapshot) => {
         const notificationsData = snapshot.docs.map(doc => ({
@@ -54,9 +51,16 @@ export default function ManageNotificationsScreen() {
         setNotifications(notificationsData);
       }
     );
+  };
+
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribeAuth = onAuthStateChanged(auth, setUser);
+
+    const unsubscribeNotifications = loadNotificationsRealtime();
 
     return () => {
-      unsubscribe();
+      unsubscribeAuth();
       unsubscribeNotifications();
     };
   }, []);
@@ -250,7 +254,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
     marginTop: 10,
-  },  
+  },
   buttonuser: {
     backgroundColor: '#2A5224',
     paddingVertical: 12,
