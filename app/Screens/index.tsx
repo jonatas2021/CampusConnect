@@ -210,9 +210,8 @@ export default function HomeScreen() {
 
       checkUnreadNotifications();
 
-      return () => {
-
-      };
+      return () => {};
+      
     }, [notifications]) // Recarregar sempre que as notificações mudarem
   );
   // Função de manipulação de notificações
