@@ -88,7 +88,7 @@ const LoadingScreen = () => {
             data: remoteMessage.data,
             android: {
               smallIcon: 'ic_notification', // <- o nome do ícone no /res/drawable (sem extensão)
-              color: '#2A5A06',
+              color: '#2A5224',
               channelId: 'default-channel-id',
             },
           });
