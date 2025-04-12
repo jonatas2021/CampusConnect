@@ -84,6 +84,7 @@ export default function RootLayout() {
             <Stack.Screen name="Screens/Notifications" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/Notification/CreateNotification" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/Notification/UpdateNotification" options={{ headerShown: false }} />
+            <Stack.Screen name="Screens/Notification/UserListScreen" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/Login" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/Aulas" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/Carteira" options={{ headerShown: false }} />

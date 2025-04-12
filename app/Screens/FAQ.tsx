@@ -112,8 +112,12 @@ export default function FAQScreen() {
         {
           text: 'Sim',
           onPress: () => {
-            const email = 'csa8@discente.ifpe.edu.b'; // E-mail desejado
-            Linking.openURL(`mailto:${email}`);
+            const email = 'csa8@discente.ifpe.edu.br';
+            const subject = 'Feedback sobre o app';
+            const body = 'Olá, equipe de desenvolvimento!\n\nGostaria de compartilhar o seguinte feedback:';
+  
+            const url = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            Linking.openURL(url);
           }
         }
       ]

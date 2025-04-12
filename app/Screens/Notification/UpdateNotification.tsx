@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Pressable, StyleSheet, Alert, FlatList, BackHandler } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import BackButton from '@/components/BackButton';
@@ -29,7 +29,7 @@ export default function ManageNotificationsScreen() {
 
   useEffect(() => {
     const backAction = () => {
-      router.push('/Screens'); 
+      router.push('/Screens');
       return true;
     };
 
@@ -56,8 +56,8 @@ export default function ManageNotificationsScreen() {
     );
 
     return () => {
-      unsubscribe(); 
-      unsubscribeNotifications(); 
+      unsubscribe();
+      unsubscribeNotifications();
     };
   }, []);
 
@@ -170,14 +170,14 @@ export default function ManageNotificationsScreen() {
       <Text style={styles.title}>Gerenciar Notificações</Text>
       <View style={styles.separator} />
       <View style={styles.sair}>
-      <Text style={styles.userInfo}>
-        {user ? `Usuário: ${user.email}` : 'Nenhum usuário autenticado'}
-      </Text>
-      {user && (
-        <Pressable style={styles.logoutButton} onPress={handleLogout}>
-          <Text style={styles.logoutButtonText}>Sair</Text>
-        </Pressable>
-      )}
+        <Text style={styles.userInfo}>
+          {user ? `Usuário: ${user.email}` : 'Nenhum usuário autenticado'}
+        </Text>
+        {user && (
+          <Pressable style={styles.logoutButton} onPress={handleLogout}>
+            <Text style={styles.logoutButtonText}>Sair</Text>
+          </Pressable>
+        )}
       </View>
 
       <FlatList
@@ -211,6 +211,10 @@ export default function ManageNotificationsScreen() {
       <Pressable style={[styles.button, styles.createButton]} onPress={() => router.push('/Screens/Notification/CreateNotification')}>
         <Text style={styles.buttonText}>Criar Nova Notificação</Text>
       </Pressable>
+
+      <Pressable style={styles.buttonuser} onPress={() => router.push('/Screens/Notification/UserListScreen')}>
+        <Text style={styles.buttonText}>Usuários do Aplicativo</Text>
+      </Pressable>
     </View>
   );
 }
@@ -242,6 +246,13 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#4CAF50',
+    paddingVertical: 12,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginTop: 10,
+  },  
+  buttonuser: {
+    backgroundColor: '#2A5224',
     paddingVertical: 12,
     borderRadius: 8,
     alignItems: 'center',

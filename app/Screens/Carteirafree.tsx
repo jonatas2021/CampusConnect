@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Text, StyleSheet, Linking, ImageBackground, Image, SafeAreaView, ScrollView, ToastAndroid, } from "react-native";
+import React, { useEffect} from "react";
+import { View, Text, StyleSheet, Linking, ImageBackground, Image, SafeAreaView, ScrollView, ToastAndroid, BackHandler } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useRouter } from "expo-router";
 import BackButton from "@/components/BackButton2";
@@ -33,6 +33,18 @@ const handleCopy = () => {
 
 const Carteirafree = () => {
     const router = useRouter();
+      useEffect(() => {
+        const backAction = () => {
+          router.push('/Screens/Carteira');
+          return true;
+        };
+    
+        const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+    
+        return () => {
+          backHandler.remove();
+        };
+      }, []);
 
     return (
         <SafeAreaView style={styles.safeContainer}>

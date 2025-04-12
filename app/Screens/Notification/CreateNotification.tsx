@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Pressable, StyleSheet, Alert } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, TextInput, Pressable, StyleSheet, Alert, BackHandler } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import BackButton from '@/components/BackButton';
 import { getFirestore, collection, addDoc, serverTimestamp } from '@react-native-firebase/firestore';
 import { useRouter } from "expo-router";
 import { getAuth } from '@react-native-firebase/auth';  // Ajuste aqui para getAuth
-
 
 export default function CreateNotificationScreen() {
   const [title, setTitle] = useState('');
@@ -17,6 +16,18 @@ export default function CreateNotificationScreen() {
   const db = getFirestore();
   const auth = getAuth();  // Usando getAuth para obter a instância correta
 
+  useEffect(() => {
+    const backAction = () => {
+      router.push('/Screens/Notification/UpdateNotification');
+      return true;
+    };
+
+    const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+
+    return () => {
+      backHandler.remove();
+    };
+  }, []);
 
   const handleCreateNotification = async () => {
     if (!title || !note || !description) {
@@ -109,5 +120,5 @@ const styles = StyleSheet.create({
     height: 2,
     backgroundColor: "#000",
     marginBottom: 20
-},
+  },
 });

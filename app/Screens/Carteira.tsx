@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Text, StyleSheet, Linking, ImageBackground, Image, SafeAreaView, ScrollView, ToastAndroid } from "react-native";
+import React, { useEffect } from "react";
+import { View, Text, StyleSheet, Linking, ImageBackground, Image, SafeAreaView, ScrollView, ToastAndroid, BackHandler } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useRouter } from "expo-router";
 import BackButton from "@/components/BackButton2";
@@ -9,9 +9,22 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 const Carteira = () => {
     const router = useRouter();
 
+    useEffect(() => {
+        const backAction = () => {
+            router.push('/Screens');
+            return true;
+        };
+
+        const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+
+        return () => {
+            backHandler.remove();
+        };
+    }, []);
+
     return (
         <SafeAreaView style={styles.safeContainer}>
-            <BackButton />
+            <BackButton destination="/Screens" />
             <Text style={styles.title}>Carteira de estudante</Text>
             <View style={styles.separator} />
             <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -78,14 +91,14 @@ const Carteira = () => {
                 </View>
 
                 <View style={styles.descricaositeviewp}>
-                <ImageBackground
+                    <ImageBackground
                         source={require('./Carteira/Imagens/diner.png')}
                         style={styles.imagens}
                         resizeMode="contain"
                     >
-                    <Text style={styles.descricaopagamentotextp}>
-                        Pague a taxa de emissão e pronto! Sua carteirinha estará pronta para ser retirada ou entregue na sua casa.
-                    </Text>
+                        <Text style={styles.descricaopagamentotextp}>
+                            Pague a taxa de emissão e pronto! Sua carteirinha estará pronta para ser retirada ou entregue na sua casa.
+                        </Text>
                     </ImageBackground>
 
                 </View>
@@ -100,23 +113,23 @@ const Carteira = () => {
 
                 <View style={styles.descricaositeview}>
                     <Text style={styles.descricaopagamentotext}>
-                    Se você possui o ID Jovem, tem direito à emissão gratuita da carteirinha.
+                        Se você possui o ID Jovem, tem direito à emissão gratuita da carteirinha.
                     </Text>
                 </View>
 
                 <View style={styles.containerButton2}>
-                <ImageBackground
+                    <ImageBackground
                         source={require('./Carteira/Imagens/efeito.png')}
                         style={styles.imagens}
                         resizeMode="contain"
                     >
-                    <TouchableOpacity
-                        style={styles.button2}
-                        activeOpacity={0.5}
-                        onPress={() => router.push("/Screens/Carteirafree")}
-                    >
-                        <Text style={styles.buttonText}>Saiba mais</Text>
-                    </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.button2}
+                            activeOpacity={0.5}
+                            onPress={() => router.push("/Screens/Carteirafree")}
+                        >
+                            <Text style={styles.buttonText}>Saiba mais</Text>
+                        </TouchableOpacity>
                     </ImageBackground>
 
                 </View>
@@ -279,7 +292,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         alignItems: 'center',
         justifyContent: 'center',
-    },    
+    },
     button3: {
         width: "100%",
         paddingVertical: "3%",
@@ -296,7 +309,7 @@ const styles = StyleSheet.create({
         marginVertical: "14%",
         alignItems: 'center',
         justifyContent: 'center',
-    },  
+    },
     buttonText2: {
         color: "#000",
         fontSize: RFValue(14),
