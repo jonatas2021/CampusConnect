@@ -4,7 +4,7 @@ const SvgComponent = (props: SvgProps) => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
     width={292}
-    height={240}
+    height={170}
     fill="none"
     {...props}
   >

@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, SafeAreaView, View, Text, Linking, ToastAndroid } from "react-native";
-import Carousel from "@/components/ui/CarouselSetores";
+import Carousel from "@/components/ui/CarouselSetoresDen";
 import { RFValue } from "react-native-responsive-fontsize";
 import BackButton from "@/components/BackButton2";
 import { useRouter } from "expo-router";
@@ -17,15 +17,18 @@ const carouselData = [
             "A Diretoria de Ensino (DEN) do IFPE Campus Igarassu coordena as atividades pedagógicas, garantindo a qualidade do ensino e o suporte aos estudantes.",
         backgroundColor: "#DFFFD6",
         image: CarouselItem01,
-        email: "" 
+        email: "",
+        email2: "" // ➡️ Adicionando email
     },
     {
         id: "2",
         title: "Para mais informações:",
+        title2: "Secretaria da DEN:",
         description: "",
         backgroundColor: "#DFFFD6",
         image: CarouselItem02,
-        email: "den@igarassu.ifpe.edu.br" // ➡️ Adicionando email
+        email: "den@igarassu.ifpe.edu.br", // ➡️ Adicionando email
+        email2: "secretaria.den@igarassu.ifpe.edu.br" // ➡️ Adicionando email
     },
 ];
 
