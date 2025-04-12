@@ -48,13 +48,21 @@ export default function HomeScreen() {
     console.log('[Versão Atual]:', currentVersion);
   
     try {
-      const lastCheck = await AsyncStorage.getItem('lastVersionCheck');
-      const today = new Date().toISOString().slice(0, 10); // formato: "2025-04-07"
+      const lastCheckString = await AsyncStorage.getItem('lastVersionCheck');
   
-      // Verifica se já foi feito hoje
-      if (lastCheck === today) {
-        console.log('[Verificação de versão já feita hoje]');
-        return;
+      const now = new Date();
+      const twelveHoursInMs = 12 * 60 * 60 * 1000;
+  
+      if (lastCheckString) {
+        const lastCheckDate = new Date(lastCheckString);
+        const diff = now.getTime() - lastCheckDate.getTime();
+
+        console.log('[Última verificação]:', lastCheckDate.toLocaleString());
+  
+        if (diff < twelveHoursInMs) {
+          console.log('[Verificação de versão já feita nas últimas 12 horas]');
+          return;
+        }
       }
   
       const db = getFirestore();
@@ -81,19 +89,19 @@ export default function HomeScreen() {
                 }
               },
               {
-                text: 'Lembrar novamente amanhã',
+                text: 'Lembrar novamente depois',
                 style: 'cancel',
                 onPress: async () => {
-                  console.log('[Lembrar novamente amanhã]');
-                  await AsyncStorage.setItem('lastVersionCheck', today);
+                  console.log('[Lembrar novamente em 12h]');
+                  await AsyncStorage.setItem('lastVersionCheck', now.toISOString());
                 }
               }
             ]
           );
         } else {
           console.log('[App está atualizado]');
-          // Marca como verificado apenas se o app já estiver atualizado
-          await AsyncStorage.setItem('lastVersionCheck', today);
+          // Salva o horário da verificação só se estiver atualizado
+          await AsyncStorage.setItem('lastVersionCheck', now.toISOString());
         }
       } else {
         console.log('[Documento não encontrado no Firestore]');
@@ -101,7 +109,7 @@ export default function HomeScreen() {
     } catch (error) {
       console.error('[Erro ao verificar versão]:', error);
     }
-  };
+  };  
   
   useFocusEffect(
     React.useCallback(() => {
