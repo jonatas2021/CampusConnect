@@ -19,6 +19,8 @@ export interface Notification {
   link?: string;
   image?: string;
   read: boolean;
+  createdAt: Date;
+
 }
 
 interface NotificationsContextData {
@@ -49,6 +51,7 @@ const NotificationsProvider = ({ children }: { children: React.ReactNode }) => {
           link: data.link,
           image: data.image,
           read: savedNotification ? savedNotification.read : false,
+          createdAt: data.createdAt?.toDate?.() ?? new Date(), // 👈 Aqui você converte o Timestamp
         };
       });
 

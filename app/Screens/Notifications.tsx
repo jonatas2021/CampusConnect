@@ -12,6 +12,32 @@ export default function NotificationsScreen() {
   const { notifications, markAsRead } = useNotifications();
   const router = useRouter();
 
+  function formatNotificationDate(timestamp: Date | string) {
+    const now = new Date();
+    const created = new Date(timestamp);
+    const diffMs = now.getTime() - created.getTime();
+    const diffMins = Math.floor(diffMs / (1000 * 60));
+    const diffHours = Math.floor(diffMins / 60);
+    const diffDays = Math.floor(diffHours / 24);
+  
+    if (diffMins < 1) {
+      return 'Agora';
+    } else if (diffMins < 60) {
+      return `Há ${diffMins} min`;
+    } else if (diffHours < 24) {
+      return `Há ${diffHours}h`;
+    } else if (diffDays < 2) {
+      return `Há ${diffDays} dia`;
+    } else if (diffDays < 5) {
+      return `Há ${diffDays} dias`;
+    } else {
+      return created.toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: 'long',
+      });
+    }
+  }
+  
   const handleNotificationPress = async (id: string, link?: string) => {
     markAsRead(id);
 
@@ -47,6 +73,10 @@ export default function NotificationsScreen() {
             >
               {/* Título em destaque, ocupando toda a largura */}
               <Text style={styles.notificationTitle}>{item.title}</Text>
+
+              <Text style={styles.notificationDate}>
+                {formatNotificationDate(item.createdAt)}
+              </Text>
 
               <View style={styles.contentRow}>
                 {/* Conteúdo textual (nota + descrição) */}
@@ -114,7 +144,6 @@ const styles = StyleSheet.create({
   notificationImage: {
     flex: 3,
     height: '100%',
-    borderRadius: 8,
   },
   unread: {
     backgroundColor: '#92C36B',
@@ -123,23 +152,29 @@ const styles = StyleSheet.create({
     backgroundColor: '#e0e0e0',
   },
   notificationTitle: {
-    fontSize: 18,
+    fontSize: RFValue(14),
     fontWeight: 'bold',
     marginBottom: 6,
     color: '#222',
   },
   notificationNote: {
-    fontSize: 14,
+    fontSize: RFValue(11),
     color: '#666',
     marginTop: 4,
   },
   notificationDescription: {
-    fontSize: 16,
+    fontSize: RFValue(12.5),
     color: '#444',
     marginTop: 4,
   },
   noNotifications: {
-    fontSize: 16,
+    fontSize: RFValue(13),
     color: '#888',
   },
+  notificationDate: {
+    fontSize: RFValue(9.5),
+    color: '#444',
+    marginBottom: 4,
+  },
+  
 });
