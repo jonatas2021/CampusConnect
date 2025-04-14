@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
-import BackButton from '@/components/BackButton2';
+import BackButton from '@/components/BackButton';
 import { RFValue } from "react-native-responsive-fontsize";
 
 interface FAQItem {
