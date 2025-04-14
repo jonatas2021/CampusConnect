@@ -72,6 +72,7 @@ export default function HomeScreen() {
         const data = docSnap.data();
         const latestVersion = data?.latest_version;
         const updateUrl = data?.update_url;
+        const notes = data?.notes;
   
         console.log('[Versão mais recente no Firestore]:', latestVersion);
         console.log('[URL de atualização]:', updateUrl);
@@ -79,7 +80,7 @@ export default function HomeScreen() {
         if (latestVersion && currentVersion !== latestVersion) {
           Alert.alert(
             'Atualização disponível',
-            `Sua versão do app é ${currentVersion} \nA versão mais recente é ${latestVersion}.`,
+            `Sua versão do aplicativo é ${currentVersion} \n\nA versão mais recente é ${latestVersion} \n\nNotas de atualização: ${notes}`,
             [
               {
                 text: 'Atualizar agora',
