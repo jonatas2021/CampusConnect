@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     paddingTop: '6%',
     flex: 1,
     padding: 16,
-    backgroundColor: '#f4f4f4',
+    backgroundColor: '#f1f5f9',
   },
   title: {
     fontSize: RFValue(20),
