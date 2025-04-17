@@ -189,7 +189,7 @@ export default function HomeScreen() {
 
       // Função para lidar com o botão de voltar
       const backAction = () => {
-        Alert.alert("Sair do App", "Você realmente quer sair?", [
+        Alert.alert("Sair do Campus Connect", "Você realmente quer sair?", [
           { text: "Não", onPress: () => null, style: "cancel" },
           { text: "Sim", onPress: () => BackHandler.exitApp() }
         ]);
