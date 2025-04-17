@@ -6,7 +6,7 @@ import { getApp, initializeApp } from '@react-native-firebase/app';
 import { getFirestore } from '@react-native-firebase/firestore';
 import { getAuth } from '@react-native-firebase/auth';
 import { getMessaging, requestPermission, AuthorizationStatus, getToken, onMessage, onTokenRefresh } from '@react-native-firebase/messaging';
-import notifee, { EventType } from '@notifee/react-native';
+import notifee, { EventType, AndroidStyle } from '@notifee/react-native';
 import { firebaseConfig } from '../firebaseConfig';
 import { requestNotificationPermission } from '@/requestNotificationPermission';
 
@@ -87,9 +87,16 @@ const LoadingScreen = () => {
             body,
             data: remoteMessage.data,
             android: {
-              smallIcon: 'ic_notification', // <- o nome do ícone no /res/drawable (sem extensão)
+              smallIcon: 'ic_notification',
               color: '#2A5224',
               channelId: 'default-channel-id',
+              pressAction: {
+                id: 'default',
+              },
+              style: {
+                type: AndroidStyle.BIGTEXT,
+                text: body,
+              },
             },
           });
         }
