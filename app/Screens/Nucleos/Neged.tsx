@@ -38,7 +38,7 @@ const CarouselPage = () => {
     };
 
    const handleButtonPressP = () => {
-        ToastAndroid.show("A portaria ainda não está disponível para visualização.", ToastAndroid.SHORT);
+        Linking.openURL("https://drive.google.com/file/d/1k3qJk9wMCCQKS37_-SyJJdvxe0GbARW3/view?usp=drive_link");
     };
     return (
         <SafeAreaView style={styles.container}>

@@ -16,32 +16,32 @@ interface BusTimeProps {
 }
 
 const weekdaySchedules: BusTimeProps[] = [
-  { departure: "04:10", arrival: "04:30" },
-  { departure: "04:45", arrival: "05:05" },
-  { departure: "05:50", arrival: "06:10" },
-  { departure: "06:25", arrival: "06:45" },
-  { departure: "07:00", arrival: "07:20" },
-  { departure: "07:30", arrival: "07:50" },
+  { departure: "04:00", arrival: "04:20" },
+  { departure: "04:35", arrival: "04:55" },
+  { departure: "05:10", arrival: "05:30" },
+  { departure: "05:45", arrival: "06:05" },
+  { departure: "06:20", arrival: "06:40" },
+  { departure: "06:55", arrival: "07:15" },
+  { departure: "07:35", arrival: "07:55" },
   { departure: "08:10", arrival: "08:30" },
   { departure: "09:15", arrival: "09:35" },
   { departure: "09:45", arrival: "10:05" },
   { departure: "10:50", arrival: "11:10" },
   { departure: "11:20", arrival: "11:40" },
-  { departure: "11:55", arrival: "12:15" },
-  { departure: "12:30", arrival: "12:50" },
-  { departure: "13:10", arrival: "13:30" },
-  { departure: "13:45", arrival: "14:05" },
-  { departure: "14:50", arrival: "15:10" },
-  { departure: "15:20", arrival: "15:40" },
-  { departure: "16:00", arrival: "16:20" },
-  { departure: "16:35", arrival: "16:55" },
-  { departure: "17:15", arrival: "17:35" },
-  { departure: "17:50", arrival: "18:10" },
-  { departure: "18:30", arrival: "18:50" },
-  { departure: "19:05", arrival: "19:25" },
-  { departure: "20:10", arrival: "20:30" },
-  { departure: "20:45", arrival: "21:05" },
-  { departure: "21:20", arrival: "21:40" },
+  { departure: "12:00", arrival: "12:20" },
+  { departure: "12:35", arrival: "12:55" },
+  { departure: "13:15", arrival: "13:35" },
+  { departure: "13:50", arrival: "14:10" },
+  { departure: "15:00", arrival: "15:20" },
+  { departure: "15:30", arrival: "15:50" },
+  { departure: "16:15", arrival: "16:35" },
+  { departure: "16:45", arrival: "17:05" },
+  { departure: "17:30", arrival: "17:50" },
+  { departure: "18:00", arrival: "18:20" },
+  { departure: "18:45", arrival: "19:05" },
+  { departure: "19:15", arrival: "19:35" },
+  { departure: "20:25", arrival: "20:45" },
+  { departure: "21:00", arrival: "21:20" },
   { departure: "22:00", arrival: "22:20" },
 ];
 
@@ -84,7 +84,7 @@ const BusScheduleScreen: React.FC = () => {
       <BackButton />
       <Text style={styles.title}>TI Igarassu / Botafogo</Text>
       <View style={styles.separator} />
-      <Text style={styles.subtitle}>Em vigor desde 01 de julho de 2024</Text>
+      <Text style={styles.subtitle}>Em vigor desde 16 de maio de 2025</Text>
 
       {/* Botões de seleção */}
       <View style={styles.selectionContainer}>

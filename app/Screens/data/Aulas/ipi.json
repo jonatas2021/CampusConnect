@@ -1,10 +1,10 @@
 {
   "1°": {
     "seg": [
-      {"time": "1t", "subject": "Redes de Computadores", "teacher": "Prof. David J. Cavalcanti"},
-      {"time": "2t", "subject": "Redes de Computadores", "teacher": "Prof. David J. Cavalcanti"},
-      {"time": "3t", "subject": "Redes de Computadores", "teacher": "Prof. David J. Cavalcanti"},
-      {"time": "4t", "subject": "Redes de Computadores", "teacher": "Prof. David J. Cavalcanti"}
+      {"time": "1t", "subject": "Redes de Computadores", "teacher": "Prof. Ramon M. S. Farias"},
+      {"time": "2t", "subject": "Redes de Computadores", "teacher": "Prof. Ramon M. S. Farias"},
+      {"time": "3t", "subject": "Redes de Computadores", "teacher": "Prof. Ramon M. S. Farias"},
+      {"time": "4t", "subject": "Redes de Computadores", "teacher": "Prof. Ramon M. S. Farias"}
     ],
     "ter": [
       {"time": "1t", "subject": "Português Instrumental", "teacher": "Prof. Mari T. Soares"},
@@ -78,11 +78,11 @@
       { "time": "5t", "subject": "Projeto e Prática II", "teacher": "Prof. Ranieri V. Carvalho" }
     ],
     "ter": [
-      { "time": "2t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon M. de S. Farias" },
-      { "time": "3t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon M. de S. Farias" },
-      { "time": "4t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon M. de S. Farias" },
-      { "time": "5t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon M. de S. Farias" },
-      { "time": "6t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon M. de S. Farias" }
+      { "time": "2t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon M. S. Farias" },
+      { "time": "3t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon M. S. Farias" },
+      { "time": "4t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon M. S. Farias" },
+      { "time": "5t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon M. S. Farias" },
+      { "time": "6t", "subject": "Implantação e A. de S. Web", "teacher": "Prof. Ramon M. S. Farias" }
 
     ],
     "qua": [

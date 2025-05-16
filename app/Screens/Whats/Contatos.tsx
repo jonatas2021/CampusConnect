@@ -12,7 +12,7 @@ const groups = [
     id: '1',
     title: 'CRADT',
     description: 'Contatato da Coordenação de Registros Acadêmicos (CRADT), que oferece suporte à comunidade acadêmica e ao público externo.',
-    link: 'https://wa.me/+558181732446',
+    link: 'https://wa.me/+558191949211',
     image: Image1,
     buttonText: 'Entrar em contato',
   },

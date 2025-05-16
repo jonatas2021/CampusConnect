@@ -36,7 +36,7 @@ const CarouselPage = () => {
     };
 
     const handleButtonPressP = () => {
-        ToastAndroid.show("A portaria ainda não está disponível para visualização.", ToastAndroid.SHORT);
+        Linking.openURL("https://drive.google.com/file/d/1Fr6ia8dbpxSEsQ7bW7er_APtZuWcIr6h/view?usp=drive_link");
     };
 
     return (

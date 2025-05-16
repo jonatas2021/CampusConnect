@@ -38,7 +38,7 @@ const CarouselPage = () => {
     };
 
     const handleButtonPressP = () => {
-        ToastAndroid.show("A portaria ainda não está disponível para visualização.", ToastAndroid.SHORT);
+        ToastAndroid.show("Este núcleo ainda não está ativo em nosso campus.", ToastAndroid.SHORT);
     };
     return (
         <SafeAreaView style={styles.container}>

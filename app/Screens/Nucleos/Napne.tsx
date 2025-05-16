@@ -14,7 +14,7 @@ import CarouselItem02 from "@/components/svg/Nucleos/NapneText";
 const carouselData = [
     {
         id: "1",
-        title: "O que é o NAPNE?",
+        title: "O que é o DAPD?",
         description:
             "É um núcleo de promoção, planejamento e execução de políticas inclusivas pautado na construção da cidadania por meio da valorização da identidade étnico-racial, do respeito às diferenças e à igualdade de oportunidades, que venha a eliminar as barreiras atitudinais.",
         backgroundColor: "#DFFFD6",
@@ -38,12 +38,12 @@ const CarouselPage = () => {
     };
 
    const handleButtonPressP = () => {
-        ToastAndroid.show("A portaria ainda não está disponível para visualização.", ToastAndroid.SHORT);
+        Linking.openURL("https://drive.google.com/file/d/1WtbXAWNWZqF9XfCWV5khCGRxnpKxvhxY/view?usp=drive_link");
     };
     return (
         <SafeAreaView style={styles.container}>
             <BackButton />
-            <Text style={styles.title}>NAPNE</Text>
+            <Text style={styles.title}>DAPD</Text>
             <View style={styles.separator} />
             <View style={styles.rootContainer}>
                 <Carousel 
