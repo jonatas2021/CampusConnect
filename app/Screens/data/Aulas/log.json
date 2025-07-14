@@ -67,40 +67,38 @@
   },
   "3°": {
     "seg": [
-      { "time": "4m", "subject": "Gestão da Qualidade", "teacher": "Prof. Josefa R. Q. C. Gomes" },
-      { "time": "5m", "subject": "Gestão da Qualidade", "teacher": "Prof. Josefa R. Q. C. Gomes" },
-      { "time": "6m", "subject": "Gestão da Qualidade", "teacher": "Prof. Josefa R. Q. C. Gomes" }
+      { "time": "4t", "subject": "Gestão da Qualidade", "teacher": "Prof. Josefa R. Q. C. Gomes" },
+      { "time": "5t", "subject": "Gestão da Qualidade", "teacher": "Prof. Josefa R. Q. C. Gomes" },
+      { "time": "6t", "subject": "Gestão da Qualidade", "teacher": "Prof. Josefa R. Q. C. Gomes" }
     ],
     "ter": [
-      { "time": "1m", "subject": "Custos Logísticos", "teacher": "Prof. José T. P. Magalhães" },
-      { "time": "2m", "subject": "Custos Logísticos", "teacher": "Prof. José T. P. Magalhães" },
-      { "time": "3m", "subject": "Inglês II", "teacher": "Prof. Mari T. S. Soares" },
-      { "time": "4m", "subject": "Inglês II", "teacher": "Prof. Mari T. S. Soares" },
-      { "time": "5m", "subject": "Tecnologia e Sistemas de I. L.", "teacher": "Prof. Alexandre M. A. Oliveira" },
-      { "time": "6m", "subject": "Tecnologia e Sistemas de I. L.", "teacher": "Prof. Alexandre M. A. Oliveira" }
+      { "time": "3t", "subject": "Inglês II", "teacher": "Prof. Mari T. S. Soares" },
+      { "time": "4t", "subject": "Inglês II", "teacher": "Prof. Mari T. S. Soares" },
+      { "time": "5t", "subject": "Tecnologia e Sistemas de I. L.", "teacher": "Prof. Alexandre M. A. Oliveira" },
+      { "time": "6t", "subject": "Tecnologia e Sistemas de I. L.", "teacher": "Prof. Alexandre M. A. Oliveira" }
     ],
     "qua": [
-      { "time": "1m", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José R. D. Melo" },
-      { "time": "2m", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José R. D. Melo" },
-      { "time": "3m", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José R. D. Melo" },
-      { "time": "4m", "subject": "Tópicos Especiais em L.", "teacher": "Prof. Adriana F. V. Bastos" },
-      { "time": "5m", "subject": "Tópicos Especiais em L.", "teacher": "Prof. Adriana F. V. Bastos" },
-      { "time": "6m", "subject": "Tópicos Especiais em L.", "teacher": "Prof. Adriana F. V. Bastos" }
+      { "time": "1t", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José R. D. Melo" },
+      { "time": "2t", "subject": "Gestão de Materiais, E. e C.", "teacher": "Prof. José R. D. Melo" },
+      { "time": "3t", "subject": "Tópicos Especiais em L.", "teacher": "Prof. Adriana F. V. Bastos" },
+      { "time": "4t", "subject": "Tópicos Especiais em L.", "teacher": "Prof. Adriana F. V. Bastos" },
+      { "time": "5t", "subject": "Tópicos Especiais em L.", "teacher": "Prof. Adriana F. V. Bastos" },
+      { "time": "6t", "subject": "Tópicos Especiais em L.", "teacher": "Prof. Adriana F. V. Bastos" }
     ],
     "qui": [
-      { "time": "1m", "subject": "Gestão de Produção", "teacher": "Prof. Jessyca S. F. Aires" },
-      { "time": "2m", "subject": "Gestão de Produção", "teacher": "Prof. Jessyca S. F. Aires" },
-      { "time": "3m", "subject": "Gestão de Produção", "teacher": "Prof. Jessyca S. F. Aires" },
-      { "time": "4m", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana C. M. R. Lemos" },
-      { "time": "5m", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana C. M. R. Lemos" }
+      { "time": "1t", "subject": "Gestão de Produção", "teacher": "Prof. Djalma" },
+      { "time": "2t", "subject": "Gestão de Produção", "teacher": "Prof. Djalma" },
+      { "time": "3t", "subject": "Gestão de Produção", "teacher": "Prof. Djalma" },
+      { "time": "4t", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana C. M. R. Lemos" },
+      { "time": "5t", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana C. M. R. Lemos" },
+      { "time": "6t", "subject": "Higiene e Segurança do T.", "teacher": "Prof. Ana C. M. R. Lemos" }
     ],
     "sex": [
-      { "time": "1m", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José R. D. Melo" },
-      { "time": "2m", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José R. D. Melo" },
-      { "time": "3m", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José R. D. Melo" },
-      { "time": "4m", "subject": "Gestâo de Produção", "teacher": "Prof. Jessyca S. F. Aires" },
-      { "time": "5m", "subject": "Gestâo de Produção", "teacher": "Prof. Jessyca S. F. Aires" },
-      { "time": "6m", "subject": "Gestâo de Produção", "teacher": "Prof. Jessyca S. F. Aires" }
+      { "time": "1t", "subject": "Custos Logísticos", "teacher": "Prof. Tarcisio" },
+      { "time": "2t", "subject": "Custos Logísticos", "teacher": "Prof. Tarcisio" },      
+      { "time": "3t", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José R. D. Melo" },
+      { "time": "4t", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José R. D. Melo" },
+      { "time": "5t", "subject": "Gestão de Cadeia de S.", "teacher": "Prof. José R. D. Melo" }
     ]
   }
 }

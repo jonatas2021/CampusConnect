@@ -1,9 +1,9 @@
 {
   "1°": {
     "seg": [
-      { "time": "1m", "subject": "Redes de Computadores", "teacher": "Prof. David Júnio M. Cavalcanti" },
-      { "time": "2m", "subject": "Redes de Computadores", "teacher": "Prof. David Júnio M. Cavalcanti" },
-      { "time": "3m", "subject": "Redes de Computadores", "teacher": "Prof. David Júnio M. Cavalcanti" },
+      { "time": "1m", "subject": "Fundamentos de C. para I.", "teacher": "Prof. Liliane A. N. Sales" },
+      { "time": "2m", "subject": "Fundamentos de C. para I.", "teacher": "Prof. Liliane A. N. Sales" },
+      { "time": "3m", "subject": "Redes de Computadores", "teacher": "Prof. Liliane A. N. Sales" },
       { "time": "4m", "subject": "Cálculo para Computação", "teacher": "Prof. Cícero R. S. Júnior" },
       { "time": "5m", "subject": "Cálculo para Computação", "teacher": "Prof. Cícero R. S. Júnior" },
       { "time": "6m", "subject": "Cálculo para Computação", "teacher": "Prof. Cícero R. S. Júnior" }
@@ -11,30 +11,33 @@
     "ter": [
       { "time": "1m", "subject": "Ética, Cidadania e S.", "teacher": "Prof. Ana C. Marinho R. Lemos" },
       { "time": "2m", "subject": "Ética, Cidadania e S.", "teacher": "Prof. Ana C. Marinho R. Lemos" },
+      { "time": "3m", "subject": "Programação Imperativa", "teacher": "Prof. Allan D. S. Lima" },
       { "time": "4m", "subject": "Programação Imperativa", "teacher": "Prof. Allan D. S. Lima" },
       { "time": "5m", "subject": "Programação Imperativa", "teacher": "Prof. Allan D. S. Lima" }
     ],
     "qua": [
-      { "time": "2m", "subject": "Fundamentos de C. para I.", "teacher": "Prof. Liliane A. N. Sales" },
-      { "time": "3m", "subject": "Fundamentos de C. para I.", "teacher": "Prof. Liliane A. N. Sales" },
-      { "time": "4m", "subject": "Redes de Computadores", "teacher": "Prof. David Júnio M. Cavalcanti" },
-      { "time": "5m", "subject": "Redes de Computadores", "teacher": "Prof. David Júnio M. Cavalcanti" },
-      { "time": "6m", "subject": "Redes de Computadores", "teacher": "Prof. David Júnio M. Cavalcanti" }
+      { "time": "1m", "subject": "Redes de Computadores", "teacher": "Prof. Pedro H. T. M. Nogueira" },
+      { "time": "2m", "subject": "Redes de Computadores", "teacher": "Prof. Pedro H. T. M. Nogueira" },
+      { "time": "3m", "subject": "Redes de Computadores", "teacher": "Prof. Pedro H. T. M. Nogueira" },
+      { "time": "4m", "subject": "Redes de Computadores", "teacher": "Prof. Pedro H. T. M. Nogueira" },
+      { "time": "5m", "subject": "Redes de Computadores", "teacher": "Prof. Pedro H. T. M. Nogueira" },
+      { "time": "6m", "subject": "Redes de Computadores", "teacher": "Prof. Pedro H. T. M. Nogueira" }
     ],
     "qui": [
-      { "time": "2m", "subject": "Inglês I", "teacher": "Prof. Ivo F. G. Sá" },
-      { "time": "3m", "subject": "Inglês I", "teacher": "Prof. Ivo F. G. Sá" },
+      { "time": "1m", "subject": "Programação Imperativa", "teacher": "Prof. Allan D. S. Lima" },
+      { "time": "2m", "subject": "Programação Imperativa", "teacher": "Prof. Allan D. S. Lima" },
+      { "time": "3m", "subject": "Programação Imperativa", "teacher": "Prof. Allan D. S. Lima" },
       { "time": "4m", "subject": "Inglês I", "teacher": "Prof. Ivo F. G. Sá" },
-      { "time": "5m", "subject": "Programação Imperativa", "teacher": "Prof. Allan D. S. Lima" },
-      { "time": "6m", "subject": "Programação Imperativa", "teacher": "Prof. Allan D. S. Lima" }
+      { "time": "5m", "subject": "Inglês I", "teacher": "Prof. Ivo F. G. Sá" },
+      { "time": "6m", "subject": "Inglês I", "teacher": "Prof. Ivo F. G. Sá" }
     ],
     "sex": [
       { "time": "1m", "subject": "Introdução a Administração", "teacher": "Prof. Simonelle W. Nascimento" },
       { "time": "2m", "subject": "Introdução a Administração", "teacher": "Prof. Simonelle W. Nascimento" },
       { "time": "3m", "subject": "Introdução a Administração", "teacher": "Prof. Simonelle W. Nascimento" },
-      { "time": "4m", "subject": "Fundamentos do Design", "teacher": "Prof. Erton W. V. Silva" },
-      { "time": "5m", "subject": "Fundamentos do Design", "teacher": "Prof. Erton W. V. Silva" },
-      { "time": "5m", "subject": "Fundamentos do Design", "teacher": "Prof. Erton W. V. Silva" }
+      { "time": "4m", "subject": "Redes de Computadores", "teacher": "Prof. Gustavo N. Martins" },
+      { "time": "5m", "subject": "Redes de Computadores", "teacher": "Prof. Gustavo N. Martins" },
+      { "time": "6m", "subject": "Redes de Computadores", "teacher": "Prof. Gustavo N. Martins" }
     ]
   },
   "2°": {

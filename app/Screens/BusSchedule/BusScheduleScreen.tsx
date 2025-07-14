@@ -29,18 +29,18 @@ const weekdaySchedules: BusTimeProps[] = [
   { departure: "10:50", arrival: "11:10" },
   { departure: "11:20", arrival: "11:40" },
   { departure: "12:00", arrival: "12:20" },
-  { departure: "12:35", arrival: "12:55" },
+  { departure: "12:30", arrival: "12:50" },
   { departure: "13:15", arrival: "13:35" },
-  { departure: "13:50", arrival: "14:10" },
-  { departure: "15:00", arrival: "15:20" },
+  { departure: "13:45", arrival: "14:05" },
+  { departure: "14:55", arrival: "15:15" },
   { departure: "15:30", arrival: "15:50" },
-  { departure: "16:15", arrival: "16:35" },
+  { departure: "16:05", arrival: "16:25" },
   { departure: "16:45", arrival: "17:05" },
-  { departure: "17:30", arrival: "17:50" },
-  { departure: "18:00", arrival: "18:20" },
+  { departure: "17:25", arrival: "17:45" },
+  { departure: "18:05", arrival: "18:25" },
   { departure: "18:45", arrival: "19:05" },
-  { departure: "19:15", arrival: "19:35" },
-  { departure: "20:25", arrival: "20:45" },
+  { departure: "19:20", arrival: "19:40" },
+  { departure: "20:30", arrival: "20:50" },
   { departure: "21:00", arrival: "21:20" },
   { departure: "22:00", arrival: "22:20" },
 ];
@@ -84,7 +84,7 @@ const BusScheduleScreen: React.FC = () => {
       <BackButton />
       <Text style={styles.title}>TI Igarassu / Botafogo</Text>
       <View style={styles.separator} />
-      <Text style={styles.subtitle}>Em vigor desde 16 de maio de 2025</Text>
+      <Text style={styles.subtitle}>Em vigor desde 14 de julho de 2025</Text>
 
       {/* Botões de seleção */}
       <View style={styles.selectionContainer}>
