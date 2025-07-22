@@ -398,6 +398,12 @@ export default function HomeScreen() {
       label: 'Administrador',
       icon: 'account-lock' as const,
       onPress: checkAuthentication,
+    },
+        {
+      id: 17,
+      label: 'Atualização',
+      icon: 'update' as const,
+      onPress: () => router.push("/Screens/Update"),
     }
   ];
 
