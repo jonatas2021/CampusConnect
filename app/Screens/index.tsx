@@ -45,38 +45,38 @@ export default function HomeScreen() {
   const checkAppVersion = async () => {
     const currentVersion = DeviceInfo.getVersion();
     console.log('[Versão Atual]:', currentVersion);
-  
+
     try {
       const lastCheckString = await AsyncStorage.getItem('lastVersionCheck');
-  
+
       const now = new Date();
       const twelveHoursInMs = 12 * 60 * 60 * 1000;
-  
+
       if (lastCheckString) {
         const lastCheckDate = new Date(lastCheckString);
         const diff = now.getTime() - lastCheckDate.getTime();
 
         console.log('[Última verificação]:', lastCheckDate.toLocaleString());
-  
+
         if (diff < twelveHoursInMs) {
           console.log('[Verificação de versão já feita nas últimas 12 horas]');
           return;
         }
       }
-  
+
       const db = getFirestore();
       const docRef = doc(db, 'app_version', 'current');
       const docSnap = await getDoc(docRef);
-  
+
       if (docSnap.exists) {
         const data = docSnap.data();
         const latestVersion = data?.latest_version;
         const updateUrl = data?.update_url;
         const notes = data?.notes;
-  
+
         console.log('[Versão mais recente no Firestore]:', latestVersion);
         console.log('[URL de atualização]:', updateUrl);
-  
+
         if (latestVersion && currentVersion !== latestVersion) {
           Alert.alert(
             'Atualização disponível',
@@ -109,7 +109,7 @@ export default function HomeScreen() {
     } catch (error) {
       console.error('[Erro ao verificar versão]:', error);
     }
-  };  
+  };
 
   const saveUserIfNotExists = async () => {
     try {
@@ -117,19 +117,19 @@ export default function HomeScreen() {
       const userId = await DeviceInfo.getUniqueId();
       const savedUserId = await AsyncStorage.getItem('@user_id');
       const isUserCreated = await AsyncStorage.getItem('@user_created'); // Verifica se o usuário já foi registrado no Firestore
-  
+
       if (isUserCreated === 'true') {
         console.log('✅ O usuário', userId, 'já foi registrado no Firestore.');
         return;
       }
-  
+
       if (savedUserId) {
         console.log('🆔 ID do usuário já salvo no AsyncStorage:', savedUserId);
-  
+
         // Verifica se o usuário já existe no Firestore
         const userRef = doc(db, 'users', savedUserId);
         const docSnap = await getDoc(userRef);
-  
+
         if (docSnap.exists) {
           console.log('✅ Usuário já existe no Firestore!');
           await AsyncStorage.setItem('@user_created', 'true'); // Marca o usuário como registrado
@@ -138,18 +138,18 @@ export default function HomeScreen() {
           console.log('⚠️ Usuário no AsyncStorage, mas não existe no Firestore');
         }
       }
-  
+
       // Se não houver ID salvo, ou se o ID no AsyncStorage não estiver no Firestore, cria um novo ID
       console.log('🆔 Novo ID gerado:', userId);
-  
+
       // Salva o ID no AsyncStorage
       await AsyncStorage.setItem('@user_id', userId);
       console.log('📦 Novo ID registrado no AsyncStorage.');
-  
+
       // Verifica se o usuário já existe no Firestore
       const userRef = doc(db, 'users', userId);
       const docSnap = await getDoc(userRef);
-  
+
       if (!docSnap.exists) {
         // Se não existir, cria o documento no Firestore
         await setDoc(userRef, {
@@ -162,12 +162,12 @@ export default function HomeScreen() {
       } else {
         console.log('⚠️ Usuário já existe no Firestore.');
       }
-  
+
     } catch (error) {
       console.error('❌ Erro ao salvar/verificar usuário:', error);
     }
   };
-  
+
   useFocusEffect(
     React.useCallback(() => {
       console.log("Tela focada - Carregando nome...");
@@ -211,8 +211,8 @@ export default function HomeScreen() {
 
       checkUnreadNotifications();
 
-      return () => {};
-      
+      return () => { };
+
     }, [notifications]) // Recarregar sempre que as notificações mudarem
   );
   // Função de manipulação de notificações
@@ -398,11 +398,16 @@ export default function HomeScreen() {
       label: 'Administrador',
       icon: 'account-lock' as const,
       onPress: checkAuthentication,
-    },
-        {
+    }, {
       id: 17,
+      label: 'Programação',
+      icon: require('./Menuindex/Demow.png'), // Ícone como imagem
+      onPress: () => router.push("/Screens/DemoWeek"),
+    },
+    {
+      id: 18,
       label: 'Atualização',
-      icon: 'update' as const,
+      icon: 'sync-circle' as const,
       onPress: () => router.push("/Screens/Update"),
     }
   ];
