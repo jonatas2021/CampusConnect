@@ -97,6 +97,7 @@ const DemoWeekManager = () => {
         selectedValue={categoria}
         onValueChange={(itemValue) => setCategoria(itemValue)}
       >
+        <Picker.Item label="Atividades" value="Atividade" />
         <Picker.Item label="Palestras" value="Palestra" />
         <Picker.Item label="Projetos" value="Projeto" />
         <Picker.Item label="Jogos" value="Jogo" />

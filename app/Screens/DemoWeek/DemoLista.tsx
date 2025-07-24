@@ -16,11 +16,12 @@ type Evento = {
   dia: string;
   hora_inicio: string;
   hora_fim: string;
-  categoria: 'Palestra' | 'Projeto' | 'Jogo';
+  categoria: 'Atividade' | 'Palestra' | 'Projeto' | 'Jogo';
 };
 
 const DemoWeekEventos = () => {
   const db = getFirestore();
+  const [Atividade, setAtividades] = useState<Evento[]>([]);
   const [Palestra, setPalestras] = useState<Evento[]>([]);
   const [Projeto, setProjetos] = useState<Evento[]>([]);
   const [Jogo, setJogos] = useState<Evento[]>([]);
@@ -83,6 +84,7 @@ const DemoWeekEventos = () => {
       });
 
       // ✅ Separar por categoria
+      setAtividades(ordenados.filter(e => e.categoria === 'Atividade'));
       setPalestras(ordenados.filter(e => e.categoria === 'Palestra'));
       setProjetos(ordenados.filter(e => e.categoria === 'Projeto'));
       setJogos(ordenados.filter(e => e.categoria === 'Jogo'));
@@ -173,6 +175,7 @@ const DemoWeekEventos = () => {
   );
 
   const dadosPorCategoria = [
+    { titulo: "😁 Atividades", data: Atividade },
     { titulo: "📢 Palestras", data: Palestra },
     { titulo: "📂 Projetos", data: Projeto },
     { titulo: "🎮 Jogos", data: Jogo },
@@ -233,6 +236,7 @@ const DemoWeekEventos = () => {
               selectedValue={categoria}
               onValueChange={(itemValue) => setCategoria(itemValue)}
             >
+              <Picker.Item label="Atividade" value="Atividade" />
               <Picker.Item label="Palestra" value="Palestra" />
               <Picker.Item label="Projeto" value="Projeto" />
               <Picker.Item label="Jogo" value="Jogo" />

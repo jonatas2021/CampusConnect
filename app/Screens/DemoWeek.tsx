@@ -7,11 +7,14 @@ import { RFValue } from 'react-native-responsive-fontsize';
 const PalestraIcon = require('../../assets/images/DemoW/Palestra.png');
 const ProjetoIcon = require('../../assets/images/DemoW/Projetos.png');
 const JogoIcon = require('../../assets/images/DemoW/Jogos.png');
+const AtividadeIcon = require('../../assets/images/DemoW/Atividades.png');
 const BackgroundImage = require('../../assets/images/DemoW/Background.png');
 const HeaderImage = require('../../assets/images/DemoW/Header.png');
 
 const getIcon = (categoria: string) => {
     switch (categoria) {
+        case 'Atividade':
+            return AtividadeIcon;
         case 'Palestra':
             return PalestraIcon;
         case 'Projeto':
@@ -25,7 +28,7 @@ const getIcon = (categoria: string) => {
 
 type Evento = {
     id: string;
-    categoria: 'Palestra' | 'Projeto' | 'Jogo';
+    categoria: 'Palestra' | 'Projeto' | 'Jogo' | 'Atividade';
     dia: string; // formato ISO: "2025-07-24"
     hora_inicio: string; // formato: "HH:MM"
     hora_fim: string;    // formato: "HH:MM"
@@ -139,7 +142,7 @@ const DemoWeekScreen = () => {
 
     useEffect(() => {
         // Após atualizar eventos, rola para o índice de foco de cada categoria
-        ['Palestra', 'Projeto', 'Jogo'].forEach((categoria) => {
+        ['Atividade', 'Palestra', 'Projeto', 'Jogo'].forEach((categoria) => {
             const eventosPorCategoria = eventos.filter((e) => e.categoria === categoria);
             const initialIndex = getEventoFocoIndex(eventosPorCategoria);
             if (initialIndex >= 0 && flatListRefs.current[categoria]) {
@@ -181,7 +184,7 @@ const DemoWeekScreen = () => {
         );
     };
 
-    const categorias: Evento['categoria'][] = ['Palestra', 'Projeto', 'Jogo'];
+    const categorias: Evento['categoria'][] = ['Atividade', 'Palestra', 'Projeto', 'Jogo' ];
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
@@ -248,8 +251,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     headerImage: {
-        height: RFValue(200),
-        resizeMode: 'contain',
+        width:"100%",
+        height: RFValue(210),
+        resizeMode: 'cover',
     },
     sectionHeader: {
         flexDirection: 'row',
