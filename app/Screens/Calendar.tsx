@@ -87,7 +87,7 @@ const CalendarScreen: React.FC = () => {
       <BackButton />
       <Text style={styles.title}>Calendário 2025.1</Text>
       <View style={styles.separator} />
-      <Text style={styles.lastUpdate}>Última atualização: 25/03/2025</Text>
+      <Text style={styles.lastUpdate}>Última atualização: 24/07/2025</Text>
       <View style={styles.searchContainer}>
         <MaterialIcons name="search" size={24} color="#2A5224" style={styles.searchIcon} />
         <TextInput
@@ -262,7 +262,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 10,
     fontWeight: "bold",
-    width: "95%"
+    width: "96%"
   },
   searchContainer: {
     flexDirection: 'row',
