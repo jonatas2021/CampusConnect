@@ -262,6 +262,12 @@ export default function HomeScreen() {
 
   const menuItems = [
     {
+      id: 18,
+      label: 'Programação',
+      icon: require('./Menuindex/Demow.png'), // Ícone como imagem
+      onPress: () => router.push("/Screens/DemoWeek"),
+    },
+    {
       id: 1,
       label: 'Calendário Acadêmico',
       icon: 'calendar-month' as const,
@@ -395,20 +401,15 @@ export default function HomeScreen() {
     },
     {
       id: 16,
-      label: 'Administrador',
-      icon: 'account-lock' as const,
-      onPress: checkAuthentication,
-    }, {
-      id: 17,
-      label: 'Programação',
-      icon: require('./Menuindex/Demow.png'), // Ícone como imagem
-      onPress: () => router.push("/Screens/DemoWeek"),
-    },
-    {
-      id: 18,
       label: 'Atualização',
       icon: 'sync-circle' as const,
       onPress: () => router.push("/Screens/Update"),
+    },
+        {
+      id: 17,
+      label: 'Administrador',
+      icon: 'account-lock' as const,
+      onPress: checkAuthentication,
     }
   ];
 

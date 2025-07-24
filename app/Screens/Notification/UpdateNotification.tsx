@@ -219,6 +219,9 @@ export default function ManageNotificationsScreen() {
       <Pressable style={styles.buttonuser} onPress={() => router.push('/Screens/Notification/UserListScreen')}>
         <Text style={styles.buttonText}>Usuários do Aplicativo</Text>
       </Pressable>
+            <Pressable style={styles.buttonDemo} onPress={() => router.push('/Screens/DemoWeek/DemoLista')}>
+        <Text style={styles.buttonText}>Demo Week</Text>
+      </Pressable>
     </View>
   );
 }
@@ -257,6 +260,13 @@ const styles = StyleSheet.create({
   },
   buttonuser: {
     backgroundColor: '#2A5224',
+    paddingVertical: 12,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+    buttonDemo: {
+    backgroundColor: '#2A2B73',
     paddingVertical: 12,
     borderRadius: 8,
     alignItems: 'center',
