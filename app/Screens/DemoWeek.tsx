@@ -3,6 +3,7 @@ import { View, Text, FlatList, StyleSheet, SafeAreaView, ScrollView, Image, Imag
 import { getFirestore, collection, query, onSnapshot } from '@react-native-firebase/firestore';
 import BackButton from "@/components/BackButton2";
 import { RFValue } from 'react-native-responsive-fontsize';
+import { StatusBar } from 'expo-status-bar';
 
 const PalestraIcon = require('../../assets/images/DemoW/Palestra.png');
 const ProjetoIcon = require('../../assets/images/DemoW/Projetos.png');
@@ -184,10 +185,11 @@ const DemoWeekScreen = () => {
         );
     };
 
-    const categorias: Evento['categoria'][] = ['Atividade', 'Palestra', 'Projeto', 'Jogo' ];
+    const categorias: Evento['categoria'][] = ['Atividade', 'Palestra', 'Projeto', 'Jogo'];
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
+            <StatusBar style="light" translucent />
             <BackButton />
             <ImageBackground source={BackgroundImage} style={styles.background} resizeMode="cover">
                 <ScrollView>
@@ -251,7 +253,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     headerImage: {
-        width:"100%",
+        width: "100%",
         height: RFValue(210),
         resizeMode: 'cover',
     },

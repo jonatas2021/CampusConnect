@@ -13,8 +13,7 @@ const DemoWeekManager = () => {
   const [categoria, setCategoria] = useState('Palestra'); // padrão inicial
 
   // Estados para data e hora agora como objetos Date
-  const [data, setData] = useState(new Date());
-  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [dia, setData] = useState('2025-08-13');
 
   const [horaInicio, setHoraInicio] = useState(new Date());
   const [showHoraInicioPicker, setShowHoraInicioPicker] = useState(false);
@@ -30,7 +29,6 @@ const DemoWeekManager = () => {
     if (!titulo || !ministrante || !local) return;
 
     // Formatar data e horas para string no formato desejado
-    const diaStr = `${data.getFullYear()}-${String(data.getMonth() + 1).padStart(2, '0')}-${String(data.getDate()).padStart(2, '0')}`;
     const horaInicioStr = horaInicio.toTimeString().slice(0, 5);
     const horaFimStr = horaFim.toTimeString().slice(0, 5);
 
@@ -40,7 +38,7 @@ const DemoWeekManager = () => {
       ministrante,
       local,
       categoria,
-      dia: diaStr,
+      dia,
       hora_inicio: horaInicioStr,
       hora_fim: horaFimStr,
     });
@@ -49,7 +47,7 @@ const DemoWeekManager = () => {
     setMinistrante('');
     setLocal('');
     setCategoria('Palestra');
-    setData(new Date());
+    setData('2025-08-13');
     setHoraInicio(new Date());
     setHoraFim(new Date());
 
@@ -67,10 +65,6 @@ const DemoWeekManager = () => {
   }, []);
 
   // Handlers para mostrar DatePicker e TimePicker
-  const onChangeData = (event: any, selectedDate?: Date) => {
-    setShowDatePicker(Platform.OS === 'ios');
-    if (selectedDate) setData(selectedDate);
-  };
 
   const onChangeHoraInicio = (event: any, selectedDate?: Date) => {
     setShowHoraInicioPicker(Platform.OS === 'ios');
@@ -105,17 +99,16 @@ const DemoWeekManager = () => {
       </View>
 
       <Text style={styles.label}>Data do Evento</Text>
-      <TouchableOpacity onPress={() => setShowDatePicker(true)} style={styles.input}>
-        <Text>{data.toLocaleDateString()}</Text>
-      </TouchableOpacity>
-      {showDatePicker && (
-        <DateTimePicker
-          value={data}
-          mode="date"
-          display="default"
-          onChange={onChangeData}
-        />
-      )}
+                <View style={styles.pickerContainer}>
+      <Picker
+        selectedValue={dia}
+        onValueChange={(itemValue) => setData(itemValue)}
+      >
+        <Picker.Item label="Dia 13" value="2025-08-13" />
+        <Picker.Item label="Dia 14" value="2025-08-14" />
+        <Picker.Item label="Dia 15" value="2025-08-15" />
+      </Picker>
+      </View>
 
       <Text style={styles.label}>Hora Início</Text>
       <TouchableOpacity onPress={() => setShowHoraInicioPicker(true)} style={styles.input}>

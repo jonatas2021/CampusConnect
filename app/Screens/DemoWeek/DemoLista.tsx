@@ -245,17 +245,16 @@ const DemoWeekEventos = () => {
 
 
           <Text>Dia</Text>
-          <TouchableOpacity style={styles.input} onPress={() => setShowDatePicker(true)}>
-            <Text>{dia || 'Selecionar data'}</Text>
-          </TouchableOpacity>
-          {showDatePicker && (
-            <DateTimePicker
-              value={dia ? new Date(dia) : new Date()}
-              mode="date"
-              display="default"
-              onChange={onChangeData}
-            />
-          )}
+          <View style={styles.pickerContainer}>
+            <Picker
+              selectedValue={dia}
+              onValueChange={(itemValue) => setDia(itemValue)}
+            >
+              <Picker.Item label="Dia 13" value="2025-08-13" />
+              <Picker.Item label="Dia 14" value="2025-08-14" />
+              <Picker.Item label="Dia 15" value="2025-08-15" />
+            </Picker>
+          </View>
 
           <Text>Hora Início</Text>
           <TouchableOpacity style={styles.input} onPress={() => setShowHoraInicioPicker(true)}>
