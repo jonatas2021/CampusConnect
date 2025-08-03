@@ -91,8 +91,18 @@ const CARD_MARGIN_RIGHT = 12; // marginRight do estilo
 
 const DemoWeekScreen = () => {
     const [eventos, setEventos] = useState<Evento[]>([]);
+    const [tick, setTick] = useState(0); // Força re-render para atualizar status
     const db = getFirestore();
     const flatListRefs = useRef<{ [key: string]: any }>({}); // refs para cada FlatList por categoria
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setTick((prev) => prev + 1);
+        }, 30000); // Atualiza a cada 30 segundos
+
+        return () => clearInterval(interval);
+    }, []);
+
 
     useEffect(() => {
         const q = query(collection(db, 'demoweek'));
