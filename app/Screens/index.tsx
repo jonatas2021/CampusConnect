@@ -405,7 +405,7 @@ export default function HomeScreen() {
       icon: 'sync-circle' as const,
       onPress: () => router.push("/Screens/Update"),
     },
-        {
+    {
       id: 17,
       label: 'Administrador',
       icon: 'account-lock' as const,
@@ -447,7 +447,15 @@ export default function HomeScreen() {
               <MaterialCommunityIcons name={item.icon as any} size={RFValue(52)} color="white" />
             ) : (
               // Se não for string, renderiza uma imagem PNG
-              <Image source={item.icon} style={{ width: RFValue(52), height: RFValue(52) }} resizeMode="contain" />
+              <Image
+                source={item.icon}
+                style={{
+                  width: item.id === 18 ? RFValue(80) : RFValue(52),
+                  height: item.id === 18 ? RFValue(80) : RFValue(52),
+                }}
+                resizeMode="contain"
+              />
+
             )}
             <Text style={styles.buttonText}>{item.label}</Text>
           </Pressable>
