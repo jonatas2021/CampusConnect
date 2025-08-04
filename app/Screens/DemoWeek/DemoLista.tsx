@@ -80,7 +80,7 @@ const DemoWeekEventos = () => {
       const ordenados = todos.sort((a, b) => {
         const dataA = new Date(`${a.dia}T${a.hora_inicio}`);
         const dataB = new Date(`${b.dia}T${b.hora_fim}`);
-        return dataB.getTime() - dataA.getTime();
+        return dataA.getTime() - dataB.getTime();
       });
 
       // ✅ Separar por categoria
