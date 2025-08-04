@@ -31,7 +31,7 @@ const UpdateScreen = () => {
             if (docSnap.exists) {
                 const data = docSnap.data();
                 const latest = data?.latest_version;
-                const updateUrl = data?.update_url;
+                const updateUrlu = data?.update_urlu;
                 const notes = data?.notes;
 
                 setLatestVersion(latest);
@@ -46,7 +46,7 @@ const UpdateScreen = () => {
                             {
                                 text: 'Atualizar agora',
                                 onPress: () => {
-                                    if (updateUrl) Linking.openURL(updateUrl);
+                                    if (updateUrlu) Linking.openURL(updateUrlu);
                                 }
                             },
                             {
