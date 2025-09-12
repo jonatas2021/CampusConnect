@@ -261,12 +261,14 @@ export default function HomeScreen() {
   };
 
   const menuItems = [
+    /*
     {
       id: 18,
       label: 'Programação',
       icon: require('./Menuindex/Demow.png'), // Ícone como imagem
       onPress: () => router.push("/Screens/DemoWeek"),
     },
+    */
     {
       id: 1,
       label: 'Calendário Acadêmico',
