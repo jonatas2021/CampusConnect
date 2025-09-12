@@ -85,9 +85,9 @@ const CalendarScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <BackButton />
-      <Text style={styles.title}>Calendário 2025.1</Text>
+      <Text style={styles.title}>Calendário 2025.2</Text>
       <View style={styles.separator} />
-      <Text style={styles.lastUpdate}>Última atualização: 24/07/2025</Text>
+      <Text style={styles.lastUpdate}>Última atualização: 12/09/2025</Text>
       <View style={styles.searchContainer}>
         <MaterialIcons name="search" size={24} color="#2A5224" style={styles.searchIcon} />
         <TextInput
