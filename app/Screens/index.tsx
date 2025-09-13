@@ -407,12 +407,13 @@ export default function HomeScreen() {
       icon: 'sync-circle' as const,
       onPress: () => router.push("/Screens/Update"),
     },
-    {
+    /*{
       id: 17,
       label: 'Administrador',
       icon: 'account-lock' as const,
       onPress: checkAuthentication,
     }
+    */
   ];
 
   return (

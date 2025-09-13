@@ -1,19 +1,11 @@
 import React, { useState } from 'react';
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  TextInput, 
-  TouchableOpacity, 
-  ScrollView, 
-  SafeAreaView, 
-  Linking,
-  Alert
+import {View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, SafeAreaView, Linking, Alert
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
 import BackButton from '@/components/BackButton';
 import { RFValue } from "react-native-responsive-fontsize";
+import { getAuth, onAuthStateChanged } from '@react-native-firebase/auth'; // Atualizado
 
 interface FAQItem {
   id: number;
@@ -86,16 +78,16 @@ export default function FAQScreen() {
       answer: 'Você deve entrar em contato com o professor responsável pela disciplina e seguir as orientações, caso ainda reste dúvidas você pode entrar em contato com a CRADT.',
       expanded: false
     }
-           
+
   ]);
 
   const toggleExpand = (id: number) => {
-    setFaqItems(faqItems.map(item => 
-      item.id === id ? {...item, expanded: !item.expanded} : item
+    setFaqItems(faqItems.map(item =>
+      item.id === id ? { ...item, expanded: !item.expanded } : item
     ));
   };
 
-  const filteredFAQs = faqItems.filter(item => 
+  const filteredFAQs = faqItems.filter(item =>
     item.question.toLowerCase().includes(searchText.toLowerCase()) ||
     item.answer.toLowerCase().includes(searchText.toLowerCase())
   );
@@ -115,7 +107,7 @@ export default function FAQScreen() {
             const email = 'csa8@discente.ifpe.edu.br';
             const subject = 'Feedback sobre o app';
             const body = 'Olá, equipe de desenvolvimento!\n\nGostaria de compartilhar o seguinte feedback:';
-  
+
             const url = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             Linking.openURL(url);
           }
@@ -123,6 +115,20 @@ export default function FAQScreen() {
       ]
     );
   };
+
+    // Verifica se o usuário está autenticado no momento do clique
+    const checkAuthentication = () => {
+      const auth = getAuth(); // Uso do Firebase Auth atualizado
+  
+      const user = auth.currentUser; // Obtém o usuário autenticado
+      if (user) {
+        // Se o usuário estiver autenticado, redireciona para outra tela
+        router.push("/Screens/Notification/UpdateNotification"); // Altere o caminho para a tela desejada
+      } else {
+        // Se o usuário não estiver autenticado, vai para a tela de login
+        router.push("/Screens/Login");
+      }
+    };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -132,12 +138,12 @@ export default function FAQScreen() {
         </View>
         <Text style={styles.headerTitle}>Suporte</Text>
       </View>
-      
-       <View style={styles.separator} />
 
-       <View style={styles.content2}>     
+      <View style={styles.separator} />
+
+      <View style={styles.content2}>
         <Text style={styles.subtitle}>Como podemos ajudá-lo?</Text>
-        
+
         <View style={styles.searchContainer}>
           <MaterialIcons name="search" size={24} color="#2A5224" style={styles.searchIcon} />
           <TextInput
@@ -148,31 +154,31 @@ export default function FAQScreen() {
             onChangeText={setSearchText}
           />
         </View>
-          <View style={styles.faqHeader}>
-            <Text style={styles.faqTitle}>Perguntas Frequentes:</Text>
-            <TouchableOpacity style={{backgroundColor: '#e8f5e9'}}>
-            </TouchableOpacity>
-          </View>
-          </View>
+        <View style={styles.faqHeader}>
+          <Text style={styles.faqTitle}>Perguntas Frequentes:</Text>
+          <TouchableOpacity style={{ backgroundColor: '#e8f5e9' }}>
+          </TouchableOpacity>
+        </View>
+      </View>
 
       <ScrollView style={styles.content}>
-        
+
         <View style={styles.faqSection}>
-          
+
           {filteredFAQs.map(item => (
             <View key={item.id} style={styles.faqItem}>
-              <TouchableOpacity 
-                style={styles.faqQuestion} 
+              <TouchableOpacity
+                style={styles.faqQuestion}
                 onPress={() => toggleExpand(item.id)}
               >
                 <Text style={styles.questionText}>{item.question}</Text>
-                <MaterialIcons 
-                  name={item.expanded ? "remove" : "add"} 
-                  size={24} 
-                  color="#35672D" 
+                <MaterialIcons
+                  name={item.expanded ? "remove" : "add"}
+                  size={24}
+                  color="#35672D"
                 />
               </TouchableOpacity>
-              
+
               {item.expanded && (
                 <View style={styles.faqAnswer}>
                   <Text style={styles.answerText}>{item.answer}</Text>
@@ -183,9 +189,11 @@ export default function FAQScreen() {
         </View>
       </ScrollView>
 
-      <TouchableOpacity 
+      <TouchableOpacity
         style={styles.contactButton}
-        onPress={handleSendEmail}
+        onPress={handleSendEmail} // clique normal → abre email
+        onLongPress={checkAuthentication} // segura → abre tela admin
+        delayLongPress={5000} // 5000ms = 5 segundos
       >
         <View style={styles.supportButtonContent}>
           <MaterialIcons name="email" size={24} color="#e8f5e9" style={styles.supportIcon} />
@@ -222,19 +230,19 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   separator: {
-    alignSelf:'center',
+    alignSelf: 'center',
     width: "94%",
     height: 2,
     backgroundColor: "#000",
-},
+  },
   content: {
     flex: 1,
     paddingHorizontal: 16,
-    marginBottom:10
+    marginBottom: 10
   },
   content2: {
     paddingHorizontal: 16,
-    paddingTop:16
+    paddingTop: 16
   },
   subtitle: {
     fontSize: 22,
