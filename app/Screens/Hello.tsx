@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     left: 0
   },
   image2: {
-    height: '46%',
+    height: 250,
     resizeMode: 'contain',
     marginBottom: '30%'
   },
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   },
   caixa: {
     width: '100%',
-    height: '28%',
+    minHeight: 200,
     backgroundColor: 'white',
     position: 'absolute',
     bottom: 0, 
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
   },
   input: { 
     width: '95%', 
-    height: '20%', 
+    height: 50, 
     borderColor: '#001E01', 
     borderWidth: 2, 
     borderRadius: 5, 
