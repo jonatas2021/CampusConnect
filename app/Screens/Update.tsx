@@ -50,7 +50,7 @@ const UpdateScreen = () => {
 
                     Alert.alert(
                         'Atualização disponível',
-                        `Sua versão: ${version}\nVersão mais recente: ${latest}\n\nNotas:\n${notes}`,
+                        `Sua versão: ${version}\nVersão mais recente: ${latest}\n\nNotas de atualização:\n${notes}`,
                         [
                             {
                                 text: 'Atualizar agora',

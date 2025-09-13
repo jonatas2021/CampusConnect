@@ -80,7 +80,7 @@ export default function HomeScreen() {
         if (latestVersion && currentVersion !== latestVersion) {
           Alert.alert(
             'Atualização disponível',
-            `Sua versão do aplicativo é ${currentVersion} \n\nA versão mais recente é ${latestVersion} \n\nNotas de atualização: ${notes}`,
+            `Sua versão do aplicativo é ${currentVersion} \n\nA versão mais recente é ${latestVersion} \n\nNotas de atualização:\n${notes}`,
             [
               {
                 text: 'Atualizar agora',
