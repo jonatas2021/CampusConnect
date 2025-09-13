@@ -6,6 +6,7 @@ import { getFirestore, doc, getDoc, setDoc } from '@react-native-firebase/firest
 import BackButton from "@/components/BackButton";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { RFValue } from "react-native-responsive-fontsize";
+import NetInfo from '@react-native-community/netinfo';
 
 const UpdateScreen = () => {
     const [status, setStatus] = useState<'idle' | 'checking' | 'updated' | 'update-available'>('idle');
@@ -17,13 +18,21 @@ const UpdateScreen = () => {
         const version = DeviceInfo.getVersion();
         setCurrentVersion(version);
 
-        // Aguarda 3 segundos antes de continuar
+        // Aguarda 3 segundos antes de continuar (sua animação de loading)
         await new Promise(resolve => setTimeout(resolve, 3000));
 
+        // 🔍 Verifica conexão
+        const state = await NetInfo.fetch();
+        if (!state.isConnected) {
+            setStatus('idle');
+            Alert.alert(
+                'Sem conexão',
+                'Você precisa estar conectado à internet para verificar atualizações.'
+            );
+            return;
+        }
 
         try {
-            const now = new Date();
-
             const db = getFirestore();
             const docRef = doc(db, 'app_version', 'current');
             const docSnap = await getDoc(docRef);
@@ -49,10 +58,7 @@ const UpdateScreen = () => {
                                     if (updateUrlu) Linking.openURL(updateUrlu);
                                 }
                             },
-                            {
-                                text: 'Atualizar depois',
-                                style: 'cancel',
-                            }
+                            { text: 'Atualizar depois', style: 'cancel' }
                         ]
                     );
                 } else {
