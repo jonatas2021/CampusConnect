@@ -38,7 +38,6 @@ export default function RootLayout() {
             <Stack.Screen name="Screens/Hello" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/Questions" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/Carousel" options={{ headerShown: false }} />
-            <Stack.Screen name="Screens/index" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/Contato" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/BusSchedule/BusScheduleScreen" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/BusSchedule/BusScheduleScreen2" options={{ headerShown: false }} />
@@ -49,7 +48,7 @@ export default function RootLayout() {
             <Stack.Screen name="Screens/Nucleos/Neabi" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/Nucleos/Neged" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/Nucleos/Napne" options={{ headerShown: false }} />
-            <Stack.Screen name="Screens/Nucleos/N60+" options={{ headerShown: false }} />
+            <Stack.Screen name="Screens/Nucleos/N60mais" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/Nucleos/Nac" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/Cursos" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/Cursos/Adm1" options={{ headerShown: false }} />
@@ -91,6 +90,7 @@ export default function RootLayout() {
             <Stack.Screen name="Screens/DemoWeek" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/DemoWeek/DemoWeekManager" options={{ headerShown: false }} />
             <Stack.Screen name="Screens/DemoWeek/DemoLista" options={{ headerShown: false }} />
+            <Stack.Screen name="Screens/Home" options={{ headerShown: false }} />
             <Stack.Screen name="+not-found"  />
           </Stack>
           <StatusBar style="dark" translucent />
