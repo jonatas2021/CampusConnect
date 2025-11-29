@@ -11,7 +11,7 @@ const Carteira = () => {
 
     useEffect(() => {
         const backAction = () => {
-            router.push('/Screens');
+            router.push('/Screens/Home');
             return true;
         };
 
@@ -138,7 +138,7 @@ const Carteira = () => {
                     <TouchableOpacity
                         style={styles.button3}
                         activeOpacity={0.5}
-                        onPress={() => router.push("/Screens")}
+                        onPress={() => router.push("/Screens/Home")}
                     >
                         <Text style={styles.buttonText2}>Volte para o inicio</Text>
                     </TouchableOpacity>

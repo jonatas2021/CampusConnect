@@ -106,7 +106,7 @@ const UpdateScreen = () => {
             {/* Topo */}
             <BackButton />
             <View style={styles.topSection}>
-                <Text style={styles.title}>Atualização do App</Text>
+                <Text style={styles.title}>Atualizar Campus Connect</Text>
                 <View style={styles.separator} />
             </View>
 

@@ -29,7 +29,7 @@ export default function ManageNotificationsScreen() {
 
   useEffect(() => {
     const backAction = () => {
-      router.push('/Screens');
+      router.push('/Screens/Home');
       return true;
     };
 
@@ -162,7 +162,7 @@ export default function ManageNotificationsScreen() {
     try {
       await signOut(getAuth());
       Alert.alert('Sucesso', 'Você saiu com sucesso.');
-      router.push('/Screens'); // Redireciona para a tela de login após logout
+      router.push('/Screens/Home'); // Redireciona para a tela de login após logout
     } catch (error) {
       Alert.alert('Erro', 'Não foi possível fazer logout.');
     }

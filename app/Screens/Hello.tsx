@@ -21,7 +21,7 @@ export default function Hello() {
     await AsyncStorage.setItem('userName', trimmedName);
 
     // Navega para a próxima tela com o nome
-    router.push({ pathname: "/Screens", params: { name: trimmedName } });
+    router.push({ pathname: "/Screens/Home", params: { name: trimmedName } });
   };
 
   const getGreeting = () => {
