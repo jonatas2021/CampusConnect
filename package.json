@@ -80,6 +80,7 @@
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-react": "^7.26.3",
+    "@react-native-community/cli": "^20.0.2",
     "@types/jest": "^29.5.12",
     "@types/react": "~18.3.12",
     "@types/react-native-dotenv": "^0.2.2",
