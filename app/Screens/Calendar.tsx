@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -11,8 +11,9 @@ import {
 } from "react-native";
 import BackButton from "@/components/BackButton";
 import { RFValue } from "react-native-responsive-fontsize";
-import importedHolidays from './Calendar/calendar.json'; // O arquivo JSON
 import { MaterialIcons } from '@expo/vector-icons';
+import { fetchCalendar } from "@/src/services/calendar"; // arquivo que criamos
+
 
 interface HolidayProps {
   month: string;
@@ -44,15 +45,23 @@ const CalendarScreen: React.FC = () => {
     }
   };
 
-  // Listagem de meses a serem exibidos
-  const months = importedHolidays.reduce((acc: string[], holiday: HolidayProps) => {
-    if (!acc.includes(holiday.month)) {
-      acc.push(holiday.month);
-    }
-    return acc;
-  }, []);
+const [holidays, setHolidays] = useState<HolidayProps[]>([]);
+const [lastUpdate, setLastUpdate] = useState<string | null>(null);
+const [fromCache, setFromCache] = useState<boolean>(false);
 
-  const holidays: HolidayProps[] = importedHolidays;
+  // carregar JSON remoto
+useEffect(() => {
+  const load = async () => {
+    const result = await fetchCalendar();
+
+    if (result) {
+      setHolidays(result.data);           // somente o array
+      setLastUpdate(result.lastUpdate);   // string
+      setFromCache(result.fromCache);     // boolean
+    }
+  };
+  load();
+}, []);
 
   const holidayType = [
     { type: "Início/Fim do período", color: "#92C36B" },
