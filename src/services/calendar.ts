@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Platform, ToastAndroid } from "react-native";
 
 const CALENDAR_URL =
   "https://raw.githubusercontent.com/CaioSousa32/campus-connect-data/main/calendar.json";
@@ -8,32 +9,80 @@ const STORAGE_DATE_KEY = "@calendar_last_update";
 
 export const fetchCalendar = async () => {
   try {
-    // 1️⃣ Tenta pegar do cache primeiro
+    console.log("🔍 Verificando atualizações do calendário...");
+
+    // Carrega cache
     const cachedData = await AsyncStorage.getItem(STORAGE_KEY);
     const cachedDate = await AsyncStorage.getItem(STORAGE_DATE_KEY);
 
-    if (cachedData) {
+    let parsedCache = cachedData ? JSON.parse(cachedData) : null;
+
+    // Tenta baixar o conteúdo remoto
+    const response = await fetch(CALENDAR_URL, {
+      headers: { "Cache-Control": "no-cache" },
+    });
+
+    if (!response.ok) {
+      console.log("⚠️ Falha ao baixar remoto — usando cache, pois response.ok === false");
+      if (parsedCache) {
+        return { data: parsedCache, lastUpdate: cachedDate, fromCache: true };
+      }
+      return null;
+    }
+
+    const remoteData = await response.json();
+
+    // Compara conteúdos
+    const cacheString = cachedData || "";
+    const remoteString = JSON.stringify(remoteData);
+
+    if (cacheString === remoteString) {
+      console.log("✅ Nenhuma atualização encontrada — usando cache");
       return {
-        data: JSON.parse(cachedData),
-        lastUpdate: cachedDate || null,
+        data: parsedCache,
+        lastUpdate: cachedDate,
         fromCache: true,
       };
     }
 
-    // 2️⃣ Caso não tenha cache → Buscar online
-    const response = await fetch(CALENDAR_URL);
-    const data = await response.json();
+    // Dados são diferentes → salvar
+    const updateDate = new Date().toISOString();
 
-    const updateDate = new Date().toISOString(); // salva quando foi atualizado
-
-    // 3️⃣ Salvar no cache
-    await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    await AsyncStorage.setItem(STORAGE_KEY, remoteString);
     await AsyncStorage.setItem(STORAGE_DATE_KEY, updateDate);
 
-    return { data, lastUpdate: updateDate, fromCache: false };
+    console.log("📥 Atualização encontrada e salva");
+    return {
+      data: remoteData,
+      lastUpdate: updateDate,
+      fromCache: false,
+    };
 
-  } catch (error) {
-    console.error("Erro ao carregar calendário:", error);
-    return null;
+} catch (error) {
+  console.error("❌ Erro ao verificar calendário:", error);
+
+  // Tentar usar cache
+  const cachedData = await AsyncStorage.getItem(STORAGE_KEY);
+  const cachedDate = await AsyncStorage.getItem(STORAGE_DATE_KEY);
+
+  if (cachedData) {
+    console.log("📦 Sem internet — usando cache salvo");
+    return {
+      data: JSON.parse(cachedData),
+      lastUpdate: cachedDate || null,
+      fromCache: true,
+    };
   }
+
+  // 📢 Sem internet E sem cache → avisar o usuário
+  if (Platform.OS === "android") {
+    ToastAndroid.show(
+      "Sem conexão. Conecte-se à internet para carregar o calendário.",
+      ToastAndroid.SHORT
+    );
+  }
+
+  return null;
+}
+
 };

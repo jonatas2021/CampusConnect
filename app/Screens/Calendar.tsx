@@ -1,18 +1,9 @@
-import React, { useState, useEffect } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  ScrollView,
-  TouchableOpacity,
-  Animated,
-  TextInput,
-} from "react-native";
+import React, { useState, useEffect, useMemo, } from "react";
+import { View, Text, StyleSheet, SafeAreaView, ScrollView, TouchableOpacity, Animated, TextInput, Image} from "react-native";
 import BackButton from "@/components/BackButton";
 import { RFValue } from "react-native-responsive-fontsize";
 import { MaterialIcons } from '@expo/vector-icons';
-import { fetchCalendar } from "@/src/services/calendar"; // arquivo que criamos
+import { fetchCalendar } from "@/src/services/calendar"; 
 
 
 interface HolidayProps {
@@ -45,23 +36,27 @@ const CalendarScreen: React.FC = () => {
     }
   };
 
-const [holidays, setHolidays] = useState<HolidayProps[]>([]);
-const [lastUpdate, setLastUpdate] = useState<string | null>(null);
-const [fromCache, setFromCache] = useState<boolean>(false);
+  const [holidays, setHolidays] = useState<HolidayProps[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [lastUpdate, setLastUpdate] = useState<string | null>(null);
+  const [fromCache, setFromCache] = useState<boolean>(false);
 
   // carregar JSON remoto
-useEffect(() => {
-  const load = async () => {
-    const result = await fetchCalendar();
+  useEffect(() => {
+    requestAnimationFrame(async () => {
+      setLoading(true);
 
-    if (result) {
-      setHolidays(result.data);           // somente o array
-      setLastUpdate(result.lastUpdate);   // string
-      setFromCache(result.fromCache);     // boolean
-    }
-  };
-  load();
-}, []);
+      const result = await fetchCalendar();
+
+      if (result) {
+        setHolidays(result.data);
+        setLastUpdate(result.lastUpdate);
+        setFromCache(result.fromCache);
+      }
+
+      setLoading(false);
+    });
+  }, []);
 
   const holidayType = [
     { type: "Início/Fim do período", color: "#92C36B" },
@@ -75,28 +70,56 @@ useEffect(() => {
   ];
 
   // Filtrar os feriados com base na pesquisa
-  const filteredHolidays = holidays
-    .filter(
+  const filteredHolidays = useMemo(() => {
+    return holidays.filter(
       (holiday) =>
         holiday.name.toLowerCase().includes(searchText.toLowerCase()) ||
         holiday.type.toLowerCase().includes(searchText.toLowerCase())
     );
+  }, [holidays, searchText]);
 
-  // Gerar uma lista de meses com feriados que atendem à pesquisa
-  const monthsWithHolidays = filteredHolidays.reduce((acc: string[], holiday: HolidayProps) => {
-    if (!acc.includes(holiday.month)) {
-      acc.push(holiday.month);
-    }
-    return acc;
-  }, []);
+  const monthsWithHolidays = useMemo(() => {
+    return filteredHolidays.reduce((acc: string[], holiday) => {
+      if (!acc.includes(holiday.month)) acc.push(holiday.month);
+      return acc;
+    }, []);
+  }, [filteredHolidays]);
 
+
+  if (loading) {
+  return (
+    <SafeAreaView
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#FFFFFF",
+      }}
+    >
+      <Image source={require('../../assets/images/Loading.gif')} style={{width: '40%', height: '20%'}} resizeMode="contain"/>
+
+      <Text style={{ marginTop: 20, fontSize: 18, color: "#2A5224" }}>
+        Carregando calendário...
+      </Text>
+    </SafeAreaView>
+  );
+}
 
   return (
     <SafeAreaView style={styles.container}>
       <BackButton />
       <Text style={styles.title}>Calendário 2025.2</Text>
       <View style={styles.separator} />
-      <Text style={styles.lastUpdate}>Última atualização: 12/09/2025</Text>
+      <Text style={styles.lastUpdate}>
+        Última atualização:{" "}
+        {lastUpdate
+          ? new Date(lastUpdate).toLocaleDateString("pt-BR", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+          })
+          : "–"}
+      </Text>
       <View style={styles.searchContainer}>
         <MaterialIcons name="search" size={24} color="#2A5224" style={styles.searchIcon} />
         <TextInput
