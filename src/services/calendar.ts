@@ -42,10 +42,6 @@ export const fetchCalendar = async () => {
       };
     }
 
-
-    // Dados são diferentes → salvar
-    const updateDate = new Date().toISOString();
-
     await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(remoteData.events));
     await AsyncStorage.setItem(STORAGE_DATE_KEY, remoteData.lastUpdate);
 
