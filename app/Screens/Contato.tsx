@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   SafeAreaView,
@@ -8,16 +8,38 @@ import {
   TouchableOpacity,
   Alert,
   Linking,
+  Platform,
+  ToastAndroid, Image
 } from "react-native";
 import BackButton from "@/components/BackButton";
 import { RFValue } from "react-native-responsive-fontsize";
-import { MaterialIcons, Feather } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 import * as Clipboard from "expo-clipboard";
-import docentesData from "@/docentes.json";
 import CopyButton from "@/components/svg/CopyButton";
+import { fetchContacts } from "@/src/services/contatos"; // <-- seu arquivo contatos.ts
 
-const EmailDocentes = () => {
-  const [docentes] = useState(docentesData);
+interface ContactProps {
+  id: string;
+  nome: string;
+  email: string;
+}
+
+const EmailDocentes: React.FC = () => {
+  const [contacts, setContacts] = useState<ContactProps[]>([]);
+  const [lastUpdate, setLastUpdate] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    requestAnimationFrame(async () => {
+      const result = await fetchContacts();
+
+      if (result.data.length > 0) {
+        setContacts(result.data);
+        setLastUpdate(result.lastUpdate);
+      } 
+      setLoading(false);
+    });
+  }, []);
 
   const handleSendEmail = (email: string) => {
     Linking.openURL(`mailto:${email}`).catch(() => {
@@ -27,22 +49,40 @@ const EmailDocentes = () => {
 
   const handleCopyEmail = async (email: string) => {
     await Clipboard.setStringAsync(email);
-    Alert.alert(
-      "Copiado!",
-      "O email foi copiado para a área de transferência.",
-    );
+    Alert.alert("Copiado!", "O email foi copiado para a área de transferência.");
   };
+
+  if (loading) {
+  return (
+    <SafeAreaView
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#FFFFFF",
+      }}
+    >
+      <Image source={require('../../assets/images/Loading.gif')} style={{width: '40%', height: '20%'}} resizeMode="contain"/>
+
+      <Text style={{ marginTop: 20, fontSize: 18, color: "#2A5224" }}>
+        Carregando calendário...
+      </Text>
+    </SafeAreaView>
+  );
+}
 
   return (
     <SafeAreaView style={styles.container}>
       <BackButton />
       <Text style={styles.title}>Email dos Docentes</Text>
       <View style={styles.separator} />
-      <Text style={styles.lastUpdate}>Última atualização: 07/02/2025</Text>
+      <Text style={styles.lastUpdate}>
+        Última atualização: {lastUpdate ? new Date(lastUpdate).toLocaleDateString("pt-BR") : "–"}
+      </Text>
 
       <View style={styles.listContainer}>
         <FlatList
-          data={docentes}
+          data={contacts}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
             <View style={styles.item}>
@@ -132,7 +172,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   copyButton: {
-    transform: [{ scale: 0.9 }], // Diminui proporcionalmente o tamanho
+    transform: [{ scale: 0.9 }],
   },
 });
 
