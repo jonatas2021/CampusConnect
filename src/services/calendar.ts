@@ -32,12 +32,9 @@ export const fetchCalendar = async () => {
 
     const remoteData = await response.json();
 
-    // Compara conteúdos
-    const cacheString = cachedData || "";
-    const remoteString = JSON.stringify(remoteData);
-
-    if (cacheString === remoteString) {
-      console.log("✅ Nenhuma atualização encontrada — usando cache");
+    // Agora comparamos APENAS as datas
+    if (cachedDate && cachedDate === remoteData.lastUpdate) {
+      console.log("✅ Nenhuma atualização — lastUpdate igual ao cache");
       return {
         data: parsedCache,
         lastUpdate: cachedDate,
@@ -45,44 +42,47 @@ export const fetchCalendar = async () => {
       };
     }
 
+
     // Dados são diferentes → salvar
     const updateDate = new Date().toISOString();
 
-    await AsyncStorage.setItem(STORAGE_KEY, remoteString);
-    await AsyncStorage.setItem(STORAGE_DATE_KEY, updateDate);
+    await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(remoteData.events));
+    await AsyncStorage.setItem(STORAGE_DATE_KEY, remoteData.lastUpdate);
+
 
     console.log("📥 Atualização encontrada e salva");
     return {
-      data: remoteData,
-      lastUpdate: updateDate,
+      data: remoteData.events,
+      lastUpdate: remoteData.lastUpdate,
       fromCache: false,
     };
 
-} catch (error) {
-  console.error("❌ Erro ao verificar calendário:", error);
 
-  // Tentar usar cache
-  const cachedData = await AsyncStorage.getItem(STORAGE_KEY);
-  const cachedDate = await AsyncStorage.getItem(STORAGE_DATE_KEY);
+  } catch (error) {
+    console.error("❌ Erro ao verificar calendário:", error);
 
-  if (cachedData) {
-    console.log("📦 Sem internet — usando cache salvo");
-    return {
-      data: JSON.parse(cachedData),
-      lastUpdate: cachedDate || null,
-      fromCache: true,
-    };
+    // Tentar usar cache
+    const cachedData = await AsyncStorage.getItem(STORAGE_KEY);
+    const cachedDate = await AsyncStorage.getItem(STORAGE_DATE_KEY);
+
+    if (cachedData) {
+      console.log("📦 Sem internet — usando cache salvo");
+      return {
+        data: JSON.parse(cachedData),
+        lastUpdate: cachedDate || null,
+        fromCache: true,
+      };
+    }
+
+    // 📢 Sem internet E sem cache → avisar o usuário
+    if (Platform.OS === "android") {
+      ToastAndroid.show(
+        "Sem conexão. Conecte-se à internet para carregar o calendário.",
+        ToastAndroid.SHORT
+      );
+    }
+
+    return null;
   }
-
-  // 📢 Sem internet E sem cache → avisar o usuário
-  if (Platform.OS === "android") {
-    ToastAndroid.show(
-      "Sem conexão. Conecte-se à internet para carregar o calendário.",
-      ToastAndroid.SHORT
-    );
-  }
-
-  return null;
-}
 
 };
