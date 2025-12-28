@@ -65,7 +65,7 @@ const EmailDocentes: React.FC = () => {
       <Image source={require('../../assets/images/Loading.gif')} style={{width: '40%', height: '20%'}} resizeMode="contain"/>
 
       <Text style={{ marginTop: 20, fontSize: 18, color: "#2A5224" }}>
-        Carregando calendário...
+        Carregando contatos...
       </Text>
     </SafeAreaView>
   );
