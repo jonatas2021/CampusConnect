@@ -1,139 +1,95 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
   StyleSheet,
   SafeAreaView,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity, Image
 } from "react-native";
 import BackButton from "@/components/BackButton";
 import { RFValue } from "react-native-responsive-fontsize";
+import { fetchBusSchedule } from "@/src/services/busSchedule2";
 
 interface BusTimeProps {
   departure: string;
   arrival: string;
 }
 
-const mondaySchedules: BusTimeProps[] = [
-  { departure: "04:30", arrival: "05:00" },
-  { departure: "05:00", arrival: "05:30" },
-  { departure: "05:30", arrival: "06:00" },
-  { departure: "05:45", arrival: "06:20" },
-  { departure: "06:00", arrival: "06:40" },
-  { departure: "06:15", arrival: "07:00" },
-  { departure: "06:30", arrival: "07:30" },
-  { departure: "06:45", arrival: "08:00" },
-  { departure: "07:00", arrival: "08:30" },
-  { departure: "07:20", arrival: "09:00" },
-  { departure: "07:40", arrival: "09:30" },
-  { departure: "08:00", arrival: "10:00" },
-  { departure: "08:30", arrival: "10:00" },
-  { departure: "09:00", arrival: "11:00" },
-  { departure: "09:30", arrival: "11:30" },
-  { departure: "10:00", arrival: "12:00" },
-  { departure: "10:30", arrival: "12:30" },
-  { departure: "11:00", arrival: "13:00" },
-  { departure: "11:30", arrival: "13:30" },
-  { departure: "12:00", arrival: "14:00" },
-  { departure: "13:00", arrival: "14:30" },
-  { departure: "14:00", arrival: "15:00" },
-  { departure: "14:30", arrival: "15:20" },
-  { departure: "15:00", arrival: "15:40" },
-  { departure: "15:30", arrival: "16:00" },
-  { departure: "16:00", arrival: "16:30" },
-  { departure: "16:30", arrival: "17:00" },
-  { departure: "17:00", arrival: "17:30" },
-  { departure: "18:00", arrival: "18:00" }
-]
-
-
-
-const tuesdayTothursday: BusTimeProps[] = [
-  { departure: "05:00", arrival: "05:00" },
-  { departure: "05:30", arrival: "05:30" },
-  { departure: "06:00", arrival: "06:00" },
-  { departure: "06:30", arrival: "06:30" },
-  { departure: "07:00", arrival: "07:00" },
-  { departure: "07:30", arrival: "07:30" },
-  { departure: "08:00", arrival: "08:00" },
-  { departure: "08:30", arrival: "09:00" },
-  { departure: "09:00", arrival: "10:00" },
-  { departure: "10:00", arrival: "11:00" },
-  { departure: "11:00", arrival: "12:00" },
-  { departure: "12:00", arrival: "13:00" },
-  { departure: "13:00", arrival: "13:30" },
-  { departure: "13:30", arrival: "14:00" },
-  { departure: "14:00", arrival: "14:30" },
-  { departure: "14:30", arrival: "15:00" },
-  { departure: "15:00", arrival: "15:30" },
-  { departure: "15:30", arrival: "16:00" },
-  { departure: "16:00", arrival: "16:30" },
-  { departure: "16:30", arrival: "17:00" },
-  { departure: "17:00", arrival: "17:30" },
-  { departure: "18:00", arrival: "18:00" }
-]
-
-
-const fridayAndsaturday: BusTimeProps[] = [
-  { departure: "05:00", arrival: "05:00" },
-  { departure: "05:30", arrival: "05:30" },
-  { departure: "06:00", arrival: "06:00" },
-  { departure: "06:30", arrival: "06:30" },
-  { departure: "07:00", arrival: "07:00" },
-  { departure: "07:30", arrival: "07:30" },
-  { departure: "08:00", arrival: "08:00" },
-  { departure: "08:30", arrival: "08:30" },
-  { departure: "09:00", arrival: "09:00" },
-  { departure: "09:30", arrival: "09:30" },
-  { departure: "10:00", arrival: "10:00" },
-  { departure: "10:30", arrival: "10:30" },
-  { departure: "11:00", arrival: "11:00" },
-  { departure: "11:30", arrival: "11:30" },
-  { departure: "12:00", arrival: "12:00" },
-  { departure: "12:30", arrival: "12:30" },
-  { departure: "13:00", arrival: "13:00" },
-  { departure: "13:30", arrival: "11:30" },
-  { departure: "14:00", arrival: "14:00" },
-  { departure: "14:30", arrival: "14:30" },
-  { departure: "15:00", arrival: "15:00" },
-  { departure: "15:30", arrival: "15:30" },
-  { departure: "16:00", arrival: "16:00" },
-  { departure: "16:30", arrival: "16:30" },
-  { departure: "17:00", arrival: "17:00" },
-  { departure: "18:00", arrival: "17:30" },
-  { departure: "--:--", arrival: "18:00" }
-]
-
-
+type ScheduleKey =
+  | "monday"
+  | "tuesdayToThursday"
+  | "fridayAndSaturday";
 
 const BusScheduleScreen2: React.FC = () => {
-  const [selectedDay, setSelectedDay] = useState<"monday" | "tuesdayTothursday" | "saturday" >("tuesdayTothursday");
+  const [selectedDay, setSelectedDay] =
+    useState<ScheduleKey>("tuesdayToThursday");
 
-  const getSchedules = () => {
-    switch (selectedDay) {
-      case "monday":
-        return mondaySchedules;
-      case "tuesdayTothursday":
-        return tuesdayTothursday;
-      case "saturday":
-      default:
-        return fridayAndsaturday;
-    }
-  };
+  const [schedules, setSchedules] = useState<Record<ScheduleKey, BusTimeProps[]>>({
+    monday: [],
+    tuesdayToThursday: [],
+    fridayAndSaturday: [],
+  });
+
+  const [lastUpdate, setLastUpdate] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadSchedules = async () => {
+      const result = await fetchBusSchedule();
+
+      if (result?.data) {
+        setSchedules(result.data);
+        setLastUpdate(result.lastUpdate);
+      }
+
+      setLoading(false);
+    };
+
+    loadSchedules();
+  }, []);
+
+  const getSchedules = () => schedules[selectedDay] ?? [];
+
+  if (loading) {
+  return (
+    <SafeAreaView
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#FFFFFF",
+      }}
+    >
+      <Image source={require('../../../assets/images/Loading.gif')} style={{width: '40%', height: '20%'}} resizeMode="contain"/>
+
+      <Text style={{ marginTop: 20, fontSize: 18, color: "#2A5224" }}>
+        Carregando horários...
+      </Text>
+    </SafeAreaView>
+  );
+}
 
   return (
     <SafeAreaView style={styles.container}>
       <BackButton />
+
       <Text style={styles.title}>Rodotur - Recife / Goiana</Text>
       <View style={styles.separator} />
-      <Text style={styles.subtitle}>Em vigor desde 01 de julho de 2024</Text>
 
-      {/* Botões de seleção */}
+      <Text style={styles.subtitle}>
+        Em vigor desde{" "}
+        {lastUpdate
+          ? new Date(lastUpdate).toLocaleDateString("pt-BR")
+          : "–"}
+      </Text>
+
+      {/* Botões */}
       <View style={styles.selectionContainer}>
         <Text style={styles.weekdayText}>Horários de:</Text>
+
         <View style={styles.buttonContainer}>
-        <TouchableOpacity
+          <TouchableOpacity
             style={[
               styles.button,
               selectedDay === "monday" && styles.buttonSelected,
@@ -142,29 +98,30 @@ const BusScheduleScreen2: React.FC = () => {
           >
             <Text style={styles.buttonText}>Seg</Text>
           </TouchableOpacity>
+
           <TouchableOpacity
             style={[
               styles.button,
-              selectedDay === "tuesdayTothursday" && styles.buttonSelected,
+              selectedDay === "tuesdayToThursday" && styles.buttonSelected,
             ]}
-            onPress={() => setSelectedDay("tuesdayTothursday")}
+            onPress={() => setSelectedDay("tuesdayToThursday")}
           >
             <Text style={styles.buttonText}>Ter à Qui</Text>
           </TouchableOpacity>
+
           <TouchableOpacity
             style={[
               styles.button,
-              selectedDay === "saturday" && styles.buttonSelected,
+              selectedDay === "fridayAndSaturday" && styles.buttonSelected,
             ]}
-            onPress={() => setSelectedDay("saturday")}
+            onPress={() => setSelectedDay("fridayAndSaturday")}
           >
             <Text style={styles.buttonText}>Sex e Sáb</Text>
           </TouchableOpacity>
         </View>
       </View>
 
-
-      {/* Header Boxes */}
+      {/* Header */}
       <View style={styles.headerContainer}>
         <View style={styles.headerBox}>
           <Text style={styles.headerText}>Saída de Goiana</Text>
@@ -175,7 +132,6 @@ const BusScheduleScreen2: React.FC = () => {
       </View>
 
       <ScrollView>
-        {/* Time Columns */}
         <View style={styles.columnsContainer}>
           <View style={styles.column}>
             {getSchedules().map((schedule, index) => (
@@ -241,7 +197,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 8, // Espaçamento entre os botões
   },
-
   button: {
     backgroundColor: "#ddd",
     paddingHorizontal: 10,
