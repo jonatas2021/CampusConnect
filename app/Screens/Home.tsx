@@ -17,6 +17,7 @@ export default function HomeScreen() {
   const [hasNewNotification, setHasNewNotification] = useState(false);
   const router = useRouter();
   const uniqueId = DeviceInfo.getUniqueId(); // ID exclusivo do dispositivo
+  const [appStatus, setAppStatus] = useState('Status');
 
   const handleShare = async () => {
     try {
@@ -78,6 +79,10 @@ export default function HomeScreen() {
         console.log('[URL de atualização]:', updateUrl);
 
         if (latestVersion && currentVersion !== latestVersion) {
+
+          await AsyncStorage.setItem('appVersionStatus', 'desatualizado');
+          setAppStatus('desatualizado');
+
           Alert.alert(
             'Atualização disponível',
             `Sua versão do aplicativo é ${currentVersion} \n\nA versão mais recente é ${latestVersion} \n\nNotas de atualização:\n${notes}`,
@@ -100,6 +105,10 @@ export default function HomeScreen() {
           );
         } else {
           console.log('[App está atualizado]');
+
+          await AsyncStorage.setItem('appVersionStatus', 'atualizado');
+          setAppStatus('atualizado');
+
           // Salva o horário da verificação só se estiver atualizado
           await AsyncStorage.setItem('lastVersionCheck', now.toISOString());
         }
@@ -183,9 +192,15 @@ export default function HomeScreen() {
         }
       };
 
+      const checkStatus = async () => {
+        const status = await AsyncStorage.getItem('appVersionStatus');
+        console.log('O app esta:', status);
+        setAppStatus(status || 'Status');      };
+
       saveUserIfNotExists();
       fetchName();
       checkAppVersion();
+      checkStatus();
 
       // Função para lidar com o botão de voltar
       const backAction = () => {
@@ -220,6 +235,11 @@ export default function HomeScreen() {
     console.log("🖱️ Clicado no botão de notificação...");
     console.log("🚀 Redirecionando para tela de notificações...");
     router.push('/Screens/Notifications');
+  };
+
+  const handleUpdateClick = async () => {
+    console.log("🖱️ Clicado no botão de atualização...");
+    router.push('/Screens/Update');
   };
 
   const getGreeting = () => {
@@ -425,6 +445,16 @@ export default function HomeScreen() {
         </Text>
 
         <View style={styles.headerIcons}>
+          {appStatus === 'desatualizado' && (
+            <Pressable
+              onPress={handleUpdateClick}
+            >
+              <Image
+                source={require('../../assets/images/UpdateHome.gif')}
+                style={styles.updateIcon}
+              />
+            </Pressable>
+          )}
           <Pressable onPress={handleShare} style={styles.iconButton}>
             <MaterialCommunityIcons name="share-variant" size={28} color="black" />
           </Pressable>
@@ -527,5 +557,10 @@ const styles = StyleSheet.create({
   iconButton: {
     marginRight: 12,
   },
+  updateIcon: {
+  width: RFValue(28),
+  height: RFValue(28),
+  marginRight: 12
+}
 
 });
