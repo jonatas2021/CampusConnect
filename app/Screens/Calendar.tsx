@@ -108,7 +108,7 @@ const CalendarScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <BackButton />
-      <Text style={styles.title}>Calendário 2025.2</Text>
+      <Text style={styles.title}>Calendário 2026.1</Text>
       <View style={styles.separator} />
       <Text style={styles.lastUpdate}>
         Última atualização:{" "}

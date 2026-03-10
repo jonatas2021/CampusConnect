@@ -46,11 +46,7 @@ const BusScheduleScreen: React.FC = () => {
     loadSchedules();
   }, []);
 
-  const getSchedules = () => {
-    return selectedDay === "weekday"
-      ? schedules.weekday
-      : schedules.weekend;
-  };
+  const getSchedules = () => schedules[selectedDay] ?? [];
 
   if (loading) {
   return (
