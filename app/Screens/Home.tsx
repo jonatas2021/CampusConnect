@@ -76,7 +76,9 @@ export default function HomeScreen() {
         const notes = data?.notes;
 
         console.log('[Versão mais recente no Firestore]:', latestVersion);
-        console.log('[URL de atualização]:', updateUrl);
+
+          // salva versão remota localmente
+          await AsyncStorage.setItem('lastKnownLatestVersion', latestVersion);
 
         if (latestVersion && currentVersion !== latestVersion) {
 
@@ -118,6 +120,22 @@ export default function HomeScreen() {
     } catch (error) {
       console.error('[Erro ao verificar versão]:', error);
     }
+  };
+
+  const checkLocalVersion = async () => {
+  const currentVersion = DeviceInfo.getVersion();
+
+  const storedLatestVersion = await AsyncStorage.getItem('lastKnownLatestVersion');
+
+  if (!storedLatestVersion) return;
+
+  if (currentVersion === storedLatestVersion) {
+    await AsyncStorage.setItem('appVersionStatus', 'atualizado');
+    setAppStatus('atualizado');
+  } else {
+    await AsyncStorage.setItem('appVersionStatus', 'desatualizado');
+    setAppStatus('desatualizado');
+  }
   };
 
   const saveUserIfNotExists = async () => {
@@ -199,6 +217,7 @@ export default function HomeScreen() {
 
       saveUserIfNotExists();
       fetchName();
+      checkLocalVersion();
       checkAppVersion();
       checkStatus();
 
