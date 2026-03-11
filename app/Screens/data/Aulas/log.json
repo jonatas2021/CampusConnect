@@ -18,9 +18,9 @@
       { "time": "3t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre M. A. Oliveira" },
       { "time": "4t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre M. A. Oliveira" },
       { "time": "5t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre M. A. Oliveira" },
-      { "time": "6t", "subject": "Informática Básica", "teacher": "Prof. Hebert Gomes Mendes " },
-      { "time": "7t", "subject": "Informática Básica", "teacher": "Prof. Hebert Gomes Mendes " },
-      { "time": "8t", "subject": "Informática Básica", "teacher": "Prof. Hebert Gomes Mendes " }
+      { "time": "6t", "subject": "Informática Básica", "teacher": "Prof. Hebert Gomes Mendes" },
+      { "time": "7t", "subject": "Informática Básica", "teacher": "Prof. Hebert Gomes Mendes" },
+      { "time": "8t", "subject": "Informática Básica", "teacher": "Prof. Hebert Gomes Mendes" }
     ],
     "qui": [
       { "time": "1t", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" },
