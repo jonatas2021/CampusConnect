@@ -213,7 +213,7 @@ const Aulas = () => {
     <Provider>
       <View style={styles.container}>
         <BackButton />
-        <Text style={styles.title}>Horários dos Cursos</Text>
+        <Text style={styles.title}>Horários das Aulas 2026.1</Text>
         <View style={styles.separator} />
 
         {/* Seleção de Curso (Dropdown) */}
