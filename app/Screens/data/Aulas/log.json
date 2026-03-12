@@ -23,8 +23,8 @@
       { "time": "8t", "subject": "Informática Básica", "teacher": "Prof. Hebert Gomes Mendes" }
     ],
     "qui": [
-      { "time": "1t", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" },
-      { "time": "2t", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" }
+      { "time": "1m", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" },
+      { "time": "2m", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" }
     ],
     "sex": [
       { "time": "3t", "subject": "Introdução a ADM", "teacher": "Prof. Edilene F. Santos" },
