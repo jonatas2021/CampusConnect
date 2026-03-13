@@ -472,6 +472,7 @@ export default function HomeScreen() {
                 source={require('../../assets/images/UpdateHome.gif')}
                 style={styles.updateIcon}
               />
+              <View style={styles.notificationBadge2} />
             </Pressable>
           )}
           <Pressable onPress={handleShare} style={styles.iconButton}>
@@ -541,10 +542,19 @@ const styles = StyleSheet.create({
   },
   notificationBadge: {
     position: 'absolute',
-    top: 6,
-    right: 6,
-    width: 12,
-    height: 12,
+    top: 7,
+    right: 9,
+    width: 10,
+    height: 10,
+    backgroundColor: 'red',
+    borderRadius: 6,
+  },
+    notificationBadge2: {
+    position: 'absolute',
+    top: -1,
+    right: 9,
+    width: 10,
+    height: 10,
     backgroundColor: 'red',
     borderRadius: 6,
   },
@@ -577,8 +587,8 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   updateIcon: {
-  width: RFValue(28),
-  height: RFValue(28),
+  width: 28,
+  height: 28,
   marginRight: 12
 }
 
