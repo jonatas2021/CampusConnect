@@ -74,8 +74,8 @@
       { "time": "3tadm", "subject": "Direito Empresarial e T.", "teacher": "Prof. Leonardo M. Pereira" }
     ],
     "sex": [
-      { "time": "1tadm", "subject": "Administração e Legislação Tributária", "teacher": "Prof. Michelle S. O. Cedraz" },
-      { "time": "2tadm", "subject": "Administração e Legislação Tributária", "teacher": "Prof. Michelle S. O. Cedraz" },
+      { "time": "1tadm", "subject": "Administração e Legislação T.", "teacher": "Prof. Michelle S. O. Cedraz" },
+      { "time": "2tadm", "subject": "Administração e Legislação T.", "teacher": "Prof. Michelle S. O. Cedraz" },
       { "time": "3tadm", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" },
       { "time": "4tadm", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" },
       { "time": "5tadm", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" }

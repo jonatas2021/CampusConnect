@@ -87,12 +87,12 @@
       { "time": "6m", "subject": "Projeto Integrador II", "teacher": "Prof. Jessyca S. F. Aires" }
     ],
     "qui": [    
-      { "time": "4t", "subject": "Gestão de Produção", "teacher": "Prof. Inêz M. Santos" },
-      { "time": "5t", "subject": "Gestão de Produção", "teacher": "Prof. Inêz M. Santos" },
-      { "time": "6t", "subject": "Gestão de Produção", "teacher": "Prof. Inêz M. Santos" } ,
-      { "time": "4t", "subject": "Tecnologia e S. de I. Aplicados", "teacher": "Prof. Hebert G. Mendes" },
-      { "time": "5t", "subject": "Tecnologia e S. de I. Aplicados", "teacher": "Prof. Hebert G. Mendes" },
-      { "time": "6t", "subject": "Tecnologia e S. de I. Aplicados", "teacher": "Prof. Hebert G. Mendes" }
+      { "time": "1m", "subject": "Gestão de Produção", "teacher": "Prof. Inêz M. Santos" },
+      { "time": "2m", "subject": "Gestão de Produção", "teacher": "Prof. Inêz M. Santos" },
+      { "time": "3m", "subject": "Gestão de Produção", "teacher": "Prof. Inêz M. Santos" } ,
+      { "time": "4m", "subject": "Tecnologia e S. de I. Aplicados", "teacher": "Prof. Hebert G. Mendes" },
+      { "time": "5m", "subject": "Tecnologia e S. de I. Aplicados", "teacher": "Prof. Hebert G. Mendes" },
+      { "time": "6m", "subject": "Tecnologia e S. de I. Aplicados", "teacher": "Prof. Hebert G. Mendes" }
     ]
   },
   "4°": {

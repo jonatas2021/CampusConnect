@@ -1,47 +1,45 @@
 {
   "1°": {
     "seg": [
+      { "time": "1t", "subject": "Português Aplicado", "teacher": "Prof. Adriana de F. V. Bastos" },
+      { "time": "2t", "subject": "Português Aplicado", "teacher": "Prof. Adriana de F. V. Bastos" },
       { "time": "3t", "subject": "Português Aplicado", "teacher": "Prof. Adriana de F. V. Bastos" },
-      { "time": "4t", "subject": "Português Aplicado", "teacher": "Prof. Adriana de F. V. Bastos" },
-      { "time": "5t", "subject": "Português Aplicado", "teacher": "Prof. Adriana de F. V. Bastos" },
-      { "time": "6t", "subject": "Matemática Básica", "teacher": "Prof. Roberto D. Cahu" },
-      { "time": "7t", "subject": "Matemática Básica", "teacher": "Prof. Roberto D. Cahu" }
+      { "time": "4t", "subject": "Matemática Básica", "teacher": "Prof. Roberto D. Cahu" },
+      { "time": "5t", "subject": "Matemática Básica", "teacher": "Prof. Roberto D. Cahu" }
     ],
     "ter": [ 
-      { "time": "3t", "subject": "Ética Profissional", "teacher": "Prof. Willyans G. Coelho" },
-      { "time": "4t", "subject": "Ética Profissional", "teacher": "Prof. Willyans G. Coelho" }, 
-      { "time": "5t", "subject": "Logística Reversa e M. A.", "teacher": "Prof. Bruno R. Monteiro" },
-      { "time": "6t", "subject": "Logística Reversa e M. A.", "teacher": "Prof. Bruno R. Monteiro" },
-      { "time": "7t", "subject": "Logística Reversa e M. A.", "teacher": "Prof. Bruno R. Monteiro" }
+      { "time": "1t", "subject": "Ética Profissional", "teacher": "Prof. Willyans G. Coelho" },
+      { "time": "2t", "subject": "Ética Profissional", "teacher": "Prof. Willyans G. Coelho" }, 
+      { "time": "3t", "subject": "Logística Reversa e M. A.", "teacher": "Prof. Bruno R. Monteiro" },
+      { "time": "4t", "subject": "Logística Reversa e M. A.", "teacher": "Prof. Bruno R. Monteiro" },
+      { "time": "5t", "subject": "Logística Reversa e M. A.", "teacher": "Prof. Bruno R. Monteiro" }
     ],
     "qua": [
+      { "time": "1t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre M. A. Oliveira" },
+      { "time": "2t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre M. A. Oliveira" },
       { "time": "3t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre M. A. Oliveira" },
-      { "time": "4t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre M. A. Oliveira" },
-      { "time": "5t", "subject": "Introdução a Logística", "teacher": "Prof. Alexandre M. A. Oliveira" },
-      { "time": "6t", "subject": "Informática Básica", "teacher": "Prof. Hebert Gomes Mendes" },
-      { "time": "7t", "subject": "Informática Básica", "teacher": "Prof. Hebert Gomes Mendes" },
-      { "time": "8t", "subject": "Informática Básica", "teacher": "Prof. Hebert Gomes Mendes" }
+      { "time": "4t", "subject": "Informática Básica", "teacher": "Prof. Hebert Gomes Mendes" },
+      { "time": "5t", "subject": "Informática Básica", "teacher": "Prof. Hebert Gomes Mendes" },
+      { "time": "6t", "subject": "Informática Básica", "teacher": "Prof. Hebert Gomes Mendes" }
     ],
     "qui": [
       { "time": "1m", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" },
       { "time": "2m", "subject": "Metodologia Científica", "teacher": "Prof. Andreza S. Cordeiro" }
     ],
     "sex": [
-      { "time": "3t", "subject": "Introdução a ADM", "teacher": "Prof. Edilene F. Santos" },
+      { "time": "1t", "subject": "Introdução a ADM", "teacher": "Prof. Edilene F. Santos" },
+      { "time": "2t", "subject": "Introdução a ADM", "teacher": "Prof. Edilene F. Santos" },
+      { "time": "3t", "subject": "Introdução a ADM", "teacher": "Prof. Edilene F. Santos" }, 
       { "time": "4t", "subject": "Introdução a ADM", "teacher": "Prof. Edilene F. Santos" },
-      { "time": "5t", "subject": "Introdução a ADM", "teacher": "Prof. Edilene F. Santos" }, 
-      { "time": "6t", "subject": "Introdução a ADM", "teacher": "Prof. Edilene F. Santos" },
-      { "time": "7t", "subject": "Introdução a ADM", "teacher": "Prof. Edilene F. Santos" },
-      { "time": "8t", "subject": "Introdução a ADM", "teacher": "Prof. Edilene F. Santos" }
+      { "time": "5t", "subject": "Introdução a ADM", "teacher": "Prof. Edilene F. Santos" },
+      { "time": "6t", "subject": "Introdução a ADM", "teacher": "Prof. Edilene F. Santos" }
     ]
   },
   "2°": {
     "seg": [
       { "time": "4m", "subject": "Logística de Transporte e D.", "teacher": "Prof. Alexandre M. A. Oliveira" },
       { "time": "5m", "subject": "Logística de Transporte e D.", "teacher": "Prof. Alexandre M. A. Oliveira" },
-      { "time": "3t", "subject": "Logística de Transporte e D.", "teacher": "Prof. Alexandre M. A. Oliveira" },
-      { "time": "1t", "subject": "Gerenciamento e Economia", "teacher": "Prof. Marcelo R. S. Reis" },
-      { "time": "2t", "subject": "Gerenciamento e Economia", "teacher": "Prof. Marcelo R. S. Reis" }
+      { "time": "6m", "subject": "Logística de Transporte e D.", "teacher": "Prof. Alexandre M. A. Oliveira" }
     ],
     "ter": [   
       { "time": "2m", "subject": "Logística de Armazenagem", "teacher": "Prof. José T. P. Magalhães" },

@@ -14,24 +14,24 @@
       { "time": "4t", "subject": "Segurança do Trabalho", "teacher": "Prof. Ana C. M. R. Lemos" }
     ],
     "qua": [      
-      { "time": "1m", "subject": "Fundamentos da Informática", "teacher": "Prof. Hebert G. Mendes" },
-      { "time": "2m", "subject": "Fundamentos da Informática", "teacher": "Prof. Hebert G. Mendes" },
-      { "time": "3m", "subject": "Fundamentos da Informática", "teacher": "Prof. Hebert G. Mendes" },
-      { "time": "3m", "subject": "Matemática Aplicada", "teacher": "Prof. Hugo L. Dantas" },
-      { "time": "4m", "subject": "Matemática Aplicada", "teacher": "Prof. Hugo L. Dantas" }
+      { "time": "1t", "subject": "Fundamentos da Informática", "teacher": "Prof. Hebert G. Mendes" },
+      { "time": "2t", "subject": "Fundamentos da Informática", "teacher": "Prof. Hebert G. Mendes" },
+      { "time": "3t", "subject": "Fundamentos da Informática", "teacher": "Prof. Hebert G. Mendes" },
+      { "time": "3t", "subject": "Matemática Aplicada", "teacher": "Prof. Hugo L. Dantas" },
+      { "time": "4t", "subject": "Matemática Aplicada", "teacher": "Prof. Hugo L. Dantas" }
     ],
     "qui": [
-      { "time": "4m", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan D. Lima" },
-      { "time": "5m", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan D. Lima" },      
-      { "time": "6m", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan D. Lima" },
-      { "time": "5m", "subject": "Inglês Instrumental", "teacher": "Prof. Mari T. Soares" },
-      { "time": "6m", "subject": "Inglês Instrumental", "teacher": "Prof. Mari T. Soares" }
+      { "time": "1t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan D. Lima" },
+      { "time": "2t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan D. Lima" },      
+      { "time": "3t", "subject": "Lógica de Programação O. E. D.", "teacher": "Prof. Allan D. Lima" },
+      { "time": "4t", "subject": "Inglês Instrumental", "teacher": "Prof. Mari T. Soares" },
+      { "time": "5t", "subject": "Inglês Instrumental", "teacher": "Prof. Mari T. Soares" }
     ],
     "sex": [
-      { "time": "4m", "subject": "Redes de Computadores", "teacher": "Prof. Gustavo N. Martins" },
-      { "time": "5m", "subject": "Redes de Computadores", "teacher": "Prof. Gustavo N. Martins" },
-      { "time": "6m", "subject": "Redes de Computadores", "teacher": "Prof. Gustavo N. Martins" },
-      { "time": "6m", "subject": "Redes de Computadores", "teacher": "Prof. Gustavo N. Martins" }
+      { "time": "1t", "subject": "Redes de Computadores", "teacher": "Prof. Gustavo N. Martins" },
+      { "time": "2t", "subject": "Redes de Computadores", "teacher": "Prof. Gustavo N. Martins" },
+      { "time": "3t", "subject": "Redes de Computadores", "teacher": "Prof. Gustavo N. Martins" },
+      { "time": "4t", "subject": "Redes de Computadores", "teacher": "Prof. Gustavo N. Martins" }
     ]
   },
   "2°": {
