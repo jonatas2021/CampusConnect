@@ -42,6 +42,20 @@ export default function HomeScreen() {
     setHasNewNotification(unreadNotifications);
   };
 
+  const compareVersions = (v1: string, v2: string): number => {
+  const a = v1.split('.').map(Number);
+  const b = v2.split('.').map(Number);
+
+  for (let i = 0; i < Math.max(a.length, b.length); i++) {
+    const num1 = a[i] || 0;
+    const num2 = b[i] || 0;
+
+    if (num1 > num2) return 1;
+    if (num1 < num2) return -1;
+  }
+
+  return 0;
+};
 
   const checkAppVersion = async () => {
     const currentVersion = DeviceInfo.getVersion();
@@ -129,13 +143,15 @@ export default function HomeScreen() {
 
   if (!storedLatestVersion) return;
 
-  if (currentVersion === storedLatestVersion) {
-    await AsyncStorage.setItem('appVersionStatus', 'atualizado');
-    setAppStatus('atualizado');
-  } else {
-    await AsyncStorage.setItem('appVersionStatus', 'desatualizado');
-    setAppStatus('desatualizado');
-  }
+  const result = compareVersions(currentVersion, storedLatestVersion);
+
+if (result >= 0) {
+  await AsyncStorage.setItem('appVersionStatus', 'atualizado');
+  setAppStatus('atualizado');
+} else {
+  await AsyncStorage.setItem('appVersionStatus', 'desatualizado');
+  setAppStatus('desatualizado');
+}
   };
 
   const saveUserIfNotExists = async () => {
