@@ -24,7 +24,7 @@ const Carteira = () => {
 
     return (
         <SafeAreaView style={styles.safeContainer}>
-            <BackButton destination="/Screens" />
+            <BackButton/>
             <Text style={styles.title}>Carteira de estudante</Text>
             <View style={styles.separator} />
             <ScrollView contentContainerStyle={styles.scrollContainer}>

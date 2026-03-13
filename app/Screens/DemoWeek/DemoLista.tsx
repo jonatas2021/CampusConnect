@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import BackButton from '@/components/BackButton';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity, SafeAreaView, Modal, TextInput, Button, Alert, Pressable, ScrollView } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, SafeAreaView, Modal, TextInput, Button, Alert, Pressable, BackHandler, ScrollView } from 'react-native';
 import { useRouter } from "expo-router";
 import { getFirestore, collection, getDocs, doc, updateDoc, deleteDoc } from '@react-native-firebase/firestore';
 import { RFValue } from 'react-native-responsive-fontsize';
@@ -42,6 +42,15 @@ const DemoWeekEventos = () => {
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [showHoraInicioPicker, setShowHoraInicioPicker] = useState(false);
   const [showHoraFimPicker, setShowHoraFimPicker] = useState(false);
+
+    useEffect(() => {
+      const backAction = () => {
+        router.push('/Screens/Notification/UpdateNotification');
+        return true;
+      };
+      const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+      return () => backHandler.remove();
+    }, []);
 
   const onChangeData = (_: any, selectedDate?: Date) => {
     setShowDatePicker(false);

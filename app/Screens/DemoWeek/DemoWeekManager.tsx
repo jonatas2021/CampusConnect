@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, Button, FlatList, StyleSheet, Platform, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Button, FlatList, StyleSheet, Platform, TouchableOpacity, BackHandler } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { Picker } from '@react-native-picker/picker';
 import { getFirestore, collection, addDoc, getDocs } from '@react-native-firebase/firestore';
 import { RFValue } from 'react-native-responsive-fontsize';
 import BackButton from '@/components/BackButton';
+import { useRouter } from "expo-router";
 
 const DemoWeekManager = () => {
   const [titulo, setTitulo] = useState('');
   const [ministrante, setMinistrante] = useState('');
   const [local, setLocal] = useState('');
   const [categoria, setCategoria] = useState('Palestra'); // padrão inicial
+  const router = useRouter();
 
   // Estados para data e hora agora como objetos Date
   const [dia, setData] = useState('2025-08-13');
@@ -24,6 +26,15 @@ const DemoWeekManager = () => {
   const [eventos, setEventos] = useState<any[]>([]);
 
   const db = getFirestore();
+
+    useEffect(() => {
+      const backAction = () => {
+        router.push('/Screens/DemoWeek/DemoLista');
+        return true;
+      };
+      const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+      return () => backHandler.remove();
+    }, []);
 
   const salvarEvento = async () => {
     if (!titulo || !ministrante || !local) return;
