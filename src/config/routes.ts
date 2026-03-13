@@ -52,8 +52,8 @@ export const knownRoutes = [
     "/Screens/Login",
     "/Screens/Carteira",
     "/Screens/Carteirafree",
-    "Screens/Update",
-    "Screens/DemoWeek",
+    "/Screens/Update",
+    "/Screens/DemoWeek",
   ] as const;
   
   export type KnownRoute = (typeof knownRoutes)[number];
