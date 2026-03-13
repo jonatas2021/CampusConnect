@@ -193,7 +193,7 @@ export default function FAQScreen() {
         style={styles.contactButton}
         onPress={handleSendEmail} // clique normal → abre email
         onLongPress={checkAuthentication} // segura → abre tela admin
-        delayLongPress={5000} // 5000ms = 5 segundos
+        delayLongPress={2000} // 2000ms = 2 segundos
       >
         <View style={styles.supportButtonContent}>
           <MaterialIcons name="email" size={24} color="#e8f5e9" style={styles.supportIcon} />
