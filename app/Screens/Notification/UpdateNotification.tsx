@@ -170,7 +170,7 @@ export default function ManageNotificationsScreen() {
 
   return (
     <View style={styles.container}>
-      <BackButton destination="/Screens" />
+      <BackButton destination="/Screens/Home" />
       <Text style={styles.title}>Gerenciar Notificações</Text>
       <View style={styles.separator} />
       <View style={styles.sair}>
