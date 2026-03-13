@@ -43,19 +43,19 @@ export default function HomeScreen() {
   };
 
   const compareVersions = (v1: string, v2: string): number => {
-  const a = v1.split('.').map(Number);
-  const b = v2.split('.').map(Number);
+    const a = v1.split('.').map(Number);
+    const b = v2.split('.').map(Number);
 
-  for (let i = 0; i < Math.max(a.length, b.length); i++) {
-    const num1 = a[i] || 0;
-    const num2 = b[i] || 0;
+    for (let i = 0; i < Math.max(a.length, b.length); i++) {
+      const num1 = a[i] || 0;
+      const num2 = b[i] || 0;
 
-    if (num1 > num2) return 1;
-    if (num1 < num2) return -1;
-  }
+      if (num1 > num2) return 1;
+      if (num1 < num2) return -1;
+    }
 
-  return 0;
-};
+    return 0;
+  };
 
   const checkAppVersion = async () => {
     const currentVersion = DeviceInfo.getVersion();
@@ -91,8 +91,8 @@ export default function HomeScreen() {
 
         console.log('[Versão mais recente no Firestore]:', latestVersion);
 
-          // salva versão remota localmente
-          await AsyncStorage.setItem('lastKnownLatestVersion', latestVersion);
+        // salva versão remota localmente
+        await AsyncStorage.setItem('lastKnownLatestVersion', latestVersion);
 
         if (latestVersion && currentVersion !== latestVersion) {
 
@@ -137,21 +137,21 @@ export default function HomeScreen() {
   };
 
   const checkLocalVersion = async () => {
-  const currentVersion = DeviceInfo.getVersion();
+    const currentVersion = DeviceInfo.getVersion();
 
-  const storedLatestVersion = await AsyncStorage.getItem('lastKnownLatestVersion');
+    const storedLatestVersion = await AsyncStorage.getItem('lastKnownLatestVersion');
 
-  if (!storedLatestVersion) return;
+    if (!storedLatestVersion) return;
 
-  const result = compareVersions(currentVersion, storedLatestVersion);
+    const result = compareVersions(currentVersion, storedLatestVersion);
 
-if (result >= 0) {
-  await AsyncStorage.setItem('appVersionStatus', 'atualizado');
-  setAppStatus('atualizado');
-} else {
-  await AsyncStorage.setItem('appVersionStatus', 'desatualizado');
-  setAppStatus('desatualizado');
-}
+    if (result >= 0) {
+      await AsyncStorage.setItem('appVersionStatus', 'atualizado');
+      setAppStatus('atualizado');
+    } else {
+      await AsyncStorage.setItem('appVersionStatus', 'desatualizado');
+      setAppStatus('desatualizado');
+    }
   };
 
   const saveUserIfNotExists = async () => {
@@ -229,7 +229,8 @@ if (result >= 0) {
       const checkStatus = async () => {
         const status = await AsyncStorage.getItem('appVersionStatus');
         console.log('O app esta:', status);
-        setAppStatus(status || 'Status');      };
+        setAppStatus(status || 'Status');
+      };
 
       saveUserIfNotExists();
       fetchName();
@@ -565,7 +566,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
     borderRadius: 6,
   },
-    notificationBadge2: {
+  notificationBadge2: {
     position: 'absolute',
     top: -1,
     right: 9,
@@ -603,9 +604,9 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   updateIcon: {
-  width: 28,
-  height: 28,
-  marginRight: 12
-}
+    width: 28,
+    height: 28,
+    marginRight: 12
+  }
 
 });
